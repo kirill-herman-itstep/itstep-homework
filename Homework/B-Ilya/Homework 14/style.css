@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+html ::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  font-family: "K2D", sans-serif;
+  background-color: #2D3436;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header > div {
+  width: 33%;
+  padding: 1rem 0;
+  border: 1px solid white;
+  font-size: 3rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+header > div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.view_panel .commands > div {
+  display: none;
+  justify-content: center;
+  align-items: stretch;
+}
+.view_panel .commands > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.view_panel .commands > div > div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view_panel .commands > div > div .desc {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid white;
+}
+.view_panel .commands > div > div div {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.view_panel .commands > div > div div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view_panel .commands > div.flex {
+  display: flex;
+}
+.view_panel .commands .show_time {
+  font-size: 1.5rem;
+}
+.view_panel .commands .task1_commands > div {
+  width: 49.5%;
+}
+.view_panel .commands .task1_commands > div.show_info {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid white;
+}
+.view_panel .commands .task2_commands > div {
+  width: 19.8%;
+}
+.view_panel .commands .task2_commands > div.show_fraction {
+  flex-direction: row;
+  justify-content: space-around;
+}
+.view_panel .commands .task2_commands > div.show_fraction .numer {
+  border-bottom: 1px solid white;
+  padding: 0 0.5rem;
+}
+.view_panel .commands .task3_commands > div {
+  width: 24.75%;
+}
+.view_panel .commands .task3_commands > div > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.view_panel .commands .task3_commands > div > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+}
+.view_panel .output {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+}
+
+input {
+  font-family: inherit;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.task2_commands input {
+  width: 1.5rem;
+  text-align: center;
+}
+
+.fraction {
+  display: none;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+}
+.fraction.flex {
+  display: flex;
+}
+.fraction > div {
+  display: flex;
+  flex-direction: column;
+}
+.fraction > div div:first-child {
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+}
+
+.task3_commands input {
+  width: 4rem;
+  margin: 0.8rem 0;
+  text-align: center;
+}
+
+.hw_condition {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.hw_condition:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+embed {
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 45vw;
+  height: 90vh;
+  margin: 0;
+  z-index: 1000;
+}
+
+.hide_embed {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
