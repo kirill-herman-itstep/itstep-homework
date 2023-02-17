@@ -1,15 +1,3 @@
-function dividers (num, arr) {
-    arr = [];
-    for (i = 2; i <= num; i++) {
-        if (num % i === 0) arr.push(i);
-    }
-    return arr;
-}
-
-function sortArr(a, b) {
-    return b - a;
-}
-
 // =================    TASK 1    =============
 
 const auto = {
