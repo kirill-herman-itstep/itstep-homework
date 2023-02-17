@@ -18,7 +18,7 @@ const car = {
             let leisureTime = Math.floor(time / 4);
             time += leisureTime;
         } else if(time > 4 && time % 4 == 0) {
-            let leisureTime = Math.floor(time / 4)
+            let leisureTime = Math.floor(time / 4);
             time += leisureTime - 1;
         }
         return console.log(`На преодоление расстояния в ${a} км в городском режиме со средней скоростью ${this.averageCarSpeedСity} км/ч на данном автомобиле потребуется ${time}ч.`);
@@ -58,7 +58,7 @@ const fraction = {
         let result, a, b;
         b = this.fractionOne['denominator'] * this.fractionTwo['denominator'];
         a = this.fractionOne['numerator'] * this.fractionTwo['denominator'] + this.fractionTwo['numerator'] * this.fractionOne['denominator'];
-        result = `${a}/${b}`
+        result = `${a}/${b}`;
         console.log(`${this.fractionOne['numerator']}/${this.fractionOne['denominator']} + ${this.fractionTwo['numerator']}/${this.fractionTwo['denominator']} = ${result}`);
     },
 
@@ -115,10 +115,6 @@ const time = {
     hour: 9,
     minute: 15,
     secunde: 35,
-
-    showRightTime() {
-
-    },
 
     info() {
         let newHour, newMinute, newSecunde;
