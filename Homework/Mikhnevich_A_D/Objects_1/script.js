@@ -4,7 +4,7 @@ let greatCar = {manufacturer: 'Elona Musk',
     model: 'Pussy Wagon', 
     year: '2077', 
     speed: '228', 
-    data() {
+    printMe() {
         console.log(`${this.manufacturer}, ${this.model}, ${this.year}, ${this.speed}`);
     }, 
     time(data) {
@@ -20,24 +20,24 @@ let greatCar = {manufacturer: 'Elona Musk',
 let niceFraction = {numerator: undefined, denominator: undefined};
 let viseFraction = {numerator: undefined, denominator: undefined};
  
-function sum(data, value) {
-    return {numerator: data.numerator*value.denominator + value.numerator*data.denominator, 
-        denominator: value.denominator*data.denominator};
+function sum(x, y) {
+    return {numerator: x.numerator*y.denominator + y.numerator*x.denominator, 
+        denominator: x.denominator*y.denominator};
 }
  
-function sub(data, value) {
-    return {numerator: data.numerator*value.denominator - value.numerator*data.denominator, 
-        denominator: value.denominator*data.denominator};
+function sub(x, y) {
+    return {numerator: x.numerator*y.denominator - y.numerator*x.denominator, 
+        denominator: x.denominator*y.denominator};
 }
  
-function multi(data, value) {
-    return {numerator: data.numerator*value.numerator, 
-        denominator: value.denominator*data.denominator};
+function multi(x, y) {
+    return {numerator: x.numerator*y.numerator, 
+        denominator: x.denominator*y.denominator};
 }
  
-function div(data, value) {
-    return {numerator: data.numerator*value.denominator, 
-        denominator: value.numerator*data.denominator};
+function div(x, y) {
+    return {numerator: x.numerator*y.denominator, 
+        denominator: y.numerator*x.denominator};
 }
  
 function simple(data) {
