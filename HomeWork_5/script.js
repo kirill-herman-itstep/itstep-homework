@@ -1,6 +1,6 @@
 // ************** Task 1 ****************
 function raisingNumberToAPower(a, b) {
-    if (b == 1) {
+    if (b === 1) {
         return a;
     } else {
         return a * raisingNumberToAPower(a, b - 1);
