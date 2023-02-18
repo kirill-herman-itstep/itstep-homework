@@ -1,2 +1,2 @@
 # itstep-homework
-edit
+# Mikhnevich Andrew's Homework folder.
