@@ -69,17 +69,22 @@ function bringing() {
     return SCM;
 }
 // Сокращение
+let cuttedFraction = '';
+
 function cut(num, denom) {
     let GCD = findGCD(primeFactors(num), primeFactors(denom));
     convertedNumerator = num / GCD;
     convertedDenominator = denom / GCD;
-    return reducedArr =[convertedNumerator, convertedDenominator]
+    return cuttedFraction = [convertedNumerator, convertedDenominator];
 }
 //Выделение целой части
+let fullPartOfFraction = 0;
+let newNumerator = 0;
+
 function fullPart() {
-    intNum = parseInt(reducedArr[0] / reducedArr[1]);
-    newNum = reducedArr[0] % reducedArr[1];
-    return [intNum, newNum]
+    fullPartOfFraction = parseInt(cuttedFraction[0] / cuttedFraction[1]);
+    newNumerator = cuttedFraction[0] % cuttedFraction[1];
+    return [fullPartOfFraction, newNumerator];
 }
 // Конструктор дроби + простых множителей
 function Fraction (numer, denom) {
@@ -97,8 +102,7 @@ function sumFraction () {
     let convertedNumerator = newFirstNumer + newSecondNumer;
     let convertedDenominator = SCM;
     // Сокращение и вывод
-    cut(convertedNumerator, convertedDenominator)
-    return reducedArr;
+    return cut(convertedNumerator, convertedDenominator);
 }
 // =================    Разность    ================
 function subFraction () {
@@ -107,24 +111,21 @@ function subFraction () {
     let convertedNumerator = newFirstNumer - newSecondNumer;
     let convertedDenominator = SCM;
     // Сокращение и вывод
-    cut(convertedNumerator, convertedDenominator)
-    return reducedArr;
+    return cut(convertedNumerator, convertedDenominator);
 }
 // =================    Умножение    ================
 function multiplicationFraction () {
     let convertedNumerator = firstFraction.numerator * secondFraction.numerator;
     let convertedDenominator = firstFraction.denominator * secondFraction.denominator;   
     // Сокращение и вывод
-    cut(convertedNumerator, convertedDenominator)
-    return reducedArr;
+    return cut(convertedNumerator, convertedDenominator);
 }
 // =================    Деление    ================
 function divideFraction () {
     let convertedNumerator = firstFraction.numerator * secondFraction.denominator;
     let convertedDenominator = firstFraction.denominator * secondFraction.numerator;   
     // Сокращение и вывод
-    cut(convertedNumerator, convertedDenominator)
-    return reducedArr;
+    return cut(convertedNumerator, convertedDenominator);
 }
 
 // =================    TASK 3    =============
