@@ -77,19 +77,19 @@ let time = {h: 0, m: 0, s: 0,
     },
     hr(data) {
         if (!Number.isFinite(data)) return 'Invalid data';
-        this.h = (this.h + Math.trunc(data));
+        this.h += Math.trunc(data);
         this.valid();
         this.printMe();
     },
     min(data){
         if (!Number.isFinite(data)) return 'Invalid data';
-        this.m = (this.m + Math.trunc(data));
+        this.m += Math.trunc(data);
         this.valid();
         this.printMe();
     },
     sec(data) {
         if (!Number.isFinite(data)) return 'Invalid data';
-        this.s = (this.s + Math.trunc(data));
+        this.s += Math.trunc(data);
         this.valid();
         this.printMe();
     },
