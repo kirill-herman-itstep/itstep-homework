@@ -6,7 +6,7 @@
 <i>Например: A-Mikhnevich, B-Mariya, Masalskiy-Sergey, Kirill-Herman</i><br>
 В собственной папке находится папка по номеру/теме ДЗ и в ней необходимые файлы.<br>
 <i>Например: homework 14, JavaScript 6, HW 14, JS Objects 1</i> <br>
-</strong> <br>
+</strong>
 <h3>Ключевая папка Practice</h3>
 <strong>
 Содержит любые работы, выставленные на критику. <br>
