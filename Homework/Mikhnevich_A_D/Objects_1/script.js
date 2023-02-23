@@ -41,7 +41,7 @@ function div(x, y) {
 }
  
 function simple(data) {
-    if(!Number.isInteger(data.numerator) || !Number.isInteger(data.denominator)  || 
+    if (!Number.isInteger(data.numerator) || !Number.isInteger(data.denominator)  || 
     data.denominator === 0) return 'Invalid data';
     if (data.numerator === 0) return data;
     let value = Math.max(Math.abs(data.numerator), Math.abs(data.denominator));
@@ -70,7 +70,10 @@ function simple(data) {
 
 // Task 3
  
-let time = {h: 0, m: 0, s: 0,
+let time = {h: 0, 
+    m: 0, 
+    s: 0,
+    
     printMe() {
         console.log(this.h + (this.m < 10 ? `:0${this.m}` : `:${this.m}`) + 
         (this.s < 10 ? `:0${this.s}` : `:${this.s}`));
@@ -94,7 +97,7 @@ let time = {h: 0, m: 0, s: 0,
         this.printMe();
     },
     valid() {
-        if(!Number.isFinite(this.h) || !Number.isFinite(this.m) || 
+        if (!Number.isFinite(this.h) || !Number.isFinite(this.m) || 
         !Number.isFinite(this.s)) return 'Am invalid T_T';
         this.m = Math.trunc(this.m) + Math.floor(this.s / 60);
         this.s = (60 + Math.trunc(this.s) % 60) % 60;
