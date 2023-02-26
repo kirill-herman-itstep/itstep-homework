@@ -15,25 +15,23 @@ let shoppingList = [
     new Product('Cheese', 0.43, false),
 ]
 
-function showList() {
-    for (let value of shoppingList) {
-        console.log(value);
-    }
+function showList(list) {
+    list.forEach((element) => console.log(element));
 }
 
-function notBuyedFirst() {
-    return shoppingList.sort((a, b) => a.isBuyed > b.isBuyed ? 1 : -1)
+function notBuyedFirst(list) {
+    return list.sort((a, b) => a.isBuyed > b.isBuyed ? 1 : -1)
 }
 
-function addInList(addedProductName, amount) {
-    const product = shoppingList.find((elem) => elem.productName === addedProductName);
+function addInList(list, addedProductName, amount) {
+    const product = list.find((elem) => elem.productName === addedProductName);
     if (product) {
         product.amount += amount
-    } else shoppingList.push(new Product(addedProductName, amount))
+    } else list.push(new Product(addedProductName, amount))
 }
 
-function checkAsBuyed(productNameAsBuyed) {
-    const product = shoppingList.find((elem) => elem.productName === productNameAsBuyed)
+function checkAsBuyed(list, productNameAsBuyed) {
+    const product = list.find((elem) => elem.productName === productNameAsBuyed)
     if (product) {
         product.isBuyed = true;
     }
@@ -59,31 +57,23 @@ let cheque = [
     new Purchase('Cheese', 0.43, 15.94),
 ]
 
-function showCheque() {
-    for (let value of cheque) {
-        document.write(`${value} <br>`)
-    }
+function showCheque(listOfPurchased) {
+    listOfPurchased.forEach(element => document.write(`${element} <br>`));
 }
 
-function total() {
+function total(listOfPurchased) {
     let totalPrice = 0;
-    for (let value of cheque) {
-        totalPrice += (value.amount * value.price);
-    }
+    listOfPurchased.forEach((element) => totalPrice += (element.amount * element.price))
     return totalPrice.toFixed(2)
 }
 
-function mostExpansivePurchase() {
-    cheque.sort((a, b) => (a.amount * a.price) > (b.amount * b.price) ? -1 : 1);
-    return cheque[0];
+function mostExpansivePurchase(listOfPurchased) {
+    listOfPurchased.sort((a, b) => (a.amount * a.price) > (b.amount * b.price) ? -1 : 1);
+    return listOfPurchased[0];
 }
 
-function averagePrice() {
-    let sumOfPrice = 0;
-    for (let value of cheque) {
-        sumOfPrice += value.price;
-    }
-    return (sumOfPrice / cheque.length).toFixed(2);
+function averagePrice(listOfPurchased) {
+    return (total(listOfPurchased) / listOfPurchased.length);
 }
 // === TASK 3 ===
 function CssStyle(property, value) {
@@ -124,18 +114,18 @@ function Group(name, numberOfStudents, faculty) {
     this.faculty = faculty
 }
 
-let academy = [
+let lectureOfAcademy = [
     new LectureHall('Electronic security systems', 16, 'Computer Engineering'),
     new LectureHall('Cardiolgy', 12, 'Clinical medicine'),
     new LectureHall('Infocommunication technologies', 15, 'Information security'),
     new LectureHall('Programmable mobile systems', 17, 'Computer Engineering'),
-    new LectureHall('Radio informatics', 12, 'Radio engineering and electronics'),
+    new LectureHall('Radio informatics', 9, 'Radio engineering and electronics'),
     new LectureHall('Electronic information security', 13, 'Radio engineering and electronics'),
     new LectureHall('Email Marketing', 16, 'Engineering and economic'),
     new LectureHall('Medical electronics', 11, 'Computer Engineering')
 ]
 
-let studyGroup = [
+let studyGroupList = [
     new Group('1st year CE', 12, 'Computer Engineering'),
     new Group('3rd year medicine', 3, 'Clinical medicine'),
     new Group('2nd year CE', 10, 'Computer Engineering'),
@@ -143,32 +133,29 @@ let studyGroup = [
     new Group('4st year REE', 12, 'Radio engineering and electronics'),
 ]
 
-function showAllLecture() {
-    for (let value of academy) {
-        document.write(`Lecture Hall of ${value} <br>`)
-    }
+function showAllLectures(lectureList) {
+    lectureList.forEach((element) => document.write(`Lecture Hall of ${element} <br>`))
 }
 
-function facultyLectureHalls(faculty) {
-    document.write(`Lecture halls for ${faculty} faculty <br>`)
-    for (let value of academy) {
-        if (faculty === value.faculty) document.write(`${value.name}, ${value.numberOfSeats} seats <br>`);
-    }
+function facultyLectureHalls(lectureList, faculty) {
+    document.write(`Lecture halls for ${faculty} faculty <br>`);
+    lectureList.forEach((element) => {
+        if (faculty === element.faculty) document.write(`${element.name}, ${element.numberOfSeats} seats <br>`);
+    });
 }
 
-function lectureHallForGroup(group) {
-    let facultyOfGroup = '';
-    for (let value of studyGroup) {
-        if (value.name === group) facultyOfGroup = value.faculty;
-    }
-    document.write(`Lectures for ${group} group <br>`);
-    facultyLectureHalls(facultyOfGroup)
+function lectureHallForGroup(lectureList, groupList, groupTitle) {
+    const group = groupList.find((element) => element.name === groupTitle);
+    document.write(`Lectures for ${groupTitle} group (${group.numberOfStudents} students)<br>`);
+    lectureList.forEach((element) => {
+        if (group.numberOfStudents >= element.numberOfSeats) document.write(`Lecture Hall of ${element} <br>`)
+    })
 }
 
-function sortByNumberOfSeats() {
-    return academy.sort((a, b) => a.numberOfSeats > b.numberOfSeats ? -1 : 1)
+function sortByNumberOfSeats(lectureList) {
+    return lectureList.sort((a, b) => a.numberOfSeats > b.numberOfSeats ? -1 : 1)
 }
 
-function sortLectureHallByABC() {
-    return academy.sort((a, b) => a.name > b.name ? 1 : -1)
+function sortLectureHallByABC(lectureList) {
+    return lectureList.sort((a, b) => a.name > b.name ? 1 : -1)
 }
