@@ -3,30 +3,30 @@ console.log('Задание №1');
 const orange = {
     nameProduct: 'Orange',
     quantity: 5,
-    status: 'bought',
+    status: true,
 };
 const apple = {
     nameProduct: 'Apple',
     quantity: 7,
-    status: 'bought',
+    status: true,
 };
 
 const bread = {
     nameProduct: 'Bread',
     quantity: 1,
-    status: 'unbought',
+    status: false,
 };
 
 const milk = {
     nameProduct: 'Milk',
     quantity: 2,
-    status: 'unbought',
+    status: false,
 };
 
 const juice = {
     nameProduct: 'Juice',
     quantity: 1,
-    status: 'unbought',
+    status: false,
 };
 
 const purchaseList = [orange, apple, bread, milk];
@@ -34,11 +34,8 @@ const purchaseList = [orange, apple, bread, milk];
 // Функция сортировки на купленные некупленные
 
 const showProducts = array => {
-    const boughtproducts = [], unboughtproducts = [];
-    for (value of array) {
-        if (value.status == 'bought') boughtproducts.push(value);
-        else unboughtproducts.push(value);
-    }
+    const boughtproducts = array.filter(item => item.status === true);
+    const unboughtproducts = array.filter(item => item.status === false);
     
     console.log('Купленные:');
     boughtproducts.forEach((item, index) => console.log(`${index + 1}. ${item.nameProduct} - ${item.quantity} шт.`))
@@ -51,11 +48,10 @@ showProducts(purchaseList);
 // Функция добавления продукта в массив
 
 const addPurchase = (product, array) => {
-    for (value of array) {
-        if (value.nameProduct == product.nameProduct) value.quantity += product.quantity;
-    }
-    if (value.nameProduct !== product.nameProduct) array.push(product);
-
+    const foundProduct = array.find(item => item.nameProduct === product.nameProduct);
+    const foundProductIndex = array.findIndex(item => item.nameProduct === product.nameProduct);
+    if(foundProduct !== undefined) array[foundProductIndex].quantity += product.quantity;
+    else array.push(product);
     return array
 }
 
@@ -67,7 +63,7 @@ const addPurchase = (product, array) => {
 const productPurchase = (product, array = []) => {
     if (array.includes(product)) {
         array.map((item) => {
-            if (item.nameProduct == product.nameProduct) item.status = 'bought';
+            if (item.nameProduct === product.nameProduct) item.status = true;
         })
     } else {
         return 'Данной покупки нет в списке';
@@ -96,7 +92,7 @@ const toiletWater = new CheckСargo('Toilet water', 1, 60);
 
 const purchaseReceipt = [sausage, soap, towel, toiletWater];
 
-// Распечатка чека
+// // Распечатка чека
 
 const checkPrintout = (array) => {
     return array.map((item, index) => item = `${index + 1}. ${item.productName}, цена: ${item.price} byn, количество: ${item.quantity} шт, стоимость: ${item.price * item.quantity} byn`)
@@ -119,19 +115,17 @@ console.log(checkAmount(purchaseReceipt));
 // Самая дорогая покупка в чеке
 
 const maxAmount = (array) => {
-    let maxAmuntProduct = array[0];
-    for(value of array) {
-        if ((value.price * value.quantity) > (maxAmuntProduct.price * maxAmuntProduct.quantity)) maxAmuntProduct = value;
-    }
-    return maxAmuntProduct
-}
+    const newArray = array.slice();
+    newArray.sort((a, b) =>  b.price * b.quantity - a.price * a.quantity);
 
+    return newArray[0]
+}
 console.log(`Самая дорогая покупка - ${maxAmount(purchaseReceipt).productName} стоимостью ${maxAmount(purchaseReceipt).price * maxAmount(purchaseReceipt).quantity} byn`);
 
 // Средняя стоимость одного товара в чеке 
 
 const averagePriceCheck = (array) => {
-    const averagePrice = array.reduce((acc,item) => acc += (item.price * item.quantity), 0) / array.reduce((acc, item) => acc += item.quantity, 0);
+    const averagePrice = array.reduce((acc,item) => acc += (item.price * item.quantity) / array.length, 0);
     return averagePrice
 }
 
@@ -200,7 +194,7 @@ showAudince(audienceHogwarts);
 const showAudinceFaculty = (array, nameFaculty) => {
     console.log(`${counter5}) Аудитории факультета "${nameFaculty}":`);
     array.forEach(item => {
-        if (item.faculty == nameFaculty) {
+        if (item.faculty === nameFaculty) {
             console.log(`Аудитория "${item.auditoriumName}", мест: ${item.seatingCapacity}, факультет: "${item.faculty}"`);
         }
     });
@@ -220,7 +214,7 @@ const harryGroup = [{
 // Функция определения аудиторий для группы
 
 const showAudinceGroup = (array, group) => {
-    let audienceGroup = array.filter((item) => (item.faculty == group[0].faculty && item.seatingCapacity >= group[0].studentPopulation));
+    let audienceGroup = array.filter((item) => (item.faculty === group[0].faculty && item.seatingCapacity >= group[0].studentPopulation));
     console.log(`${counter5}) Группе "${group[0].nameGroup}" факультета "${group[0].faculty}" для обучения подойдут аудитории:`);
     audienceGroup.forEach((item,index) => console.log(`${index + 1}. Аудитория "${item.auditoriumName}" (количество мест - ${item.seatingCapacity}) факультета "${item.faculty}"`));
     counter5++;
