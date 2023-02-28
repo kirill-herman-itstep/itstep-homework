@@ -2,25 +2,29 @@
 
 let purchaseList = [];
 
+add('never', 2);
+add('gonna', 2);
+add('give', 2);
+add('you', 1);
+add('up', 1);
+
 function printPurchaseList() {
-    let value = false;
     console.log(`Wished:`)
-    purchaseList.forEach(e => {
-        if(e.status === false) {
+    if (purchaseList.reduce((isEmpty, e) => {
+        if(!e.status) {
             console.log(`   ${e.name}, ${e.amount}`);
-            value = true;
-        } 
-    });
-    if (value === false) console.log('   None');
-    value = false;
+            return false;
+        }
+        return isEmpty; 
+    }, true)) console.log('   None');
     console.log(`Bought:`)
-    purchaseList.forEach(e => {
-        if(e.status === true) {
+    if (purchaseList.reduce((isEmpty, e) => {
+        if(e.status) {
             console.log(`   ${e.name}, ${e.amount}`);
-            value = true;
+            return false;
         } 
-    });
-    if (value === false) console.log('   None');
+        return isEmpty;
+    }, true)) console.log('   None');
 }
 
 function add(data, value) {
@@ -51,7 +55,7 @@ function buy(data) {
         success.status = true;
             return 'Bought';
     }
-    return `There is no ${data} your purchase list`;
+    return `There is no ${data} in your purchase list`;
 }
 
 
