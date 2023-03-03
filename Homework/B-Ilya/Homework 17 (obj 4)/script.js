@@ -89,7 +89,9 @@ class CssClass {
 
     removeStyle(value) {
         const valueIndex = this.styleArray.indexOf(this.styleArray.find((element) => element === value))
-        return this.styleArray = (this.styleArray.splice(0, valueIndex) + ','  + this.styleArray.splice(valueIndex - 1)).split(',')
+        const begin = this.styleArray.slice(0, valueIndex);
+        const end = this.styleArray.slice(valueIndex + 1);
+        return this.styleArray = begin.concat(end);
     }
 
     getCss() {
