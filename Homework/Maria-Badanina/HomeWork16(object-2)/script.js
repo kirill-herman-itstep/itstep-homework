@@ -287,11 +287,7 @@ function sortByNumberSeats() {
 }
 
 function sortByAudienceName() {
-    academyAudiences.sort((a, b) => {
-        if (a.name > b.name) return 1;
-        else if (a.name < b.name) return -1;
-        else return 0;
-    });
+    academyAudiences.sort((a, b) => a.name > b.name ? 1 : -1);
 }
 
 console.log('');
