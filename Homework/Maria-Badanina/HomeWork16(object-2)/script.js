@@ -154,7 +154,7 @@ console.log('');
 // ====== Task 3 ======
 
 console.log(`Задание 3:
-printStyles(styles)`);
+printStyles(styles, 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.')`);
 
 const styles = [
     {'color': 'red'},
@@ -168,7 +168,7 @@ const styles = [
     {'width': '325px'}
 ]
 
-function printStyles(styles) {
+function printStyles(styles, text) {
     let style = '';
 
     styles.forEach(elem => {
@@ -178,7 +178,7 @@ function printStyles(styles) {
     });
 
     document.write(`<p style="${style}">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit esse assumenda maxime natus voluptatem repellendus. Recusandae porro illo voluptatem ad! Molestiae pariatur quisquam ad maxime totam nobis dolores a facere?
+    ${text}
     </p>`)
 }
 
