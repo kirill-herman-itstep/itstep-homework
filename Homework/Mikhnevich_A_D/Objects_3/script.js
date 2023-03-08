@@ -12,90 +12,15 @@ function stringStat(str) {
 // Task 2
 
 function callNumber(num) {
-    function badNumber() {
-        switch (+num[1]) {
-            case 0 :
-                return 'десять';
-            case 1:
-                return 'одиннадцать';
-            case 2:
-                return 'двенадцать';
-            case 3:
-                return 'тринадцать';
-            case 4:
-                return 'четырнадцать';
-            case 5:
-                return 'пятнадцать';
-            case 6:
-                return 'шестнадцать';
-            case 7:
-                return 'семнадцать';
-            case 8:
-                return 'восемнадцать';
-            case 9:
-                return 'девятнадцать';
-            default:
-                return 'Error';
-        }
-    }
-    let a;
-    num = `${num}`;
-    
-    switch (+num[0]) {
-        case 1:
-            return badNumber();
-        case 2:
-            a = 'двадцать';
-            break;
-        case 3:
-            a = 'тридцать';
-            break;
-        case 4:
-            a = 'сорок';   
-            break;
-        case 5:
-            a = 'пятьдесят';
-            break;
-        case 6:
-            a = 'шестьдесят';
-            break;
-        case 7:
-            a = 'семьдесят';
-            break;
-        case 8:
-            a = 'восемьдесят';
-            break;
-        case 9:
-            a = 'девяносто';
-            break;
-        default:
-            return 'Error';
-    }
-    
-    switch (+num[1]) {
-        case 0 :
-            return a;
-        case 1:
-            return a + ' один';
-        case 2:
-            return a + ' два';
-        case 3:
-            return a + ' три';
-        case 4:
-            return a + ' четыре';
-        case 5:
-            return a + ' пять';
-        case 6:
-            return a + ' шесть';
-        case 7:
-            return a + ' семь';
-        case 8:
-            return a + ' восемь';
-        case 9:
-            return a + ' девять';
-        default:
-            return 'Error';
-    }
+    num = String(num);
+    let badNumber = ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 
+    'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'];
+    let dozens = ['', '', 'двадцать', 'тридцать', 'сорок', 
+    'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто'];
+    let units = ['', ' один', ' два', ' три', ' четыре', ' пять',
+    ' шесть', ' семь', ' восемь', ' девять'];
+    if (+num[0] === 1) return badNumber[+num[1]];
+    return dozens[num[0]] + units[num[1]];
 }
 
 
@@ -172,11 +97,13 @@ function calc(str) {
 
 // Task 8
 
-// Это мы не проходили, это нам не задавали.
+function getUrl() {
+    let a = window. location;
+    return `протокол: ${a.protocol}, домен: ${a.host}, путь: ${a.pathname}`;
+}
+
 
 // Task 9
-
-
 
 function divide(str, divider) {
     let i = [-Infinity];
