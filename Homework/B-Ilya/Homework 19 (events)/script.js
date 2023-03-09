@@ -29,6 +29,11 @@ closeModalWindowButton.addEventListener('click', () => {
 //     footballBall.style.top = `${event.clientY - 50}px`;
 // })
 // === TASK 4 ===
-const redLight = document.querySelector('.lights .red')
-const yellowLight = document.querySelector('.lights .yellow')
-const greenLight = document.querySelector('.lights .green')
+const redLight = document.querySelector('.lights .red');
+const yellowLight = document.querySelector('.lights .yellow');
+const greenLight = document.querySelector('.lights .green');
+const switchButton = document.querySelector('.traffic_lights button');
+
+switchButton.addEventListener('click', () => {
+    
+})
