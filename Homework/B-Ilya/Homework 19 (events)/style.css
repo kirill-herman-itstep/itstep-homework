@@ -16,6 +16,7 @@ button {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
 }
 
 .window {
@@ -79,18 +80,50 @@ button {
 .lights > div {
     width: 80px;
     height: 80px;
+    background-color: gray;
     border: 1px solid black;
     border-radius: 50%;
 }
 
-.red {
-    background-color: red;
+/* Task 5 */
+li {
+    cursor: default;
 }
 
-.yellow {
-    background-color: yellow;
+/* Task 6 */
+.custom_tooltip_buttons {
+    position: relative;
 }
 
-.green {
-    background-color: green;
+.tooltip {
+    position: absolute;
+    display: none;
+    width: 60px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0.2rem;
+    border: 0.3px solid white;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 0.7rem;
+    background-color: rgba(46, 46, 46, 1);
+    color: white;
+    z-index: 1;
+    animation: fadeOut 0.3s 1 both;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.button_one {
+    position: relative;
+    top: 50px;
 }
