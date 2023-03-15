@@ -1,0 +1,65 @@
+@import '../vars';
+
+.twit-current-twit-autor {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+
+    :first-of-type {
+        font-weight: 700;
+        font-size: 18px;
+        margin-right: auto;
+    }
+
+    :last-of-type {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-left: auto;
+    }
+}
+
+.twit-current-twit-text {
+    box-sizing: border-box;
+    padding-left: 39px;
+}
+
+.twit-current-twit-info {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-flow: row nowrap;
+
+    .twit-current-twit-info-edit {
+        width: $width-heght-main-current-twit-info-edit;
+        height: $width-heght-main-current-twit-info-edit;
+        background: url(img/edit.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .twit-current-twit-info-delete {
+        width: $width-heght-main-current-twit-info-delete;
+        height: $width-heght-main-current-twit-info-delete;
+        background: url(img/Delete.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        box-sizing: border-box;
+        margin-left: 22px;
+    }
+
+    .twit-current-twit-info-messege {
+        width: $width-main-current-twit-info-messege;
+        height: $heght-main-current-twit-info-messege;
+        background: url(img/Comment.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        box-sizing: border-box;
+        margin-left: 60px;
+    }
+
+    #quantityMessege {
+        box-sizing: border-box;
+        color: #88658C;
+        padding-left: 15px;
+    }
+}
