@@ -1,0 +1,60 @@
+@import 'modules-error/errorleftBlock';
+@import 'modules-error/errorRaightBlock';
+
+#mainWrapper{
+margin-right: 0%;
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 100%;
+}
+body{
+margin: 0%;
+}
+.mainPage{
+width: 112px;
+height: 28px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #000000;
+}
+#nyatterSmall{
+display: flex;
+flex-direction: row;
+margin-top: 148px;
+}
+#footerEnd{
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 100px;
+left: 0px;
+// top: 882px;
+background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.2);
+justify-content: space-between;
+align-items: center;
+padding-left: 5%;
+padding-right: 5%;
+}
+ul{
+list-style-type: none;
+}
+ul h2{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 30px; 
+color: #000000;
+margin: 0%;
+}
+.liraight{
+display: flex;
+justify-content: flex-end
+}
