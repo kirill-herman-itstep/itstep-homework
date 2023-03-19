@@ -128,8 +128,8 @@ section#task6 {
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    height: 8rem;
+    gap: 2.5rem;
+    height: 10rem;
 }
 
 section#task6 button {
@@ -146,6 +146,12 @@ section#task6 button:last-of-type {
     align-self: flex-start;
 }
 
+section#task6 button:nth-of-type(2) {
+    align-self: center;
+    position: relative;
+    top: -8px;
+}
+
 section#task6 div.hint {
     display: none;
     position: absolute;
@@ -158,8 +164,19 @@ section#task6 div.hint div.hintElem {
     position: absolute;
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
-    border-top: 0.5rem solid #8a53a9;
-    bottom: 0;
     left: 50%;
+}
+
+section#task6 div.hint div.top {
     transform: translate(-50%, 100%);
+    border-top: 0.5rem solid #8a53a9;
+    border-bottom: none;
+    bottom: 0;
+}
+
+section#task6 div.hint div.bottom {
+    transform: translate(-50%, -100%);
+    border-top: none;
+    border-bottom: 0.5rem solid #8a53a9;
+    top: 0;
 }

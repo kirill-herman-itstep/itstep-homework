@@ -95,22 +95,20 @@ task6.addEventListener('mouseover', e => {
     const button = e.target;
     const hintElem = hint.querySelector('.hintElem');
 
+    insertingText(e);
+
     hint.style.display = 'block';
     hint.style.left = (button.offsetLeft + (button.offsetWidth/2 - hint.offsetWidth/2)) + 'px';
 
-    if (e.target.offsetTop > 42) {
+    if (e.target.offsetTop > hint.offsetHeight + 12) {
         hint.style.top = (button.offsetTop - hint.offsetHeight - 12) + 'px';
-        hintElem.style.borderTop = '';
-        hintElem.style.borderBottom = '';
-        hintElem.style.bottom = '';
+        hintElem.classList.remove('bottom');
+        hintElem.classList.add('top');
     } else {
         hint.style.top = (button.offsetTop + button.offsetHeight + 12) + 'px';
-        hintElem.style.borderTop = 'none';
-        hintElem.style.borderBottom = '0.5rem solid #8a53a9';
-        hintElem.style.bottom = hint.offsetHeight + 7 + 'px';
+        hintElem.classList.remove('top');
+        hintElem.classList.add('bottom');
     }
-
-    insertingText(e);
 });
 
 function insertingText(e) {
