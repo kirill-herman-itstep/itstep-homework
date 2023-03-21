@@ -24,7 +24,7 @@ task2.addEventListener('click', e => {
             setTimeout(function(){child.style.display = 'none'}, 300);
         } else {
             child.style.display = '';
-            setTimeout(function(){child.style.opacity = ''}, 20)
+            setTimeout(function(){child.style.opacity = ''}, 20);
         }
     }
 });
@@ -63,13 +63,13 @@ document.addEventListener('keydown', e => {
     if (e.ctrlKey && e.key === 'e') {
         e.preventDefault();
         let text = task4.querySelector('.text');
-        text.outerHTML = `<textarea rows="8">${text.innerHTML}</textarea>`
+        text.outerHTML = `<textarea rows="8">${text.innerHTML}</textarea>`;
     }
 
     if (e.ctrlKey && e.key === 's') {
         e.preventDefault();
         let text = task4.querySelector('textarea');
-        text.outerHTML = `<div class="text">${text.value}</div>`
+        text.outerHTML = `<div class="text">${text.value}</div>`;
     }
 });
 
@@ -83,19 +83,22 @@ table.tHead.addEventListener('click', e => {
     for (const row of table.tBodies[0].rows) {
         rows.push(row.cloneNode(true));
     }
+
+    const firstRow = rows[0].cells[index].innerHTML;
+    const lastRow = rows[rows.length - 1].cells[index].innerHTML;
     
-    if (rows.reduce((acc, elem) => acc ? isFinite(elem.cells[index].innerHTML) : acc, true)) {
-        if (+rows[0].cells[index].innerHTML > rows[rows.length - 1].cells[index].innerHTML) {
+    if (rows.reduce((acc, elem) => acc ? isFinite(elem.cells[index].innerHTML) : acc, true)) {   
+        if (+firstRow > lastRow) {
             rows.sort((a, b) => a.cells[index].innerHTML - b.cells[index].innerHTML);
             
         } else {
             rows.sort((a, b) => b.cells[index].innerHTML - a.cells[index].innerHTML);
         }
     } else {
-        if (rows[0].cells[index].innerHTML > rows[rows.length - 1].cells[index].innerHTML) {
+        if (firstRow > lastRow) {
             rows.sort((a, b) => a.cells[index].innerHTML > b.cells[index].innerHTML ? 1 : -1);
         } else {
-            rows.sort((a, b) =>  b.cells[index].innerHTML > a.cells[index].innerHTML ? 1 : -1);
+            rows.sort((a, b) => b.cells[index].innerHTML > a.cells[index].innerHTML ? 1 : -1);
         }
     }
     
@@ -123,7 +126,7 @@ task6.querySelector('.toffee').addEventListener('mousedown', e => {
         conteiner.style.height = e.pageY - conteiner.offsetTop + shiftY + 'px';
     }
     
-    document.addEventListener('mousemove', changeTheSize)
+    document.addEventListener('mousemove', changeTheSize);
 
     document.onmouseup = function() {
         task6.style.cursor = '';
