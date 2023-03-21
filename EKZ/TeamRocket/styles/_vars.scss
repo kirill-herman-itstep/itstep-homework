@@ -1,0 +1,80 @@
+$main-bg-color: #2E2E2E;
+$secondary-bg-color: #1C1C1C;
+$light-bg-color: rgb(249, 248, 248);
+$secondary-light-bg-color: rgba(249, 248, 248, 0.5);
+$main-border-color: #000000;
+$light-border-color: white;
+
+$border-width: 1px;
+$default-border: $border-width solid $main-border-color;
+$big-border: 2 * $border-width solid $main-border-color;
+$light-border: $border-width solid $light-border-color;
+
+$default-box-shadow: rgb(0 0 0 / 100%) 0 0 5px;
+$light-box-shadow: rgb(0 0 0 / 30%) 0 0 10px;
+$lighter-box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+$white-box-shadow: rgb(255 255 255 / 100%) 0 0 7px;
+$lesser-white-box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+
+$little-border-radius: 0.25rem;
+$default-padding: 1rem;
+
+$link-color: #0052cc;
+
+
+$crutchScale: 1.2;
+
+
+$body-height: 100vh;
+
+// typography
+
+// $good-color: rgba(201, 242, 155, 0.9);
+// $normal-color: rgba(255, 252, 127, 0.9);
+// $bad-color: rgba(246, 71, 71, 0.9);
+$good-color: rgba(139, 163, 112, 1);
+$normal-color: rgba(192, 190, 111, 1);
+$bad-color: rgba(175, 61, 61, 1);
+
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 1rem;
+$small-font-size: 0.875rem;
+$smaller-font-size: 0.75rem;
+$extra-small-font-size: 0.375rem;
+
+// Scrolbar
+
+$scrollbar-size: 0.25rem;
+
+
+// Login form
+
+$login-padding: 2 * $default-padding;
+$mainLogo-size: calc(min(100vh, 100vw) * 0.3);
+
+
+// Header
+
+$header-height: 3.5rem;
+$header-padding: 0.5 * $default-padding;
+$header-border-width: $border-width;
+
+$square-elemets-width: calc($header-height - 2 * $header-padding - $header-border-width);
+
+
+// main
+
+$toolbar-height: 2rem;
+$toolbar-padding: 0.5 * $default-padding;
+$toolbar-icons-size: 1rem;
+
+
+// Table
+
+$blur-width: 2 * $default-padding;
+
+// Profile
+
+$modal-color: rgba(0, 0, 0, 0.5);

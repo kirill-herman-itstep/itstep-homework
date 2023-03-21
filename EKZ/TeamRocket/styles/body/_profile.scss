@@ -1,0 +1,106 @@
+.profileLayuot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $modal-color;
+
+    * {
+        color: $light-bg-color;
+    }
+
+    .profile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.5 * $default-padding;
+        padding: 2 * $default-padding;
+        border-radius: $default-padding;
+        box-shadow: $white-box-shadow;
+        background-color: $main-bg-color;
+
+        * {
+            width: 100%;
+        }
+    
+        .avatarPlaceholder {
+            width: 5 * $default-padding;
+            height: 5 * $default-padding;
+            background-color: $light-bg-color;
+            border-radius: 50%;
+    
+            path {
+                fill: $secondary-bg-color;
+            }
+
+            &:hover {
+                background-color: $secondary-light-bg-color;
+                background-image: url(assets/svg/pictureIco.svg);
+                background-repeat: no-repeat;
+                background-position: 50%;
+
+                path {
+                    opacity: 0.5;
+                }
+            }
+        }
+    
+        .crossIco {
+            position: absolute;
+            right: $default-padding;
+            top: $default-padding;
+            width: 1.75 * $default-padding;
+            height: 1.75 * $default-padding;
+            padding: 0.35 * $default-padding;
+            border-radius: 2 * $little-border-radius;
+    
+            path {
+                fill: $light-bg-color;
+                stroke: $light-bg-color;
+            }
+
+            &:hover {
+                background-color: $secondary-bg-color;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5 * $default-padding;
+
+            span {
+                font-size: $smaller-font-size;
+                font-weight: 300;
+            }
+
+            input {
+                background-color: $main-bg-color;
+                box-shadow: $lesser-white-box-shadow;
+                margin-bottom: 0.5 * $default-padding;
+
+                &[type="password"] {
+                    margin-top: $default-padding;
+                }
+            }
+        }
+
+        button {
+            margin-top: $default-padding;
+            border: none;
+            font-size: 1.25em;
+            font-weight: 500;
+            background-color: $secondary-bg-color;
+            box-shadow: $lesser-white-box-shadow;
+
+            &:hover {
+                box-shadow: 0 0 0 2px $light-border-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@import 'styles/reset';
+@import 'styles/vars';
+@import 'styles/scrollbar';
+@import 'styles/fonts';
+
+* {
+    font-family: 'Roboto';
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+hr {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img[src="assets/png/sortIco.png"], img[src="assets/png/plusIco.png"], img[src="assets/png/deleteIco.png"], img[src="assets/png/optionsIco.png"], img[src="assets/png/avatarPlaceholder.png"] {
+    filter: invert(1);
+}
+
+button {
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+    // font-weight: 500;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+        box-shadow: 0 0 0 2px $light-border-color;
+    }
+}
+
+input {
+    min-width: 16rem;
+    border: none;
+    outline: none;
+    box-shadow: $light-box-shadow;
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    // &, .main, .tableForm {
+    //     overflow: hidden;
+    // }
+
+
+    @import 'styles/body/login';
+    @import 'styles/body/header';
+    @import 'styles/body/main';
+    @import 'styles/body/profile';
+}

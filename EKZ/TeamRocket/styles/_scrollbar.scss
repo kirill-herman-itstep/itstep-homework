@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+
+    &-thumb {
+        border: 0.25rem solid $main-border-color;
+        border-radius: 0.75rem;
+
+        // &:hover {
+        //     border: 0.25rem solid $main-border-color;
+        //     border-radius: 0.75rem;
+
+        // }
+    }
+}
+
+// ::-webkit-scrollbar-track {
+//     -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+//     background-color: #f9f9fd;
+//   }

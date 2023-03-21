@@ -1,0 +1,64 @@
+main {
+    height: calc($body-height - $header-height);
+    color: $light-bg-color;
+
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: $toolbar-height;
+        border-bottom: $default-border;
+        background-color: $main-bg-color;
+        padding: 0.25 * $toolbar-padding 2 * $default-padding;
+        color: $light-bg-color;
+
+        section {
+            display: flex;
+            column-gap: 0.5 * $default-padding;
+
+            // &.left {
+                
+            // }
+            // &.right {
+
+            // }
+
+            div {
+                display: flex;
+                align-items: center;
+                column-gap: 0.25 * $default-padding;
+                padding: 0 0.5 * $default-padding;
+                border-radius: 2 * $little-border-radius;
+                transition: all 0.3s linear;
+
+                svg {
+                    width: $toolbar-icons-size;
+                    height: $toolbar-icons-size;
+
+                    path {
+                        fill: $light-border-color;
+                        stroke: $light-border-color;
+                    }
+                }
+
+                img {
+                    width: $toolbar-icons-size;
+                    height: $toolbar-icons-size;
+                }
+
+                span {
+                    margin-top: 0.125 * $toolbar-icons-size;
+                }
+
+                &:hover {
+                    background-color: $secondary-bg-color;
+                    color: $light-border-color;
+                }
+            }
+        }
+        
+        
+    }
+
+    @import 'main/table';
+}

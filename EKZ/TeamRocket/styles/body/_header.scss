@@ -1,0 +1,66 @@
+header {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: $default-border;
+    padding: $header-padding 4 * $header-padding;
+    background-color: $main-bg-color;
+
+
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 2em;
+        gap: $header-padding;
+        color: $light-bg-color;
+
+        nav {
+            height: 100%;
+            margin-right: calc(3 * $header-padding);
+            border-radius: 2 * $little-border-radius;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: $secondary-bg-color;
+            }
+
+            svg {
+                width: $square-elemets-width;
+                height: 100%;
+                padding: 0 0.25 * $default-padding; //crutch
+
+                path {
+                    fill: $light-border-color;
+                }
+            }
+        }
+
+        .mainLogo {
+            width: $square-elemets-width;
+            height: 100%;
+            filter: invert(1);
+        }
+    }
+
+    .user {
+        background-color: $light-bg-color;
+        border-radius: 50%;
+        transition: all 0.3s linear;
+        
+        &:hover {
+            scale: $crutchScale;
+        }
+        
+        svg {
+            width: $square-elemets-width;
+            height: 100%;
+            // padding: 1px;
+
+            path {
+                fill: $secondary-bg-color;
+                // stroke: $secondary-bg-color;
+            }
+        }
+    }
+}
