@@ -23,7 +23,7 @@ class Circle {
 
     circleLength() {
         const PI = 3.14;
-        return PI * this.rad
+        return 2 * PI * this.rad
     }
 }
 
