@@ -50,6 +50,43 @@ input {
     padding: 0.25 * $default-padding 0.5 * $default-padding;
 }
 
+textarea {
+    border-radius: $little-border-radius;
+    padding: 0.25 * $default-padding 0.5 * $default-padding;
+}
+
+.layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+svg {
+    width: $svg-size;
+    height: $svg-size;
+    padding: $svg-padding;
+    border-radius: $svg-radius;
+    transition: all 0.3s linear;
+
+    path {
+        fill: $light-border-color;
+    }
+
+    &.plusIco, &.filterIco, &.sortIco, &.crossIco {
+
+        path {
+            stroke: $light-border-color;
+        }
+    }
+
+    &:hover {
+        background-color: $secondary-bg-color;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -65,4 +102,5 @@ body {
     @import 'styles/body/header';
     @import 'styles/body/main';
     @import 'styles/body/profile';
+    @import 'styles/body/task';
 }

@@ -165,6 +165,37 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
+textarea {
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+svg {
+  width: 1.825rem;
+  height: 1.825rem;
+  padding: 0.35rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s linear;
+}
+svg path {
+  fill: white;
+}
+svg.plusIco path, svg.filterIco path, svg.sortIco path, svg.crossIco path {
+  stroke: white;
+}
+svg:hover {
+  background-color: #1C1C1C;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -172,15 +203,11 @@ body {
   overflow-x: hidden;
 }
 body .loginFormLayout {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  min-height: 100vh;
   padding: 4rem;
   background-color: rgb(249, 248, 248);
-  overflow: hidden;
 }
 body .loginFormLayout .loginForm {
   display: flex;
@@ -252,13 +279,9 @@ body header .logo nav {
   border-radius: 0.5rem;
   transition: all 0.3s linear;
 }
-body header .logo nav:hover {
-  background-color: #1C1C1C;
-}
 body header .logo nav svg {
   width: calc(2.5rem - 1px);
   height: 100%;
-  padding: 0 0.25rem;
 }
 body header .logo nav svg path {
   fill: white;
@@ -274,14 +297,19 @@ body header .user {
   transition: all 0.3s linear;
 }
 body header .user:hover {
-  scale: 1.2;
+  opacity: 0.5;
 }
 body header .user svg {
   width: calc(2.5rem - 1px);
   height: 100%;
+  padding: 0;
+  border-radius: 50%;
 }
 body header .user svg path {
   fill: #1C1C1C;
+}
+body header .user svg:hover {
+  background-color: inherit;
 }
 body main {
   height: calc(100vh - 3.5rem);
@@ -314,10 +342,8 @@ body main .toolbar section div {
 body main .toolbar section div svg {
   width: 1rem;
   height: 1rem;
-}
-body main .toolbar section div svg path {
-  fill: white;
-  stroke: white;
+  padding: 0;
+  border-radius: 0;
 }
 body main .toolbar section div img {
   width: 1rem;
@@ -342,53 +368,51 @@ body main .taskBoard {
 body main .taskBoard .taskTableWrapper {
   min-width: 20rem;
 }
-body main .taskBoard .taskTableWrapper div {
+body main .taskBoard .taskTableWrapper .tableHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-body main .taskBoard .taskTableWrapper div h4 {
+body main .taskBoard .taskTableWrapper .tableHeader h4 {
   margin: 0.5rem;
   padding: 0 0.25rem;
   font-size: 1.25rem;
   font-weight: 500;
   flex-grow: 1;
 }
-body main .taskBoard .taskTableWrapper div div {
+body main .taskBoard .taskTableWrapper .tableHeader div {
   display: flex;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
-body main .taskBoard .taskTableWrapper div div svg {
-  width: 1.875rem;
-  height: 1.875rem;
-  padding: 0.35rem;
+body main .taskBoard .taskTableWrapper .tableHeader div svg {
   border-radius: 0.5rem;
   transition: all 0.3s linear;
 }
-body main .taskBoard .taskTableWrapper div div svg path {
+body main .taskBoard .taskTableWrapper .tableHeader div svg path {
   fill: white;
 }
-body main .taskBoard .taskTableWrapper div div svg:not(.deleteIco, .optionsIco, .assigneeAvatar) path {
+body main .taskBoard .taskTableWrapper .tableHeader div svg:not(.deleteIco, .optionsIco, .assigneeAvatar) path {
   stroke: white;
 }
-body main .taskBoard .taskTableWrapper div div svg:hover {
+body main .taskBoard .taskTableWrapper .tableHeader div svg:hover {
   background-color: #1C1C1C;
 }
-body main .taskBoard .taskTableWrapper div div img {
+body main .taskBoard .taskTableWrapper .tableHeader div img {
   width: 1.875rem;
   height: 1.875rem;
   padding: 0.35rem;
   border-radius: 0.5rem;
   transition: all 0.3s linear;
 }
-body main .taskBoard .taskTableWrapper div div img:hover {
+body main .taskBoard .taskTableWrapper .tableHeader div img:hover {
   background-color: rgb(249, 248, 248);
 }
 body main .taskBoard .taskTableWrapper .taskTable {
   position: relative;
+  display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   row-gap: 1rem;
   height: calc(100vh - 3.5rem - 2rem - 1rem - 2.25rem - 1rem);
   padding: 0 1rem;
@@ -414,6 +438,7 @@ body main .taskBoard .taskTableWrapper .taskTable .border.bottom {
   margin-top: -1rem;
 }
 body main .taskBoard .taskTableWrapper .taskTable .taskForm {
+  display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #2E2E2E;
@@ -426,6 +451,9 @@ body main .taskBoard .taskTableWrapper .taskTable .taskForm:hover {
 }
 body main .taskBoard .taskTableWrapper .taskTable .taskForm > * {
   width: 100%;
+}
+body main .taskBoard .taskTableWrapper .taskTable .taskForm div {
+  display: flex;
 }
 body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskStatus {
   justify-content: space-between;
@@ -463,21 +491,16 @@ body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskStatus img:hove
 body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskAssignee {
   justify-content: flex-end;
 }
-body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskAssignee .assignee {
+body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskAssignee .assignee svg {
+  width: 2.28125rem;
+  height: 2.28125rem;
+  margin-left: 0.25rem;
   border-radius: 50%;
 }
-body main .taskBoard .taskTableWrapper .taskTable .taskForm .taskAssignee .assignee svg {
-  padding: 0.2rem;
-}
 body .profileLayuot {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 body .profileLayuot * {
@@ -497,22 +520,23 @@ body .profileLayuot .profile {
 body .profileLayuot .profile * {
   width: 100%;
 }
-body .profileLayuot .profile .avatarPlaceholder {
+body .profileLayuot .profile svg.avatarPlaceholder {
   width: 5rem;
   height: 5rem;
+  padding: 0;
   background-color: rgb(249, 248, 248);
   border-radius: 50%;
-}
-body .profileLayuot .profile .avatarPlaceholder path {
-  fill: #1C1C1C;
-}
-body .profileLayuot .profile .avatarPlaceholder:hover {
-  background-color: rgba(249, 248, 248, 0.5);
-  background-image: url(assets/svg/pictureIco.svg);
   background-repeat: no-repeat;
   background-position: 50%;
 }
-body .profileLayuot .profile .avatarPlaceholder:hover path {
+body .profileLayuot .profile svg.avatarPlaceholder path {
+  fill: #1C1C1C;
+}
+body .profileLayuot .profile svg.avatarPlaceholder:hover {
+  background-image: url(assets/svg/pictureIco.svg);
+  background-color: rgba(249, 248, 248, 0.5);
+}
+body .profileLayuot .profile svg.avatarPlaceholder:hover path {
   opacity: 0.5;
 }
 body .profileLayuot .profile .crossIco {
@@ -557,5 +581,117 @@ body .profileLayuot .profile button {
   box-shadow: rgb(255, 255, 255) 0 0 3px;
 }
 body .profileLayuot .profile button:hover {
+  box-shadow: 0 0 0 2px white;
+}
+body .taskCreationLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body .taskCreationLayout .task {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgb(255, 255, 255) 0 0 7px;
+  background-color: #2E2E2E;
+}
+body .taskCreationLayout .task .actionsBar {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: -moz-fit-content;
+  width: fit-content;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+body .taskCreationLayout .task > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  width: 100%;
+}
+body .taskCreationLayout .task > div span {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+body .taskCreationLayout .task > div input {
+  width: 27rem;
+  background-color: #2E2E2E;
+  box-shadow: rgb(255, 255, 255) 0 0 3px;
+}
+body .taskCreationLayout .task > div input[type=password] {
+  margin-top: 1rem;
+}
+body .taskCreationLayout .task > div textarea {
+  resize: none;
+  width: 27rem;
+  height: 8rem;
+  background-color: #2E2E2E;
+  box-shadow: rgb(255, 255, 255) 0 0 3px;
+  outline: none;
+}
+body .taskCreationLayout .task > div.options {
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .taskCreationLayout .task > div.options div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .taskCreationLayout .task > div.options div span {
+  text-align: center;
+}
+body .taskCreationLayout .task > div.options div div {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+body .taskCreationLayout .task > div.options div div svg {
+  width: 2.28125rem;
+  height: 2.28125rem;
+  margin-bottom: -0.35rem;
+}
+body .taskCreationLayout .task > div.options div select {
+  min-width: 8rem;
+  border: none;
+  outline: none;
+  box-shadow: rgb(255, 255, 255) 0 0 3px;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #2E2E2E;
+}
+body .taskCreationLayout .task > div.options .chooseImportance #importance * {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+body .taskCreationLayout .task > div.options .chooseImportance #importance *.high {
+  background-color: rgb(175, 61, 61);
+}
+body .taskCreationLayout .task > div.options .chooseImportance #importance *.medium {
+  background-color: rgb(192, 190, 111);
+}
+body .taskCreationLayout .task > div.options .chooseImportance #importance *.low {
+  background-color: rgb(139, 163, 112);
+}
+body .taskCreationLayout .task button {
+  align-self: flex-end;
+  margin-top: 1rem;
+  border: none;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  background-color: #1C1C1C;
+  box-shadow: rgb(255, 255, 255) 0 0 3px;
+  color: rgb(249, 248, 248);
+}
+body .taskCreationLayout .task button:hover {
   box-shadow: 0 0 0 2px white;
 }/*# sourceMappingURL=styles.css.map */

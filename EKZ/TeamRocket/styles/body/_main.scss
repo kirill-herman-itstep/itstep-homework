@@ -34,11 +34,8 @@ main {
                 svg {
                     width: $toolbar-icons-size;
                     height: $toolbar-icons-size;
-
-                    path {
-                        fill: $light-border-color;
-                        stroke: $light-border-color;
-                    }
+                    padding: 0;
+                    border-radius: 0;
                 }
 
                 img {

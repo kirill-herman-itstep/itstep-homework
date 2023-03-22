@@ -9,7 +9,7 @@
     .taskTableWrapper {
         min-width: 20rem;
 
-        div {
+        .tableHeader {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,9 +34,6 @@
                 column-gap: 0.25 * $login-padding;
 
                 svg {
-                    width: 1.5 * $h4-font-size;
-                    height: 1.5 * $h4-font-size;
-                    padding: 0.35 * $default-padding;
                     border-radius: 2 * $little-border-radius;
                     transition: all 0.3s linear;
 
@@ -72,8 +69,9 @@
     
         .taskTable {
             position: relative;
+            display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: flex-start;
             row-gap: $default-padding;
             height: calc($body-height - $header-height - $toolbar-height - $default-padding - 2.25rem - $default-padding);
             padding: 0 $default-padding;
@@ -102,6 +100,7 @@
             }
 
             .taskForm {
+                display: flex;
                 flex-direction: column;
                 width: 100%;
                 background-color: $main-bg-color;
@@ -115,6 +114,10 @@
 
                 > * {
                     width: 100%;
+                }
+
+                div {
+                    display: flex;
                 }
 
                 .taskStatus {
@@ -134,7 +137,6 @@
                         
                         &.high {
                             background-color: $bad-color;
-                            // color: $light-bg-color;
                         }
 
                         &.medium {
@@ -167,10 +169,12 @@
                     justify-content: flex-end;
 
                     .assignee {
-                        border-radius: 50%;
 
                         svg {
-                            padding: 0.2 * $default-padding;
+                            width: 1.25 * $svg-size;
+                            height: 1.25 * $svg-size;
+                            margin-left: 0.25 * $default-padding;
+                            border-radius: 50%;
                         }
                     }
                 }

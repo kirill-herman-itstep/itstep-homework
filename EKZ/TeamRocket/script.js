@@ -17,6 +17,14 @@ function crutchLogin() {
     choosePage();
 }
 
+function crutchProfile() {
+    showProfileLayuot()
+}
+
+function crutchTaskCreation() {
+    showTaskCreation();
+}
+
 ////////////////////////////////////////////////////////
 
 // NAVIGATION
@@ -86,6 +94,27 @@ function gotoTableLayout() {
 }
 
 
+
+function showProfileLayuot() {
+    let profileLayoutTemplate = document.querySelector('#profileLayoutTemplate');
+    let clone = profileLayoutTemplate.content.cloneNode(true);
+    body.append(clone);
+}
+
+
+function hideProfileLayout() {
+    body.removeChild(document.querySelector('.profileLayuot'));
+}
+
+function showTaskCreation() {
+    let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
+    let clone = taskCreationTemplate.content.cloneNode(true);
+    body.append(clone);
+}
+
+function hideTaskCreation() {
+    body.removeChild(document.querySelector('.taskCreationLayout'));
+}
 
 let clearAnchor;
 body.childNodes.forEach((e, i) => {

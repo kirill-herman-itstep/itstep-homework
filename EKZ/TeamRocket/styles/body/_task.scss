@@ -1,0 +1,134 @@
+.taskCreationLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+
+    .task {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: $default-padding;
+        padding: 2 * $default-padding;
+        border-radius: $default-padding;
+        box-shadow: $white-box-shadow;
+        background-color: $main-bg-color;
+    
+        .actionsBar{
+            position: absolute;
+            right: $default-padding;
+            top: $default-padding;
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            column-gap: 0.25 * $default-padding;
+        }
+    
+        >div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.75 * $default-padding;
+            width: 100%;
+    
+            span {
+                font-weight: 300;
+                color: $middle-color;
+            }
+    
+            input {
+                width: 27rem;
+                background-color: $main-bg-color;
+                box-shadow: $lesser-white-box-shadow;
+    
+                &[type="password"] {
+                    margin-top: $default-padding;
+                }
+            }
+    
+            textarea {
+                resize: none;
+                width: 27 * $default-padding;
+                height: 8 * $default-padding;
+                background-color: $main-bg-color;
+                box-shadow: $lesser-white-box-shadow;
+                outline: none;
+            }
+    
+            &.options {
+                flex-direction: row;
+                justify-content: space-between;
+                
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+    
+                    span {
+                        text-align: center;
+                    }
+    
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: $default-padding;
+    
+                        svg {
+                            width: 1.25 * $svg-size;
+                            height: 1.25 * $svg-size;
+                            margin-bottom: - $svg-padding;
+                        }
+                    }
+    
+                    select {
+                        min-width: 8rem;
+                        border: none;
+                        outline: none;
+                        box-shadow: $lesser-white-box-shadow;
+                        border-radius: $default-padding;
+                        padding: 0.25 * $default-padding 0.5 * $default-padding;
+                        background-color: $main-bg-color;
+                    }
+                }
+    
+                .chooseImportance {
+    
+                    #importance {
+    
+                        * {
+                            width: 1.5 * $default-padding;
+                            height: 1.5 * $default-padding;
+                            border-radius: 50%;
+        
+                            &.high {
+                                background-color: $bad-color;
+                            }
+            
+                            &.medium {
+                                background-color: $normal-color;
+                            }
+            
+                            &.low {
+                                background-color: $good-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        button {
+            align-self: flex-end;
+            margin-top: $default-padding;
+            border: none;
+            padding: 0.25 * $default-padding $default-padding;
+            border-radius: $default-padding;
+            background-color: $secondary-bg-color;
+            box-shadow: $lesser-white-box-shadow;
+            color: $light-bg-color;
+    
+            &:hover {
+                box-shadow: 0 0 0 2px $light-border-color;
+            }
+        }
+    }
+}

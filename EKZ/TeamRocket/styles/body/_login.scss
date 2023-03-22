@@ -1,14 +1,9 @@
 .loginFormLayout {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    min-height: 100vh;
-    // height: 100vh;
     padding: 2 * $login-padding;
     background-color: $light-bg-color;
-    overflow: hidden;
 
     .loginForm {
         // position: relative;

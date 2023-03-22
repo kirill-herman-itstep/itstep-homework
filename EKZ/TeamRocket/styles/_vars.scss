@@ -4,6 +4,7 @@ $light-bg-color: rgb(249, 248, 248);
 $secondary-light-bg-color: rgba(249, 248, 248, 0.5);
 $main-border-color: #000000;
 $light-border-color: white;
+$middle-color:rgba(255, 255, 255, 0.5);
 
 $border-width: 1px;
 $default-border: $border-width solid $main-border-color;
@@ -43,6 +44,12 @@ $h6-font-size: 1rem;
 $small-font-size: 0.875rem;
 $smaller-font-size: 0.75rem;
 $extra-small-font-size: 0.375rem;
+
+// svg
+
+$svg-size: 1.825rem;
+$svg-padding: 0.35rem;
+$svg-radius: 0.5rem;
 
 // Scrolbar
 

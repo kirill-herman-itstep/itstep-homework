@@ -1,12 +1,7 @@
 .profileLayuot {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
     background-color: $modal-color;
 
     * {
@@ -28,21 +23,22 @@
             width: 100%;
         }
     
-        .avatarPlaceholder {
+        svg.avatarPlaceholder {
             width: 5 * $default-padding;
             height: 5 * $default-padding;
+            padding: 0;
             background-color: $light-bg-color;
             border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: 50%;
     
             path {
                 fill: $secondary-bg-color;
             }
 
             &:hover {
-                background-color: $secondary-light-bg-color;
                 background-image: url(assets/svg/pictureIco.svg);
-                background-repeat: no-repeat;
-                background-position: 50%;
+                background-color: $secondary-light-bg-color;
 
                 path {
                     opacity: 0.5;
