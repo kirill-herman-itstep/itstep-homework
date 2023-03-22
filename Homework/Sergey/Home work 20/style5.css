@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #FBF2E9;
+    display: inline-flex;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+td {
+    border-collapse: collapse;
+    border: 2px solid #8A8A8A;
+    padding: 10px 20px;
+}
+
+#personTable {
+    border-collapse: collapse;
+}

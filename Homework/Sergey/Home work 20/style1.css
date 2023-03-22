@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    background-color: #FBF2E9;
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.container ul {
+    padding-right: 24px;
+}
+
+.container ul li {
+    list-style-type: circle;
+}
+
+ul li a{
+    color: blue;
+    text-decoration: none;
+}
+
+.dashed-element {
+    text-decoration: dashed underline blue;
+}

@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background: #FBF2E9;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 500px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    height: 350px;
+}
+
+.container>div,
+.container>textarea {
+    padding-top: 10px;
+}
+
+.container>:nth-of-type(2) {
+    border-bottom: 2px solid #D0CCC8;
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+
+.no-reflect {
+    display: none;
+}
+
+#editWindowInput {
+    height: 200px;
+    margin-top: 10px;
+    resize: none;
+    outline: none;
+}
