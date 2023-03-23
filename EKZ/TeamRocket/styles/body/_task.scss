@@ -13,7 +13,11 @@
         border-radius: $default-padding;
         box-shadow: $white-box-shadow;
         background-color: $main-bg-color;
-    
+
+        svg {
+            cursor: pointer;
+        }
+   
         .actionsBar{
             position: absolute;
             right: $default-padding;
@@ -32,13 +36,14 @@
     
             span {
                 font-weight: 300;
-                color: $middle-color;
+                color: white;
             }
     
             input {
                 width: 27rem;
                 background-color: $main-bg-color;
                 box-shadow: $lesser-white-box-shadow;
+                color: white;
     
                 &[type="password"] {
                     margin-top: $default-padding;
@@ -78,16 +83,6 @@
                             margin-bottom: - $svg-padding;
                         }
                     }
-    
-                    select {
-                        min-width: 8rem;
-                        border: none;
-                        outline: none;
-                        box-shadow: $lesser-white-box-shadow;
-                        border-radius: $default-padding;
-                        padding: 0.25 * $default-padding 0.5 * $default-padding;
-                        background-color: $main-bg-color;
-                    }
                 }
     
                 .chooseImportance {
@@ -98,6 +93,7 @@
                             width: 1.5 * $default-padding;
                             height: 1.5 * $default-padding;
                             border-radius: 50%;
+                            transition: outline 0.3s;
         
                             &.high {
                                 background-color: $bad-color;
@@ -110,6 +106,12 @@
                             &.low {
                                 background-color: $good-color;
                             }
+                        }
+
+                        *:hover {
+                            outline: 1px solid white;
+                            outline-offset: 2px;
+                            cursor: pointer;
                         }
                     }
                 }

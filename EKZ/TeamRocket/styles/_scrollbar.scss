@@ -1,17 +1,16 @@
 ::-webkit-scrollbar {
-    width: 0.25rem;
-    height: 0.25rem;
+    width: 0;
 
-    &-thumb {
-        border: 0.25rem solid $main-border-color;
-        border-radius: 0.75rem;
+    // &-thumb {
+        // border: 0.25rem solid $main-border-color;
+        // border-radius: 0.75rem;
 
         // &:hover {
         //     border: 0.25rem solid $main-border-color;
         //     border-radius: 0.75rem;
 
         // }
-    }
+    // }
 }
 
 // ::-webkit-scrollbar-track {

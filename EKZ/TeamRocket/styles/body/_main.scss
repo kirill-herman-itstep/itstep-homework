@@ -8,6 +8,7 @@ main {
         width: 100%;
         height: $toolbar-height;
         border-bottom: $default-border;
+        border-color: rgba(0, 0, 0, 0.3);
         background-color: $main-bg-color;
         padding: 0.25 * $toolbar-padding 2 * $default-padding;
         color: $light-bg-color;
@@ -30,6 +31,7 @@ main {
                 padding: 0 0.5 * $default-padding;
                 border-radius: 2 * $little-border-radius;
                 transition: all 0.3s linear;
+                cursor: pointer;
 
                 svg {
                     width: $toolbar-icons-size;

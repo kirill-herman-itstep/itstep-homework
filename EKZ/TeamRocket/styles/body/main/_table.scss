@@ -27,6 +27,13 @@
                 //     outline: $secondary-bg-color auto $border-width !important;
                 //     outline:none;
                 // }
+                border: 1px solid transparent;
+                border-radius: 3px;
+                transition: border 0.2s;
+
+                &:hover {
+                    border: 1px solid white;
+                }
             }
 
             div {
@@ -35,6 +42,7 @@
 
                 svg {
                     border-radius: 2 * $little-border-radius;
+                    cursor: pointer;
                     transition: all 0.3s linear;
 
                     path {
@@ -107,9 +115,11 @@
                 border-radius: $default-padding;
                 padding: 0.5 * $default-padding $default-padding;
                 row-gap: 0.25 * $default-padding;
+                transition: box-shadow 0.2s linear;
+                cursor: pointer;
 
                 &:hover {
-                    outline: $big-border;
+                    box-shadow: $lesser-white-box-shadow;
                 }
 
                 > * {

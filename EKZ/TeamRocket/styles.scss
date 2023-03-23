@@ -34,7 +34,7 @@ button {
     padding: 0.25 * $default-padding 0.5 * $default-padding;
     // font-weight: 500;
     cursor: pointer;
-    transition: all 0.1s;
+    transition: all 0.3s;
 
     &:hover {
         box-shadow: 0 0 0 2px $light-border-color;
@@ -53,6 +53,7 @@ input {
 textarea {
     border-radius: $little-border-radius;
     padding: 0.25 * $default-padding 0.5 * $default-padding;
+    color: white;
 }
 
 .layout {
