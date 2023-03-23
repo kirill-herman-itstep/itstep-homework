@@ -47,9 +47,10 @@ button {
     background-repeat: no-repeat;
 }
 
-.border {
+.fieldBorder {
     width: 89%;
     height: 95%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .ball {

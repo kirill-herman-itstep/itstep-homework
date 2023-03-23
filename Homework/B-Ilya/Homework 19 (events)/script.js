@@ -21,12 +21,23 @@ closeModalWindowButton.addEventListener('click', () => {
 })
 
 // === TASK 3 ===
-const footballFieldBorder = document.querySelector('.field .border');
+const fieldBorder = document.querySelector('.field .fieldBorder')
 const footballBall = document.querySelector('.field .ball');
 
-footballFieldBorder.addEventListener('click', (event) => {
-    footballBall.style.left = `${event.clientX - 50}px`;
-    footballBall.style.top = `${event.clientY - 50}px`;
+fieldBorder.addEventListener('click', (event) => {
+    console.log(event.offsetY);
+    if (event.offsetX > (fieldBorder.clientWidth - footballBall.offsetWidth / 2)) {
+        footballBall.style.left = fieldBorder.clientWidth - fieldBorder.offsetLeft / 4 + 'px'
+    } else if (event.offsetX < (footballBall.offsetWidth / 2)) {
+        footballBall.style.left = fieldBorder.offsetLeft + 'px'
+    } else footballBall.style.left = event.clientX - footballBall.offsetWidth / 2 + 'px';
+
+    if (event.offsetY > (fieldBorder.clientHeight - footballBall.offsetHeight)) {
+        footballBall.style.top = fieldBorder.clientHeight - fieldBorder.offsetTop * 3 + 'px'
+    } else if (event.offsetY < footballBall.offsetHeight / 2) {
+        footballBall.style.top = fieldBorder.offsetTop + 'px'
+    } else footballBall.style.top = event.clientY - footballBall.offsetHeight / 2 + 'px';
+
 })
 // === TASK 4 ===
 const redLight = document.querySelector('.lights .red');
