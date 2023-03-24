@@ -1,5 +1,5 @@
 class TaskCollection {
-    taskArray = []; // мб сделать его статичным? (Тогда и методы необходимо будет делать статичными)
+    taskArray = [];
 
     constructor(tasks) {
         if (Array.isArray(tasks)) {
@@ -8,9 +8,7 @@ class TaskCollection {
     }
 
     sortTaskByDate() {
-        return this.taskArray.sort((a, b) => a.createdAt > b.createdAt ? 1 : -1)
-        // return this.taskArray.sort((a, b) => a.createdAt - b.createdAt) 
-        // обьект Date при операции вычисления автоматически преобразуется в миллисекунды
+        return this.taskArray.sort((a, b) => a.createdAt - b.createdAt);
         // сортировать будем по дате создания карточки или по lastDate?
     }
 
@@ -73,16 +71,16 @@ class TaskCollection {
     }
 
     addAll(tasks) {
-        const invalidateTasks = [];
+        const invalidTasks = [];
         tasks.forEach(task => {
             if (Task.validate(task)) {
                 this.taskArray.push(task);
             } else {
-                invalidateTasks.push(task);
+                invalidTasks.push(task);
             }
         });
 
-        return invalidateTasks;
+        return invalidTasks;
     }
 
     clear() {
@@ -128,7 +126,7 @@ class TaskCollection {
     remove(id) { // Удалять может только автор или испонителе тоже могут удалять?
         const task = this.getTask(id);
 
-        if (task.assignee !== 'currentUser' || task === undefined) { // Не уверена, надо ли здесь проверка на undefined
+        if ((task.author !== 'currentUser' && task.assignee !== 'currentUser') || task === undefined) {
             return false;
         }
 
@@ -152,27 +150,46 @@ class TaskCollection {
 }
 
 class Task {
-    // static idGeneration = 0;
+    #id;
+    #createdAt;
+    #author;
 
-    constructor(name, priority, description = '', assignee = 'currentUser', status = 'to do', isPrivate = false, comments = []) {
-        this.id = Math.random().toString(16).slice(2); // Может стоит создать статичную переменную или глабальную переменную и каждый раз при создании обьекта Task увеличивать на 1;
-        // this.id = 'task' + ++Task.idGeneration;
-        // И может сам id сделать приватной переменной и прописать ему только get
+    constructor(name, priority, description = '', assignee = 'currentUser', status = 'to do', isPrivate = false) {
+        this.#id = Math.random().toString(16).slice(2);
         this.name = name;
         this.description = description;
-        this.createdAt = new Date(Date.now()); // createAt похоже должен быть приватным и иметь только get
-        // this.lastDate = new Date(); то, что вчера обсуждалось с Кириллом. Следует добавить поле, которое обновляется при добавлении задачи на другую доску;
+        this.#createdAt = new Date();
+        this.lastDate = new Date(); 
         this.assignee = assignee; // т.к. исполнителей у нас вроде будет несколько, может стоит лучще сделать массив?
         this.status = status;
         this.priority = priority
         this.isPrivate = isPrivate;
-        this.comments = comments; // В задании comments должен быть пустым при создании задачи. Тоесть мы не принимаем значение comments в констукторе, а просто создаем пустой массив
-        mainDB.taskArray.push(this) // Сперва необходима проверить на вилидность. метод add TaskColection позволяет это сделать
+        this.comments = [];
+        this.#author = 'currentUser';
     }
 
-    // addComment(text) { // Этот метод по заданию находится в TaskCollection  и с параметром id
-    //     this.comments.push(new Comment(text))
-    // }
+    get id() {
+        return this.#id;
+    }
+
+    get createdAt() {
+        return this.#createdAt;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    addComment(text) {
+        const com = new Comment(text);
+        
+        if (!Comment.validate(com)) {
+            return false;
+        }
+
+        this.comments.push(new Comment(text));
+        return true;
+    }
 
     static validate(task) {
         return (task.name && task.name.length <= 100 && task.description.length <= 280 &&
@@ -181,11 +198,27 @@ class Task {
 }
 
 class Comment {
-    constructor(text, author = 'currentUser') { // может в параметрах стоит оставить только text. Ведь человет не может написать комментарий от другого пользователя
-        this.id = Math.random().toString(16).slice(2); // должно быть приветным полем с get
+    #id;
+    #createdAt;
+    #author;
+
+    constructor(text) { 
+        this.#id = Math.random().toString(16).slice(2);
         this.text = text;
-        this.createdAt = new Date(Date.now()); // должно быть приватным полем с get
-        this.author = author;
+        this.#createdAt = new Date(Date.now());
+        this.#author = 'currentUser';
+    }
+
+    get id() {
+        return this.#id;
+    }
+
+    get createdAt() {
+        return this.#createdAt;
+    }
+
+    get author() {
+        return this.#author;
     }
 
     static validate(com) {
@@ -204,17 +237,17 @@ class User { // Если у нас есть класс User, то думаю н�
 
 const mainDB = new TaskCollection()
 
-const task1 = new Task('Make world better', 'high')
-const task2 = new Task('Self-harm?', 'low')
-const task3 = new Task('Billy... We don;t forget you...', 'high')
-const task4 = new Task('AMD AM4 forever!!!', 'medium')
-const task5 = new Task('PC upgrade', 'low')
-const task6 = new Task('New work form', 'high')
-const task7 = new Task('Chill and relax', 'high')
-const task8 = new Task('Listen Lo-fi radio', 'high')
-const task9 = new Task('Found new epic tracks', 'high')
-const task10 = new Task('Sawano always be the best', 'high')
-const task11 = new Task('Kevin Penkin is not bad', 'high')
-const task13 = new Task('Enter soft-lock', 'high')
-const task14 = new Task('Pick up the phone', 'high')
-const task15 = new Task('Great knowledge base found', 'high')
+mainDB.addAll([new Task('Make world better', 'high'),
+new Task('Self-harm?', 'low'),
+new Task('Billy... We don;t forget you...', 'high'),
+new Task('AMD AM4 forever!!!', 'medium'),
+new Task('PC upgrade', 'low'),
+new Task('New work form', 'high'),
+new Task('Chill and relax', 'high'),
+new Task('Listen Lo-fi radio', 'high'),
+new Task('Found new epic tracks', 'high'),
+new Task('Sawano always be the best', 'high'),
+new Task('Kevin Penkin is not bad', 'high'),
+new Task('Enter soft-lock', 'high'),
+new Task('Pick up the phone', 'high'),
+new Task('Great knowledge base found', 'high'),]);
