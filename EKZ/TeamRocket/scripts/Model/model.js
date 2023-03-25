@@ -226,28 +226,62 @@ class Comment {
     }
 }
 
-class User { // Если у нас есть класс User, то думаю нужна коллекция users. 
+
+class UserCollection { 
+    constructor () {
+        this.userArray = [];
+    }
+
+    create(login, password, name) {
+        this.userArray.push(new User(login, password, name))
+    }
+
+    auth(element) {
+        currentUser = element.name;
+    }
+}
+
+class User {
     constructor(login, password, name) {
         this.id = Math.random().toString(16).slice(2);
         this.login = login;
         this.password = password;
         this.name = name;
+        userDB.userArray.push(this)
+    }
+
+    edit(newPassword, newName) {
+        this.password = newPassword;
+        this.name = newName;
     }
 }
 
 const mainDB = new TaskCollection()
+const userDB = new UserCollection()
+let currentUser = '';
 
-mainDB.addAll([new Task('Make world better', 'high'),
-new Task('Self-harm?', 'low'),
-new Task('Billy... We don;t forget you...', 'high'),
-new Task('AMD AM4 forever!!!', 'medium'),
-new Task('PC upgrade', 'low'),
-new Task('New work form', 'high'),
-new Task('Chill and relax', 'high'),
-new Task('Listen Lo-fi radio', 'high'),
-new Task('Found new epic tracks', 'high'),
-new Task('Sawano always be the best', 'high'),
-new Task('Kevin Penkin is not bad', 'high'),
-new Task('Enter soft-lock', 'high'),
-new Task('Pick up the phone', 'high'),
-new Task('Great knowledge base found', 'high'),]);
+mainDB.addAll([
+    new Task('Make world better', 'high', 'We can kill all people? Maybe not, but, we have superpower!!!', 'Mark', 'to do', false),
+    new Task('Self-harm?', 'low', 'Overkill', 'Mark', 'in progress', true),
+    new Task('Billy... We dont forget you...', 'high', 'Rest in piece...', 'Andrew', 'complete', false),
+    new Task('AMD AM4 forever!!!', 'medium', '', 'Lena', 'to do', false),
+    new Task('PC upgrade', 'low', 'Stone + GPU', 'Iliya', 'to do', true),
+    new Task('New work form', 'high', 'Cotton only', 'Sophi', 'in progress', false),
+    new Task('Chill and relax', 'high', 'Chiiiiil', 'Mark'),
+    new Task('Listen Lo-fi radio', 'high'),
+    new Task('Found new epic tracks', 'high', 'Sawano Hiroyuki maybe?'),
+    new Task('Sawano always be the best', 'high', 'ALL THE TIME'),
+    new Task('Kevin Penkin is not bad', 'high', 'Abyss', 'Kevin', 'complete'),
+    new Task('Enter soft-lock', 'high', 'WTF?'),
+    new Task('Pick up the phone', 'high', 'Okeeeey', 'Mark', 'in progress'),
+    new Task('Great knowledge base found', 'high'),
+]);
+
+userDB.userArray = [
+    new User('isuzuri@gmail.com', '9edl4', 'Isuzuri'),
+    new User('ballage94@gmail.com', 'kmmc8g9p', 'BiYuLaLaLa'),
+    new User('loremipsum2965@mail.ru', '1648734', 'LoremLorem'),
+    new User('fishMachine2000@rambler.ru', 'hahaho879', 'FIIIIIISH'),
+    new User('killmepls@yandex.ru', 'itsJOKE', 'Lena137'),
+    new User('kitamuraRey@jap.com', 'undefinedSymbols', 'Rey Kitamura')
+]
