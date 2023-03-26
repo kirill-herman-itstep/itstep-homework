@@ -47,7 +47,7 @@ task3.addEventListener('click', e => {
     if (e.target.tagName !== 'LI') {
         return;
     }
-    
+
     if (e.ctrlKey) {
         if (selectedText.includes(e.target)) {
             e.target.style.backgroundColor = '';
@@ -90,13 +90,19 @@ task3.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
     if (e.ctrlKey && e.key === 'e') {
         e.preventDefault();
+
         let text = task4.querySelector('.text');
+        if (!text) return;
+        
         text.outerHTML = `<textarea rows="8">${text.innerHTML}</textarea>`;
     }
 
     if (e.ctrlKey && e.key === 's') {
         e.preventDefault();
+
         let text = task4.querySelector('textarea');
+        if (!text) return;
+
         text.outerHTML = `<div class="text">${text.value}</div>`;
     }
 });
