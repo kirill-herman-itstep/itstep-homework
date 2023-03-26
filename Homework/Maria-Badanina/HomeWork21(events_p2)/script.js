@@ -32,28 +32,56 @@ task2.addEventListener('click', e => {
 // ===== Task 3 =====
 
 let selectedText = [];
+selectedText.pushElem = function(elem) {
+    elem.style.backgroundColor = 'lightsalmon';
+    selectedText.push(elem);
+}
+
 let pressingCtrl = false;
+
+task3.querySelector('ol').addEventListener('mousedown', (e) => {
+    if (e.shiftKey) e.preventDefault();
+})
 
 task3.addEventListener('click', e => {
     if (e.target.tagName !== 'LI') {
         return;
     }
+    
     if (e.ctrlKey) {
         if (selectedText.includes(e.target)) {
             e.target.style.backgroundColor = '';
             const index = selectedText.indexOf(e.target);
             selectedText.splice(index, 1);
+
         } else {
-            e.target.style.backgroundColor = 'lightsalmon';
-            selectedText.push(e.target);
+            selectedText.pushElem(e.target);
+        }
+    } else if (e.shiftKey) {
+        const list = task3.querySelector('ol').children;
+        let index;
+        let indexLastElem;
+
+        for (const key in list) {
+            if (list[key] === e.target) index = key;
+            if (list[key] === selectedText.at(-1)) indexLastElem = key;
+        }
+
+        const max = Math.max(index, indexLastElem);
+        const min = Math.min(index, indexLastElem);
+
+        for (let i = min; i <= max; i++) {
+            if (!selectedText.includes(list[i])) {
+                selectedText.pushElem(list[i]);
+            }
         }
     } else {
-        if (selectedText.toString()) {
+        if (selectedText.length > 0) {
             selectedText.forEach(elem => elem.style.backgroundColor = '');
             selectedText.length = 0;
         } 
-        e.target.style.backgroundColor = 'lightsalmon';
-        selectedText.push(e.target);
+
+        selectedText.pushElem(e.target);
     }
 });
 
