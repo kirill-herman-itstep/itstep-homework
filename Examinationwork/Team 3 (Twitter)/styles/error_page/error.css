@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inspiration&family=Permanent+Marker&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap");
+#mainWrapper {
+  margin-right: 0%;
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  margin: 0%;
+}
+
+.mainPage {
+  width: 112px;
+  height: 28px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+#nyatterSmall {
+  display: flex;
+  flex-direction: row;
+  margin-top: 148px;
+}
+
+#footerEnd {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(176, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+  margin: 0%;
+}
+
+.liraight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#raightBlock {
+  box-sizing: border-box;
+  padding-left: 0%;
+  border: 0%;
+  width: 80.41%;
+  min-width: 500px;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 18px 3px rgba(136, 101, 140, 0.4);
+  margin-bottom: 0%;
+}
+
+#leftBlock {
+  display: flex;
+  min-width: 301px;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-left: 0%;
+  padding-left: 0%;
+  margin-bottom: 0%;
+  box-sizing: border-box;
+  align-items: center;
+  width: 19.59%;
+  left: 0px;
+  top: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+}
+
+.vectorKat {
+  padding-top: 86px;
+  width: 60.59px;
+  height: 56.24px;
+}
+
+#leftBlock h3 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 26px;
+  margin-top: 0%;
+}
+
+.Sign {
+  margin-top: 0%;
+  padding-top: 27px;
+  width: 231px;
+  height: 38px;
+  left: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  color: black;
+}
+
+.mainPage {
+  padding-top: 100px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=error.css.map */

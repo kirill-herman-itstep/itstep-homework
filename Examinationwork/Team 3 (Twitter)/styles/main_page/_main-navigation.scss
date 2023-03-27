@@ -1,0 +1,28 @@
+@import 'vars';
+
+.main-navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+    background: rgb(255, 255, 255);
+    min-height: 40px;
+    align-items: center;
+
+    .main-navigation-icon {
+        margin-left: 41px;
+        background: url(../../assets/images/img_main_page/home.png);
+        width: $width-navigation-icon;
+        height: $height-navigation-icon;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: $font-size-main-navigation;
+        color: #88658C;
+    }
+
+    :last-of-type {
+        color: #88658C;
+        font-size: $font-size-main-navigation;
+    }
+}

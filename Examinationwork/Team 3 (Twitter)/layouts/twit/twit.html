@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twit</title>
+    <link rel="stylesheet" href="../../styles/twit_page/twit.css">
+</head>
+<body>
+    <div class="container-twit">
+        <aside class="welcome">
+            <div class="welcome-icon"></div>
+            <h1>Welcome!</h1>
+            <h2>Hi, User</h3>
+            <a href="#" id="logOut">Log out</a>
+            <div class="welcome-site">MAIN PAGE</div>
+        </aside>
+        <main class="twit-main">
+            <div class="twit-main-navigation">
+                <div class="twit-main-navigation-icon"></div>
+                <a href="#">Main</a>
+                <div class="twit-main-next">></div>
+                <a href="#">Twit</a>
+                <div class="twit-main-next">></div>
+            </div>
+            <div class="container-corrent-twit">
+                <div class="twit-current-twit"  id="twitNumber1">
+                    <div class="twit-current-twit-autor">
+                        <div>Author's name</div>
+                        <div>Date and time</div>
+                    </div>
+                    <div class="twit-current-twit-text">Text twit</div>
+                    <div class="twit-current-twit-info">
+                        <div class="twit-current-twit-info-edit"></div>
+                        <div class="twit-current-twit-info-delete"></div>
+                        <div class="twit-current-twit-info-messege"></div>
+                        <div id="quantityMessege">5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-comments-twit">
+                <div class="comments-twit"  id="twitNumber1">
+                    <div class="comments-twit-autor">
+                        <div>Сommenter's name</div>
+                        <div>Date and time</div>
+                    </div>
+                    <div class="comments-twit-text">Comment text</div>
+                </div>
+            </div>
+            <div class="container-comments-answer">
+                <div class="comments-answer">
+                    <textarea name="" id="commentsAnswerTwit" placeholder="Write your reply"></textarea>
+                    <div id="commentsAnswerСounter">0/280</div>
+                </div>
+                <button>Post</button>
+            </div>
+        </main>
+    </div> 
+</body>
+</html>
