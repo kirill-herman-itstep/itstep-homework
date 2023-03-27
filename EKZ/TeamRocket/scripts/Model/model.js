@@ -61,23 +61,18 @@ class TaskCollection {
         return this.taskArray.find(elem => elem.id === id)
     }
 
-    add(name, description, assignee, status, priority, isPrivate) {
-        const task = new Task(name, priority, description,assignee, status, isPrivate);
-        if (Task.validate(task)) {
-            this.taskArray.push(task);
-            return true;
-        }
-        return false;
+    add(name, priority, description, assignee, status, isPrivate) {
+        this.taskArray.push(new Task(name, priority, description, assignee, status, isPrivate));
     }
 
     addAll(tasks) {
         const invalidTasks = [];
         tasks.forEach(task => {
-            if (Task.validate(task)) {
+        //     if (Task.validate(task)) {
                 this.taskArray.push(task);
-            } else {
-                invalidTasks.push(task);
-            }
+            // } else {
+            //     invalidTasks.push(task);
+            // }
         });
 
         return invalidTasks;
@@ -85,42 +80,6 @@ class TaskCollection {
 
     clear() {
         this.taskArray.length = 0;
-    }
-
-    edit(id, name, description, assignee, status, priority, isPrivate = false) {
-        const task = this.getTask(id);
-
-        if (task.author !== 'currentUser' && task.assignee !== 'currentUser') {
-            return false;
-        }
-        if (name !== task.name) {
-            if (name.length > 100 || !name) {
-                return false;
-            }
-            task.name = name;
-        }
-        if (description !== task.description) {
-            if (description > 280) {
-                return false;
-            }
-            task.description = description;
-        }
-        if (assignee !== task.assignee) {
-            // Есть ли исполнитель в списке пользователей таск менеджера , если нет fasle
-            task.assignee = assignee;
-        }
-        if (status !== task.status) {
-            // Может проверка на существования такой доски?
-            task.status = status;
-            task.lastDate = new Date();
-        }
-        if (priority !== task.priority) {
-            task.priority = priority;
-        }
-        if (isPrivate !== task.isPrivate) {
-            task.isPrivate = isPrivate;
-        }
-        return true;
     }
 
     remove(id) { // Удалять может только автор или испонителе тоже могут удалять?
@@ -135,18 +94,6 @@ class TaskCollection {
 
         return true;
     }
-
-    addComment(id, text) {
-        const com = new Comment(text);
-        const task = this.getTask(id);
-        
-        if (!Comment.validate(com) || task === undefined) {
-            return false;
-        }
-
-        task.comments.push(com);
-        return true;
-    }
 }
 
 class Task {
@@ -154,18 +101,18 @@ class Task {
     #createdAt;
     #author;
 
-    constructor(name, priority, description = '', assignee = 'currentUser', status = 'to do', isPrivate = false) {
+    constructor(name, priority, description, assignee, status, isPrivate) {
         this.#id = Math.random().toString(16).slice(2);
         this.name = name;
         this.description = description;
-        this.#createdAt = new Date();
-        this.lastDate = new Date(); 
-        this.assignee = assignee; // т.к. исполнителей у нас вроде будет несколько, может стоит лучще сделать массив?
+        this.#createdAt = new Date(Date.now());
+        // this.lastDate = new Date(); 
+        this.assignee = assignee; 
         this.status = status;
-        this.priority = priority
+        this.priority = priority;
         this.isPrivate = isPrivate;
         this.comments = [];
-        this.#author = 'currentUser';
+        this.#author = currentUser;
     }
 
     get id() {
@@ -181,14 +128,16 @@ class Task {
     }
 
     addComment(text) {
-        const com = new Comment(text);
-        
-        if (!Comment.validate(com)) {
-            return false;
-        }
+        this.comments.push(new Comment(text))
+    }
 
-        this.comments.push(new Comment(text));
-        return true;
+    edit(name, priority, description, assignee, status, isPrivate) {
+        this.name = name;
+        this.priority = priority;
+        this.description = description;
+        this.assignee = assignee;
+        this.status = status;
+        this.isPrivate = isPrivate;
     }
 
     static validate(task) {
@@ -206,7 +155,7 @@ class Comment {
         this.#id = Math.random().toString(16).slice(2);
         this.text = text;
         this.#createdAt = new Date(Date.now());
-        this.#author = 'currentUser';
+        this.#author = currentUser;
     }
 
     get id() {
@@ -233,11 +182,11 @@ class UserCollection {
     }
 
     create(login, password, name) {
-        this.userArray.push(new User(login, password, name))
+        new User(login, password, name)
     }
 
     auth(element) {
-        currentUser = element.name;
+        currentUser = element;
     }
 }
 
@@ -253,6 +202,10 @@ class User {
     edit(newPassword, newName) {
         this.password = newPassword;
         this.name = newName;
+    }
+
+    logOut() {
+        currentUser = '';
     }
 }
 
