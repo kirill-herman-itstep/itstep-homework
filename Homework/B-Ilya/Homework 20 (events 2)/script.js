@@ -23,7 +23,7 @@ let lastClickedLiIndex = 0;
 olItems.forEach((element, index) => {
     element.addEventListener('click', (event) => {
         if (event.ctrlKey) {
-            element.style.backgroundColor = 'orange';
+            element.classList.toggle('highlightText')
         } else if (event.shiftKey){
             const isBeforeLastClickedLi = lastClickedLiIndex > index;
             if (isBeforeLastClickedLi) {
@@ -36,7 +36,10 @@ olItems.forEach((element, index) => {
                 }
             }
         } else {
-            olItems.forEach((e) => e.style.backgroundColor = '');
+            olItems.forEach((e) => {
+                e.style.backgroundColor = ''
+                e.classList.remove('highlightText')
+            });
             element.style.backgroundColor = 'orange';
         }
         lastClickedLiIndex = index;
@@ -81,7 +84,9 @@ function sortTable(columnNum, dataType) {
             break
         case 'number':
             compare = function(rowA, rowB) {
-                return rowA.cells[columnNum].innerHTML - rowB.cells[columnNum].innerHTML ? -1 : 1;
+                console.log(rowA.cells[columnNum].innerHTML);
+                return rowA.cells[columnNum].innerHTML - rowB.cells[columnNum].innerHTML;
+                
             }
             break
     }
@@ -97,7 +102,7 @@ let startX, startY, startWidth, startHeight;
 
 triangle.addEventListener('mousedown', startDrag)
 
-function startDrag() {
+function startDrag(event) {
     startX = event.clientX;
     startY = event.clientY;
     startWidth = resizeableDiv.clientWidth;
@@ -106,7 +111,7 @@ function startDrag() {
     document.addEventListener('mouseup', completeDrag);
 }
 
-function onDrag() {
+function onDrag(event) {
     resizeableDiv.style.width = (startWidth + event.clientX - startX) + 'px';
     resizeableDiv.style.height = (startHeight + event.clientY - startY) + 'px';
 }

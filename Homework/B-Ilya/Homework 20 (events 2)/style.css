@@ -21,6 +21,10 @@ a {
     cursor: default;
 }
 
+.highlightText {
+    background-color: orange;
+}
+
 /* Task 3 */
 .mark_list_item_upd li {
     cursor: default;
