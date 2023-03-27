@@ -40,7 +40,7 @@ olItems.forEach((element, index) => {
                 e.style.backgroundColor = ''
                 e.classList.remove('highlightText')
             });
-            element.style.backgroundColor = 'orange';
+            element.classList.add('highlightText');
         }
         lastClickedLiIndex = index;
     })
