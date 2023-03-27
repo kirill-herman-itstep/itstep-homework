@@ -28,11 +28,11 @@ olItems.forEach((element, index) => {
             const isBeforeLastClickedLi = lastClickedLiIndex > index;
             if (isBeforeLastClickedLi) {
                 for(i = lastClickedLiIndex; i >= index; i--) {
-                    olItems[i].style.backgroundColor = 'orange'
+                    olItems[i].classList.add('highlightText')
                 }
             } else {
                 for(i = lastClickedLiIndex; i <= index; i++) {
-                    olItems[i].style.backgroundColor = 'orange'
+                    olItems[i].classList.add('highlightText')
                 }
             }
         } else {
