@@ -1,4 +1,5 @@
-.wrapper {
+/* Task 1 */
+.wrapper-track {
     display: flex;
     align-items: center;
     margin: 5rem auto;
@@ -20,4 +21,81 @@
     height: 30px;
     background-color: cornflowerblue;
     cursor: pointer;
+}
+
+/* Task 2 */
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    margin: 5rem auto;
+}
+
+.wrap button {
+    width: 3rem;
+    height: 100%;
+    border: 1px solid transparent;
+    background-color: transparent;
+    background-position: center center;
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.wrap button:hover {
+    background-color: aliceblue;
+}
+
+.wrap button:disabled {
+    background-color: gainsboro;
+    cursor: not-allowed;
+}
+
+.wrap .next {
+    background-image: url(icons/right.svg);
+}
+
+.wrap .previous {
+    background-image: url(icons/left.svg);
+}
+
+.wrap div {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/pic1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+
+/* Task 3 */
+h3 {
+    margin: 0;
+    font-weight: 500;
+    padding: 0.1rem 1rem;
+    border-bottom: 1px solid royalblue;
+}
+
+.lorem-wrap .part {
+    border: 1px solid royalblue;
+}
+
+.lorem-wrap p {
+    display: none;
+    margin: 0;
+    padding: 0.1rem 1rem;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+
+/* Task 4 */
+
+.part-scroll {
+    height: 500px;
+    display: none;
 }
