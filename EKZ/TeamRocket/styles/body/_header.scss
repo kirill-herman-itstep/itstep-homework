@@ -3,6 +3,7 @@ header {
     display: flex;
     justify-content: space-between;
     border-bottom: $default-border;
+    border-color: $border-color;
     padding: $header-padding 4 * $header-padding;
     background-color: $main-bg-color;
 

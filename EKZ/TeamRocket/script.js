@@ -116,6 +116,30 @@ function hideTaskCreation() {
     body.removeChild(document.querySelector('.taskCreationLayout'));
 }
 
+function showTaskOpen() {
+    if (document.querySelector('.task')) hideTaskOpen();
+    let taskOpenTemplate = document.querySelector('#taskOpenTemplate');
+    let clone = taskOpenTemplate.content.cloneNode(true);
+    body.append(clone);
+}
+
+function hideTaskOpen() {
+    body.removeChild(document.querySelector('.task'));
+}
+
+function showFilter() {
+    if (document.querySelector('.filterLayout')) hideFilter();
+    else {
+        let filterLayoutTemplate = document.querySelector('#filterLayoutTemplate');
+        let clone = filterLayoutTemplate.content.cloneNode(true);
+        body.append(clone);
+    }
+}
+
+function hideFilter() {
+    body.removeChild(document.querySelector('.filterLayout'));
+}
+
 let clearAnchor;
 body.childNodes.forEach((e, i) => {
     if(e.nodeName === 'SCRIPT') clearAnchor = i + 1;

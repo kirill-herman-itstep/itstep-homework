@@ -109,7 +109,7 @@
                 row-gap: 0.25 * $default-padding;
 
                 &:hover {
-                    outline: $big-border;
+                    box-shadow: $lesser-white-box-shadow;
                 }
 
                 > * {
