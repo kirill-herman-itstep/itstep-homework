@@ -200,6 +200,14 @@ body {
   border: none;
   outline: none;
 }
+.container-twit .container-comments-answer #commentsAnswerTwit::-moz-placeholder {
+  font-size: 24px;
+  box-sizing: border-box;
+}
+.container-twit .container-comments-answer #commentsAnswerTwit:-ms-input-placeholder {
+  font-size: 24px;
+  box-sizing: border-box;
+}
 .container-twit .container-comments-answer #commentsAnswerTwit::placeholder {
   font-size: 24px;
   box-sizing: border-box;
@@ -229,6 +237,4 @@ body {
 }
 .container-twit .container-comments-answer button:hover {
   cursor: pointer;
-}
-
-/*# sourceMappingURL=twit.css.map */
+}/*# sourceMappingURL=twit.css.map */

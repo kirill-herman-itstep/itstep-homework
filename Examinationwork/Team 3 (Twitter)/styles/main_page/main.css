@@ -213,6 +213,14 @@ body {
   border: none;
   width: 100%;
 }
+.container .filtration .filtration-form .filtration-form-autor input::-moz-placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .filtration .filtration-form .filtration-form-autor input:-ms-input-placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
 .container .filtration .filtration-form .filtration-form-autor input::placeholder {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
@@ -242,6 +250,14 @@ body {
   border: none;
   width: 100%;
 }
+.container .filtration .filtration-form .filtration-form-date :last-of-type input::-moz-placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.container .filtration .filtration-form .filtration-form-date :last-of-type input:-ms-input-placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
 .container .filtration .filtration-form .filtration-form-date :last-of-type input::placeholder {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
@@ -268,6 +284,20 @@ body {
   padding-left: 16px;
   height: 75px;
 }
+.container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area::-moz-placeholder {
+  padding-top: 29px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area:-ms-input-placeholder {
+  padding-top: 29px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
 .container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area::placeholder {
   padding-top: 29px;
   font-size: 14px;
@@ -289,6 +319,20 @@ body {
   border: none;
   width: 100%;
 }
+.container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text::-moz-placeholder {
+  padding-top: 29px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text:-ms-input-placeholder {
+  padding-top: 29px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
 .container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text::placeholder {
   padding-top: 29px;
   font-size: 14px;
@@ -309,6 +353,4 @@ body {
   border-radius: 12px;
   font-weight: 700;
   margin-top: 20px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
