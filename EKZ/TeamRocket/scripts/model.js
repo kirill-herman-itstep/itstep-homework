@@ -63,10 +63,11 @@ class TaskCollection {
         return this.taskArray.find(elem => elem.id === id)
     }
 
-    add(name, description, assignee, status, priority, isPrivate) {
-        const task = new Task(name, priority, description,assignee, status, isPrivate);
+    add(name, priority, description, assignee, status, isPrivate) {
+        const task = new Task(name, priority, description, assignee, status, isPrivate);
         if (Task.validate(task)) {
             this.taskArray.push(task);
+            update()
             return true;
         }
         return false;
@@ -156,7 +157,6 @@ class Task {
         this.isPrivate = isPrivate;
         this.comments = [];
         this.#author = currentUser;
-        this.addOnBoard()
     }
 
     get id() {
@@ -177,14 +177,14 @@ class Task {
     }
 
     addOnBoard() {
-        const toDoBoard = document.querySelector('#toDo .taskTable .border.top');
-        const inProgressBoard = document.querySelector('#inProgress .taskTable .border.top');
-        const complete = document.querySelector('#complete .taskTable .border.top');
+        const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
+        const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
+        const complete = document.querySelector('#complete .taskTable .innerContent');
         if (this.status === 'to do') {
-            toDoBoard.insertAdjacentHTML('afterend', taskHTML(this.priority, this.name))
+            toDoBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name))
         } else if (this.status === 'in progress') {
-            inProgressBoard.insertAdjacentHTML('afterend', taskHTML(this.priority, this.name))
-        } else complete.insertAdjacentHTML('afterend', taskHTML(this.priority, this.name)) 
+            inProgressBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name))
+        } else complete.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name)) 
     }
 
     static validate(task) {
@@ -286,3 +286,13 @@ userDB.userArray = [
     new User('killmepls@yandex.ru', 'itsJOKE', 'Lena137'),
     new User('kitamuraRey@jap.com', 'undefinedSymbols', 'Rey Kitamura')
 ]
+
+function update() {
+    const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
+    const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
+    const complete = document.querySelector('#complete .taskTable .innerContent');
+    toDoBoard.innerHTML = '';    
+    inProgressBoard.innerHTML = '';    
+    complete.innerHTML = '';    
+    mainDB.taskArray.forEach(e => e.addOnBoard())
+}

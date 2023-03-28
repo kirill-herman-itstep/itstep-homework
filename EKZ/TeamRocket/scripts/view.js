@@ -64,9 +64,7 @@ function wrongInputReg() {
     })
 }
 
-// Добавление задачи
-mainDB.taskArray.forEach(e => e.addOnBoard())
-
+// Добавление задачи [НЕ ДОПИСАНО]
 function taskHTML(priority, name) {
     return `
             <div class="taskForm">
@@ -89,4 +87,21 @@ function taskHTML(priority, name) {
                 </div>
             </div>
     `
+}
+
+let priority = '';
+
+function addCardData() {
+    const inputs = document.querySelectorAll('.taskCreationLayout input');
+    const textarea = document.querySelector('.taskCreationLayout textarea');
+    
+    const assignee = inputs[0].value;
+    const name = inputs[1].value;
+    const description = textarea.value;
+    return cardData = {
+        name,
+        priority,
+        assignee,
+        description,
+    }
 }
