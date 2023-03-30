@@ -181,10 +181,10 @@ class Task {
         const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
         const complete = document.querySelector('#complete .taskTable .innerContent');
         if (this.status === 'to do') {
-            toDoBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name))
+            toDoBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id))
         } else if (this.status === 'in progress') {
-            inProgressBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name))
-        } else complete.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name)) 
+            inProgressBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id))
+        } else complete.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id)) 
     }
 
     static validate(task) {
@@ -295,4 +295,9 @@ function update() {
     inProgressBoard.innerHTML = '';    
     complete.innerHTML = '';    
     mainDB.taskArray.forEach(e => e.addOnBoard())
+
+    const tasks = document.querySelectorAll('.taskForm')
+    tasks.forEach(e => {
+        e.addEventListener('click', () => showTaskOpen(e.id))
+    })
 }

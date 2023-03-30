@@ -139,15 +139,14 @@ function hideTaskCreation() {
     body.removeChild(document.querySelector('.taskCreationLayout'));
 }
 
-function showTaskOpen() {
-    if (document.querySelector('.task')) hideTaskOpen();
-    let taskOpenTemplate = document.querySelector('#taskOpenTemplate');
-    let clone = taskOpenTemplate.content.cloneNode(true);
-    body.append(clone);
-}
+function showTaskOpen(id) {
+    const main = document.querySelector('main');
+    const task = mainDB.getTask(id)
+    main.insertAdjacentHTML('afterbegin', pageHTML(task))
 
-function hideTaskOpen() {
-    body.removeChild(document.querySelector('.task'));
+    const closeButton = document.querySelector('.task .crossIco')
+    const taskPage = document.querySelector('.task')
+    closeButton.addEventListener('click', () => taskPage.remove())
 }
 
 function showFilter() {

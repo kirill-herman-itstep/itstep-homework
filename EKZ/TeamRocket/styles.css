@@ -251,6 +251,7 @@ body .loginFormLayout .loginForm #inputs p {
   margin-bottom: -1rem;
 }
 body .loginFormLayout .loginForm #inputs p a {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -427,6 +428,7 @@ body main .taskBoard .taskTableWrapper .taskTable {
   overflow-x: hidden;
 }
 body main .taskBoard .taskTableWrapper .taskTable .border {
+  position: -webkit-sticky;
   position: sticky;
   width: calc(100% + 4px);
   height: 2rem;
@@ -698,6 +700,7 @@ body .task {
   box-shadow: rgb(255, 255, 255) 0 0 7px;
   background-color: #2E2E2E;
   overflow: auto;
+  z-index: 1000;
 }
 body .task input, body .task textarea {
   color: rgb(249, 248, 248);
@@ -708,6 +711,7 @@ body .task .actionsBar {
   top: 1rem;
   display: flex;
   flex-direction: row;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   -moz-column-gap: 0.25rem;
