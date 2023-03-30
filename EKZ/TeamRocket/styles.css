@@ -444,6 +444,11 @@ body main .taskBoard .taskTableWrapper .taskTable .border.bottom {
   background-image: linear-gradient(to top, #1C1C1C, transparent 100%);
   margin-top: -1rem;
 }
+body main .taskBoard .taskTableWrapper .taskTable .innerContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
 body main .taskBoard .taskTableWrapper .taskTable .taskForm {
   display: flex;
   flex-direction: column;

@@ -125,7 +125,7 @@ function pageHTML(task) {
                 <svg class="deleteIco" viewBox="0 0 14 18">
                     <path d="M11 6V16H3V6H11ZM9.5 0H4.5L3.5 1H0V3H14V1H10.5L9.5 0ZM13 4H1V16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4Z"/>
                 </svg>
-                <svg class="crossIco" viewBox="0 0 14 14" onclick="hideTaskOpen()">
+                <svg class="crossIco" viewBox="0 0 14 14">
                     <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
                 </svg>
             </div>

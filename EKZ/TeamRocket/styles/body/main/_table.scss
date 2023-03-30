@@ -99,6 +99,12 @@
                 }
             }
 
+            .innerContent {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+
             .taskForm {
                 display: flex;
                 flex-direction: column;

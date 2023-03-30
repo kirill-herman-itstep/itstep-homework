@@ -139,14 +139,25 @@ function hideTaskCreation() {
     body.removeChild(document.querySelector('.taskCreationLayout'));
 }
 
-function showTaskOpen(id) {
-    const main = document.querySelector('main');
-    const task = mainDB.getTask(id)
-    main.insertAdjacentHTML('afterbegin', pageHTML(task))
+let currentTaskOpen;
 
-    const closeButton = document.querySelector('.task .crossIco')
-    const taskPage = document.querySelector('.task')
-    closeButton.addEventListener('click', () => taskPage.remove())
+function showTaskOpen(id) {
+    if (currentTaskOpen) {
+        const taskPage = document.querySelector('.task');
+        taskPage.remove();
+        currentTaskOpen = null;
+    }
+    const main = document.querySelector('main');
+    const task = mainDB.getTask(id);
+    currentTaskOpen = task;
+    main.insertAdjacentHTML('afterbegin', pageHTML(task));
+
+    const closeButton = document.querySelector('.task .crossIco');
+    const taskPage = document.querySelector('.task');
+    closeButton.addEventListener('click', () => {
+        taskPage.remove();
+        currentTaskOpen = null;
+    } );
 }
 
 function showFilter() {
