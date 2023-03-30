@@ -24,5 +24,6 @@ function userCreate() {
 }
 
 function addtask() {
-    
+    mainDB.add(cardData.name, cardData.priority, cardData.description, cardData.assignee, cardData.status, cardData.access);
+    priority = '';
 }

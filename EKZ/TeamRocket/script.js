@@ -110,6 +110,29 @@ function showTaskCreation() {
     let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
     let clone = taskCreationTemplate.content.cloneNode(true);
     body.append(clone);
+
+    const importancesList = document.querySelectorAll('.chooseImportance #importance div')
+    importancesList.forEach(e => {
+        e.addEventListener('click', (event) => {
+            priority = event.target.className;
+            importancesList.forEach(elem => elem.style = '')
+            event.target.style.outline = '2px solid white'
+        })
+    })
+
+    const accessList = document.querySelectorAll('.chooseAccess svg')
+    accessList.forEach(e => {
+        e.addEventListener('click', (event) => {
+            accessList.forEach(elem => elem.style = '')
+            if (event.target === accessList[1]) {
+                access = true;
+            } else access = false
+            event.target.style.outline = '1px solid white'
+        })
+    })
+
+    const submitButton = document.querySelector('.taskCreationLayout button')
+    submitButton.addEventListener('click', addCard)
 }
 
 function hideTaskCreation() {

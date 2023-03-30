@@ -90,18 +90,29 @@ function taskHTML(priority, name) {
 }
 
 let priority = '';
+let access = '';
 
 function addCardData() {
     const inputs = document.querySelectorAll('.taskCreationLayout input');
     const textarea = document.querySelector('.taskCreationLayout textarea');
+    const select = document.querySelector('.taskCreationLayout select')
     
     const assignee = inputs[0].value;
     const name = inputs[1].value;
     const description = textarea.value;
+    const status = select.value;
     return cardData = {
         name,
         priority,
-        assignee,
         description,
+        assignee,
+        status,
+        access,
     }
 }
+
+function addCard() {
+    addCardData()
+    addtask()
+}
+
