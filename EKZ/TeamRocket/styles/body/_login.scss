@@ -23,7 +23,7 @@
             height: $mainLogo-size;
         }
 
-        #inputs {
+        #inputs > form {
             display: flex;
             flex-direction: column;
             align-items: center;
