@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section {
+    background-color: #fbf2e9;
+    border: 1px solid #000;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    width: 90vw;
+    min-width: 40rem;
+    text-align: center;
+}
+
+section h3 {
+    margin-top: 0;
+}
+
+section#task1 input {
+    display: block;
+    margin: auto;
+    width: 19.5rem;
+    margin-top: 0.5rem;
+}
+
+section#task1 input::placeholder {
+    color: black;
+}
+
+section#task2 div.window {
+    visibility: hidden;
+    position: relative;
+    z-index: 10;
+    background: #e3ffff;
+    width: 28rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #000;
+}
+
+section#task2 > button {
+    margin-bottom: 1rem;
+}
+
+section#task2 div.modal {
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    top: 0;
+    display: none;
+    left: 0;
+    background: #28282896;
+    height: 100vh;
+}
+
+section#task3 div {
+    position: relative;
+}
+
+section#task3 div img[alt="field"] {
+    width: 100%;
+    cursor: crosshair;
+}
+
+section#task3 div img[alt="ball"] {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+}
+
+section#task4 > div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+section#task4 div.traffic-lights {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+section#task4 div.circle {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+section#task4 div.green {
+    background-color: #11a211;
+}
+
+section#task4 div.yellow {
+    background-color: #e2d211;
+}
+
+section#task4 div.red {
+    background-color: red;
+}
+
+section#task4 button {
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 2px 2px 1px 1px black;
+}
+
+section#task4 button:active {
+    box-shadow: 2px 2px 1px 0px black;
+}
+
+section#task5 ol {
+    text-align: left;
+}
+
+section#task6 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    height: 10rem;
+}
+
+section#task6 button {
+    font-size: 1.25rem;
+    outline: none;
+    cursor: pointer;
+}
+
+section#task6 button:first-of-type {
+    align-self: flex-end;
+}
+
+section#task6 button:last-of-type {
+    align-self: flex-start;
+}
+
+section#task6 button:nth-of-type(2) {
+    align-self: center;
+    position: relative;
+    top: -8px;
+}
+
+section#task6 div.hint {
+    display: none;
+    position: absolute;
+    background-color: #8a53a9;
+    color: white;
+    padding: 0.5rem 0.75rem 0.75rem;
+}
+
+section#task6 div.hint div.hintElem {
+    position: absolute;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    left: 50%;
+}
+
+section#task6 div.hint div.top {
+    transform: translate(-50%, 100%);
+    border-top: 0.5rem solid #8a53a9;
+    border-bottom: none;
+    bottom: 0;
+}
+
+section#task6 div.hint div.bottom {
+    transform: translate(-50%, -100%);
+    border-top: none;
+    border-bottom: 0.5rem solid #8a53a9;
+    top: 0;
+}
