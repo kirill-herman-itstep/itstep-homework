@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 24rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightyellow;
+    padding: 1rem;
+    border: 1px solid black;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#input {
+    width: 17rem;
+}
+
+#modal {
+    justify-content: end;
+    height: 13rem;
+    display: none;
+    z-index: 1;
+    border: none;
+    background-image: url(pic.jpg);
+    background-size: 20rem 15rem;
+    padding-bottom: 0.5rem;
+}
+
+#modal h4 {
+    filter: drop-shadow(0 0 2px white);
+}
+
+#blackout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+#field {
+    height: 14.5rem;
+    background-image: url(field.jpg);
+    background-size: cover;
+}
+
+#ball {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 50%;
+    background-image: url(ball.png);
+    background-position: center;
+    background-size: contain;
+    transition: all 0.75s;
+}
+
+#lights {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+    height: 4rem;
+}
+
+#lights * {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: dimgrey !important;
+    border: none;
+}
+
+#lightsBtn {
+    margin-left: 0.5rem;
+    width: 6rem;
+    height: 4rem;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+ol {
+    padding-left: 1rem;
+}
+
+/* li::marker {
+    content: '';
+} */
+
+.buttons {
+    position: relative;
+    padding: 2rem;
+}
+
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    border: none;
+    padding: 0;
+    height: initial;
+    width: initial;
+    gap: 0;
+    background-color: initial;
+}
+
+.tooltip div {
+    padding: 0.5rem;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+}
+
+.tooltip span {
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+}
+
+#highTooltip span{
+    border-top: 0.5rem solid blueviolet;
+}
+
+#lowTooltip span{
+    border-bottom: 0.5rem solid blueviolet;
+}

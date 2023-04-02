@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>Enter your name (name can't contain digits):</span>
+        <input id="input" type="text" placeholder="John Doe">
+    </div>
+    <div style="height: 15rem;">
+        <button id="modalshow">Open modal</button>
+        <div id="blackout"></div>
+        <div id = "modal">
+            <h4>Модальное окно передаёт вам привет.</h4>
+            <button id="modalhide">Close</button>
+        </div>
+    </div>
+    <div id="field">
+        <div id="ball"></div>
+    </div>
+    <div style="flex-direction: row;">
+        <div id="lights">
+            <div style="background-color:green !important"></div>
+            <div style="background-color:yellow "></div>
+            <div style="background-color:red "></div>
+        </div>
+        <button id="lightsBtn">NEXT</button>
+    </div>
+    <div>
+        <ol id="bookList">
+            <li>"Sissy: A Coming-of-Gender Story" by Jacob Tobia</li>
+            <li>"Tomorrow Will Be Different: Love, Loss, and the Fight for Trans Equality" by Sarah McBride</li>
+            <li>"On Being Different: What It Means to Be a Homosexual" by Merle Miller</li>
+            <li>"Bad Gays: A Homosexual History" by Huw Lemmey and Ben Miller</li>
+            <li>"Middlesex" by Jeffrey Eugenides</li>
+            <li>"Knocking Myself Up: A Memoir of my (In)Fertility" by Michelle Tea</li>
+            <li>"Some Girls Do" by Jennifer Dugan</li>
+        </ol>
+    </div>
+    <div class="buttons">
+        <button data-tooltip="Tool tip 1">Button 1</button>
+        <button data-tooltip="Tool tip 2">Button 2</button>
+    </div>
+    <div class="buttons" style="padding: 3rem;">
+        <button data-tooltip="Tool tip 3">Button 3</button>
+        <button data-tooltip="Tool tip 4">Button 4</button>
+    </div>
+    <div id="highTooltip" class="tooltip">
+        <div>content</div>
+        <span></span>
+    </div>
+    <div id="lowTooltip" class="tooltip">
+        <span></span>
+        <div>content</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
