@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #FBF2E9;
+    display: inline-flex;
+    gap: 25px;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+.traffic-light {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 25px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.red,
+.yellow, 
+.green {
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.traffic-light-controller {
+    display: flex;
+    width: 100px;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.red {
+    background-color: red;
+}

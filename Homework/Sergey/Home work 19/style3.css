@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+.field {
+    width: 100vw;
+    height: 100vh;
+    background: url(img3/field.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background-image: url(img3/ball.png);
+    display: inline-block;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+}

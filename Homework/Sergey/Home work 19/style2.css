@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #6F6B67;
+    width: 40vw;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.container>button {
+    width: max-content;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.modale {
+    background-color: #E3FFFF;
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    padding: 15px;
+    gap: 1vh;
+    align-items: center;
+    opacity: 0;
+}
+
+.modale-text {
+    font-weight: bolder;
+}
+
+.modale>button {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}

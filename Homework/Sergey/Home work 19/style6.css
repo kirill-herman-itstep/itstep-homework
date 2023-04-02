@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    gap: 100px;
+    position: relative;
+    justify-content: center;
+}
+
+.button-one {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: max-content;
+    align-items: center;
+}
+
+.button-one>button {
+    position: relative;
+    top: 100px;/*Корректировать положение кнопок*/
+    width: 100%;
+}
+
+.button-two {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: max-content;
+    align-items: center;
+}
+
+.button-two>button {
+    position: relative;
+    top: 30px;/*Корректировать положение кнопок*/
+    width: 100%;
+}

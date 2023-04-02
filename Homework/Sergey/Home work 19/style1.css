@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    display: flex;
+    padding-top: 2vh;
+    justify-content: center;
+}
+
+.container {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #FBF2E9;
+}
+
+input {
+    outline: none;
+}
