@@ -12,7 +12,7 @@
   width: 19.59%;
   height: 88vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
 }
 
 .vectorKat {
@@ -51,7 +51,7 @@
   min-width: 500px;
   min-width: 301px;
   top: 0px;
-  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 18px 3px rgba(136, 101, 140, 0.4);
   margin-bottom: 0%;
@@ -78,14 +78,14 @@
   width: 100%;
   height: 40px;
   top: 0px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 .signUp {
   width: 344px;
   height: 54px;
-  background: #88658C;
+  background: #88658c;
   border-radius: 20px;
   cursor: pointer;
   color: white;
@@ -96,7 +96,7 @@
   line-height: 21px;
   border: none;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 96px;
 }
 
@@ -105,7 +105,7 @@
   box-sizing: border-box;
   width: 482px;
   left: 47px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -141,7 +141,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   justify-content: space-between;
   align-items: center;
@@ -184,7 +184,7 @@ ul h2 {
   font-size: 12px;
   line-height: 14px;
   text-align: center;
-  color: #88658C;
+  color: #88658c;
   padding-left: 20.12px;
 }
 
@@ -196,7 +196,7 @@ ul h2 {
   font-size: 12px;
   line-height: 14px;
   text-align: center;
-  color: #88658C;
+  color: #88658c;
   padding-left: 20.12px;
 }
 
@@ -204,14 +204,14 @@ ul h2 {
   width: 100%;
   height: 40px;
   top: 0px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 .signUp {
   width: 344px;
   height: 54px;
-  background: #88658C;
+  background: #88658c;
   border-radius: 20px;
   margin-top: 5%;
   cursor: pointer;
@@ -223,7 +223,7 @@ ul h2 {
   line-height: 21px;
   border: none;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .userName,
@@ -233,7 +233,7 @@ ul h2 {
   height: 45px;
   left: 47px;
   top: 358px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
   font-family: "Roboto";
@@ -265,7 +265,7 @@ ul h2 {
 }
 
 .password {
-  background: url(../../assets/images/img_autorisation/Vector\ \(Home\).png);
+  background: url(../../assets/images/img_autorisation/Home.png);
   outline: none;
   background-repeat: no-repeat;
   background-color: white;
@@ -282,4 +282,6 @@ ul h2 {
 #mainFormBlockRaight a:nth-of-type(2) {
   margin-top: 5px;
   text-decoration: none;
-}/*# sourceMappingURL=autorisation.css.map */
+}
+
+/*# sourceMappingURL=autorisation.css.map */

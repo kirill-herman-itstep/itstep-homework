@@ -1,4 +1,4 @@
-@import 'vars';
+@import "vars";
 
 .twit-main-navigation {
     display: flex;
@@ -19,11 +19,11 @@
     a {
         text-decoration: none;
         font-size: $font-size-main-navigation;
-        color: #88658C;
+        color: #88658c;
     }
 
     .twit-main-next {
-        color: #88658C;
+        color: #88658c;
         font-size: $font-size-main-navigation;
     }
 }

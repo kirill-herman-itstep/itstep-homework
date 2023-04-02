@@ -1,4 +1,4 @@
-#raightBlock{
+#raightBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,12 +10,12 @@
     min-width: 500px;
     min-width: 301px;
     top: 0px;
-    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 18px 3px rgba(136, 101, 140, 0.4);
     margin-bottom: 0%;
 }
-    #mainSektion{
+#mainSektion {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,210 +23,203 @@
     margin-top: 8px;
     padding-top: 20px;
 }
-    .imgHome{
+.imgHome {
     width: 18.75px;
     height: 20.83px;
-    }
+}
 
-    .mainHader{
+.mainHader {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     height: 40px;
     top: 0px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
-    }
-    .signUp{
+}
+.signUp {
     width: 344px;
     height: 54px;
-    background: #88658C;
+    background: #88658c;
     border-radius: 20px;
     cursor: pointer;
     color: white;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
     border: none;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-top: 96px;
-    }
-    .userName,
-    .password{
+}
+.userName,
+.password {
     box-sizing: border-box;
     width: 482px;
     left: 47px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-    #mainWrapper{
+}
+#mainWrapper {
     margin-right: 0%;
     display: flex;
     flex-direction: row;
-    }
-    body{
-        margin: 0%;
-    }
-    .mainPage{
+}
+body {
+    margin: 0%;
+}
+.mainPage {
     width: 100%;
     height: 28px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
     text-align: center;
     color: #000000;
-    }
-    #nyatterSmall{
+}
+#nyatterSmall {
     display: flex;
     flex-direction: row;
-    }
-        
-        
-        
-    #footerEnd{
+}
+
+#footerEnd {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     width: 100%;
-    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     justify-content: space-between;
     align-items: center;
     padding-left: 5%;
     padding-right: 5%;
-    }
-    ul{
-        list-style-type: none;
-    }
-    ul h2{
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 30px; 
-        color: #000000;
-        margin: 0%;
-    }
-    .liraight{
-        display: flex;
-        justify-content: flex-end
-    }
-        
-    .mainHader img{
-    width: 18.75px ;
+}
+ul {
+    list-style-type: none;
+}
+ul h2 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    color: #000000;
+    margin: 0%;
+}
+.liraight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainHader img {
+    width: 18.75px;
     height: 20.83px;
     padding-left: 44.12px;
-    }
+}
 
-    .mainHader h3:nth-of-type(2),
-    .mainHader h3:nth-of-type(4){
+.mainHader h3:nth-of-type(2),
+.mainHader h3:nth-of-type(4) {
     width: 7px;
     height: 14px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     text-align: center;
-    color: #88658C;
+    color: #88658c;
     padding-left: 20.12px;
-    }
-    .mainHader h3:nth-of-type(1),
-    .mainHader h3:nth-of-type(3){
-    font-family: 'Roboto';
+}
+.mainHader h3:nth-of-type(1),
+.mainHader h3:nth-of-type(3) {
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     text-align: center;
-    color: #88658C;
+    color: #88658c;
     padding-left: 20.12px;
-    }
-    
-   
-    .mainHader{
+}
 
+.mainHader {
     width: 100%;
     height: 40px;
     top: 0px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
-    }
-    .signUp{
+}
+.signUp {
     width: 344px;
     height: 54px;
-    background: #88658C;
+    background: #88658c;
     border-radius: 20px;
     margin-top: 5%;
     cursor: pointer;
     color: white;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
     border: none;
     text-align: center;
-    color: #FFFFFF;
-   
-  
-    }
-    .userName,
-    .password{
+    color: #ffffff;
+}
+.userName,
+.password {
     box-sizing: border-box;
     width: 482px;
-   height: 45px;
+    height: 45px;
     left: 47px;
     top: 358px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     outline: none;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     color: rgba(0, 0, 0, 0.4);
-    }
-    .userName{
+}
+.userName {
     margin-top: 26.6px;
-    }
+}
 
-    #mainFormBlockRaight{
+#mainFormBlockRaight {
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
-    .userName{
+}
+.userName {
     background: url(../../assets/images/img_autorisation/userName.png);
     outline: none;
     background-repeat: no-repeat;
     background-color: white;
     padding-left: 54px;
     background-position-x: 27px;
-    background-position-y: 10px ;
-
-    }
-    .password{
-    background: url(../../assets/images/img_autorisation/Vector\ \(Home\).png);
+    background-position-y: 10px;
+}
+.password {
+    background: url(../../assets/images/img_autorisation/Home.png);
     outline: none;
     background-repeat: no-repeat;
     background-color: white;
     padding-left: 54px;
     background-position-x: 27px;
-    background-position-y: 10px ; 
-    }
-    #mainFormBlockRaight a:nth-of-type(1){
+    background-position-y: 10px;
+}
+#mainFormBlockRaight a:nth-of-type(1) {
     margin-top: 27px;
     text-decoration: none;
-    }
-    #mainFormBlockRaight a:nth-of-type(2){
+}
+#mainFormBlockRaight a:nth-of-type(2) {
     margin-top: 5px;
     text-decoration: none;
-    }
+}

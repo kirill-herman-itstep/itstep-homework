@@ -1,5 +1,4 @@
-
-#leftBlock{
+#leftBlock {
     display: flex;
     min-width: 301px;
     flex-direction: column;
@@ -12,17 +11,17 @@
     width: 19.59%;
     height: 88vh;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
-    }
-    .vectorKat{
+    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
+}
+.vectorKat {
     padding-top: 86px;
     left: 39.5%;
     top: 25%;
-    width:60.59px ;
-    height:56.24px ; 
-    }
-    .Sign{
-    font-family: 'Roboto', sans-serif;
+    width: 60.59px;
+    height: 56.24px;
+}
+.Sign {
+    font-family: "Roboto", sans-serif;
     padding-top: 40%;
     font-style: normal;
     font-weight: 500;
@@ -31,7 +30,7 @@
     text-align: center;
     color: black;
     height: 100%;
-    }
-   .mainPage{
+}
+.mainPage {
     width: 100%;
-   }
+}
