@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background-color: #fbf2e9;
+    box-sizing: border-box;
+    padding: 25px;
+    width: 80vw;
+    margin-top: 10vh;
+}
+
+.box-trackbar {
+    position: relative;
+    background-color: #d7d7d7;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.trackbar {
+    position: absolute;
+    background-color: #2699ff;
+    height: 30px;
+    width: 30px;
+}
