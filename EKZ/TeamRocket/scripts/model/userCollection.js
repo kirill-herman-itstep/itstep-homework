@@ -1,5 +1,4 @@
 import { User } from "./user.js";
-import { currentUser } from "../../index.js";
 
 export class UserCollection { 
     constructor () {
@@ -8,7 +7,7 @@ export class UserCollection {
 
     create(login, password, name) {
         new User(login, password, name)
-        crutchLogin()
-        createUserPanel()
+        // crutchLogin()
+        // createUserPanel() 
     }
 }

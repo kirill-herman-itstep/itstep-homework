@@ -8,7 +8,7 @@ export class Comment {
     constructor(text) { 
         this.#id = Math.random().toString(16).slice(2);
         this.text = text;
-        this.#createdAt = new Date(Date.now());
+        this.#createdAt = new Date();
         this.#author = currentUser;
     }
 
