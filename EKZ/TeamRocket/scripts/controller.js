@@ -1,9 +1,12 @@
-function userAuth() {
+import { userDB, currentUser, setUser } from "../index.js";
+import { wrongInputLogin } from "./other/authorization.js";
+import { crutchLogin } from "../script.js";
+
+export function userAuth(loginData) {
     userDB.userArray.find((element) => {
         if (loginData.login === element.login && loginData.password === element.password) {
-            userDB.auth(element);
+            setUser(element)
             crutchLogin()
-            setCurrentUser(element);
         }
     })
     if (currentUser === '') wrongInputLogin()

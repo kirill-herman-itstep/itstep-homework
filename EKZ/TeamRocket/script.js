@@ -1,3 +1,6 @@
+import { loginFormData } from "./scripts/other/authorization.js";
+import { userAuth } from "./scripts/controller.js";
+
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
 //         console.dir(e.target.style);
@@ -10,7 +13,7 @@
 
 // CRUTCH
 
-function crutchLogin() {
+export function crutchLogin() {
     history.pushState('', '', '#table');
     clearBody();
     hash = location.hash;
@@ -73,6 +76,9 @@ function gotoLoginForm() {
     let loginTemplate = document.querySelector('#loginTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
+
+    const subBut = document.querySelector('form[name="login"] button')
+    subBut.addEventListener('click', () => userAuth(loginFormData()))
 }
 
 function gotoRegistrationForm() {
