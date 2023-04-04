@@ -114,3 +114,39 @@ article {
     text-align: center;
     cursor: pointer;
 }
+
+/* Task 5 */
+.table-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 1.5rem auto;
+    gap: 0.5rem;
+}
+
+.input-wrap {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.input-wrap > input {
+    width: 50%;
+}
+
+.gen {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 1.5rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: center;
+}
