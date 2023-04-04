@@ -1,4 +1,4 @@
-import { Task } from "../model/task.js";
+import { Task } from "../classes/task.js";
 
 export function mockTasksArray() {
     return [

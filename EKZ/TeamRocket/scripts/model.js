@@ -1,4 +1,7 @@
-function update() {
+import { mainDB } from "../index.js";
+import { addOnBoard } from "./other/taskAddEdit.js";
+
+export function update() {
     const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
     const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
     const complete = document.querySelector('#complete .taskTable .innerContent');

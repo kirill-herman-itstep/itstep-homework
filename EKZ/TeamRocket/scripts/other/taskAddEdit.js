@@ -1,3 +1,5 @@
+import { priority, access } from "../../script.js";
+
 // Добавление задачи [РАБОТАЕТ]
 function taskHTML(priority, name, id) {
     return `
@@ -23,10 +25,7 @@ function taskHTML(priority, name, id) {
     `
 }
 
-let priority = '';
-let access = '';
-
-function getCardData() {
+export function getCardData() {
     const inputs = document.querySelectorAll('.taskCreationLayout input');
     const textarea = document.querySelector('.taskCreationLayout textarea');
     const select = document.querySelector('.taskCreationLayout select')
@@ -35,6 +34,7 @@ function getCardData() {
     const name = inputs[1].value;
     const description = textarea.value;
     const status = select.value;
+    let cardData = {};
     return cardData = {
         name,
         priority,
@@ -45,11 +45,7 @@ function getCardData() {
     }
 }
 
-function addCard() {
-    
-}
-
-function addOnBoard() {
+export function addOnBoard() {
     const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
     const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
     const complete = document.querySelector('#complete .taskTable .innerContent');

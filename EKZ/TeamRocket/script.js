@@ -1,5 +1,6 @@
-import { loginFormData } from "./scripts/other/authorization.js";
-import { userAuth } from "./scripts/controller.js";
+import { getCardData } from "./scripts/other/taskAddEdit.js";
+import { loginFormData, regUserData } from "./scripts/other/authorization.js";
+import { userAuth, userCreate, addtask } from "./scripts/controller.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -85,6 +86,9 @@ function gotoRegistrationForm() {
     let loginTemplate = document.querySelector('#registrationTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
+
+    const subBut = document.querySelector('form[name="registration"] button')
+    subBut.addEventListener('click', () => userCreate(regUserData()))
 }
 
 function gotoMainPage() {
@@ -97,6 +101,9 @@ function gotoTableLayout() {
     let tableLayoutTemplate = document.querySelector('#tableLayoutTemplate');
     let clone = tableLayoutTemplate.content.cloneNode(true);
     body.querySelector(`main`).append(clone);
+
+    const addTaskButton = document.querySelectorAll('svg.plusIco')
+    addTaskButton.forEach(e => e.addEventListener('click', () => crutchTaskCreation()))
 }
 
 
@@ -111,6 +118,9 @@ function showProfileLayuot() {
 function hideProfileLayout() {
     body.removeChild(document.querySelector('.profileLayuot'));
 }
+
+export let priority = '';
+export let access = '';
 
 function showTaskCreation() {
     let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
@@ -138,7 +148,10 @@ function showTaskCreation() {
     })
 
     const submitButton = document.querySelector('.taskCreationLayout button')
-    submitButton.addEventListener('click', addCard)
+    submitButton.addEventListener('click', () => addtask(getCardData()))
+
+    const closeTaskCreation = document.querySelector('svg.crossIco')
+    closeTaskCreation.addEventListener('click', () => hideTaskCreation())
 }
 
 function hideTaskCreation() {

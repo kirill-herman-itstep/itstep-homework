@@ -6,8 +6,10 @@ export class UserCollection {
     }
 
     create(login, password, name) {
-        new User(login, password, name)
-        // crutchLogin()
-        // createUserPanel() 
+        this.userArray.push(new User(login, password, name))
+    }
+
+    getUserByLogin(login) {
+        return this.userArray.find(elem => elem.login === login)
     }
 }

@@ -69,7 +69,6 @@ export class TaskCollection {
         const task = new Task(name, priority, description, assignee, status, isPrivate);
         if (Task.validate(task)) {
             this.taskArray.push(task);
-            update()
             return true;
         }
         return false;

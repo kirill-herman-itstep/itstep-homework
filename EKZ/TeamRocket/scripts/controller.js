@@ -1,5 +1,5 @@
-import { userDB, currentUser, setUser } from "../index.js";
-import { wrongInputLogin } from "./other/authorization.js";
+import { userDB, setUser, mainDB } from "../index.js";
+import { wrongInputLogin, createUserPanel, wrongInputReg } from "./other/authorization.js";
 import { crutchLogin } from "../script.js";
 
 export function userAuth(loginData) {
@@ -7,26 +7,29 @@ export function userAuth(loginData) {
         if (loginData.login === element.login && loginData.password === element.password) {
             setUser(element)
             crutchLogin()
-        }
+            createUserPanel()
+        } else wrongInputLogin()
     })
-    if (currentUser === '') wrongInputLogin()
 }
 
-function userCreate() {
+export function userCreate(regData) {
     const existCheck = !!userDB.userArray.find((element) => {
         return regData.login === element.login
     })
     if (regData.login === '' || regData.password === '' || regData.repeatPassword === '' || regData.name === '') return wrongInputReg();
     if (existCheck) {
-        // функция отображения пользователю что-то типа "This email already used"
+        alert('Email already used')
     } else {
-        if (regData.password === regData.repeatPassword) {
-            regData.password.length >= 6 ? userDB.create(regData.login, regData.password, regData.name) : wrongInputReg();
-        }   
+        if ((regData.password === regData.repeatPassword) && (regData.password.length >= 6)) {
+            userDB.create(regData.login, regData.password, regData.name)
+            setUser(userDB.getUserByLogin(regData.login))
+            crutchLogin()
+            createUserPanel() 
+        } else wrongInputReg()
     }
 }
 
-function addtask() {
+export function addtask(cardData) {
     mainDB.add(cardData.name, cardData.priority, cardData.description, cardData.assignee, cardData.status, cardData.access);
-    priority = '';
+    console.log(mainDB)
 }

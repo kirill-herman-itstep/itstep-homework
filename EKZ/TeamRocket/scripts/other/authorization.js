@@ -1,8 +1,9 @@
-// Авторизация
 export function createUserPanel() {
     const userPanel = document.querySelector('header .user')
     userPanel.insertAdjacentHTML("beforeend", loginedUserHTML())
 }
+
+// Вход
 
 function loginedUserHTML() {
     return `
@@ -38,8 +39,9 @@ export function wrongInputLogin() {
 
 // Регистрация
 
-function regUserData() {
+export function regUserData() {
     const regForm = document.querySelectorAll('form[name="registration"] input')
+    let regData = {};
     return regData = {
         name: regForm[0].value,
         login: regForm[1].value,
@@ -48,7 +50,7 @@ function regUserData() {
     }
 }
 
-function wrongInputReg() {
+export function wrongInputReg() {
     const regForm = document.querySelectorAll('form[name="registration"] input');
     regForm.forEach(e => e.innerHTML = '')
     regForm.forEach(element => {
