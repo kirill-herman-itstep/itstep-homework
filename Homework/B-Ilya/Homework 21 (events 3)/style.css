@@ -95,7 +95,22 @@ h3 {
 
 /* Task 4 */
 
-.part-scroll {
-    height: 500px;
+.first {
+    display: block;
+}
+
+article {
     display: none;
+    background-color: antiquewhite;
+}
+
+.load-more {
+    right: 1rem;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
 }

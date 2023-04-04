@@ -69,10 +69,76 @@ textTitles.forEach(element => {
 });
 
 // Task 4
-const scrollParts = document.querySelectorAll('.part-scroll')
-let i = 0;
+const scrollParts = document.querySelectorAll('article');
+const loadMoreButton = document.querySelector('.load-more')
+let i = 1;
 
-document.addEventListener('scroll', (event) => {
+loadMoreButton.addEventListener('click', () => {
     scrollParts[i].style.display = 'block';
     i++;
+})
+
+// Task 5 
+
+function calender(month, year) {
+    let rightMonth = month - 1;
+    let firstDay = new Date(year, rightMonth)
+    let tbody = '';
+
+    for (let i = 0; i < getDay(firstDay); i++) {
+        tbody += '<td></td>';
+    }
+
+    while (firstDay.getMonth() === rightMonth) {
+        tbody += '<td>' + firstDay.getDate() + '</td>';
+
+        if (getDay(firstDay) % 7 === 6) { 
+          tbody += '</tr><tr>';
+        }
+
+        firstDay.setDate(firstDay.getDate() + 1);
+    }
+
+    if (getDay(firstDay) != 0) {
+        for (let i = getDay(firstDay); i < 7; i++) {
+            tbody += '<td></td>';
+        }
+    }
+    return tbody;
+}
+
+function getDay(date) {
+    let weekDay = date.getDay();
+    if (weekDay === 0) weekDay = 7;
+    return weekDay - 1;
+}
+
+const output = document.querySelector('.calender')
+
+function makeCalender(month, year) {
+    output.innerHTML = 
+    `<table>
+        <thead>
+            <td>пн</td>
+            <td>вт</td>
+            <td>ср</td>
+            <td>чт</td>
+            <td>пт</td>
+            <td>сб</td>
+            <td>вс</td>
+        </thead>
+        <tbody>
+            ${calender(month, year)}
+        </tbody>
+    </table>`
+}
+
+
+
+const genButton = document.querySelector('.gen')
+
+genButton.addEventListener('click', () => {
+    const inputMonth = document.querySelector('.month').value
+    const inputYear = document.querySelector('.year').value
+    makeCalender(inputMonth, inputYear)
 })
