@@ -1,4 +1,4 @@
-import { User } from "../classes/user.js";
+import { User } from "../model/model.user.js";
 
 export function mockUserArray() {
     return [

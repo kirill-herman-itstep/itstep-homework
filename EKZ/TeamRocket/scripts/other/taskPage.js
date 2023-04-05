@@ -1,6 +1,6 @@
 // Страница задачи
 
-function pageHTML(task) {
+export function pageHTML(task) {
     return `
     <div class="task">
             <div class="actionsBar">
@@ -62,15 +62,15 @@ function pageHTML(task) {
             </div>
             <!-- <button>Create</button> -->
         </div>
-        `
+        `;
 }
 
-function getCommentsHTML(task) {
-    let commentList = ''
+ function getCommentsHTML(task) {
+    let commentList = '';
     if (task.comments.length === 0) {
-        return commentList
+        return commentList;
     } else {
-        task.comments.forEach(comment => commentList += commentHTML(comment))
+        task.comments.forEach(comment => commentList += commentHTML(comment));
         return commentList;
     }
 }
@@ -87,5 +87,5 @@ function commentHTML(comment) {
     <p>${comment.text}</p>
     <span class="date">${comment.createdAt}</span>
 </div>
-    `
+    `;
 }

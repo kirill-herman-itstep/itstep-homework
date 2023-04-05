@@ -1,5 +1,3 @@
-import { userDB } from "../../index.js";
-
 export class User {
     constructor(login, password, name) {
         this.id = Math.random().toString(16).slice(2);

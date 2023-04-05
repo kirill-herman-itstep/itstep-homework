@@ -1,5 +1,5 @@
 import { currentUser } from "../../index.js";
-import { Comment } from "./comment.js"
+import { Comment } from "./model.comment.js";
 
 export class Task {
     #id;

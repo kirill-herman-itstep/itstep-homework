@@ -1,4 +1,4 @@
-import { Task } from "./task.js";
+import { Task } from "./model.task.js";
 import { currentUser } from "../../index.js";
 
 export class TaskCollection {
@@ -15,7 +15,6 @@ export class TaskCollection {
     }
 
     getTasks(skip = 0, top = 10, filterConfig = {}) {
-        this.sortTaskByDate();
 
         const filteredTasks = this.taskArray.filter(task => {
             if (filterConfig.assignee) {
@@ -47,22 +46,21 @@ export class TaskCollection {
             if (filterConfig.description) {
                 if (!task.description.includes(filterConfig.description) && 
                     !task.name.includes(filterConfig.description)) {
-                    return false 
+                    return false;
                 } 
             }
             return true;
         });
 
-        let returnedArray = [];
-        for (let i = skip; i < skip + top && i < filteredTasks.length; i++) {
-            returnedArray.push(filteredTasks[i])
-        }
+        this.sortTaskByDate();
+
+        let returnedArray = filteredTasks.slice(skip, top + skip);
         
         return returnedArray;
     }
 
     getTask(id) {
-        return this.taskArray.find(elem => elem.id === id)
+        return this.taskArray.find(elem => elem.id === id);
     }
 
     add(name, priority, description, assignee, status, isPrivate) {

@@ -1,6 +1,6 @@
 import { priority, access } from "../../script.js";
 
-// Добавление задачи [РАБОТАЕТ]
+// Добавление задачи [РАБОТАЕТ] // Не работает!
 function taskHTML(priority, name, id) {
     return `
             <div class="taskForm" id="${id}">
@@ -22,36 +22,29 @@ function taskHTML(priority, name, id) {
                     </div>
                 </div>
             </div>
-    `
+    `;
 }
 
 export function getCardData() {
     const inputs = document.querySelectorAll('.taskCreationLayout input');
     const textarea = document.querySelector('.taskCreationLayout textarea');
-    const select = document.querySelector('.taskCreationLayout select')
+    const select = document.querySelector('.taskCreationLayout select');
     
     const assignee = inputs[0].value;
     const name = inputs[1].value;
     const description = textarea.value;
     const status = select.value;
-    let cardData = {};
-    return cardData = {
-        name,
-        priority,
-        description,
-        assignee,
-        status,
-        access,
-    }
+
+    return {name, priority, description, assignee, status, access};
 }
 
-export function addOnBoard() {
+export function addOnBoard(task) {
     const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
     const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
     const complete = document.querySelector('#complete .taskTable .innerContent');
-    if (this.status === 'to do') {
-        toDoBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id))
-    } else if (this.status === 'in progress') {
-        inProgressBoard.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id))
-    } else complete.insertAdjacentHTML('afterbegin', taskHTML(this.priority, this.name, this.id)) 
+    if (task.status === 'to do') {
+        toDoBoard.insertAdjacentHTML('afterbegin', taskHTML(task.priority, task.name, task.id));
+    } else if (task.status === 'in progress') {
+        inProgressBoard.insertAdjacentHTML('afterbegin', taskHTML(task.priority, task.name, task.id));
+    } else complete.insertAdjacentHTML('afterbegin', taskHTML(task.priority, task.name, task.id));
 }
