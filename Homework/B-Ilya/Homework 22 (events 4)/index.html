@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task 1 -->
+    <div class="msg">
+        <div class="msg-head">
+            <div class="sender">Name</div>
+            <div class="time">Date here</div>
+        </div>
+        <div class="msg-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nostrum tempore esse impedit distinctio! Maxime quam similique ea eaque est nam molestias! Sapiente vero unde nobis possimus, deserunt cum quae.</div>
+    </div>
+    <div class="add-msg-field">
+        <div class="title">Add message</div>
+        <form action="" name="msg" onsubmit="event.preventDefault()">
+            <div class="input-name">
+                <span>Your name:</span>
+                <input type="text" name="name">
+            </div>
+            <div class="input-msg">
+                <span>Your message:</span>
+                <textarea name="text"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Task 2 -->
+    <form action="" name="test" onsubmit="event.preventDefault()">
+        <ol>
+            <li class="ques-1">
+                <div>How many letter are there in the word "Hello"?</div>
+                <input type="radio" name="question-1" id="" value="5"> 5
+                <input type="radio" name="question-1" id=""value="2"> 2
+            </li>
+            <li class="ques-2">
+                <div>How many letters are there in the word "World"?</div>
+                <input type="radio" name="question-2" id="" value="4"> 4
+                <input type="radio" name="question-2" id="" value="5"> 5
+            </li>
+        </ol>
+        <button>Finish Test</button>
+    </form>
+
+    <!-- Task 3 -->
+    <form name="text-decor" onsubmit="event.preventDefault()">
+        <div class="style-choose">
+            <input type="checkbox" name="boldText" value="font-weight: 700"> <label for="boldText">Bold</label>
+            <input type="checkbox" name="underlineText" value="text-decoration: underline"> <label for="underlineText">Underline</label>
+            <input type="checkbox" name="italicText" value="font-style: italic"> <label for="italicText">Italic</label>
+            <input type="radio" name="textAlign" value="text-align: left"> <label>Left</label>
+            <input type="radio" name="textAlign" value="text-align: right"> <label>Right</label>
+            <input type="radio" name="textAlign" value="text-align: justify"> <label>Justify</label>
+        </div>
+        <textarea name="" id="" placeholder="Enter some text"></textarea>
+        <button type="submit">Show text</button>
+    </form>
+    <div class="output-text">
+        <div class="output-title">Result:</div>
+        <div class="text"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

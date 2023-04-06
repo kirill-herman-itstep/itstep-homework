@@ -1,0 +1,80 @@
+body {
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+/* Task 1 */
+.msg {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg > div {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+}
+
+.msg-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-msg-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-msg-field .title {
+    margin: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+form[name="msg"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+form[name="msg"] > div  {
+    display: flex;
+}
+
+form[name="msg"] span {
+    display: inline-block;
+    width: 130px;
+    font-weight: 600;
+}
+
+form[name="msg"] input, form[name="msg"] textarea {
+    width: 100%;
+    resize: none;
+}
+
+form[name="msg"] {
+    width: 100%;
+}
+
+/* Task 3 */
+
+form[name="text-decor"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem
+}
+
+form[name="text-decor"] > div {
+    width: 100%;
+}
+
+form[name="text-decor"] textarea {
+    height: 4rem;
+    resize: none;
+}
+
+/* Task 3 */
+.output-text .text {
+    padding: 1rem;
+    border: 1px solid black;
+}
