@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+    background-color: lightyellow;
+}
+
+section h4 {
+    margin-bottom: 1rem;
+}
+
+.trackbar {
+    position: relative;
+    width: 20rem;
+    height: 2rem;
+}
+
+.track {
+    position: absolute;
+    left: 2rem;
+    top: 0.75rem;
+    width: 16rem;
+    height: 0.5rem;
+    background-color: lightsteelblue;
+}
+
+.thumb {
+    position: absolute;
+    top: 0.5rem;
+    width: 2rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: steelblue;
+}
+
+
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    width: 10rem;
+    height: 10rem;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.left, .right {
+    width: 3rem;
+    height: 3rem;
+}
+
+.left:hover, .right:hover {
+    scale: 1.1;
+}
+
+.left {
+    rotate: 180deg;
+}
+
+
+
+.task3 div {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.task3 div *:first-child {
+    border-top: none !important;
+}
+
+.task3 div *:last-child {
+    border-bottom: none !important;
+}
+
+.task3 *:not(.super, div) {
+    padding: 0.5rem 0.25rem;
+}
+
+.task3 h4:not(.super) {
+    margin: 0;
+    border-top: 1px solid black;
+    background-color: steelblue;
+    color: azure;
+}
+
+.task3 p {
+    display: none;
+    border-top: 1px solid black;
+    background-color: lightskyblue;
+}
+
+.show {
+    display: block !important;
+}
