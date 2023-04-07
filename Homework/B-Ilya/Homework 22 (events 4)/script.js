@@ -75,3 +75,12 @@ buyBookButton.addEventListener('click', () => {
     const comment = orderFormElements[5].value
     alert(`${name} thank you for order. ${book} will be delivered ${delDate} to ${delAddres}`)
 })
+
+// Task 5
+
+const completedLessons = []
+class Lesson {
+    constructor() {
+        
+    }
+}

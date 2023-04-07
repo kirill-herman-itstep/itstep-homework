@@ -174,3 +174,43 @@ form[name="order"] input, form[name="order"] textarea {
 form[name="order"] textarea {
     height: 240px;
 }
+
+/* Task 5 */
+.lessons-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 400px;
+    margin: 2rem auto;
+}
+
+.lessons-wrap .head {
+    display: flex;
+    gap: 0.7rem;
+}
+.lessons-wrap .head select{
+    width: 6rem;
+}
+
+.lessons-wrap .head button {
+    flex-grow: 1;
+}
+
+.lessons-wrap .topic {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lessons-wrap .topic input {
+    flex-grow: 1;
+}
+
+.lessons-wrap table {
+    border-collapse: collapse;
+}
+
+.lessons-wrap table td {
+    padding: 0.2rem;
+    border-bottom: 1px solid gray;
+    border-bottom-style: dotted;
+}
