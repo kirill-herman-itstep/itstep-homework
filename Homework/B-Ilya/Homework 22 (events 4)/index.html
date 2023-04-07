@@ -66,6 +66,72 @@
         <div class="text"></div>
     </div>
 
+    <!-- Task 4 -->
+    <div class="book-shop-wrap">
+        <div class="book-list">
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book1.jpg" alt="" class="cover">
+                    <div class="title">Turning Coffee Into Code</div>
+                    <div class="author">Ben E.C. Boyter</div>
+                </div>
+                <div>
+                    <div class="price">13$</div>
+                    <button value="Turning Coffee Into Code">Select</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book2.jpg" alt="" class="cover">
+                    <div class="title">Oh Fuck. The Acid Is Kicking In</div>
+                    <div class="author">Arnold Robbins</div>
+                </div>
+                <div>
+                    <div class="price">11$</div>
+                    <button value="Oh Fuck. The Acid Is Kicking In">Select</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book3.jpeg" alt="" class="cover">
+                    <div class="title">PCs for Dummies</div>
+                    <div class="author">Dan Gookin</div>
+                </div>
+                <div>
+                    <div class="price">14$</div>
+                    <button value="PCs for Dummies">Select</button>
+                </div>
+            </div>
+        </div>
+        <form name="order" onsubmit="event.preventDefault()">
+            <div class="book">
+                <span>Book</span>
+                <input type="text" disabled>
+            </div>
+            <div class="quantity">
+                <span>Quantity</span>
+                <input type="number">
+            </div>
+            <div class="name">
+                <span>Name</span>
+                <input type="text">
+            </div>
+            <div class="del-address">
+                <span>Delivery Address</span>
+                <textarea name=""></textarea>
+            </div>
+            <div class="del-date">
+                <span>Delivery Date</span>
+                <input type="date">
+            </div>
+            <div class="comment">
+                <span>Comment</span>
+                <textarea name=""></textarea>
+            </div>
+            <button type="submit">Buy</button>
+        </form>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

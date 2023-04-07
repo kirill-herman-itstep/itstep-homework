@@ -54,3 +54,24 @@ showTextButton.addEventListener('click', () => {
     style = ''
 })
 
+// Task 4
+
+const bookSelectButtons = document.querySelectorAll('.book-list button')
+bookSelectButtons.forEach(e => {
+    e.addEventListener('click', (event) => {
+        const selectedBook = document.querySelector('form[name="order"] input:disabled')
+        selectedBook.setAttribute('placeholder', event.target.value)
+    })
+})
+
+const buyBookButton = document.querySelector('form[name="order"] button')
+buyBookButton.addEventListener('click', () => {
+    const orderFormElements = document.querySelector('form[name="order"]').elements
+    const book = orderFormElements[0].placeholder;
+    const quantity = orderFormElements[1].value
+    const name = orderFormElements[2].value
+    const delAddres = orderFormElements[3].value
+    const delDate = orderFormElements[4].value
+    const comment = orderFormElements[5].value
+    alert(`${name} thank you for order. ${book} will be delivered ${delDate} to ${delAddres}`)
+})
