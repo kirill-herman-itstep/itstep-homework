@@ -51,13 +51,14 @@ const div = document.querySelector('.changeble div')
 const textarea = document.querySelector('.changeble textarea')
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'e' && event.ctrlKey === true) {
+    console.dir(event);
+    if (event.code === 'KeyE' && event.ctrlKey === true) {
         event.preventDefault()
         textarea.value = div.innerText;
         textarea.style.visibility = 'visible';
     }
 
-    if (event.key === 's' && event.ctrlKey === true) {
+    if (event.code === 'KeyS' && event.ctrlKey === true) {
         event.preventDefault()
         div.innerText = textarea.value;
         textarea.style.visibility = '';
