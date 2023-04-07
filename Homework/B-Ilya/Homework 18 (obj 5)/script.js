@@ -125,20 +125,7 @@ class StyledEmpTable extends EmpTable {
     }
 
     getHtml() {
-        let headTitle = [];
-        for (let key in this.workersArray[0]) {
-            headTitle.push(`<td>${key}</td>`)
-        }
-
-        let workerInfo = '<tr> ';
-        this.workersArray.forEach((element) => {
-            for (const key in element) {
-                workerInfo += `<td>${element[key]}</td>`
-            }
-            workerInfo += '</tr>'
-        })
-
-        return (`${this.getStyles()}<table><thead>${headTitle.join(' ')}</thead><tbody>${workerInfo}</tbody></table>`) 
+        return this.getStyles() + super.getHtml()
     }
 
 
