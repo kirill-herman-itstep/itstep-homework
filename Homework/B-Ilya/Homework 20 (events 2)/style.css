@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+/* Task 1 */
+a {
+    text-decoration: none;
+}
+
+.coma_underline {
+    text-decoration: underline dotted;
+}
+
+/* Task 2 */
+.tree li:hover {
+    font-weight: 900;
+    cursor: default;
+}
+
+.highlightText {
+    background-color: orange;
+}
+
+/* Task 3 */
+.mark_list_item_upd li {
+    cursor: default;
+}
+
+/* Task 4 */
+.changeble {
+    position: relative;
+}
+
+.changeble div, .changeble textarea {
+    width: 300px;
+    height: 150px;
+}
+
+.changeble textarea {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    resize: none;
+}
+
+/* Task 5 */
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    font-weight: 700;
+    text-align: center;
+}
+
+td {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+}
+
+/* Task 6 */
+
+.resize {
+    position: relative;
+    width: 300px;
+    padding: 1rem;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 15px solid transparent;
+    border-right: 15px solid gray;
+    border-bottom: 15px solid gray;
+}
