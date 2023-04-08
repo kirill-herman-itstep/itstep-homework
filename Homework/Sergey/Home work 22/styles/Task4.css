@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80vw;
+    padding: 20px;
+    justify-content: space-between;
+    background: #fbf2e9;
+}
+
+.book {
+    width: calc((80vw - 40px) / 100 * 18);
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 350px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.user-info {
+    width: calc((80vw - 40px) / 100 * 36);
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.book-image {
+    height: calc((80vw - 40px) / 100 * 18 - 21.6px);
+}
+
+.bookOne {
+    background: url(../assets/Task_4/book1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.bookTwo {
+    background: url(../assets/Task_4/book2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.bookThree {
+    background: url(../assets/Task_4/book3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.book-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 3vh;
+}
+.book-autor {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 1vh;
+}
+
+.book-price {
+    margin-left: auto;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: 1vh;
+}
+
+.user-info {
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.user-info > div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.user-info > div > label {
+    flex-basis: 30%;
+}
+
+.user-info > div > input,
+.user-info > div > textarea {
+    flex-grow: 1;
+    outline: none;
+    resize: none;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    padding: 3px;
+}
+
+.user-info > div > textarea {
+    height: 80px;
+}
+
+#tittleBook {
+    font-size: 0.7rem;
+    height: min-content;
+}
+
+.message {
+    background: #fbf2e9;
+    padding: 20px;
+    min-width: 350px;
+    max-width: 500px;
+    display: flex;
+    gap: 3vh;
+    flex-flow: column nowrap;
+}
+
+.message > :first-of-type {
+    font-weight: 700;
+}
+
+.message > :last-of-type {
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    padding: 10px;
+}
+.thanksForOrder {
+    margin: 10px 0;
+}
+
+.norefresh {
+    display: none;
+}

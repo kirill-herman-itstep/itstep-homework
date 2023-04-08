@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Домашняя работа №22</title>
+        <link rel="stylesheet" href="../styles/Task2.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-question reflect">
+                <h4 class="question">1) Сколько сердец у осьминога?</h4>
+                <div class="answer-options">
+                    <div>
+                        <input name="questionOne" value="false" type="radio" id="questionOneAnswerOne" />
+                        <label for="questionOneAnswerOne">1</label>
+                    </div>
+                    <div>
+                        <input name="questionOne" value="true" type="radio" id="questionOneAnswerTwo" />
+                        <label for="questionOneAnswerTwo">3</label>
+                    </div>
+                </div>
+                <button class="next-question">Next</button>
+            </div>
+
+            <div class="container-question noreflect">
+                <h4 class="question">2) За какое время Земля делает один оборот вокруг Солнца?</h4>
+                <div class="answer-options">
+                    <div>
+                        <input name="questionWto" value="true" type="radio" id="questionTwoAnswerOne" />
+                        <label for="questionTwoAnswerOne">365 суток</label>
+                    </div>
+                    <div>
+                        <input name="questionWto" value="false" type="radio" id="questionTwoAnswerTwo" />
+                        <label for="questionTwoAnswerTwo">50 недель</label>
+                    </div>
+                </div>
+                <button class="last-question">Finish</button>
+            </div>
+        </div>
+        <script src="../scripts/Task2.js"></script>
+    </body>
+</html>

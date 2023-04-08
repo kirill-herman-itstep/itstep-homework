@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background: #fbf2e9;
+    gap: 2vh;
+}
+
+.check-style {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.font-style,
+.text-align {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+    min-height: 150px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noreflect {
+    display: none;
+}
+
+.finish-text {
+    border: 1px solid black;
+    padding: 20px;
+}

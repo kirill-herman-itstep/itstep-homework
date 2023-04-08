@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    padding: 20px;
+    width: 60vw;
+    display: flex;
+    flex-flow: column nowrap;
+    background: #fbf2e9;
+    gap: 3vh;
+}
+
+.container li {
+    list-style-type: none;
+}
+
+.header-content {
+    padding: 10px 20px;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+}
+
+.header-left {
+    margin-right: auto;
+}
+
+.main-content {
+    padding: 10px 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-top: none;
+}
+
+.new-message {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vh;
+}
+
+.new-message h4 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.user-name,
+.user-message {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+}
+
+.user-name label,
+.user-message label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100px;
+}
+
+#userName,
+#userMessage {
+    flex-grow: 1;
+    outline: none;
+    padding: 3px 10px;
+}
+
+#userMessage {
+    resize: none;
+    min-height: 80px;
+}
+
+.send {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

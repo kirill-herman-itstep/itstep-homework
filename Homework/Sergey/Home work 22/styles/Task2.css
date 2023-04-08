@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 20px;
+    width: 350px;
+    background: #fbf2e9;
+}
+
+.container-question {
+    display: flex;
+    gap: 1vh;
+    flex-flow: column nowrap;
+}
+
+.answer-options {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1vh;
+}
+
+.answer-options > div {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-left: 0.5vw;
+}
+
+.next-question,
+.last-question {
+    width: max-content;
+    padding: 3px 20px;
+}
+
+.noreflect {
+    display: none;
+}

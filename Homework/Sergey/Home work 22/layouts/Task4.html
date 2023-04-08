@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Домашняя работа №22</title>
+        <link rel="stylesheet" href="../styles/Task4.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="book">
+                <div class="book-image bookOne"></div>
+                <div class="book-title">JavaScript подробное руководство. Включает ES5 и HTML5.</div>
+                <div class="book-autor">Дэвид Флэнаган</div>
+                <div class="book-price">10$</div>
+                <button class="select">Select</button>
+            </div>
+            <div class="book">
+                <div class="book-image bookTwo"></div>
+                <div class="book-title">Типы и грамматические конструкции JS.</div>
+                <div class="book-autor">Кайл Симпсон.</div>
+                <div class="book-price">15$</div>
+                <button class="select">Select</button>
+            </div>
+            <div class="book">
+                <div class="book-image bookThree"></div>
+                <div class="book-title">Выразительный JavaScript. Современное веб-программирование.</div>
+                <div class="book-autor">Марейн Хаверберке</div>
+                <div class="book-price">14$</div>
+                <button class="select">Select</button>
+            </div>
+            <div class="user-info">
+                <div>
+                    <label for="tittleBook">Book:</label>
+                    <input type="text" name="tittleBook" id="tittleBook" disabled />
+                </div>
+                <div>
+                    <label for="quantityBook">Quantity:</label>
+                    <input type="text" name="quantityBook" id="quantityBook" />
+                </div>
+                <div>
+                    <label for="userName">Name:</label>
+                    <input type="text" name="userName" id="userName" />
+                </div>
+                <div>
+                    <label for="deliveryAddress">Delivery address:</label>
+                    <textarea name="deliveryAddress" id="deliveryAddress"></textarea>
+                </div>
+                <div>
+                    <label for="deliveryDate">Delivery date:</label>
+                    <input type="date" name="deliveryDate" id="deliveryDate" />
+                </div>
+                <div>
+                    <label for="comment">Comment:</label>
+                    <textarea name="comment" id="comment"></textarea>
+                </div>
+                <button class="buy">Buy</button>
+            </div>
+        </div>
+        <div class="message norefresh">
+            <div>Result:</div>
+            <div>
+                <div class="thanksForOrder"></div>
+                <div class="messageInfo"></div>
+            </div>
+        </div>
+        <script src="../scripts/Task4.js"></script>
+    </body>
+</html>
