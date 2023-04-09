@@ -7,7 +7,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: calc(100vw - 1rem);
     padding: 1rem;
     border-bottom: 1px solid #000;
     background-color: lightyellow;
@@ -104,4 +104,90 @@ section h4 {
 
 .show {
     display: block !important;
+}
+
+
+
+
+.task4 {
+    height: 10rem;
+    overflow-y: auto;
+    row-gap: 1rem;
+}
+
+.task4 h4 {
+    margin: 0;
+}
+
+.task4 div {
+    white-space: pre-wrap;
+}
+
+
+
+
+.task5 .modal {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.task5 .modal div {
+    position: absolute;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.task5 .modal p {
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+.task5 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task5 .options {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+}
+
+.task5 span {
+    margin-right: 0.5rem;
+}
+
+.task5 input, .task5 button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+
+}
+
+.task5 button {
+    width: 100%;
+}
+
+.task5 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task5 table >* *{
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.task5 table .crunch {
+    height: 246px;
 }
