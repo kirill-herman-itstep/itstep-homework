@@ -22,8 +22,12 @@ const taskFeedView = new TaskFeedView('taskBoard')
 
 
 // Тестирование
+import { crutchLogin } from "./script.js";
 document.addEventListener('DOMContentLoaded', () => {
+    crutchLogin()
     headerView.setCurrentUser({user: 'Isuzu'})
-    taskFeedView.getFeed()
+    taskFeedView.getFeed(0, 10, {status: 'complete'}, 'Complete')
+    taskFeedView.getFeed(0, 10, {status: 'in progress'}, 'In progress')
+    taskFeedView.getFeed(0, 10, {status: 'to do'}, 'To do')
 })
 

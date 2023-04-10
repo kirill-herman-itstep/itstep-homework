@@ -1,8 +1,5 @@
-// import { getCardData } from "./scripts/other/taskAddEdit.js";
 import { loginFormData, regUserData } from "./scripts/other/authorization.js";
-// import { userAuth, userCreate, addtask } from "./scripts/controller.js";
 
-// import { update } from "./scripts/model.js";
 import { mainDB } from "./index.js";
 import { pageHTML } from "./scripts/other/taskPage.js";
 
@@ -82,8 +79,8 @@ function gotoLoginForm() {
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
 
-    const subBut = document.querySelector('form[name="login"] button');
-    subBut.addEventListener('click', () => userAuth(loginFormData()));
+    // const subBut = document.querySelector('form[name="login"] button');
+    // subBut.addEventListener('click', () => userAuth(loginFormData()));
 }
 
 function gotoRegistrationForm() {
@@ -91,8 +88,8 @@ function gotoRegistrationForm() {
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
 
-    const subBut = document.querySelector('form[name="registration"] button');
-    subBut.addEventListener('click', () => userCreate(regUserData()));
+    // const subBut = document.querySelector('form[name="registration"] button');
+    // subBut.addEventListener('click', () => userCreate(regUserData()));
 }
 
 function gotoMainPage() {
@@ -103,12 +100,8 @@ function gotoMainPage() {
 
 function gotoTableLayout() {
     let tableLayoutTemplate = document.querySelector('#tableLayoutTemplate');
-    // let clone = tableLayoutTemplate.content.cloneNode(true);
-    // body.querySelector(`main`).append(clone);
-
-    // const addTaskButton = document.querySelectorAll('svg.plusIco');
-    // addTaskButton.forEach(e => e.addEventListener('click', () => crutchTaskCreation()));
-    // update();
+    let clone = tableLayoutTemplate.content.cloneNode(true);
+    body.querySelector(`main`).append(clone);
 }
 
 

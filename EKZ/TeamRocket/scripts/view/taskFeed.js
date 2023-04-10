@@ -11,16 +11,16 @@ export class TaskFeedView {
         container.insertAdjacentHTML('afterbegin', content)
     }
 
-    getFeed(skip = 0, top = 10, filterConfig = {}) {
+    getFeed(skip = 0, top = 10, filterConfig = {}, boardName) {
         const taskArray = mainDB.getTasks(skip, top, filterConfig);
-        this.display(this.containerID, this.getBoardHTML(taskArray))
+        this.display(this.containerID, this.getBoardHTML(taskArray, boardName))
     }
 
-    getBoardHTML(taskArray) {
+    getBoardHTML(taskArray, boardName) {
         return `
             <div class="taskTableWrapper">
                 <div class="tableHeader">
-                    <h4 contenteditable="true">Board</h4>
+                    <h4 contenteditable="true">${boardName}</h4>
                     <div>
                         <svg class="plusIco" viewBox="0 0 14 14">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
