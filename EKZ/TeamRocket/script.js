@@ -78,18 +78,12 @@ function gotoLoginForm() {
     let loginTemplate = document.querySelector('#loginTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
-
-    // const subBut = document.querySelector('form[name="login"] button');
-    // subBut.addEventListener('click', () => userAuth(loginFormData()));
 }
 
 function gotoRegistrationForm() {
     let loginTemplate = document.querySelector('#registrationTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
-
-    // const subBut = document.querySelector('form[name="registration"] button');
-    // subBut.addEventListener('click', () => userCreate(regUserData()));
 }
 
 function gotoMainPage() {
@@ -124,63 +118,32 @@ function showTaskCreation() {
     let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
     let clone = taskCreationTemplate.content.cloneNode(true);
     body.append(clone);
-
-    // const importancesList = document.querySelectorAll('.chooseImportance #importance div');
-    // importancesList.forEach(e => {
-    //     e.addEventListener('click', (event) => {
-    //         priority = event.target.className;
-    //         importancesList.forEach(elem => elem.style = '');
-    //         event.target.style.outline = '2px solid white';
-    //     })
-    // })
-
-    // const accessList = document.querySelectorAll('.chooseAccess svg');
-    // accessList.forEach(e => {
-    //     e.addEventListener('click', (event) => {
-    //         accessList.forEach(elem => elem.style = '');
-    //         if (event.target === accessList[1]) {
-    //             access = true;
-    //         } else access = false;
-    //         event.target.style.outline = '1px solid white';
-    //     });
-    // })
-
-    // const submitButton = document.querySelector('.taskCreationLayout button');
-    // submitButton.addEventListener('click', () => {
-    //     if (addtask(getCardData())) {
-    //         update();
-    //         hideTaskCreation();
-    //     } 
-    // })
-
-    // const closeTaskCreation = document.querySelector('svg.crossIco');
-    // closeTaskCreation.addEventListener('click', () => hideTaskCreation());
 }
 
 function hideTaskCreation() {
     body.removeChild(document.querySelector('.taskCreationLayout'));
 }
+// Перенести в контроллер и переписать под текущую версию
+// let currentTaskOpen;
 
-let currentTaskOpen;
+// function showTaskOpen(id) {
+//     if (currentTaskOpen) {
+//         const taskPage = document.querySelector('.task');
+//         taskPage.remove();
+//         currentTaskOpen = null;
+//     }
+//     const main = document.querySelector('main');
+//     const task = mainDB.getTask(id);
+//     currentTaskOpen = task;
+//     main.insertAdjacentHTML('afterbegin', pageHTML(task));
 
-export function showTaskOpen(id) {
-    if (currentTaskOpen) {
-        const taskPage = document.querySelector('.task');
-        taskPage.remove();
-        currentTaskOpen = null;
-    }
-    const main = document.querySelector('main');
-    const task = mainDB.getTask(id);
-    currentTaskOpen = task;
-    main.insertAdjacentHTML('afterbegin', pageHTML(task));
-
-    const closeButton = document.querySelector('.task .crossIco');
-    const taskPage = document.querySelector('.task');
-    closeButton.addEventListener('click', () => {
-        taskPage.remove();
-        currentTaskOpen = null;
-    } );
-}
+//     const closeButton = document.querySelector('.task .crossIco');
+//     const taskPage = document.querySelector('.task');
+//     closeButton.addEventListener('click', () => {
+//         taskPage.remove();
+//         currentTaskOpen = null;
+//     } );
+// }
 
 function showFilter() {
     if (document.querySelector('.filterLayout')) hideFilter();
