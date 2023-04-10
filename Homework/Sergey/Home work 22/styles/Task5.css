@@ -6,6 +6,7 @@
 body {
     display: flex;
     justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
 
 #checkLesson,
 #checkgGroup {
-    width: 80px;
+    width: 90px;
     padding: 5px;
 }
 
@@ -41,7 +42,50 @@ body {
     gap: 4vh;
 }
 
+.info-lesson {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1vw;
+}
+
+.info-lesson > input {
+    flex-grow: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3px 5px;
+}
+
+.info-student {
+    padding: 0;
+}
+
 .info-student > li {
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: dotted 1px rgb(0, 0, 1, 0.3);
+    justify-items: center;
+}
+
+.info-student > li > :first-of-type {
+    width: 30%;
+}
+
+.info-student > li > input,
+.info-student > li > div {
+    width: 50%;
+    text-align: center;
+}
+
+.list-header > :last-of-type {
+    width: 30%;
+    text-align: center;
+}
+
+.list-header > :first-of-type {
+    text-align: left;
+}
+
+.noreflect {
+    display: none;
 }
