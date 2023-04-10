@@ -92,9 +92,6 @@ export class TaskCollection {
     edit(id, name, description, assignee, status, priority, isPrivate = false) {
         const task = this.getTask(id);
 
-        if (task.author !== currentUser && task.assignee !== currentUser) {
-            return false;
-        }
         if (name !== task.name) {
             if (name.length > 100 || !name) {
                 return false;

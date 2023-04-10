@@ -3,6 +3,7 @@ import {addOnBoard} from "./other/taskAddEdit.js";
 import {showTaskOpen} from "../script.js";
 
 export function update() {
+    return 
     const toDoBoard = document.querySelector('#toDo .taskTable .innerContent');
     const inProgressBoard = document.querySelector('#inProgress .taskTable .innerContent');
     const complete = document.querySelector('#complete .taskTable .innerContent');

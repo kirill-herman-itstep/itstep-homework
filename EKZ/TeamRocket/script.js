@@ -1,8 +1,8 @@
-import { getCardData } from "./scripts/other/taskAddEdit.js";
+// import { getCardData } from "./scripts/other/taskAddEdit.js";
 import { loginFormData, regUserData } from "./scripts/other/authorization.js";
-import { userAuth, userCreate, addtask } from "./scripts/controller.js";
+// import { userAuth, userCreate, addtask } from "./scripts/controller.js";
 
-import { update } from "./scripts/model.js";
+// import { update } from "./scripts/model.js";
 import { mainDB } from "./index.js";
 import { pageHTML } from "./scripts/other/taskPage.js";
 
@@ -103,12 +103,12 @@ function gotoMainPage() {
 
 function gotoTableLayout() {
     let tableLayoutTemplate = document.querySelector('#tableLayoutTemplate');
-    let clone = tableLayoutTemplate.content.cloneNode(true);
-    body.querySelector(`main`).append(clone);
+    // let clone = tableLayoutTemplate.content.cloneNode(true);
+    // body.querySelector(`main`).append(clone);
 
-    const addTaskButton = document.querySelectorAll('svg.plusIco');
-    addTaskButton.forEach(e => e.addEventListener('click', () => crutchTaskCreation()));
-    update();
+    // const addTaskButton = document.querySelectorAll('svg.plusIco');
+    // addTaskButton.forEach(e => e.addEventListener('click', () => crutchTaskCreation()));
+    // update();
 }
 
 
@@ -132,36 +132,36 @@ function showTaskCreation() {
     let clone = taskCreationTemplate.content.cloneNode(true);
     body.append(clone);
 
-    const importancesList = document.querySelectorAll('.chooseImportance #importance div');
-    importancesList.forEach(e => {
-        e.addEventListener('click', (event) => {
-            priority = event.target.className;
-            importancesList.forEach(elem => elem.style = '');
-            event.target.style.outline = '2px solid white';
-        })
-    })
+    // const importancesList = document.querySelectorAll('.chooseImportance #importance div');
+    // importancesList.forEach(e => {
+    //     e.addEventListener('click', (event) => {
+    //         priority = event.target.className;
+    //         importancesList.forEach(elem => elem.style = '');
+    //         event.target.style.outline = '2px solid white';
+    //     })
+    // })
 
-    const accessList = document.querySelectorAll('.chooseAccess svg');
-    accessList.forEach(e => {
-        e.addEventListener('click', (event) => {
-            accessList.forEach(elem => elem.style = '');
-            if (event.target === accessList[1]) {
-                access = true;
-            } else access = false;
-            event.target.style.outline = '1px solid white';
-        });
-    })
+    // const accessList = document.querySelectorAll('.chooseAccess svg');
+    // accessList.forEach(e => {
+    //     e.addEventListener('click', (event) => {
+    //         accessList.forEach(elem => elem.style = '');
+    //         if (event.target === accessList[1]) {
+    //             access = true;
+    //         } else access = false;
+    //         event.target.style.outline = '1px solid white';
+    //     });
+    // })
 
-    const submitButton = document.querySelector('.taskCreationLayout button');
-    submitButton.addEventListener('click', () => {
-        if (addtask(getCardData())) {
-            update();
-            hideTaskCreation();
-        } 
-    })
+    // const submitButton = document.querySelector('.taskCreationLayout button');
+    // submitButton.addEventListener('click', () => {
+    //     if (addtask(getCardData())) {
+    //         update();
+    //         hideTaskCreation();
+    //     } 
+    // })
 
-    const closeTaskCreation = document.querySelector('svg.crossIco');
-    closeTaskCreation.addEventListener('click', () => hideTaskCreation());
+    // const closeTaskCreation = document.querySelector('svg.crossIco');
+    // closeTaskCreation.addEventListener('click', () => hideTaskCreation());
 }
 
 function hideTaskCreation() {
