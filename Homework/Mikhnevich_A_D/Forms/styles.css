@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section > h4 {
+  align-self: center;
+  width: fit-content !important;
+}
+
+textarea, input, button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 5.6rem;
+}
+
+button {
+  text-align: center;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  width: calc(100vw - 1rem);
+  padding: 1rem;
+  border-bottom: 1px solid #000;
+  background-color: lightyellow;
+}
+
+.task1 {
+  height: 100vh;
+}
+.task1 > * {
+  width: 100%;
+}
+.task1 .messageList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  width: 100%;
+  overflow-y: auto;
+}
+.task1 .messageList .message {
+  border: 1px solid black;
+}
+.task1 .messageList .message > * {
+  padding: 0.25rem 0.5rem;
+}
+.task1 .messageList .message .userInfo {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  background-color: lightsalmon;
+}
+.task1 .messageList .message .text {
+  background-color: lightsteelblue;
+  white-space: pre-wrap;
+}
+.task1 .postForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+.task1 .postForm > * {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.task1 .postForm > * input, .task1 .postForm > * textarea {
+  flex-grow: 1;
+}
+.task1 .postForm > * span {
+  min-width: 6.5rem;
+}
+.task1 .postForm button {
+  justify-content: center;
+}
+
+.task2 {
+  align-items: start;
+}
+.task2 .question {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 0.5rem;
+}
+.task2 .question p {
+  display: flex;
+  column-gap: 0.25rem;
+}
+.task2 .question form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+.task2 .question form .answer {
+  display: flex;
+  column-gap: 0.25rem;
+}
+.task2 .question form button {
+  width: 10rem;
+}
+
+.task3 > * {
+  width: 100%;
+}
+.task3 textarea {
+  height: 15rem;
+  resize: none;
+}
+.task3 .styles {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.task3 .styles .style * {
+  padding: 0.25rem;
+}
+.task3 .styles .style:hover {
+  background-color: lightgray;
+}
+
+.task4 .booklist .book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+.task4 .booklist .book .img {
+  width: 6rem;
+  height: 8rem;
+}
+.task4 .booklist .book .price {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-self: flex-end;
+}/*# sourceMappingURL=styles.css.map */
