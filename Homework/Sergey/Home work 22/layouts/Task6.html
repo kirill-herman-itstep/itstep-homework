@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Домашняя работа №22</title>
+        <link rel="stylesheet" href="../styles/Task6.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="search-direction-date">
+                <div class="search-direction">
+                    <label for="searchDirrection">Direction:</label>
+                    <select name="searchDirrection" id="searchDirrection">
+                        <option value="Minsk-Brest">Minsk-Brest</option>
+                        <option value="Minsk-Grodno">Minsk-Grodno</option>
+                        <option value="Minsk-Gomel">Minsk-Gomel</option>
+                    </select>
+                </div>
+                <div class="search-date">
+                    <label for="searchDate">Date:</label>
+                    <input type="date" name="searchDate" id="searchDate" />
+                </div>
+                <button class="search">Search</button>
+            </div>
+            <div class="places">
+                <table class="table-places">
+                    <tr>
+                        <td><input type="checkbox" name="place" id="1" /><label for="1">1</label></td>
+                        <td><input type="checkbox" name="place" id="3" /><label for="3">3</label></td>
+                        <td><input type="checkbox" name="place" id="5" /><label for="5">5</label></td>
+                        <td><input type="checkbox" name="place" id="7" /><label for="7">7</label></td>
+                        <td><input type="checkbox" name="place" id="9" /><label for="9">9</label></td>
+                        <td><input type="checkbox" name="place" id="11" /><label for="11">11</label></td>
+                        <td><input type="checkbox" name="place" id="13" /><label for="13">13</label></td>
+                        <td><input type="checkbox" name="place" id="15" /><label for="15">15</label></td>
+                        <td><input type="checkbox" name="place" id="17" /><label for="17">17</label></td>
+                        <td><input type="checkbox" name="place" id="19" /><label for="19">19</label></td>
+                        <td><input type="checkbox" name="place" id="21" /><label for="21">21</label></td>
+                        <td><input type="checkbox" name="place" id="23" /><label for="23">23</label></td>
+                        <td><input type="checkbox" name="place" id="25" /><label for="25">25</label></td>
+                        <td><input type="checkbox" name="place" id="27" /><label for="27">27</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="place" id="2" /><label for="2">2</label></td>
+                        <td><input type="checkbox" name="place" id="4" /><label for="4">4</label></td>
+                        <td><input type="checkbox" name="place" id="6" /><label for="6">6</label></td>
+                        <td><input type="checkbox" name="place" id="8" /><label for="8">8</label></td>
+                        <td><input type="checkbox" name="place" id="10" /><label for="10">10</label></td>
+                        <td><input type="checkbox" name="place" id="12" /><label for="12">12</label></td>
+                        <td><input type="checkbox" name="place" id="14" /><label for="14">14</label></td>
+                        <td><input type="checkbox" name="place" id="16" /><label for="16">16</label></td>
+                        <td><input type="checkbox" name="place" id="18" /><label for="18">18</label></td>
+                        <td><input type="checkbox" name="place" id="20" /><label for="20">20</label></td>
+                        <td><input type="checkbox" name="place" id="22" /><label for="22">22</label></td>
+                        <td><input type="checkbox" name="place" id="24" /><label for="24">24</label></td>
+                        <td><input type="checkbox" name="place" id="26" /><label for="26">26</label></td>
+                        <td><input type="checkbox" name="place" id="28" /><label for="28">28</label></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="total-price">
+                <div class="total-price-value">Total price: <span id="price">0$</span></div>
+                <button class="book">Book</button>
+            </div>
+            <div class="show-my-tyckets">
+                <button id="showMyTickets">Show booked tickets</button>
+                <div class="info-my-tickets norefresh">
+                    <h4>My tickets</h4>
+                    <table class="table-my-tickets"></table>
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/Task6.js"></script>
+    </body>
+</html>
