@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="../../styles/main_page/main.css">
-</head>
-<body>
-    <div class="container">
-        <aside class="welcome">
-            <div class="welcome-icon"></div>
-            <h1>Welcome!</h1>
-            <h2>Hi, User</h3>
-            <a href="#" id="logOut">Log out</a>
-        </aside>
-        <div class="main">
-            <div class="main-navigation">
-                <div class="main-navigation-icon"></div>
-                <a href="#">Main</a>
-                <div>></div>
-            </div>
-            <div class="main-new-twit">
-                <h2>What's new?</h2>
-                <div class="main-new-twit-text">
-                    <textarea name="" id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
-                    <div id="mainNewTwitСounter">0/280</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Главная страница</title>
+        <link rel="stylesheet" href="../../styles/main_page/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <aside class="welcome">
+                <div class="welcome-icon"></div>
+                <h1>Welcome!</h1>
+                <h2>Hi, User</h2>
+                <a href="#" id="logOut">Log out</a>
+            </aside>
+            <div class="main">
+                <div class="main-navigation">
+                    <div class="main-navigation-icon"></div>
+                    <a href="#">Main</a>
+                    <div>></div>
                 </div>
-                <button>Post</button>
-            </div>
-            <div class="main-current-twit"  id="twitNumber1">
-                <div class="main-current-twit-autor">
-                    <div>Author's name</div>
-                    <div>Date and time</div>
-                </div>
-                <div class="main-current-twit-text">Text twit</div>
-                <div class="main-current-twit-info">
-                    <div class="main-current-twit-info-edit"></div>
-                    <div class="main-current-twit-info-delete"></div>
-                    <div class="main-current-twit-info-messege"></div>
-                    <div id="quantityMessege">5</div>
-                </div>
-            </div>
-        </div>
-        <aside class="filtration">
-            <h2>Filtration</h2>
-            <form action="" class="filtration-form">
-                <label class="filtration-form-autor">
-                    <div>Autor name</div>
-                    <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore">
-                    <datalist id="filtrationUserAutor">
-                        <option value="User1">User1</option>
-                        <option value="User2">User2</option>
-                        <option value="User3">User3</option>
-                    </datalist>
-                </label>
-                <label class="filtration-form-date">
-                    <div>Data</div>
-                    <div>
-                        <input type="text" name="" id="" placeholder="ignore">
-                        <input type="text" name="" id="" placeholder="ignore">
+                <div class="main-new-twit">
+                    <h2>What's new?</h2>
+                    <div class="main-new-twit-text">
+                        <textarea name="" id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
+                        <div id="mainNewTwitСounter">0/280</div>
                     </div>
-                </label>
-                <label class="filtration-form-text-twit">
-                    <div>Twit text</div>
-                    <textarea name="" id="" class="filtration-form-text-twit-area" placeholder="ignore"></textarea>
-                </label>
-                <label class="filtration-form-hashtags">
-                    <div>hashtags</div>
-                    <input type="text" list="filtrationFormHashtagsText" class="filtration-form-hashtags-text" placeholder="ignore" >
-                    <datalist id="filtrationFormHashtagsText">
-                        <option value="hashtag1">hashtag1</option>
-                        <option value="hashtag2">hashtag2</option>
-                        <option value="hashtag3">hashtag3</option>
-                    </datalist>
-                </label>
-                <input type="submit" value="Find" id="filtrationFormHashtags">
-            </form>
-        </aside>
-    </div>
-</body>
+                    <button>Post</button>
+                </div>
+                <div class="main-current-all-tweets">
+                    <div class="main-current-twit" id="twitNumber1">
+                        <div class="main-current-twit-autor">
+                            <div>Author's name</div>
+                            <div>Date and time</div>
+                        </div>
+                        <div class="main-current-twit-text">Text twit</div>
+                        <div class="main-current-twit-info">
+                            <div class="main-current-twit-info-edit"></div>
+                            <div class="main-current-twit-info-delete"></div>
+                            <div class="main-current-twit-info-messege"></div>
+                            <div id="quantityMessege">5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="filtration">
+                <h2>Filtration</h2>
+                <form action="" class="filtration-form">
+                    <label class="filtration-form-autor">
+                        <div>Autor name</div>
+                        <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore" />
+                        <datalist id="filtrationUserAutor">
+                            <option value="User1">User1</option>
+                            <option value="User2">User2</option>
+                            <option value="User3">User3</option>
+                        </datalist>
+                    </label>
+                    <label class="filtration-form-date">
+                        <div>Data</div>
+                        <div>
+                            <input type="text" name="" id="" placeholder="ignore" />
+                            <input type="text" name="" id="" placeholder="ignore" />
+                        </div>
+                    </label>
+                    <label class="filtration-form-text-twit">
+                        <div>Twit text</div>
+                        <textarea name="" id="" class="filtration-form-text-twit-area" placeholder="ignore"></textarea>
+                    </label>
+                    <label class="filtration-form-hashtags">
+                        <div>hashtags</div>
+                        <input type="text" list="filtrationFormHashtagsText" class="filtration-form-hashtags-text" placeholder="ignore" />
+                        <datalist id="filtrationFormHashtagsText">
+                            <option value="hashtag1">hashtag1</option>
+                            <option value="hashtag2">hashtag2</option>
+                            <option value="hashtag3">hashtag3</option>
+                        </datalist>
+                    </label>
+                    <input type="submit" value="Find" id="filtrationFormHashtags" />
+                </form>
+            </aside>
+        </div>
+    </body>
 </html>

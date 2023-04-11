@@ -48,6 +48,7 @@ body {
 .container-twit .twit-main {
   display: flex;
   flex-flow: column nowrap;
+  max-height: 100vh;
 }
 .container-twit .twit-main .twit-main-navigation {
   display: flex;
@@ -67,10 +68,10 @@ body {
 .container-twit .twit-main .twit-main-navigation a {
   text-decoration: none;
   font-size: 12px;
-  color: #88658C;
+  color: #88658c;
 }
 .container-twit .twit-main .twit-main-navigation .twit-main-next {
-  color: #88658C;
+  color: #88658c;
   font-size: 12px;
 }
 .container-twit .container-corrent-twit {
@@ -138,7 +139,7 @@ body {
 }
 .container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info #quantityMessege {
   box-sizing: border-box;
-  color: #88658C;
+  color: #88658c;
   padding-left: 15px;
 }
 .container-twit .container-comments-twit {
@@ -146,6 +147,10 @@ body {
   box-sizing: border-box;
   padding: 32px 240px 25px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3vh;
+  overflow: auto;
 }
 .container-twit .container-comments-twit .comments-twit {
   background-color: rgb(255, 255, 255);
@@ -199,18 +204,7 @@ body {
   border-radius: 29px 29px 0 0;
   border: none;
   outline: none;
-}
-.container-twit .container-comments-answer #commentsAnswerTwit::-moz-placeholder {
-  font-size: 24px;
-  box-sizing: border-box;
-}
-.container-twit .container-comments-answer #commentsAnswerTwit:-ms-input-placeholder {
-  font-size: 24px;
-  box-sizing: border-box;
-}
-.container-twit .container-comments-answer #commentsAnswerTwit::placeholder {
-  font-size: 24px;
-  box-sizing: border-box;
+  font-size: 16px;
 }
 .container-twit .container-comments-answer #commentsAnswerСounter {
   display: flex;
@@ -221,13 +215,13 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 9px 26px 9px 0;
   border-radius: 0 0 29px 29px;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 5, 0.54);
 }
 .container-twit .container-comments-answer button {
   box-sizing: border-box;
   width: 121px;
   color: rgb(255, 255, 255);
-  background-color: #88658C;
+  background-color: #88658c;
   font-size: 18px;
   padding: 5px 0;
   border: none;
@@ -237,4 +231,6 @@ body {
 }
 .container-twit .container-comments-answer button:hover {
   cursor: pointer;
-}/*# sourceMappingURL=twit.css.map */
+}
+
+/*# sourceMappingURL=twit.css.map */

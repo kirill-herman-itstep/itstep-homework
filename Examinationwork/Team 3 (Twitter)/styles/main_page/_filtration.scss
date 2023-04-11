@@ -14,18 +14,20 @@ h2 {
             margin-bottom: 5px;
             margin-left: 16px;
         }
-    
+
         input {
             box-sizing: border-box;
             padding: 10px 0 10px 16px;
             outline: none;
             border: none;
             width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
         }
-    
+
         input::placeholder {
             font-size: 14px;
-            color: rgba(0, 0, 0, 0.4);
+            color: rgba(0, 0, 5, 0.4);
         }
     }
 
@@ -54,11 +56,12 @@ h2 {
                 outline: none;
                 border: none;
                 width: 100%;
+                font-family: 'Roboto', sans-serif;
             }
 
             input::placeholder {
                 font-size: 14px;
-                color: rgba(0, 0, 0, 0.4);
+                color: rgba(0, 0, 5, 0.4);
             }
         }
     }
@@ -85,13 +88,13 @@ h2 {
             border: none;
             padding-left: 16px;
             height: 75px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            padding: 10px 0 10px 16px;
         }
 
         .filtration-form-text-twit-area::placeholder {
-            padding-top: 29px;
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.4);
-            font-family: 'Roboto', sans-serif;
+            color: rgba(0, 0, 5, 0.4);
             box-sizing: border-box;
         }
     }
@@ -111,13 +114,13 @@ h2 {
             outline: none;
             border: none;
             width: 100%;
+            font-family: 'Roboto', sans-serif;
+            padding-top: 10px;
+            font-size: 14px;
         }
 
         .filtration-form-hashtags-text::placeholder {
-            padding-top: 29px;
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.4);
-            font-family: 'Roboto', sans-serif;
+            color: rgba(0, 0, 5, 0.4);
             box-sizing: border-box;
         }
     }
@@ -126,14 +129,18 @@ h2 {
         box-sizing: border-box;
         width: 100px;
         color: rgb(255, 255, 255);
-        background-color: #88658C;
+        background-color: #88658c;
         font-size: 18px;
         margin-left: auto;
-        margin-right: 69px;
+        margin-right: auto;
         padding: 3px 0;
         border: none;
         border-radius: 12px;
         font-weight: 700;
         margin-top: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
