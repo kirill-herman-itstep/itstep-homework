@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2 * $login-padding;
     background-color: $light-bg-color;
 
     .loginForm {
@@ -15,6 +14,7 @@
         row-gap: 1.5 * $login-padding;
         background-color: $light-border-color;
         padding: 1.5 * $login-padding $login-padding;
+        padding: 1.5 * $login-padding $login-padding 1 * $login-padding;
         box-shadow: $lighter-box-shadow;
         border-radius: $default-padding;
 
@@ -23,14 +23,17 @@
             height: $mainLogo-size;
         }
 
-        #inputs > form {
+        #inputs {
             display: flex;
             flex-direction: column;
             align-items: center;
             row-gap: $default-padding;
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                row-gap: $default-padding;
 
-            * {
-                width: 100%;
             }
 
             button {
@@ -42,13 +45,17 @@
                 filter: invert(1);
             }
 
+            >*:last-child {
+                margin-top: -0.5 * $default-padding;
+                font-size: $small-font-size;
+            }
+
             p {
                 display: flex;
                 justify-content: space-between;
-                padding: 0.5 * $default-padding;
-                font-size: 0.75rem;
+                width: 100%;
+                padding: 0 0.5 * $default-padding;
                 column-gap: $default-padding;
-                margin-bottom: -$default-padding;
 
                 a {
                     width: fit-content;
@@ -56,9 +63,7 @@
             }
 
             >a {
-                font-size: 0.85rem;
                 text-align: center;
-                margin-bottom: -$default-padding;
             }
         }
     }
