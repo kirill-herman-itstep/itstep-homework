@@ -1,0 +1,23 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+div.bg-slider {
+    background-color: rgba(158, 157, 157, 0.482);
+    width: 60vw;
+    height: 1rem;
+    margin: 5rem auto;
+    position: relative;
+
+}
+
+div.slider {
+    background-color: rgb(71, 151, 231);
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: -0.25rem;
+    left: 0px;
+    cursor: grab;
+}

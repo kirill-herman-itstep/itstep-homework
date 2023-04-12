@@ -1,0 +1,33 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left,
+.right {
+    margin: 20px 8px;
+    width: 2rem;
+    height: 3rem;
+    transition: fill 0.5s ease-out;
+    cursor: pointer;
+}
+
+.left {
+    transform: rotate(180deg);
+}
+
+img.container-img {
+    width: 70vw;
+    height: calc(70vw / 1.6);
+    border: 1px solid #000;
+}
