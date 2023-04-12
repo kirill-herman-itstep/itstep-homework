@@ -1,6 +1,6 @@
-@import "vars";
+@import 'vars';
 
-.welcome-icon {
+.welcome-icon-twit {
     margin-top: 86px;
     width: $width-welcome-icon;
     height: $height-welcome-icon;
@@ -19,14 +19,14 @@ h2 {
     font-size: 28px;
 }
 
-#logOut {
+#twitLogOut {
     margin-top: 18px;
     text-decoration: none;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.welcome-site {
+.welcome-site-twit {
     font-weight: 400;
     font-size: 18px;
     margin-top: 200px;

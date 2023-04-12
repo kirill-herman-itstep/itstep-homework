@@ -8,14 +8,14 @@
         <link rel="stylesheet" href="../../styles/main_page/main.css" />
     </head>
     <body>
-        <div class="container">
-            <aside class="welcome">
-                <div class="welcome-icon"></div>
+        <div class="main-container">
+            <aside class="main-welcome">
+                <div class="main-welcome-icon"></div>
                 <h1>Welcome!</h1>
                 <h2>Hi, User</h2>
-                <a href="#" id="logOut">Log out</a>
+                <a href="#" id="mainLogOut">Log out</a>
             </aside>
-            <div class="main">
+            <div class="main-content">
                 <div class="main-navigation">
                     <div class="main-navigation-icon"></div>
                     <a href="#">Main</a>
@@ -24,7 +24,7 @@
                 <div class="main-new-twit">
                     <h2>What's new?</h2>
                     <div class="main-new-twit-text">
-                        <textarea name="" id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
+                        <textarea id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
                         <div id="mainNewTwitСounter">0/280</div>
                     </div>
                     <button>Post</button>
@@ -40,14 +40,14 @@
                             <div class="main-current-twit-info-edit"></div>
                             <div class="main-current-twit-info-delete"></div>
                             <div class="main-current-twit-info-messege"></div>
-                            <div id="quantityMessege">5</div>
+                            <div id="mainQuantityMessege">5</div>
                         </div>
                     </div>
                 </div>
             </div>
             <aside class="filtration">
                 <h2>Filtration</h2>
-                <form action="" class="filtration-form">
+                <form class="filtration-form">
                     <label class="filtration-form-autor">
                         <div>Autor name</div>
                         <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore" />
@@ -66,7 +66,7 @@
                     </label>
                     <label class="filtration-form-text-twit">
                         <div>Twit text</div>
-                        <textarea name="" id="" class="filtration-form-text-twit-area" placeholder="ignore"></textarea>
+                        <textarea class="filtration-form-text-twit-area" placeholder="ignore"></textarea>
                     </label>
                     <label class="filtration-form-hashtags">
                         <div>hashtags</div>

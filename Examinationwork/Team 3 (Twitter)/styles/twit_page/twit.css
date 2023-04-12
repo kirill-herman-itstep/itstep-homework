@@ -11,36 +11,36 @@ body {
   min-height: 100vh;
   background-color: rgba(235, 174, 242, 0.2);
 }
-.container-twit .welcome {
+.container-twit .welcome-twit {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   box-sizing: border-box;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-.container-twit .welcome .welcome-icon {
+.container-twit .welcome-twit .welcome-icon-twit {
   margin-top: 86px;
   width: 95px;
   height: 81px;
   background: url(../../assets/images/img_twit_page/Group.png);
 }
-.container-twit .welcome h1 {
+.container-twit .welcome-twit h1 {
   margin: 0;
   margin-top: 27px;
   font-size: 40px;
 }
-.container-twit .welcome h2 {
+.container-twit .welcome-twit h2 {
   margin: 0;
   margin-top: 16px;
   font-size: 28px;
 }
-.container-twit .welcome #logOut {
+.container-twit .welcome-twit #twitLogOut {
   margin-top: 18px;
   text-decoration: none;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
 }
-.container-twit .welcome .welcome-site {
+.container-twit .welcome-twit .welcome-site-twit {
   font-weight: 400;
   font-size: 18px;
   margin-top: 200px;
@@ -137,7 +137,7 @@ body {
   box-sizing: border-box;
   margin-left: 60px;
 }
-.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info #quantityMessege {
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info #twitQuantityMessege {
   box-sizing: border-box;
   color: #88658c;
   padding-left: 15px;
@@ -231,6 +231,4 @@ body {
 }
 .container-twit .container-comments-answer button:hover {
   cursor: pointer;
-}
-
-/*# sourceMappingURL=twit.css.map */
+}/*# sourceMappingURL=twit.css.map */

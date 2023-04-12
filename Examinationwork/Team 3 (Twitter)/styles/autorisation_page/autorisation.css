@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inspiration&family=Permanent+Marker&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 #leftBlock {
   display: flex;
   min-width: 301px;
@@ -147,6 +147,7 @@ body {
   align-items: center;
   padding-left: 5%;
   padding-right: 5%;
+  height: 12vh;
 }
 
 ul {
@@ -166,6 +167,7 @@ ul h2 {
 .liraight {
   display: flex;
   justify-content: flex-end;
+  font-size: 1rem;
 }
 
 .mainHader img {
@@ -277,11 +279,15 @@ ul h2 {
 #mainFormBlockRaight a:nth-of-type(1) {
   margin-top: 27px;
   text-decoration: none;
+  color: #88658c;
 }
 
 #mainFormBlockRaight a:nth-of-type(2) {
   margin-top: 5px;
   text-decoration: none;
+  color: #88658c;
 }
 
-/*# sourceMappingURL=autorisation.css.map */
+body {
+  margin: 0;
+}/*# sourceMappingURL=autorisation.css.map */

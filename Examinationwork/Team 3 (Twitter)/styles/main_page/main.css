@@ -5,47 +5,47 @@ body {
   margin: 0;
 }
 
-.container {
+.main-container {
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr;
   height: 100vh;
   background-color: rgba(235, 174, 242, 0.2);
 }
-.container .welcome {
+.main-container .main-welcome {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   box-sizing: border-box;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-.container .welcome .welcome-icon {
+.main-container .main-welcome .main-welcome-icon {
   margin-top: 86px;
   width: 95px;
   height: 81px;
   background: url(../../assets/images/img_main_page/Group.png);
 }
-.container .welcome h1 {
+.main-container .main-welcome h1 {
   margin: 0;
   margin-top: 27px;
   font-size: 40px;
 }
-.container .welcome h2 {
+.main-container .main-welcome h2 {
   margin: 0;
   margin-top: 16px;
   font-size: 28px;
 }
-.container .welcome #logOut {
+.main-container .main-welcome #mainLogOut {
   margin-top: 18px;
   text-decoration: none;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
 }
-.container .main {
+.main-container .main-content {
   display: flex;
   flex-flow: column nowrap;
   height: 100vh;
 }
-.container .main .main-navigation {
+.main-container .main-content .main-navigation {
   display: flex;
   flex-flow: row nowrap;
   gap: 16px;
@@ -53,39 +53,39 @@ body {
   min-height: 40px;
   align-items: center;
 }
-.container .main .main-navigation .main-navigation-icon {
+.main-container .main-content .main-navigation .main-navigation-icon {
   margin-left: 41px;
   background: url(../../assets/images/img_main_page/home.png);
   width: 25px;
   height: 25px;
 }
-.container .main .main-navigation a {
+.main-container .main-content .main-navigation a {
   text-decoration: none;
   font-size: 12px;
   color: #88658C;
 }
-.container .main .main-navigation :last-of-type {
+.main-container .main-content .main-navigation :last-of-type {
   color: #88658C;
   font-size: 12px;
 }
-.container .main .main-new-twit {
+.main-container .main-content .main-new-twit {
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
   gap: 18px;
   padding: 24px 0;
 }
-.container .main .main-new-twit h2 {
+.main-container .main-content .main-new-twit h2 {
   margin: 0 0 0 79px;
   font-size: 26px;
 }
-.container .main .main-new-twit .main-new-twit-text {
+.main-container .main-content .main-new-twit .main-new-twit-text {
   display: flex;
   flex-flow: column nowrap;
   gap: 0;
   align-items: center;
 }
-.container .main .main-new-twit #mainNewTwit {
+.main-container .main-content .main-new-twit #mainNewTwit {
   box-sizing: border-box;
   padding: 18px;
   width: 90%;
@@ -96,7 +96,7 @@ body {
   border: none;
   outline: none;
 }
-.container .main .main-new-twit #mainNewTwitСounter {
+.main-container .main-content .main-new-twit #mainNewTwitСounter {
   display: flex;
   justify-content: right;
   box-sizing: border-box;
@@ -107,7 +107,7 @@ body {
   border-radius: 0 0 29px 29px;
   color: rgba(0, 0, 0, 0.54);
 }
-.container .main .main-new-twit button {
+.main-container .main-content .main-new-twit button {
   box-sizing: border-box;
   width: 121px;
   color: rgb(255, 255, 255);
@@ -120,14 +120,14 @@ body {
   border-radius: 12px;
   font-weight: 700;
 }
-.container .main .main-new-twit button:hover {
+.main-container .main-content .main-new-twit button:hover {
   cursor: pointer;
 }
-.container .main .main-current-all-tweets {
+.main-container .main-content .main-current-all-tweets {
   flex-grow: 1;
   overflow: auto;
 }
-.container .main .main-current-all-tweets .main-current-twit {
+.main-container .main-content .main-current-all-tweets .main-current-twit {
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-flow: column nowrap;
@@ -137,39 +137,39 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-autor {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-autor {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-autor :first-of-type {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-autor :first-of-type {
   font-weight: 700;
   font-size: 18px;
   margin-right: auto;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-autor :last-of-type {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-autor :last-of-type {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.6);
   margin-left: auto;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-text {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-text {
   box-sizing: border-box;
   padding-left: 39px;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-info {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-info {
   display: flex;
   align-items: center;
   justify-content: right;
   flex-flow: row nowrap;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-edit {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-edit {
   width: 25px;
   height: 25px;
   background: url(../../assets/images/img_main_page/edit.png);
   background-repeat: no-repeat;
   background-position: center;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-delete {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-delete {
   width: 29px;
   height: 29px;
   background: url(../../assets/images/img_main_page/Delete.png);
@@ -178,7 +178,7 @@ body {
   box-sizing: border-box;
   margin-left: 22px;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-messege {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-info .main-current-twit-info-messege {
   width: 27px;
   height: 25px;
   background: url(../../assets/images/img_main_page/Comment.png);
@@ -187,12 +187,12 @@ body {
   box-sizing: border-box;
   margin-left: 60px;
 }
-.container .main .main-current-all-tweets .main-current-twit .main-current-twit-info #quantityMessege {
+.main-container .main-content .main-current-all-tweets .main-current-twit .main-current-twit-info #mainQuantityMessege {
   box-sizing: border-box;
-  color: #88658C;
+  color: #88658c;
   padding-left: 15px;
 }
-.container .filtration {
+.main-container .filtration {
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
@@ -200,21 +200,21 @@ body {
   box-sizing: border-box;
   padding: 60px 25px;
 }
-.container .filtration h2 {
+.main-container .filtration h2 {
   font-size: 26px;
 }
-.container .filtration .filtration-form {
+.main-container .filtration .filtration-form {
   display: flex;
   flex-flow: column nowrap;
   gap: 25px;
 }
-.container .filtration .filtration-form .filtration-form-autor div {
+.main-container .filtration .filtration-form .filtration-form-autor div {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 5px;
   margin-left: 16px;
 }
-.container .filtration .filtration-form .filtration-form-autor input {
+.main-container .filtration .filtration-form .filtration-form-autor input {
   box-sizing: border-box;
   padding: 10px 0 10px 16px;
   outline: none;
@@ -223,27 +223,31 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
-.container .filtration .filtration-form .filtration-form-autor input::placeholder {
+.main-container .filtration .filtration-form .filtration-form-autor input::-moz-placeholder {
   font-size: 14px;
   color: rgba(0, 0, 5, 0.4);
 }
-.container .filtration .filtration-form .filtration-form-date {
+.main-container .filtration .filtration-form .filtration-form-autor input::placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 5, 0.4);
+}
+.main-container .filtration .filtration-form .filtration-form-date {
   display: flex;
   flex-flow: column;
   gap: 5px;
 }
-.container .filtration .filtration-form .filtration-form-date :first-of-type {
+.main-container .filtration .filtration-form .filtration-form-date :first-of-type {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 5px;
   margin-left: 16px;
 }
-.container .filtration .filtration-form .filtration-form-date :last-of-type {
+.main-container .filtration .filtration-form .filtration-form-date :last-of-type {
   display: flex;
   flex-flow: row nowrap;
   gap: 20px;
 }
-.container .filtration .filtration-form .filtration-form-date :last-of-type input {
+.main-container .filtration .filtration-form .filtration-form-date :last-of-type input {
   flex-grow: 1;
   width: 40%;
   margin: 0;
@@ -253,22 +257,26 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
 }
-.container .filtration .filtration-form .filtration-form-date :last-of-type input::placeholder {
+.main-container .filtration .filtration-form .filtration-form-date :last-of-type input::-moz-placeholder {
   font-size: 14px;
   color: rgba(0, 0, 5, 0.4);
 }
-.container .filtration .filtration-form .filtration-form-text-twit {
+.main-container .filtration .filtration-form .filtration-form-date :last-of-type input::placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 5, 0.4);
+}
+.main-container .filtration .filtration-form .filtration-form-text-twit {
   display: flex;
   flex-flow: column;
   gap: 5px;
 }
-.container .filtration .filtration-form .filtration-form-text-twit :first-of-type {
+.main-container .filtration .filtration-form .filtration-form-text-twit :first-of-type {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 5px;
   margin-left: 16px;
 }
-.container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area {
+.main-container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area {
   display: flex;
   box-sizing: border-box;
   margin: 0;
@@ -282,17 +290,21 @@ body {
   font-family: "Roboto", sans-serif;
   padding: 10px 0 10px 16px;
 }
-.container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area::placeholder {
+.main-container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area::-moz-placeholder {
   color: rgba(0, 0, 5, 0.4);
   box-sizing: border-box;
 }
-.container .filtration .filtration-form .filtration-form-hashtags :first-of-type {
+.main-container .filtration .filtration-form .filtration-form-text-twit .filtration-form-text-twit-area::placeholder {
+  color: rgba(0, 0, 5, 0.4);
+  box-sizing: border-box;
+}
+.main-container .filtration .filtration-form .filtration-form-hashtags :first-of-type {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 5px;
   margin-left: 16px;
 }
-.container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text {
+.main-container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text {
   box-sizing: border-box;
   margin: 0;
   padding: 10px 0 10px 16px;
@@ -303,11 +315,15 @@ body {
   padding-top: 10px;
   font-size: 14px;
 }
-.container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text::placeholder {
+.main-container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text::-moz-placeholder {
   color: rgba(0, 0, 5, 0.4);
   box-sizing: border-box;
 }
-.container .filtration .filtration-form #filtrationFormHashtags {
+.main-container .filtration .filtration-form .filtration-form-hashtags .filtration-form-hashtags-text::placeholder {
+  color: rgba(0, 0, 5, 0.4);
+  box-sizing: border-box;
+}
+.main-container .filtration .filtration-form #filtrationFormHashtags {
   box-sizing: border-box;
   width: 100px;
   color: rgb(255, 255, 255);
@@ -321,8 +337,6 @@ body {
   font-weight: 700;
   margin-top: 20px;
 }
-.container .filtration .filtration-form #filtrationFormHashtags:hover {
+.main-container .filtration .filtration-form #filtrationFormHashtags:hover {
   cursor: pointer;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

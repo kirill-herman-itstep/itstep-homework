@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inspiration&family=Permanent+Marker&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap");
-#mainWrapper {
+#errorMainWrapper {
   margin-right: 0%;
   display: flex;
   flex-direction: row;
@@ -9,11 +9,7 @@ body {
   margin: 0%;
 }
 
-#raightBlock {
-  margin-top: 0px;
-}
-
-#mainSektion {
+#errorMainSektion {
   background-image: url(../../assets/images/error_page/Error\ view.png);
   background-size: 62%;
   height: 100%;
@@ -28,11 +24,11 @@ body {
   margin-top: 148px;
 }
 
-#footerEnd {
+#errorFooterEnd {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  background: linear-gradient(0deg, rgba(176, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(176, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   justify-content: space-between;
   align-items: center;
@@ -54,36 +50,37 @@ ul h2 {
   margin: 0%;
 }
 
-.liraight {
+.error-liraight {
   display: flex;
   justify-content: flex-end;
 }
 
-#raightBlock {
+#errorRaightBlock {
+  margin-top: 0px;
   box-sizing: border-box;
   padding-left: 0%;
   border: 0%;
   width: 80.41%;
   min-width: 500px;
-  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 18px 3px rgba(136, 101, 140, 0.4);
   margin-bottom: 0%;
 }
 
-.mainHader {
+.error-main-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 40px;
   top: 0px;
   padding-left: 5%;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
-.mainHader h3:nth-of-type(2),
-.mainHader h3:nth-of-type(4) {
+.error-main-header h3:nth-of-type(2),
+.error-main-header h3:nth-of-type(4) {
   width: 7px;
   height: 14px;
   font-family: "Roboto";
@@ -92,23 +89,23 @@ ul h2 {
   font-size: 12px;
   line-height: 14px;
   text-align: center;
-  color: #88658C;
+  color: #88658c;
   padding-left: 20.12px;
 }
 
-.mainHader h3:nth-of-type(1),
-.mainHader h3:nth-of-type(3) {
+.error-main-header h3:nth-of-type(1),
+.error-main-header h3:nth-of-type(3) {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   text-align: center;
-  color: #88658C;
+  color: #88658c;
   padding-left: 20.12px;
 }
 
-#leftBlock {
+#errorLeftBlock {
   display: flex;
   min-width: 301px;
   flex-direction: column;
@@ -121,23 +118,23 @@ ul h2 {
   width: 19.59%;
   height: 88vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #FFFFFF;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
 }
 
-.vectorKat {
+.error-cat {
   padding-top: 86px;
   width: 60.59px;
   height: 56.24px;
 }
 
-#leftBlock h3 {
+#errorLeftBlock h3 {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 26px;
   margin-top: 0%;
 }
 
-.Sign {
+.error-sign {
   margin-top: 0%;
   padding-top: 27px;
   width: 231px;
@@ -152,7 +149,7 @@ ul h2 {
   color: black;
 }
 
-.mainPage {
+.error-main-page {
   padding-top: 35%;
 }
 

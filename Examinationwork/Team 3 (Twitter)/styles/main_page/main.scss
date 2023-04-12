@@ -6,7 +6,7 @@ body {
     margin: 0;
 }
 
-.container {
+.main-container {
     @import 'vars';
 
     display: grid;
@@ -14,7 +14,7 @@ body {
     height: 100vh;
     background-color: rgb(235, 174, 242, 0.2);
 
-    .welcome {
+    .main-welcome {
         @import 'welcome';
 
         display: flex;
@@ -24,7 +24,7 @@ body {
         border-right: $page-border;
     }
 
-    .main {
+    .main-content {
         @import 'main-navigation';
         display: flex;
         flex-flow: column nowrap;

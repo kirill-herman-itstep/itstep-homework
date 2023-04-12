@@ -1,6 +1,6 @@
 @import 'vars';
 
-.welcome-icon {
+.main-welcome-icon {
     margin-top: 86px;
     width: $width-welcome-icon;
     height: $height-welcome-icon;
@@ -19,7 +19,7 @@ h2 {
     font-size: 28px;
 }
 
-#logOut {
+#mainLogOut {
     margin-top: 18px;
     text-decoration: none;
     font-size: 18px;

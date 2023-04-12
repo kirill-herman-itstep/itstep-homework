@@ -45,7 +45,7 @@
     border-radius: 20px;
     cursor: pointer;
     color: white;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -74,7 +74,7 @@ body {
 .mainPage {
     width: 100%;
     height: 28px;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -98,12 +98,13 @@ body {
     align-items: center;
     padding-left: 5%;
     padding-right: 5%;
+    height: 12vh;
 }
 ul {
     list-style-type: none;
 }
 ul h2 {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
@@ -114,6 +115,7 @@ ul h2 {
 .liraight {
     display: flex;
     justify-content: flex-end;
+    font-size: 1rem;
 }
 
 .mainHader img {
@@ -126,7 +128,7 @@ ul h2 {
 .mainHader h3:nth-of-type(4) {
     width: 7px;
     height: 14px;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -137,7 +139,7 @@ ul h2 {
 }
 .mainHader h3:nth-of-type(1),
 .mainHader h3:nth-of-type(3) {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -162,7 +164,7 @@ ul h2 {
     margin-top: 5%;
     cursor: pointer;
     color: white;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -181,7 +183,7 @@ ul h2 {
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     outline: none;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -218,8 +220,10 @@ ul h2 {
 #mainFormBlockRaight a:nth-of-type(1) {
     margin-top: 27px;
     text-decoration: none;
+    color: #88658c;
 }
 #mainFormBlockRaight a:nth-of-type(2) {
     margin-top: 5px;
     text-decoration: none;
+    color: #88658c;
 }
