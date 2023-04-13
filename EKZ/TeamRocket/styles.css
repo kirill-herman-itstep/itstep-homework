@@ -207,7 +207,6 @@ body .loginFormLayout {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
   background-color: rgb(249, 248, 248);
 }
 body .loginFormLayout .loginForm {
@@ -217,6 +216,7 @@ body .loginFormLayout .loginForm {
   row-gap: 3rem;
   background-color: white;
   padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   border-radius: 1rem;
 }
@@ -224,16 +224,18 @@ body .loginFormLayout .loginForm .mainLogo {
   width: calc(min(100vh, 100vw) * 0.3);
   height: calc(min(100vh, 100vw) * 0.3);
 }
-body .loginFormLayout .loginForm #inputs > form {
+body .loginFormLayout .loginForm #inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
 }
-body .loginFormLayout .loginForm #inputs > form * {
-  width: 100%;
+body .loginFormLayout .loginForm #inputs form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
-body .loginFormLayout .loginForm #inputs > form button {
+body .loginFormLayout .loginForm #inputs button {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: none;
@@ -241,24 +243,22 @@ body .loginFormLayout .loginForm #inputs > form button {
   font-weight: 500;
   filter: invert(1);
 }
-body .loginFormLayout .loginForm #inputs > form p {
+body .loginFormLayout .loginForm #inputs > *:last-child {
+  margin-top: -0.5rem;
+  font-size: 0.875rem;
+}
+body .loginFormLayout .loginForm #inputs p {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
-  font-size: 0.75rem;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-  margin-bottom: -1rem;
+  width: 100%;
+  padding: 0 0.5rem;
+  column-gap: 1rem;
 }
-body .loginFormLayout .loginForm #inputs > form p a {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+body .loginFormLayout .loginForm #inputs p a {
   width: fit-content;
 }
-body .loginFormLayout .loginForm #inputs > form > a {
-  font-size: 0.85rem;
+body .loginFormLayout .loginForm #inputs > a {
   text-align: center;
-  margin-bottom: -1rem;
 }
 body header {
   height: 3.5rem;
@@ -332,14 +332,12 @@ body main .toolbar {
 }
 body main .toolbar section {
   display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 body main .toolbar section div {
   display: flex;
   align-items: center;
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
   padding: 0 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.3s linear;
@@ -365,8 +363,7 @@ body main .toolbar section div:hover {
 body main .taskBoard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  column-gap: 3rem;
   height: calc(100vh - 3.5rem - 2rem);
   padding: 0 4rem;
   background-color: #2E2E2E;
@@ -388,8 +385,7 @@ body main .taskBoard .taskTableWrapper .tableHeader h4 {
 }
 body main .taskBoard .taskTableWrapper .tableHeader div {
   display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 body main .taskBoard .taskTableWrapper .tableHeader div svg {
   border-radius: 0.5rem;
@@ -428,7 +424,6 @@ body main .taskBoard .taskTableWrapper .taskTable {
   overflow-x: hidden;
 }
 body main .taskBoard .taskTableWrapper .taskTable .border {
-  position: -webkit-sticky;
   position: sticky;
   width: calc(100% + 4px);
   height: 2rem;
@@ -527,8 +522,7 @@ body .filterLayout * {
 body .filterLayout .date {
   display: flex;
   align-items: center;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
   padding: 0;
   width: 100%;
   box-shadow: none;
@@ -557,8 +551,7 @@ body .filterLayout button {
 body .filterLayout > div {
   display: flex;
   align-items: center;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
   padding: 0.25rem 0.5rem;
 }
 body .filterLayout svg {
@@ -716,11 +709,8 @@ body .task .actionsBar {
   top: 1rem;
   display: flex;
   flex-direction: row;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 body .task > div {
   display: flex;
@@ -768,8 +758,7 @@ body .task > div.options div span {
 body .task > div.options div div {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 body .task > div.options div div svg {
   width: 2.28125rem;
