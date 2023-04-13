@@ -50,46 +50,33 @@
     <template id="mainLayoutTemplate">
         <header>
             <div class="logo">
-                <nav>
-                    <svg class="borgarMenuIco" viewBox="0 6 16 6">
-                        <path d="M0 10H16V8H0V10ZM0 14H16V12H0V14ZM0 6H16V4H0V6ZM0"/>
-                    </svg>
-                </nav>
                 <a href="#">
                     <img src="assets/png/mainLogo.png" alt="TaskMaster" class="mainLogo">
                 </a>
                 <span>TaskMaster</span>
             </div>
-            <template class="user" id="user">
+            <div class="user" id="user">
 
-            </template>
+            </div>
         </header>
         <main id="main">
             <div class="toolbar">
                 <section class="left">
-                    <div class="filter" onclick="showFilter()">
+                    <div class="filter">
                         <svg class="filterIco" viewBox="3 2 23 24">
                             <path transform="scale(1.2)" d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="black"/>
                         </svg>
-                        <!-- <img src="assets/png/filterIco.png" alt="Filter">  -->
                         <span>Filter</span>
                     </div>
                     <div class="sort">
                         <svg class="sortIco" viewBox="32 32 190 190" stroke-width="7.68">
                             <path d="M119.39062,172.93848a8.00028,8.00028,0,0,1-1.73339,8.71875l-32,32a8.00181,8.00181,0,0,1-11.31446,0l-32-32A8.00065,8.00065,0,0,1,48,168H72V48a8,8,0,0,1,16,0V168h24A8,8,0,0,1,119.39062,172.93848Zm94.26661-98.59571-32-32a8.00122,8.00122,0,0,0-11.31446,0l-32,32A8.00065,8.00065,0,0,0,144,88h24V208a8,8,0,0,0,16,0V88h24a8.00066,8.00066,0,0,0,5.65723-13.65723Z"/>
                         </svg>
-                        <!-- <img src="assets/png/sortIco.png" alt="Sort">  -->
                         <span>Sort</span>
                     </div>
                 </section>
                 <section class="right">
-                    <div>
-                        <svg class="plusIco" viewBox="0 0 14 14">
-                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
-                        </svg>
-                        <!-- <img src="assets/png/plusIco.png" alt=""> -->
-                        <span>Add section</span>
-                    </div>
+                    
                 </section>
             </div>
             <template id="tableLayoutTemplate">
@@ -153,9 +140,9 @@
                     <div class="chooseImportance">
                         <span>Importance</span>
                         <div id="importance">
-                            <div class="low"></div>
-                            <div class="medium"></div>
-                            <div class="high"></div>
+                            <input type="radio" name="importance" class="low" value="low">
+                            <input type="radio" name="importance" class="medium" value="medium">
+                            <input type="radio" name="importance" class="high" value="high">
                         </div>
                     </div>
                     <div class="choosBoard">
@@ -169,7 +156,9 @@
                     <div class="chooseAccess">
                         <span>Access</span>
                         <div>
-                            <svg class="peopleIco" viewBox="0 0 22 16">
+                            <input type="radio" name="access" id="" value="true">
+                            <input type="radio" name="access" id="" value="false">
+                            <!-- <svg class="peopleIco" viewBox="0 0 22 16">
                                 <path d="M15.67 9.13C17.04 10.06 18 11.32 18 13V16H22V13C22 10.82 18.43 9.53 15.67 9.13Z"/>
                                 <path d="M14 8C16.21 8 18 6.21 18 4C18 1.79 16.21 0 14 0C13.53 0 13.09 0.0999998 12.67 0.24C13.5 1.27 14 2.58 14 4C14 5.42 13.5 6.73 12.67 7.76C13.09 7.9 13.53 8 14 8Z"/>
                                 <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 2C9.1 2 10 2.9 10 4C10 5.1 9.1 6 8 6C6.9 6 6 5.1 6 4C6 2.9 6.9 2 8 2Z"/>
@@ -177,7 +166,7 @@
                             </svg>
                             <svg class="lockIco" viewBox="0 0 16 22">
                                 <path d="M14 7.5H13V5.5C13 2.74 10.76 0.5 8 0.5C5.24 0.5 3 2.74 3 5.5V7.5H2C0.9 7.5 0 8.4 0 9.5V19.5C0 20.6 0.9 21.5 2 21.5H14C15.1 21.5 16 20.6 16 19.5V9.5C16 8.4 15.1 7.5 14 7.5ZM5 5.5C5 3.84 6.34 2.5 8 2.5C9.66 2.5 11 3.84 11 5.5V7.5H5V5.5ZM14 19.5H2V9.5H14V19.5ZM8 16.5C9.1 16.5 10 15.6 10 14.5C10 13.4 9.1 12.5 8 12.5C6.9 12.5 6 13.4 6 14.5C6 15.6 6.9 16.5 8 16.5Z">
-                            </svg>
+                            </svg> -->
                         </div>
                     </div>
                 </div>

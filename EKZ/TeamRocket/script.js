@@ -1,7 +1,7 @@
-import { loginFormData, regUserData } from "./scripts/other/authorization.js";
-
-import { mainDB } from "./index.js";
-import { pageHTML } from "./scripts/other/taskPage.js";
+import { auth } from "./scripts/controller/login.js";
+import { registration } from "./scripts/controller/registration.js";
+import { clickableTasks } from "./scripts/controller/taskPage.js";
+import { taskCreate } from "./scripts/controller/taskCreate.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -23,7 +23,7 @@ export function crutchLogin() {
 }
 
 function crutchProfile() {
-    showProfileLayuot();
+    showProfileLayout();
 }
 
 function crutchTaskCreation() {
@@ -78,18 +78,21 @@ function gotoLoginForm() {
     let loginTemplate = document.querySelector('#loginTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
+    auth()
 }
 
 function gotoRegistrationForm() {
     let loginTemplate = document.querySelector('#registrationTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
+    registration()
 }
 
 function gotoMainPage() {
     let mainLayoutTemplate = document.querySelector('#mainLayoutTemplate');
     let clone = mainLayoutTemplate.content.cloneNode(true);
     body.append(clone);
+    clickableTasks()
 }
 
 function gotoTableLayout() {
@@ -100,7 +103,7 @@ function gotoTableLayout() {
 
 
 
-function showProfileLayuot() {
+function showProfileLayout() {
     let profileLayoutTemplate = document.querySelector('#profileLayoutTemplate');
     let clone = profileLayoutTemplate.content.cloneNode(true);
     body.append(clone);
@@ -111,13 +114,11 @@ function hideProfileLayout() {
     body.removeChild(document.querySelector('.profileLayuot'));
 }
 
-export let priority = '';
-export let access = '';
-
-function showTaskCreation() {
+export function showTaskCreation() {
     let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
     let clone = taskCreationTemplate.content.cloneNode(true);
     body.append(clone);
+    taskCreate()
 }
 
 function hideTaskCreation() {
@@ -126,7 +127,7 @@ function hideTaskCreation() {
 // Перенести в контроллер и переписать под текущую версию
 // let currentTaskOpen;
 
-// function showTaskOpen(id) {
+// export function showTaskOpen(id) {
 //     if (currentTaskOpen) {
 //         const taskPage = document.querySelector('.task');
 //         taskPage.remove();
@@ -135,14 +136,14 @@ function hideTaskCreation() {
 //     const main = document.querySelector('main');
 //     const task = mainDB.getTask(id);
 //     currentTaskOpen = task;
-//     main.insertAdjacentHTML('afterbegin', pageHTML(task));
+//     main.insertAdjacentHTML('afterbegin', returnPageHTML(task));
 
 //     const closeButton = document.querySelector('.task .crossIco');
 //     const taskPage = document.querySelector('.task');
 //     closeButton.addEventListener('click', () => {
 //         taskPage.remove();
 //         currentTaskOpen = null;
-//     } );
+//     });
 // }
 
 function showFilter() {
