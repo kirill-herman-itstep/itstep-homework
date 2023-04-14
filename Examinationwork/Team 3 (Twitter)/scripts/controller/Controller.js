@@ -22,7 +22,7 @@ export class TweetsController {
 
     setCurrentUser(user = '') {
         this.tweetCollection.changeUser(user);
-        if (this.headerView.element.id === 'mainUser' || this.headerView.element.id === 'tweetUser') {
+        if (this.headerView.element.id === 'helloUser') {
             this.headerView.display(user);
             return true;
         }
@@ -30,7 +30,7 @@ export class TweetsController {
     }
 
     addTweet(text = '') {
-        if (this.tweetCollection.add(text) && this.headerView.element.id === 'mainUser') {
+        if (this.tweetCollection.add(text) && this.headerView.element.id === 'helloUser') {
             this.tweetFeedView.display(this.tweetCollection.tweets);
             return true;
         }
@@ -54,7 +54,6 @@ export class TweetsController {
     }
 
     getFeed(skip = 0, top = 10, filterConfig = { author: '', dateFrom: '', dateTo: '', text: '', hashtags: [''] }) {
-        console.log(this.tweetCollection.getPage(skip, top, filterConfig));
         this.tweetFeedView.element.innerHTML = '';
         this.tweetFeedView.display(this.tweetCollection.getPage(skip, top, filterConfig));
     }

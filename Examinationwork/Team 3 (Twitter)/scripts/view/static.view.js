@@ -113,7 +113,7 @@ export const mainPage = `<div class="main-container">
 <aside class="main-welcome">
     <div class="main-welcome-icon"></div>
     <h1>Welcome!</h1>
-    <h2 id="mainUser"></h2>
+    <h2 id="helloUser"></h2>
     <a href="#" id="mainLogOut">Log out</a>
 </aside>
 <div class="main-content">
@@ -163,7 +163,7 @@ export const tweetPage = `<div class="container-twit">
 <aside class="welcome-twit">
     <div class="welcome-icon-twit"></div>
     <h1>Welcome!</h1>
-    <h2 id="tweetUser"></h2>
+    <h2 id="helloUser"></h2>
     <a href="#" id="twitLogOut">Log out</a>
     <div class="welcome-site-twit">MAIN PAGE</div>
 </aside>

@@ -28,8 +28,8 @@ newTweetCollection.addComment('8', 'Я вот сильно сомневаюсь 
 const root = document.getElementById('root');
 let user = 'Илон Маск';
 
-root.insertAdjacentHTML('afterbegin', tweetPage);
-const showUserNameMain = new HeaderView('tweetUser');
+root.insertAdjacentHTML('afterbegin', mainPage);
+const showUserNameMain = new HeaderView('helloUser');
 const showTweets = new TweetView('twitMain');
 
 const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
@@ -37,12 +37,12 @@ const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
 // ( new TweetCollection(),  new Tweet(),  new UserCollection(), new HeaderView(),  new TweetFeedView(),  new TweetView())
 
 const tweetsController = new TweetsController(newTweetCollection, '', userCollectionTest, showUserNameMain, tweetsFeed, showTweets);
-console.log(tweetsController);
+// console.log(tweetsController);
 
-console.log(tweetsController.setCurrentUser(newTweetCollection.user));
-// console.log(tweetsController.addTweet('Добрый Дэнь!'));
-// console.log(tweetsController.editTweet('29', 'Добрый Дэнь всем! #всемДобра #МысВами'));
+// console.log(tweetsController.setCurrentUser(newTweetCollection.user));
+// console.log(tweetsController.addTweet('Добрый дэнь!'));
+// console.log(tweetsController.editTweet('29', 'Добрый дэнь всем! #всемДобра #МысВами'));
 // console.log(tweetsController.removeTweet('29'));
 // console.log(tweetsController.getFeed(0, 10, filterTweets));
 
-console.log(tweetsController.showTweet('8'));
+// console.log(tweetsController.showTweet('8'));
