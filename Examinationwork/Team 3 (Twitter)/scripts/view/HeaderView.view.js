@@ -1,7 +1,11 @@
 'use strict';
 
 export class HeaderView {
-    constructor(user) {
-        this.user = user;
+    constructor(containerId = '') {
+        this.element = document.getElementById(`${containerId}`);
+    }
+
+    display(user = '') {
+        this.element.innerText = `Hi, ${user}`;
     }
 }

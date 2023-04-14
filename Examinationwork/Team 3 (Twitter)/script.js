@@ -4,30 +4,45 @@ import { Tweet } from './scripts/model/Tweet.model.js';
 import { _tweets, _tweets2 } from './scripts/mock/tweets.mock.js';
 import { TweetCollection } from './scripts/model/TweetCollection.model.js';
 import { HeaderView } from './scripts/view/HeaderView.view.js';
+import { TweetFeedView } from './scripts/view/TweetFeedView.view.js';
+import { FilterView } from './scripts/view/FilterView.view.js';
+import { TweetView } from './scripts/view/TweetView.js';
 import { autorisation, registration, errorPage, mainPage, tweetPage } from './scripts/view/static.view.js';
+import { UserCollection, User } from './scripts/model/UserCollection.model.js';
+import { TweetsController } from './scripts/controller/controller.js';
+import { userCollectionTest } from './scripts/mock/userCollection.mock.js';
 
-// console.log(_tweets);
+const newTweetCollection = new TweetCollection('Илон Маск', _tweets);
+// console.log(newTweetCollection);
+const filterTweets = {
+    author: '',
+    dateFrom: '',
+    dateTo: '',
+    text: '',
+    hashtags: ['всемДобра'],
+};
+const userNewTwit = new Tweet('Мы заблокируем Эмбер Херт в Twitter', '2020-02-15', 'Илон Маск');
 
-// const newTweetCollection = new TweetCollection('Илон Маск', _tweets);
-// console.log(newTweetCollection);
-// const filterTweets = {
-//     author: 'Илон Маск',
-//     dateFrom: '',
-//     dateTo: '2023-03-16',
-//     text: 'план',
-// };
-// const userNewTwit = new Tweet('Мы заблокируем Эмбер Херт в Twitter', '2020-02-15', 'Илон Маск');
-// console.log(Tweet.validate(userNewTwit));
-// console.log(newTweetCollection.getPage(0, 10, filterTweets));
-// console.log(newTweetCollection.get('8'));
-// console.log(newTweetCollection.add('Мы заблокируем Эмбер Херт в Twitter'));
-// console.log(newTweetCollection);
-// console.log(newTweetCollection.edit('19', 'Мы создадим свой Chat GPT за 1,5 года'));
-// console.log(newTweetCollection.edit('39', 'Мы создадим свой Chat GPT за 1,5 года'));
-// console.log(newTweetCollection.edit('18', 'Мы создадим свой Chat GPT за 1,5 года'));
-// console.log(newTweetCollection.remove('6'));
-// console.log(newTweetCollection.remove('19'));
-// console.log(newTweetCollection.addComment('18', 'Я вот сильно сомневаюсь в этом утверждении!'));
+newTweetCollection.addComment('8', 'Я вот сильно сомневаюсь в этом утверждении!');
+
 const root = document.getElementById('root');
+let user = 'Илон Маск';
 
-root.insertAdjacentHTML('afterbegin', autorisation);
+root.insertAdjacentHTML('afterbegin', tweetPage);
+const showUserNameMain = new HeaderView('tweetUser');
+const showTweets = new TweetView('twitMain');
+
+const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
+
+// ( new TweetCollection(),  new Tweet(),  new UserCollection(), new HeaderView(),  new TweetFeedView(),  new TweetView())
+
+const tweetsController = new TweetsController(newTweetCollection, '', userCollectionTest, showUserNameMain, tweetsFeed, showTweets);
+console.log(tweetsController);
+
+console.log(tweetsController.setCurrentUser(newTweetCollection.user));
+// console.log(tweetsController.addTweet('Добрый Дэнь!'));
+// console.log(tweetsController.editTweet('29', 'Добрый Дэнь всем! #всемДобра #МысВами'));
+// console.log(tweetsController.removeTweet('29'));
+// console.log(tweetsController.getFeed(0, 10, filterTweets));
+
+console.log(tweetsController.showTweet('8'));

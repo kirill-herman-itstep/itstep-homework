@@ -16,20 +16,34 @@ export class TweetCollection {
 
     set user(value) {}
 
-    getPage(skip = 0, top = 10, filterConfig = { author: '', dateFrom: '', dateTo: '', text: '' }) {
+    get tweets() {
+        return this._tweets;
+    }
+
+    set tweets(value) {}
+
+    getPage(skip = 0, top = 10, filterConfig = { author: '', dateFrom: '', dateTo: '', text: '', hashtags: [''] }) {
         if (arguments.length === 2) return _tweets.filter((item, index) => index >= skip && index < skip + top).sort((a, b) => a._createdAt - b._createdAt);
         if (arguments.length > 2) {
             return this._tweets
                 .filter(item => {
-                    if (item._author !== filterConfig?.author) return false;
+                    if (item._author !== filterConfig?.author && filterConfig?.author !== '') return false;
 
                     const dateStart = new Date(`${filterConfig?.dateFrom}`);
-                    if (item._createdAt < dateStart) return false;
+                    if (item._createdAt < dateStart && dateStart !== '') return false;
 
                     const dateEnd = new Date(`${filterConfig?.dateTo}`);
-                    if (item._createdAt > dateEnd) return false;
+                    if (item._createdAt > dateEnd && dateEnd !== '') return false;
 
                     if (!item.text.includes(filterConfig?.text)) return false;
+
+                    if (filterConfig?.hashtags[0] !== '') {
+                        const arrayHashtags = item.text
+                            .split(' ')
+                            .filter(item => item.includes('#'))
+                            .filter(item => item.slice(1) === filterConfig?.hashtags.find(itemFilter => itemFilter === item.slice(1)));
+                        if (arrayHashtags.length === 0) return false;
+                    }
 
                     return true;
                 })
@@ -82,6 +96,10 @@ export class TweetCollection {
         } else {
             return false;
         }
+    }
+
+    changeUser(user = '') {
+        this._user = user;
     }
 
     clear() {

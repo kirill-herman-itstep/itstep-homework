@@ -23,7 +23,7 @@ export const autorisation = `<div id="mainWrapper">
             <input type="password" placeholder="password" class="password" />
             <input type="button" value="Sign In" class="signUp" />
             <a href="">If you don't have an account</a>
-            <a href="">Sing</a>
+            <a href="">Sign</a>
         </form>
     </section>
 </menu>
@@ -61,7 +61,7 @@ export const registration = `<div id="registrationMainWrapper">
             <input type="password" value="confirm password" class="registration-password" />
             <input type="button" value="Sign In" class="registration-signUp" />
             <a href="">If you don't have an account</a>
-            <a href="#">Sing</a>
+            <a href="#">Sigт</a>
         </form>
     </section>
 </menu>
@@ -113,7 +113,7 @@ export const mainPage = `<div class="main-container">
 <aside class="main-welcome">
     <div class="main-welcome-icon"></div>
     <h1>Welcome!</h1>
-    <h2>Hi, User</h2>
+    <h2 id="mainUser"></h2>
     <a href="#" id="mainLogOut">Log out</a>
 </aside>
 <div class="main-content">
@@ -130,21 +130,7 @@ export const mainPage = `<div class="main-container">
         </div>
         <button>Post</button>
     </div>
-    <div class="main-current-all-tweets">
-        <div class="main-current-twit" id="twitNumber1">
-            <div class="main-current-twit-autor">
-                <div>Author's name</div>
-                <div>Date and time</div>
-            </div>
-            <div class="main-current-twit-text">Text twit</div>
-            <div class="main-current-twit-info">
-                <div class="main-current-twit-info-edit"></div>
-                <div class="main-current-twit-info-delete"></div>
-                <div class="main-current-twit-info-messege"></div>
-                <div id="mainQuantityMessege">5</div>
-            </div>
-        </div>
-    </div>
+    <div class="main-current-all-tweets" id="tweetsMainAllTweets"></div>
 </div>
 <aside class="filtration">
     <h2>Filtration</h2>
@@ -152,11 +138,6 @@ export const mainPage = `<div class="main-container">
         <label class="filtration-form-autor">
             <div>Autor name</div>
             <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore" />
-            <datalist id="filtrationUserAutor">
-                <option value="User1">User1</option>
-                <option value="User2">User2</option>
-                <option value="User3">User3</option>
-            </datalist>
         </label>
         <label class="filtration-form-date">
             <div>Data</div>
@@ -171,12 +152,7 @@ export const mainPage = `<div class="main-container">
         </label>
         <label class="filtration-form-hashtags">
             <div>hashtags</div>
-            <input type="text" list="filtrationFormHashtagsText" class="filtration-form-hashtags-text" placeholder="ignore" />
-            <datalist id="filtrationFormHashtagsText">
-                <option value="hashtag1">hashtag1</option>
-                <option value="hashtag2">hashtag2</option>
-                <option value="hashtag3">hashtag3</option>
-            </datalist>
+            <input type="text"  class="filtration-form-hashtags-text" placeholder="ignore"/>
         </label>
         <input type="submit" value="Find" id="filtrationFormHashtags" />
     </form>
@@ -187,11 +163,11 @@ export const tweetPage = `<div class="container-twit">
 <aside class="welcome-twit">
     <div class="welcome-icon-twit"></div>
     <h1>Welcome!</h1>
-    <h2>Hi, User</h2>
+    <h2 id="tweetUser"></h2>
     <a href="#" id="twitLogOut">Log out</a>
     <div class="welcome-site-twit">MAIN PAGE</div>
 </aside>
-<main class="twit-main">
+<main class="twit-main" id="twitMain">
     <div class="twit-main-navigation">
         <div class="twit-main-navigation-icon"></div>
         <a href="#">Main</a>
@@ -200,28 +176,10 @@ export const tweetPage = `<div class="container-twit">
         <div class="twit-main-next">></div>
     </div>
     <div class="container-corrent-twit">
-        <div class="twit-current-twit" id="twitNumber1">
-            <div class="twit-current-twit-autor">
-                <div>Author's name</div>
-                <div>Date and time</div>
-            </div>
-            <div class="twit-current-twit-text">Text twit</div>
-            <div class="twit-current-twit-info">
-                <div class="twit-current-twit-info-edit"></div>
-                <div class="twit-current-twit-info-delete"></div>
-                <div class="twit-current-twit-info-messege"></div>
-                <div id="twitQuantityMessege">5</div>
-            </div>
-        </div>
+
     </div>
     <div class="container-comments-twit">
-        <div class="comments-twit" id="twitNumber1">
-            <div class="comments-twit-autor">
-                <div>Сommenter's name</div>
-                <div>Date and time</div>
-            </div>
-            <div class="comments-twit-text">Comment text</div>
-        </div>
+
     </div>
     <div class="container-comments-answer">
         <div class="comments-answer">

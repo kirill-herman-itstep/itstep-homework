@@ -12,7 +12,7 @@
             <aside class="main-welcome">
                 <div class="main-welcome-icon"></div>
                 <h1>Welcome!</h1>
-                <h2>Hi, User</h2>
+                <h2 id="mainUser"></h2>
                 <a href="#" id="mainLogOut">Log out</a>
             </aside>
             <div class="main-content">
@@ -29,21 +29,7 @@
                     </div>
                     <button>Post</button>
                 </div>
-                <div class="main-current-all-tweets">
-                    <div class="main-current-twit" id="twitNumber1">
-                        <div class="main-current-twit-autor">
-                            <div>Author's name</div>
-                            <div>Date and time</div>
-                        </div>
-                        <div class="main-current-twit-text">Text twit</div>
-                        <div class="main-current-twit-info">
-                            <div class="main-current-twit-info-edit"></div>
-                            <div class="main-current-twit-info-delete"></div>
-                            <div class="main-current-twit-info-messege"></div>
-                            <div id="mainQuantityMessege">5</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="main-current-all-tweets" id="tweetsMainAllTweets"></div>
             </div>
             <aside class="filtration">
                 <h2>Filtration</h2>
@@ -51,11 +37,6 @@
                     <label class="filtration-form-autor">
                         <div>Autor name</div>
                         <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore" />
-                        <datalist id="filtrationUserAutor">
-                            <option value="User1">User1</option>
-                            <option value="User2">User2</option>
-                            <option value="User3">User3</option>
-                        </datalist>
                     </label>
                     <label class="filtration-form-date">
                         <div>Data</div>
@@ -70,12 +51,7 @@
                     </label>
                     <label class="filtration-form-hashtags">
                         <div>hashtags</div>
-                        <input type="text" list="filtrationFormHashtagsText" class="filtration-form-hashtags-text" placeholder="ignore" />
-                        <datalist id="filtrationFormHashtagsText">
-                            <option value="hashtag1">hashtag1</option>
-                            <option value="hashtag2">hashtag2</option>
-                            <option value="hashtag3">hashtag3</option>
-                        </datalist>
+                        <input type="text" class="filtration-form-hashtags-text" placeholder="ignore" disabled />
                     </label>
                     <input type="submit" value="Find" id="filtrationFormHashtags" />
                 </form>
