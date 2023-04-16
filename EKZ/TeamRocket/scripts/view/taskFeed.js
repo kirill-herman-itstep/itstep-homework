@@ -1,5 +1,5 @@
-import { mainDB } from "../../index.js"
-import { taskView } from "../../index.js"
+import { mainDB } from "../../index.js";
+import { taskView } from "../../index.js";
 
 export class TaskFeedView {
     constructor(containerID) {
@@ -7,16 +7,21 @@ export class TaskFeedView {
     }
 
     display(containerID, content) {
-        const container = document.getElementById(`${containerID}`)
-        container.insertAdjacentHTML('afterbegin', content)
+        const container = document.getElementById(`${containerID}`);
+        container.insertAdjacentHTML('afterbegin', content);
     }
 
     getFeed(skip = 0, top = 10, filterConfig = {}, boardName) {
         const taskArray = mainDB.getTasks(skip, top, filterConfig);
-        this.display(this.containerID, this.getBoardHTML(taskArray, boardName))
+        this.display(this.containerID, this.getBoardHTML(taskArray, boardName));
     }
 
     getBoardHTML(taskArray, boardName) {
+        const idBoardName = boardName.split('').reduce((acc, elem) => {
+            if (elem === ' ') return acc += '-';
+            return acc += elem.toLowerCase();
+        },'');
+
         return `
             <div class="taskTableWrapper">
                 <div class="tableHeader">
@@ -29,17 +34,17 @@ export class TaskFeedView {
                 </div>
                 <div class="taskTable">
                     <div class="border top"></div>
-                    <div class="innerContent">
+                    <div class="innerContent" id="${idBoardName}">
                     ${this.getTasksHTML(taskArray)}
                     </div>
                     <div class="border bottom"></div>
                 </div>
-            </div>`
+            </div>`;
     }
 
     getTasksHTML(taskArray) {
         let accTaskHTML = ''; 
-        taskArray.forEach(e => accTaskHTML += taskView.getHTML(e))
+        taskArray.forEach(e => accTaskHTML += taskView.getHTML(e));
         return accTaskHTML;
     }
 }

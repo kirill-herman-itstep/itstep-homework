@@ -1,7 +1,7 @@
 import { auth } from "./scripts/controller/login.js";
 import { registration } from "./scripts/controller/registration.js";
-import { clickableTasks } from "./scripts/controller/taskPage.js";
 import { taskCreate } from "./scripts/controller/taskCreate.js";
+import { showMainPage } from "./scripts/controller/mainPage.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -78,27 +78,27 @@ function gotoLoginForm() {
     let loginTemplate = document.querySelector('#loginTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
-    auth()
+    auth();
 }
 
 function gotoRegistrationForm() {
     let loginTemplate = document.querySelector('#registrationTemplate');
     let clone = loginTemplate.content.cloneNode(true);
     document.getElementById('inputs').append(clone);
-    registration()
+    registration();
 }
 
 function gotoMainPage() {
     let mainLayoutTemplate = document.querySelector('#mainLayoutTemplate');
     let clone = mainLayoutTemplate.content.cloneNode(true);
     body.append(clone);
-    clickableTasks()
 }
 
 function gotoTableLayout() {
     let tableLayoutTemplate = document.querySelector('#tableLayoutTemplate');
     let clone = tableLayoutTemplate.content.cloneNode(true);
     body.querySelector(`main`).append(clone);
+    showMainPage();
 }
 
 
@@ -118,7 +118,11 @@ export function showTaskCreation() {
     let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
     let clone = taskCreationTemplate.content.cloneNode(true);
     body.append(clone);
-    taskCreate()
+    taskCreate();
+    const closeButton = document.querySelector('.taskCreationLayout .crossIco');
+    closeButton.addEventListener('click', () => {
+        document.querySelector('.taskCreationLayout').remove();
+    })
 }
 
 function hideTaskCreation() {

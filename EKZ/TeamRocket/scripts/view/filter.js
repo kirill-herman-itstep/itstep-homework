@@ -4,7 +4,7 @@ export class FilterView {
     }
 
     display(containerID, content) {
-        const container = document.getElementById(`${containerID}`)
-        container.insertAdjacentHTML('afterbegin', content)
+        const container = document.getElementById(`${containerID}`);
+        container.insertAdjacentHTML('afterbegin', content);
     }
 }

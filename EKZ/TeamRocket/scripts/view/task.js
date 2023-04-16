@@ -1,18 +1,18 @@
 import { mainDB } from "../../index.js";
 
 export class TaskView {
-    constructor(containerID) {
-        this.containerID = containerID;
-    }
+
+    arrayTaskView = ['to-do', 'in-progress', 'complete'];
 
     display(containerID, content) {
-        const container = document.getElementById(`${containerID}`)
-        container.insertAdjacentHTML('afterbegin', content)
+        const container = document.getElementById(`${containerID}`);
+        container.insertAdjacentHTML('afterbegin', content);
     }
 
     addTask(taskObj) {
-        mainDB.add(taskObj.name, taskObj.priority, taskObj.description, taskObj.assignee, taskObj.status, taskObj.isPrivate)
-        this.display(this.containerID, this.getHTML(taskObj))
+        mainDB.add(taskObj.name, taskObj.priority, taskObj.description, taskObj.assignee, taskObj.status, taskObj.isPrivate);
+        console.log(taskObj.status);
+        this.display(taskObj.status, this.getHTML(mainDB.taskArray.at(-1)));
     }
 
     getHTML(taskObj) {
@@ -39,15 +39,15 @@ export class TaskView {
     }
 
     editTask(id, taskObj) {
-        mainDB.edit(id, taskObj.name, taskObj.description, taskObj.assignee, taskObj.status, taskObj.priority, taskObj.isPrivate)
+        mainDB.edit(id, taskObj.name, taskObj.description, taskObj.assignee, taskObj.status, taskObj.priority, taskObj.isPrivate);
     }
 
     removeTask(id) {
-        mainDB.remove(id)
+        mainDB.remove(id);
     }
 
     showTask(id) {
-        const task = mainDB.getTask(id)
-        this.display(this.containerID, this.getHTML(task))
+        const task = mainDB.getTask(id);
+        this.display(this.containerID, this.getHTML(task));
     }
 }
