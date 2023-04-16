@@ -5,9 +5,8 @@ export function taskCreate() {
     const taskPage = document.querySelector('.task');
     closeButton.addEventListener('click', () => {
         taskPage.remove();
-        currentTaskOpen = null;
     });
-    const createTaskButton = document.querySelector('.taskCreationLayout button');
+    const createTaskButton = document.querySelector('.taskCreationLayout button.create');
     createTaskButton.addEventListener('click', () => {
         const inputs = document.querySelectorAll('.taskCreationLayout input');
         const textarea = document.querySelector('.taskCreationLayout textarea');
