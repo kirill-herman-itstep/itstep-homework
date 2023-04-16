@@ -1,7 +1,13 @@
 import { taskView, mainDB } from "../../index.js";
 
 export function taskCreate() {
-    const createTaskButton = document.querySelector('.taskCreationLayout button')
+    const closeButton = document.querySelector('.task .crossIco');
+    const taskPage = document.querySelector('.task');
+    closeButton.addEventListener('click', () => {
+        taskPage.remove();
+        currentTaskOpen = null;
+    });
+    const createTaskButton = document.querySelector('.taskCreationLayout button');
     createTaskButton.addEventListener('click', () => {
         const inputs = document.querySelectorAll('.taskCreationLayout input');
         const textarea = document.querySelector('.taskCreationLayout textarea');
@@ -11,9 +17,10 @@ export function taskCreate() {
         const name = inputs[1].value;
         const description = textarea.value;
         const status = select.value;
-        const priority = document.querySelector('.chooseImportance input:checked').value
-        const access = document.querySelector('.chooseAccess input:checked').value
-        taskView.addTask({name, priority, description, assignee, status, access})
+        const priority = document.querySelector('.chooseImportance input:checked').value;
+        const isPrivate = !!+document.querySelector('.chooseAccess input:checked').value;
+        taskView.addTask({name, priority, description, assignee, status, isPrivate});
         console.log(mainDB);
+        document.querySelector('.taskCreationLayout').remove();
     })
 }

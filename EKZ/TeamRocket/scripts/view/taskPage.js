@@ -4,12 +4,12 @@ export class TaskPage {
     }
 
     display(containerID, content) {
-        const container = document.getElementById(`${containerID}`)
-        container.insertAdjacentHTML('afterbegin', content)
+        const container = document.getElementById(`${containerID}`);
+        container.insertAdjacentHTML('afterbegin', content);
     }
 
     showTaskPage(task) {
-        this.display(this.containerID, this.returnPageHTML(task))
+        this.display(this.containerID, this.returnPageHTML(task));
     }
 
     returnPageHTML(task) {
