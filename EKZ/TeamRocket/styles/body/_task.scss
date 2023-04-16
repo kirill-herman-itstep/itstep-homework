@@ -31,7 +31,7 @@
     box-shadow: $white-box-shadow;
     background-color: $main-bg-color;
     overflow: auto;
-    z-index: 1000;
+    z-index: 1;
 
     input, textarea {
         color: $light-bg-color;
@@ -64,7 +64,7 @@
             }
         }
 
-        input {
+        input:not([type=radio]) {
             width: 27rem;
             background-color: $main-bg-color;
             box-shadow: $lesser-white-box-shadow;
@@ -123,13 +123,18 @@
             .chooseImportance {
 
                 #importance {
+                    
+                    input:checked + label {
+                        outline: $light-border;
+                        outline-offset: 2 * $border-width;
+                        cursor: pointer;
+                    }
 
-                    * {
+                    >* {
                         width: 1.5 * $default-padding;
                         height: 1.5 * $default-padding;
                         border-radius: 50%;
-                        transition: outline 0.3s;
-    
+
                         &.high {
                             background-color: $bad-color;
                         }
@@ -150,12 +155,28 @@
                     }
                 }
             }
+
+            .chooseAccess {
+
+                label {
+                    border-radius: $svg-radius;
+                }
+                
+                input:checked + label {
+                    background-color: $secondary-bg-color;
+                    cursor: pointer;
+                }
+            }
         }
     }
 
-    button {
-        align-self: flex-end;
+    .buttons {
         margin-top: $default-padding;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
         border: none;
         padding: 0.25 * $default-padding $default-padding;
         border-radius: $default-padding;

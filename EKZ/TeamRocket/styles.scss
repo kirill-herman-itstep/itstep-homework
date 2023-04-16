@@ -41,13 +41,24 @@ button {
     }
 }
 
-input {
+input:not([type=radio]) {
     min-width: 16rem;
     border: none;
     outline: none;
     box-shadow: $light-box-shadow;
     border-radius: $little-border-radius;
     padding: 0.25 * $default-padding 0.5 * $default-padding;
+}
+
+input[type=radio] {
+
+    &.hidden {
+        display: none;
+        
+        &:checked + label {
+            cursor: pointer;
+        }
+    }
 }
 
 textarea {
