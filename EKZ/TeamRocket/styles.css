@@ -156,13 +156,20 @@ button:hover {
   box-shadow: 0 0 0 2px white;
 }
 
-input {
+input:not([type=radio]) {
   min-width: 16rem;
   border: none;
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
+}
+
+input[type=radio].hidden {
+  display: none;
+}
+input[type=radio].hidden:checked + label {
+  cursor: pointer;
 }
 
 textarea {
@@ -210,6 +217,7 @@ body .loginFormLayout {
   background-color: rgb(249, 248, 248);
 }
 body .loginFormLayout .loginForm {
+  margin: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,16 +257,8 @@ body .loginFormLayout .loginForm #inputs > *:last-child {
 }
 body .loginFormLayout .loginForm #inputs p {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  padding: 0 0.5rem;
-  column-gap: 1rem;
-}
-body .loginFormLayout .loginForm #inputs p a {
-  width: fit-content;
-}
-body .loginFormLayout .loginForm #inputs > a {
-  text-align: center;
 }
 body header {
   height: 3.5rem;
@@ -698,7 +698,7 @@ body .task {
   box-shadow: rgb(255, 255, 255) 0 0 7px;
   background-color: #2E2E2E;
   overflow: auto;
-  z-index: 1000;
+  z-index: 1;
 }
 body .task input, body .task textarea {
   color: rgb(249, 248, 248);
@@ -727,12 +727,12 @@ body .task > div span.boardName {
   border-radius: 1rem;
   box-shadow: rgb(255, 255, 255) 0 0 3px;
 }
-body .task > div input {
+body .task > div input:not([type=radio]) {
   width: 27rem;
   background-color: #2E2E2E;
   box-shadow: rgb(255, 255, 255) 0 0 3px;
 }
-body .task > div input[type=password] {
+body .task > div input:not([type=radio])[type=password] {
   margin-top: 1rem;
 }
 body .task > div textarea {
@@ -774,29 +774,43 @@ body .task > div.options div select {
   padding: 0.25rem 0.5rem;
   background-color: #2E2E2E;
 }
-body .task > div.options .chooseImportance #importance * {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  transition: outline 0.3s;
-}
-body .task > div.options .chooseImportance #importance *.high {
-  background-color: rgb(175, 61, 61);
-}
-body .task > div.options .chooseImportance #importance *.medium {
-  background-color: rgb(192, 190, 111);
-}
-body .task > div.options .chooseImportance #importance *.low {
-  background-color: rgb(139, 163, 112);
-}
-body .task > div.options .chooseImportance #importance *:hover {
+body .task > div.options .chooseImportance #importance input:checked + label {
   outline: 1px solid white;
   outline-offset: 2px;
   cursor: pointer;
 }
-body .task button {
-  align-self: flex-end;
+body .task > div.options .chooseImportance #importance > * {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+body .task > div.options .chooseImportance #importance > *.high {
+  background-color: rgb(175, 61, 61);
+}
+body .task > div.options .chooseImportance #importance > *.medium {
+  background-color: rgb(192, 190, 111);
+}
+body .task > div.options .chooseImportance #importance > *.low {
+  background-color: rgb(139, 163, 112);
+}
+body .task > div.options .chooseImportance #importance > *:hover {
+  outline: 1px solid white;
+  outline-offset: 2px;
+  cursor: pointer;
+}
+body .task > div.options .chooseAccess label {
+  border-radius: 0.5rem;
+}
+body .task > div.options .chooseAccess input:checked + label {
+  background-color: #1C1C1C;
+  cursor: pointer;
+}
+body .task .buttons {
   margin-top: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .task button {
   border: none;
   padding: 0.25rem 1rem;
   border-radius: 1rem;

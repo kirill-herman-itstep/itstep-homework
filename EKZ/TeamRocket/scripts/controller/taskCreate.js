@@ -4,6 +4,7 @@ export function taskCreate() {
     const createTaskButton = document.querySelector('.taskCreationLayout button')
     createTaskButton.addEventListener('click', () => {
         const inputs = document.querySelectorAll('.taskCreationLayout input');
+        console.log(inputs);
         const textarea = document.querySelector('.taskCreationLayout textarea');
         const select = document.querySelector('.taskCreationLayout select');
         
