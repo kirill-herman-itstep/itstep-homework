@@ -13,17 +13,15 @@ import { HeaderView } from "./scripts/view/header.js";
 import { TaskView } from "./scripts/view/task.js";
 import { TaskPage } from "./scripts/view/taskPage.js";
 import { TaskFeedView } from "./scripts/view/taskFeed.js";
-// import { FilterView } from "./scripts/view/filter.js";
+import { FilterView } from "./scripts/view/filter.js";
 
-export const userDB = new UserCollection(mockUserArray());
+export const userDB = new UserCollection();
 export const mainDB = new TaskCollection(mockTasksArray());
 
 export const headerView = new HeaderView('user');
 export const taskView = new TaskView();
 export const taskPage = new TaskPage('main');
 export const taskFeedView = new TaskFeedView('taskBoard');
+export const filterView = new FilterView();
 
 userDB.userArray = mockUserArray();
-
-
-

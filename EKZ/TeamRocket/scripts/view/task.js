@@ -11,7 +11,6 @@ export class TaskView {
 
     addTask(taskObj) {
         mainDB.add(taskObj.name, taskObj.priority, taskObj.description, taskObj.assignee, taskObj.status, taskObj.isPrivate);
-        console.log(taskObj.status);
         this.display(taskObj.status, this.getHTML(mainDB.taskArray.at(-1)));
     }
 

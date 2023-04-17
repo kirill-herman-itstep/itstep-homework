@@ -34,9 +34,7 @@ export class TaskCollection {
             }
 
             if (filterConfig.priority) {
-                priority.forEach((element) => {
-                    if (element.priority !== task.priority) return false;
-                })
+                if (filterConfig.priority !== task.priority) return false;
             }
 
             if (filterConfig.isPrivate !== undefined) {

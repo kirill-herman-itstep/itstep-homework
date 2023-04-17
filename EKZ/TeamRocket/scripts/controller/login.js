@@ -1,6 +1,5 @@
 import { crutchLogin } from "../../script.js";
 import { userDB } from "../../index.js";
-import { showMainPage } from "./mainPage.js";
 
 export function auth() {
     const loginForm = document.querySelector('form[name="login"]');
@@ -14,7 +13,6 @@ export function auth() {
         const user = userDB.userArray.find((element) => (loginData.login === element.login) && (loginData.password === element.password));
         if(user) {
             crutchLogin();
-            showMainPage();
         } else alert();
     })
 }

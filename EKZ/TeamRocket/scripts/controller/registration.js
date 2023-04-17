@@ -1,6 +1,5 @@
 import { crutchLogin } from "../../script.js";
 import { userDB } from "../../index.js";
-import { showMainPage } from "./mainPage.js";
 
 export function registration() {
     const regForm = document.querySelector('form[name="registration"]');
@@ -24,10 +23,7 @@ export function registration() {
             if ((regData.password === regData.repeatPassword) && (regData.password.length >= 6)) {
                 userDB.create(regData.login, regData.password, regData.name);
                 crutchLogin();
-                // headerView.setCurrentUser(userDB.getUserByLogin(regData.login));
-                showMainPage();
             } else alert();
         }
     })
-    
 }

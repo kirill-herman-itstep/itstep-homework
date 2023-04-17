@@ -128,29 +128,8 @@ export function showTaskCreation() {
 function hideTaskCreation() {
     body.removeChild(document.querySelector('.taskCreationLayout'));
 }
-// Перенести в контроллер и переписать под текущую версию
-// let currentTaskOpen;
 
-// export function showTaskOpen(id) {
-//     if (currentTaskOpen) {
-//         const taskPage = document.querySelector('.task');
-//         taskPage.remove();
-//         currentTaskOpen = null;
-//     }
-//     const main = document.querySelector('main');
-//     const task = mainDB.getTask(id);
-//     currentTaskOpen = task;
-//     main.insertAdjacentHTML('afterbegin', returnPageHTML(task));
-
-//     const closeButton = document.querySelector('.task .crossIco');
-//     const taskPage = document.querySelector('.task');
-//     closeButton.addEventListener('click', () => {
-//         taskPage.remove();
-//         currentTaskOpen = null;
-//     });
-// }
-
-function showFilter() {
+export function showFilter() {
     if (document.querySelector('.filterLayout')) hideFilter();
     else {
         let filterLayoutTemplate = document.querySelector('#filterLayoutTemplate');
