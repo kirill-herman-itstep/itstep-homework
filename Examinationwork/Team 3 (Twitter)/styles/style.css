@@ -217,22 +217,43 @@ ul h2 {
   box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
-.signUp {
+.sign-up {
   width: 344px;
   height: 54px;
   background: #88658c;
   border-radius: 20px;
   margin-top: 5%;
   cursor: pointer;
-  color: white;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
-  line-height: 21px;
   border: none;
+  position: relative;
+  overflow: hidden;
+}
+.sign-up .sign-up-effect {
+  color: #fffffa;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  line-height: 54px;
+  height: 100%;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  overflow: hidden;
   text-align: center;
-  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 100px 0 #fff, 1px 76px 10px #000;
+  transition: all 0.3s ease-in-out;
+}
+.sign-up .sign-up-effect:hover {
+  text-shadow: 0 50px 0 #fff, 1px 51px 20px #fff;
+  margin-top: -52px;
+  height: 108px;
+  background: #4e48c8;
 }
 
 .userName,
@@ -283,16 +304,43 @@ ul h2 {
   background-position-y: 10px;
 }
 
-#mainFormBlockRaight a:nth-of-type(1) {
+#mainFormBlockRaight > a:nth-of-type(1) {
   margin-top: 27px;
   text-decoration: none;
   color: #88658c;
 }
+#mainFormBlockRaight > a:nth-of-type(1):hover {
+  cursor: auto;
+}
 
-#mainFormBlockRaight a:nth-of-type(2) {
+#autorisationSign {
   margin-top: 5px;
+  font-size: 1.2rem;
   text-decoration: none;
   color: #88658c;
+  position: relative;
+}
+#autorisationSign::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+#autorisationSign:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 
 body {
@@ -435,8 +483,6 @@ body {
   border-radius: 20px;
   margin-top: 24px;
   height: 54px;
-  cursor: pointer;
-  color: white;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -444,7 +490,31 @@ body {
   line-height: 21px;
   border: none;
   text-align: center;
-  color: #ffffff;
+  color: #fffffa;
+  overflow: hidden;
+}
+.registration-signUp .registration-sign-up-effect {
+  color: #fffffa;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  line-height: 54px;
+  height: 100%;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 100px 0 #fff, 1px 76px 10px #000;
+  transition: all 0.3s ease-in-out;
+}
+.registration-signUp .registration-sign-up-effect:hover {
+  text-shadow: 0 50px 0 #fff, 1px 51px 20px #fff;
+  margin-top: -52px;
+  height: 108px;
+  background: #4e48c8;
 }
 
 .registration-user-name,
@@ -479,7 +549,7 @@ body {
   padding-left: 54px;
   background-position-x: 27px;
   background-position-y: 8px;
-  margin-top: 26px;
+  margin-top: 15px;
 }
 
 .registration-password {
@@ -492,18 +562,46 @@ body {
   background-position-y: 8px;
 }
 
-#registrationMainFormBlockRaight a:nth-of-type(1) {
+#registrationMainFormBlockRaight > a:nth-of-type(1) {
   margin-top: 10px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #88658c;
 }
+#registrationMainFormBlockRaight > a:nth-of-type(1):hover {
+  cursor: auto;
+}
 
-#registrationMainFormBlockRaight a:nth-of-type(2) {
+#registrationSign {
   margin-top: 5px;
+  display: inline-block;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #88658c;
+  font-size: 1.2rem;
+  position: relative;
+}
+#registrationSign::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+#registrationSign:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 
 #registrationFooterEnd {
@@ -690,8 +788,33 @@ ul h2 {
   padding-top: 35%;
 }
 
-a {
+#errorLogout {
   text-decoration: none;
+  color: #88658c;
+  font-size: 1.2rem;
+  position: relative;
+}
+#errorLogout::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+#errorLogout:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 
 body {
@@ -733,6 +856,29 @@ body {
   text-decoration: none;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.main-container .main-welcome #mainLogOut::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+.main-container .main-welcome #mainLogOut:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 .main-container .main-content {
   display: flex;
@@ -801,11 +947,10 @@ body {
   border-radius: 0 0 29px 29px;
   color: rgba(0, 0, 0, 0.54);
 }
-.main-container .main-content .main-new-twit button {
+.main-container .main-content .main-new-twit #postTweet {
   box-sizing: border-box;
   width: 121px;
-  color: rgb(255, 255, 255);
-  background-color: #88658c;
+  color: rgb(255, 255, 250);
   font-size: 18px;
   margin-left: auto;
   margin-right: 69px;
@@ -813,9 +958,15 @@ body {
   border: none;
   border-radius: 12px;
   font-weight: 700;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
 }
-.main-container .main-content .main-new-twit button:hover {
+.main-container .main-content .main-new-twit #postTweet:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
 }
 .main-container .main-content .main-current-all-tweets {
   flex-grow: 1;
@@ -1021,7 +1172,6 @@ body {
   box-sizing: border-box;
   width: 100px;
   color: rgb(255, 255, 255);
-  background-color: #88658c;
   font-size: 18px;
   margin-left: auto;
   margin-right: auto;
@@ -1030,9 +1180,15 @@ body {
   border-radius: 12px;
   font-weight: 700;
   margin-top: 20px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
 }
 .main-container .filtration .filtration-form #filtrationFormHashtags:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
 }
 
 body {
@@ -1074,6 +1230,29 @@ body {
   text-decoration: none;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.container-twit .welcome-twit #twitLogOut::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+.container-twit .welcome-twit #twitLogOut:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 .container-twit .welcome-twit .welcome-site-twit {
   font-weight: 400;
@@ -1252,20 +1431,25 @@ body {
   border-radius: 0 0 29px 29px;
   color: rgba(0, 0, 5, 0.54);
 }
-.container-twit .container-comments-answer button {
+.container-twit .container-comments-answer #postComment {
   box-sizing: border-box;
   width: 121px;
   color: rgb(255, 255, 255);
-  background-color: #88658c;
   font-size: 18px;
   padding: 5px 0;
   border: none;
   border-radius: 12px;
   font-weight: 700;
   margin: 0 60px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
 }
-.container-twit .container-comments-answer button:hover {
+.container-twit .container-comments-answer #postComment:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
 }
 
 #root {

@@ -28,7 +28,7 @@ newTweetCollection.addComment('8', 'Я вот сильно сомневаюсь 
 const root = document.getElementById('root');
 let user = 'Илон Маск';
 
-root.insertAdjacentHTML('afterbegin', mainPage);
+root.insertAdjacentHTML('afterbegin', registration);
 const showUserNameMain = new HeaderView('helloUser');
 const showTweets = new TweetView('twitMain');
 

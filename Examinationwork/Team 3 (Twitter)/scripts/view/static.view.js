@@ -2,7 +2,7 @@
 
 export const autorisation = `<div id="mainWrapper">
 <menu id="leftBlock">
-    <img src="assets/images/img_autorisation/LOGO.png" alt="" class="vectorKat" />
+    <img src="assets/images/img_autorisation/LOGO.png" class="vectorKat" />
     <div>
         <h2 class="Sign">Sign up</h2>
         <h2 class="mainPage">MAIN PAGE</h2>
@@ -10,20 +10,20 @@ export const autorisation = `<div id="mainWrapper">
 </menu>
 <menu id="raightBlock">
     <header class="mainHader">
-        <img src="assets/images/img_autorisation/Home.png" alt="" class="imgHome" />
+        <img src="assets/images/img_autorisation/Home.png" class="imgHome" />
         <h3>Main</h3>
         <h3>></h3>
         <h3>authorization</h3>
         <h3>></h3>
     </header>
     <section id="mainSektion">
-        <img src="assets/images/img_autorisation/LogoGroup.png" alt="" />
-        <form action="" method="get" id="mainFormBlockRaight">
+        <img src="assets/images/img_autorisation/LogoGroup.png" />
+        <form method="get" id="mainFormBlockRaight">
             <input type="text" placeholder="username" class="userName" />
             <input type="password" placeholder="password" class="password" />
-            <input type="button" value="Sign In" class="signUp" />
-            <a href="">If you don't have an account</a>
-            <a href="">Sign</a>
+            <button class="sign-up"><a href="#" class="sign-up-effect">Sign In</a></button>
+            <a href="#">If you don't have an account</a>
+            <a href="#" id="autorisationSign">Sign</a>
         </form>
     </section>
 </menu>
@@ -39,29 +39,29 @@ export const autorisation = `<div id="mainWrapper">
 </ul>
 </footer> `;
 
-export const registration = `<div id="registrationMainWrapper">
+export const registration = `  <div id="registrationMainWrapper">
 <menu id="registrationLeftBlock">
-    <img src="../../assets/images/img_registration_page/LOGO.png" class="registration-cat" />
+    <img src="assets/images/img_registration_page/LOGO.png" class="registration-cat" />
     <h2 class="registration-sign">Log in</h2>
     <h2 class="registration-main-page">main page</h2>
 </menu>
 <menu id="registrationRaightBlock">
     <header class="registration-mainHader">
-        <img src="../../assets/images/img_registration_page/Vector (Home).png" class="registration-imgHome" />
+        <img src="assets/images/img_registration_page/Vector (Home).png" class="registration-imgHome" />
         <h3>Main</h3>
         <h3>></h3>
         <h3>authorization</h3>
         <h3>></h3>
     </header>
     <section id="registrationMainSektion">
-        <img src="../../assets/images/img_registration_page/LogoGroup.png" alt="" />
+        <img src="assets/images/img_registration_page/LogoGroup.png" />
         <form method="get" id="registrationMainFormBlockRaight">
-            <input type="text" value="username" class="registration-user-name" />
-            <input type="password" value="password" class="registration-password" />
-            <input type="password" value="confirm password" class="registration-password" />
-            <input type="button" value="Sign In" class="registration-signUp" />
-            <a href="">If you don't have an account</a>
-            <a href="#">Sigт</a>
+            <input type="text" placeholder="username" class="registration-user-name" />
+            <input type="password" placeholder="password" class="registration-password" />
+            <input type="password" placeholder="confirm password" class="registration-password" />
+            <button class="registration-signUp"><a href="#" class="registration-sign-up-effect">Sign In</a></button>
+            <a href="#">if you don't have an account</a>
+            <a href="#" id="registrationSign">Sign</a>
         </form>
     </section>
 </menu>
@@ -82,7 +82,7 @@ export const errorPage = `<div id="errorMainWrapper">
     <img src="../../assets/images/error_page/LOGO.png" class="error-cat" />
     <h2 class="error-sign">Welcome!</h2>
     <h3>Hi, Dmitry</h3>
-    <a href="">Log out</a>
+    <a href="#" id="errorLogout">Log out</a>
     <h2 class="error-main-page">main page</h2>
 </menu>
 <menu id="errorRaightBlock">
@@ -113,7 +113,7 @@ export const mainPage = `<div class="main-container">
 <aside class="main-welcome">
     <div class="main-welcome-icon"></div>
     <h1>Welcome!</h1>
-    <h2 id="helloUser"></h2>
+    <h2 id="mainUser"></h2>
     <a href="#" id="mainLogOut">Log out</a>
 </aside>
 <div class="main-content">
@@ -128,7 +128,7 @@ export const mainPage = `<div class="main-container">
             <textarea id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
             <div id="mainNewTwitСounter">0/280</div>
         </div>
-        <button>Post</button>
+        <button id="postTweet">Post</button>
     </div>
     <div class="main-current-all-tweets" id="tweetsMainAllTweets"></div>
 </div>
@@ -152,9 +152,9 @@ export const mainPage = `<div class="main-container">
         </label>
         <label class="filtration-form-hashtags">
             <div>hashtags</div>
-            <input type="text"  class="filtration-form-hashtags-text" placeholder="ignore"/>
+            <input type="text" class="filtration-form-hashtags-text" placeholder="ignore" />
         </label>
-        <input type="submit" value="Find" id="filtrationFormHashtags" />
+        <button id="filtrationFormHashtags">Find</button>
     </form>
 </aside>
 </div>`;
@@ -186,7 +186,7 @@ export const tweetPage = `<div class="container-twit">
             <textarea id="commentsAnswerTwit" placeholder="Write your reply"></textarea>
             <div id="commentsAnswerСounter">0/280</div>
         </div>
-        <button>Post</button>
+        <button id="postComment">Post</button>
     </div>
 </main>
 </div>`;

@@ -153,6 +153,31 @@ ul h2 {
   padding-top: 35%;
 }
 
-a {
+#errorLogout {
   text-decoration: none;
+  color: #88658c;
+  font-size: 1.2rem;
+  position: relative;
+}
+#errorLogout::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+#errorLogout:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }/*# sourceMappingURL=error.css.map */

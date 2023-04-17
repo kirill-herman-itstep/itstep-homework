@@ -39,6 +39,29 @@ body {
   text-decoration: none;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.main-container .main-welcome #mainLogOut::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+.main-container .main-welcome #mainLogOut:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
 }
 .main-container .main-content {
   display: flex;
@@ -107,11 +130,10 @@ body {
   border-radius: 0 0 29px 29px;
   color: rgba(0, 0, 0, 0.54);
 }
-.main-container .main-content .main-new-twit button {
+.main-container .main-content .main-new-twit #postTweet {
   box-sizing: border-box;
   width: 121px;
-  color: rgb(255, 255, 255);
-  background-color: #88658c;
+  color: rgb(255, 255, 250);
   font-size: 18px;
   margin-left: auto;
   margin-right: 69px;
@@ -119,9 +141,15 @@ body {
   border: none;
   border-radius: 12px;
   font-weight: 700;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
 }
-.main-container .main-content .main-new-twit button:hover {
+.main-container .main-content .main-new-twit #postTweet:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
 }
 .main-container .main-content .main-current-all-tweets {
   flex-grow: 1;
@@ -327,7 +355,6 @@ body {
   box-sizing: border-box;
   width: 100px;
   color: rgb(255, 255, 255);
-  background-color: #88658c;
   font-size: 18px;
   margin-left: auto;
   margin-right: auto;
@@ -336,7 +363,13 @@ body {
   border-radius: 12px;
   font-weight: 700;
   margin-top: 20px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
 }
 .main-container .filtration .filtration-form #filtrationFormHashtags:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
 }/*# sourceMappingURL=main.css.map */
