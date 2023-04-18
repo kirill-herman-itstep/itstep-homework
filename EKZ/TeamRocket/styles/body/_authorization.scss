@@ -1,10 +1,10 @@
-.loginFormLayout {
+.authorizationOverlay{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $light-bg-color;
 
-    .loginForm {
+    .authorizationForm {
         margin: 2 * $login-padding;
         display: flex;
         flex-direction: column;
@@ -21,7 +21,7 @@
             height: $mainLogo-size;
         }
 
-        #inputs {
+        .functional {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,26 +32,22 @@
                 flex-direction: column;
                 row-gap: $default-padding;
 
-            }
-
-            button {
-                margin-top: $default-padding;
-                margin-bottom: $default-padding;
-                border: none;
-                font-size: 1.25em;
-                font-weight: 500;
-                filter: invert(1);
-            }
-
-            >*:last-child {
-                margin-top: -0.5 * $default-padding;
-                font-size: $small-font-size;
+                button {
+                    margin-top: $default-padding;
+                    margin-bottom: $default-padding;
+                    border: none;
+                    font-size: 1.25em;
+                    font-weight: 500;
+                    filter: invert(1);
+                }
             }
 
             p {
                 display: flex;
                 justify-content: space-around;
                 width: 100%;
+                margin-top: -0.5 * $default-padding;
+                font-size: $small-font-size;
             }
         }
     }

@@ -1,12 +1,16 @@
 .taskBoard {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    
     column-gap: 3 * $default-padding;
     height: calc($body-height - $header-height - $toolbar-height);
     padding: 0 4 * $default-padding;
     background-color: $main-bg-color;
-
+    
     .taskTableWrapper {
+        flex-grow: 1;
+        flex-basis: 20rem;
         min-width: 20rem;
 
         .tableHeader {
@@ -66,121 +70,123 @@
                 }
             }
         }
-    
+
         .taskTable {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            row-gap: $default-padding;
             height: calc($body-height - $header-height - $toolbar-height - $default-padding - 2.25rem - $default-padding);
-            padding: 0 $default-padding;
             background-color: $secondary-bg-color;
             border-radius: $default-padding;
-            overflow-y: auto;
-            overflow-x: hidden;
-
+            
             .border {
-                position: sticky;
-                width: calc(100% + 4 * $border-width);
+                position: absolute;
+                width: 100%;
                 height: $blur-width;
                 flex-shrink: 0;
 
                 &.top {
                     top: 0;
-                    background-image: linear-gradient(to bottom, $secondary-bg-color, transparent 100%);
                     margin-bottom: - 0.5 * $blur-width;
+                    border-radius: $default-padding $default-padding 0 0;
+                    background-image: linear-gradient(to bottom, $secondary-bg-color, transparent 100%);
                 }
 
                 &.bottom {
                     bottom: 0;
-                    background-image: linear-gradient(to top, $secondary-bg-color, transparent 100%);
                     margin-top: - 0.5 * $blur-width;
+                    border-radius: 0 0 $default-padding $default-padding;
+                    background-image: linear-gradient(to top, $secondary-bg-color, transparent 100%);
                 }
             }
 
-            .innerContent {
+            .tasks {
                 display: flex;
                 flex-direction: column;
-                row-gap: 1rem;
-            }
-
-            .taskForm {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                background-color: $main-bg-color;
-                border-radius: $default-padding;
-                padding: 0.5 * $default-padding $default-padding;
-                row-gap: 0.25 * $default-padding;
-
-                &:hover {
-                    box-shadow: $lesser-white-box-shadow;
-                }
-
-                > * {
-                    width: 100%;
-                }
-
-                div {
+                justify-content: flex-start;
+                row-gap: $default-padding;
+                height: calc($body-height - $header-height - $toolbar-height - $default-padding - 2.25rem - $default-padding);
+                padding: $blur-width $default-padding;
+                overflow-y: auto;
+                overflow-x: hidden;
+    
+                .innerContent {
                     display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
                 }
-
-                .taskStatus {
-                    justify-content: space-between;
-                    align-items: center;
-
-                    .mark {
-                        justify-content: center;
+    
+                .taskForm {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    background-color: $main-bg-color;
+                    border-radius: $default-padding;
+                    padding: 0.5 * $default-padding $default-padding;
+                    row-gap: 0.25 * $default-padding;
+    
+                    &:hover {
+                        box-shadow: $lesser-white-box-shadow;
+                    }
+    
+                    > * {
+                        width: 100%;
+                    }
+    
+                    div {
+                        display: flex;
+                    }
+    
+                    .taskStatus {
+                        justify-content: space-between;
                         align-items: center;
-                        // width: 4 * $h4-font-size;
-                        height: 1.25 * $h4-font-size;
-                        padding: 0 0.5 * $default-padding;
-                        border-radius: 2 * $little-border-radius;
-                        color: $main-border-color;
-                        font-size: $small-font-size;
-                        text-transform: lowercase;
-                        
-                        &.high {
-                            background-color: $bad-color;
+    
+                        .mark {
+                            justify-content: center;
+                            align-items: center;
+                            // width: 4 * $h4-font-size;
+                            height: 1.25 * $h4-font-size;
+                            padding: 0 0.5 * $default-padding;
+                            border-radius: 2 * $little-border-radius;
+                            color: $main-border-color;
+                            font-size: $small-font-size;
+                            text-transform: lowercase;
+                            
+                            &.high {
+                                background-color: $bad-color;
+                            }
+    
+                            &.medium {
+                                background-color: $normal-color;
+                            }
+    
+                            &.low {
+                                background-color: $good-color;
+                            }
                         }
-
-                        &.medium {
-                            background-color: $normal-color;
-                        }
-
-                        &.low {
-                            background-color: $good-color;
+    
+                        img {
+                            width: 1.5 * $h4-font-size;
+                            height: 1.5 * $h4-font-size;
+                            padding: 0.35 * $default-padding;
+                            border-radius: 2 * $little-border-radius;
+                            transition: all 0.3s linear;
+                
+                            &:hover {
+                                background-color: $light-bg-color
+                            }
                         }
                     }
-
-                    img {
-                        width: 1.5 * $h4-font-size;
-                        height: 1.5 * $h4-font-size;
-                        padding: 0.35 * $default-padding;
-                        border-radius: 2 * $little-border-radius;
-                        transition: all 0.3s linear;
-            
-                        &:hover {
-                            background-color: $light-bg-color
-                        }
-                    }
-                }
-
-                // .taskName {
-
-                // }
-
-                .taskAssignee {
-                    justify-content: flex-end;
-
-                    .assignee {
-
-                        svg {
-                            width: 1.25 * $svg-size;
-                            height: 1.25 * $svg-size;
-                            margin-left: 0.25 * $default-padding;
-                            border-radius: 50%;
+    
+                    .taskAssignee {
+                        justify-content: flex-end;
+    
+                        .assignee {
+    
+                            svg {
+                                width: 1.25 * $svg-size;
+                                height: 1.25 * $svg-size;
+                                margin-left: 0.25 * $default-padding;
+                                border-radius: 50%;
+                            }
                         }
                     }
                 }

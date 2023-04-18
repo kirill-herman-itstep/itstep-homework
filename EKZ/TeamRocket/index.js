@@ -9,6 +9,7 @@ export function setUser(elem) {
     currentUser = elem;
 }
 
+import { View } from "./scripts/view/view.js";
 import { HeaderView } from "./scripts/view/header.js";
 import { TaskView } from "./scripts/view/task.js";
 import { TaskPage } from "./scripts/view/taskPage.js";
@@ -18,6 +19,7 @@ import { FilterView } from "./scripts/view/filter.js";
 export const userDB = new UserCollection();
 export const mainDB = new TaskCollection(mockTasksArray());
 
+export const view = new View();
 export const headerView = new HeaderView('user');
 export const taskView = new TaskView();
 export const taskPage = new TaskPage('main');

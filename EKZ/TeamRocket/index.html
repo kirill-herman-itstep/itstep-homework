@@ -8,48 +8,49 @@
     <title>TaskMaster</title>
 </head>
 <body>
-    <template id="loginLayoutTemplate">
-        <div class="loginFormLayout layout">
-            <div class="loginForm">
-                
-                <template id="loginTemplate">
-                    <form name="login">
-                        <input type="email" placeholder="Login">
-                        <input type="password" placeholder="Password">
-                        <button type="submit">Log in</button>
-                    </form>
-                    <hr>
-                    <p>
-                        <a href="#">Forgot a password?</a>
-                        <a href="#register">Sign up</a>
-                    </p>
-                </template>
 
-                <template id="registrationTemplate">
-                    <form name="registration">
-                        <input type="text" placeholder="Username">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Repeat Password">
-                        <button type="submit">Sign up</button>
-                    </form>
-                    <hr>
-                    <p>
-                        <a href="#login">Already have an account? Log in.</a>
-                    </p>
-                </template>
-
+    <template id="authorizationPage">
+        <div class="authorizationOverlay overlay">
+            <div class="authorizationForm">
                 <a href="#">
                     <img src="assets/png/mainLogo.png" alt="TaskMaster" class="mainLogo">
                 </a>
-                <div class="functional" id="inputs">
+                <div class="functional">
                 </div>
-
             </div>
         </div>
     </template>
     
-    <template id="mainLayoutTemplate">
+    <template id="loginFunctional">
+        <form name="login">
+            <input type="email" placeholder="Login">
+            <input type="password" placeholder="Password">
+            <button type="submit">Log in</button>
+        </form>
+        <hr>
+        <p>
+            <a href="#">Forgot a password?</a>
+            <a href="#register">Sign up</a>
+        </p>
+    </template>
+
+    <template id="registrationFunctional">
+        <form name="registration">
+            <input type="text" placeholder="Username">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Repeat Password">
+            <button type="submit">Sign up</button>
+        </form>
+        <hr>
+        <p>
+            <a href="#login">Already have an account? Log in.</a>
+        </p>
+    </template>
+
+    
+
+    <template id="header">
         <header>
             <div class="logo">
                 <a href="#">
@@ -58,40 +59,95 @@
                 <span>TaskMaster</span>
             </div>
             <div class="user" id="user">
-
             </div>
         </header>
         <main id="main">
-            <div class="toolbar">
-                <section class="left">
-                    <div class="filter">
-                        <svg class="filterIco" viewBox="3 2 23 24">
-                            <path transform="scale(1.2)" d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="black"/>
-                        </svg>
-                        <span>Filter</span>
-                    </div>
-                    <div class="sort">
-                        <svg class="sortIco" viewBox="32 32 190 190" stroke-width="7.68">
-                            <path d="M119.39062,172.93848a8.00028,8.00028,0,0,1-1.73339,8.71875l-32,32a8.00181,8.00181,0,0,1-11.31446,0l-32-32A8.00065,8.00065,0,0,1,48,168H72V48a8,8,0,0,1,16,0V168h24A8,8,0,0,1,119.39062,172.93848Zm94.26661-98.59571-32-32a8.00122,8.00122,0,0,0-11.31446,0l-32,32A8.00065,8.00065,0,0,0,144,88h24V208a8,8,0,0,0,16,0V88h24a8.00066,8.00066,0,0,0,5.65723-13.65723Z"/>
-                        </svg>
-                        <span>Sort</span>
-                    </div>
-                </section>
-                <section class="right">
-                    
-                </section>
-            </div>
-            <template id="tableLayoutTemplate">
-                <div class="taskBoard" id="taskBoard">
-                </div>
-            </template>
         </main>
     </template>
+    
+    <template id="toolbar">
+        <div class="toolbar">
+            <section class="left">
+                <div class="filter">
+                    <svg class="filterIco" viewBox="3 2 23 24">
+                        <path transform="scale(1.2)" d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="black"/>
+                    </svg>
+                    <span>Filter</span>
+                </div>
+                <div class="sort">
+                    <svg class="sortIco" viewBox="32 32 190 190" stroke-width="7.68">
+                        <path d="M119.39062,172.93848a8.00028,8.00028,0,0,1-1.73339,8.71875l-32,32a8.00181,8.00181,0,0,1-11.31446,0l-32-32A8.00065,8.00065,0,0,1,48,168H72V48a8,8,0,0,1,16,0V168h24A8,8,0,0,1,119.39062,172.93848Zm94.26661-98.59571-32-32a8.00122,8.00122,0,0,0-11.31446,0l-32,32A8.00065,8.00065,0,0,0,144,88h24V208a8,8,0,0,0,16,0V88h24a8.00066,8.00066,0,0,0,5.65723-13.65723Z"/>
+                    </svg>
+                    <span>Sort</span>
+                </div>
+            </section>
+            <section class="right">
+                
+            </section>
+        </div>
+        <div class="taskBoard" id="taskBoard"></div>
+    </template>
+
+
+
+    <template id="taskTable">
+        <div class="taskTableWrapper" id="getFromJS">
+            <div class="tableHeader">
+                <h4 contenteditable="true"></h4>
+                <div>
+                    <svg class="plusIco" viewBox="0 0 14 14">
+                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
+                    </svg>
+                    <svg class="deleteIco" viewBox="0 0 14 18">
+                        <path d="M11 6V16H3V6H11ZM9.5 0H4.5L3.5 1H0V3H14V1H10.5L9.5 0ZM13 4H1V16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4Z"/>
+                    </svg>
+                    <!-- <img src="assets/png/deleteIco.png" alt="Delete section"> -->
+                </div>
+            </div>
+            <div class="taskTable">
+                <div class="border top"></div>
+                <div class="border bottom"></div>
+                <div class="tasks"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="taskForm">
+        <div class="taskForm">
+            <div class="taskStatus">
+                <div class="mark"></div>
+                <svg class="optionsIco" viewBox="0 0 4 17">
+                    <path d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z"/>
+                </svg>
+            </div>
+            <div class="taskName">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui numquam minus. Omnis ducimus nam ex beatae cum, facilis sunt pariatur laboriosam. Quis sit numquam doloremque, rerum assumenda corrupti cum.
+            </div>
+            <div class="taskAssignee">
+                <div class="assignee">
+                    <svg class="assigneeAvatar" viewBox="0 0 30 26" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0002 6C21.0002 9.31371 18.314 12 15.0002 12C11.6865 12 9.00024 9.31371 9.00024 6C9.00024 2.68629 11.6865 0 15.0002 0C18.314 0 21.0002 2.68629 21.0002 6ZM19.0002 6C19.0002 8.20914 17.2094 10 15.0002 10C12.7911 10 11.0002 8.20914 11.0002 6C11.0002 3.79086 12.7911 2 15.0002 2C17.2094 2 19.0002 3.79086 19.0002 6Z"/>
+                        <path d="M15.0002 15C8.52586 15 3.00952 18.8284 0.908203 24.192C1.4201 24.7004 1.95934 25.1812 2.52353 25.6321C4.08827 20.7077 8.99696 17 15.0002 17C21.0035 17 25.9122 20.7077 27.477 25.6321C28.0412 25.1812 28.5804 24.7004 29.0923 24.1921C26.991 18.8284 21.4746 15 15.0002 15Z"/>
+                    </svg>
+                    <svg class="assigneeAvatar" viewBox="0 0 30 26" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0002 6C21.0002 9.31371 18.314 12 15.0002 12C11.6865 12 9.00024 9.31371 9.00024 6C9.00024 2.68629 11.6865 0 15.0002 0C18.314 0 21.0002 2.68629 21.0002 6ZM19.0002 6C19.0002 8.20914 17.2094 10 15.0002 10C12.7911 10 11.0002 8.20914 11.0002 6C11.0002 3.79086 12.7911 2 15.0002 2C17.2094 2 19.0002 3.79086 19.0002 6Z"/>
+                        <path d="M15.0002 15C8.52586 15 3.00952 18.8284 0.908203 24.192C1.4201 24.7004 1.95934 25.1812 2.52353 25.6321C4.08827 20.7077 8.99696 17 15.0002 17C21.0035 17 25.9122 20.7077 27.477 25.6321C28.0412 25.1812 28.5804 24.7004 29.0923 24.1921C26.991 18.8284 21.4746 15 15.0002 15Z"/>
+                    </svg>
+                    <svg class="assigneeAvatar" viewBox="0 0 30 26" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0002 6C21.0002 9.31371 18.314 12 15.0002 12C11.6865 12 9.00024 9.31371 9.00024 6C9.00024 2.68629 11.6865 0 15.0002 0C18.314 0 21.0002 2.68629 21.0002 6ZM19.0002 6C19.0002 8.20914 17.2094 10 15.0002 10C12.7911 10 11.0002 8.20914 11.0002 6C11.0002 3.79086 12.7911 2 15.0002 2C17.2094 2 19.0002 3.79086 19.0002 6Z"/>
+                        <path d="M15.0002 15C8.52586 15 3.00952 18.8284 0.908203 24.192C1.4201 24.7004 1.95934 25.1812 2.52353 25.6321C4.08827 20.7077 8.99696 17 15.0002 17C21.0035 17 25.9122 20.7077 27.477 25.6321C28.0412 25.1812 28.5804 24.7004 29.0923 24.1921C26.991 18.8284 21.4746 15 15.0002 15Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
 
     <template id="profileLayoutTemplate">
-        <div class="profileLayuot layout">
+        <div class="profileLayout overlay">
             <div class="profile">
-                <svg class="crossIco" viewBox="0 0 14 14" onclick="hideProfileLayout()">
+                <svg class="crossIco" viewBox="0 0 14 14">
                     <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
                 </svg>
                 <svg class="avatarPlaceholder" viewBox="0 0 40 40" fill="none">
@@ -116,7 +172,7 @@
     </template>
 
     <template id="taskCreationTemplate">
-        <div class="taskCreationLayout layout">
+        <div class="taskCreationLayout overlay">
             <div class="task">
                 <div class="actionsBar">
                     <svg class="crossIco" viewBox="0 0 14 14">
@@ -184,11 +240,94 @@
         </div>
     </template>
 
-    <template id="taskOpenTemplate">
-        
+
+
+    <template id="taskPage">
+        <div class="task">
+            <div class="actionsBar">
+                <svg class="deleteIco" viewBox="0 0 14 18">
+                    <path d="M11 6V16H3V6H11ZM9.5 0H4.5L3.5 1H0V3H14V1H10.5L9.5 0ZM13 4H1V16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4Z"/>
+                </svg>
+                <svg class="crossIco" viewBox="0 0 14 14">
+                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
+                </svg>
+            </div>
+            <div class="assignTo">
+                <span>Assign to</span>
+                <input type="text">
+            </div>
+            <div class="title">
+                <span>Title</span>
+                <input type="text">
+            </div>
+            <div class="description">
+                <span>Description</span>
+                <textarea placeholder="Detailed taxt description."></textarea>
+            </div>
+            <div class="options">
+                <div class="chooseImportance">
+                    <span>Importance</span>
+                    <div id="importance">
+                        <input type="radio" name="importance" class="hidden" value="low" id="importanceLow">
+                        <label for="importanceLow" class="low"></label>
+                        <input type="radio" name="importance" class="hidden" value="medium" id="importanceMedium">
+                        <label for="importanceMedium" class="medium"></label>
+                        <input type="radio" name="importance" class="hidden" value="high" id="importanceHigh">
+                        <label for="importanceHigh" class="high"></label>
+                    </div>
+                </div>
+                <div class="chooseBoard">
+                    <span>Current board</span>
+                    <span class="boardName"></span>
+                </div>
+                <div class="chooseAccess">
+                    <span>Access</span>
+                    <div>
+                        <input type="radio" name="access" class="hidden" id="acessPublic" value="0">
+                        <label for="acessPublic">
+                            <svg class="peopleIco" viewBox="0 0 22 16">
+                                <path d="M15.67 9.13C17.04 10.06 18 11.32 18 13V16H22V13C22 10.82 18.43 9.53 15.67 9.13Z"/>
+                                <path d="M14 8C16.21 8 18 6.21 18 4C18 1.79 16.21 0 14 0C13.53 0 13.09 0.0999998 12.67 0.24C13.5 1.27 14 2.58 14 4C14 5.42 13.5 6.73 12.67 7.76C13.09 7.9 13.53 8 14 8Z"/>
+                                <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 2C9.1 2 10 2.9 10 4C10 5.1 9.1 6 8 6C6.9 6 6 5.1 6 4C6 2.9 6.9 2 8 2Z"/>
+                                <path d="M8 9C5.33 9 0 10.34 0 13V16H16V13C16 10.34 10.67 9 8 9ZM14 14H2V13.01C2.2 12.29 5.3 11 8 11C10.7 11 13.8 12.29 14 13V14Z"/>
+                            </svg>
+                        </label>
+                        <input type="radio" name="access" class="hidden" id="acessPrivate" value="1">
+                        <label for="acessPrivate">
+                            <svg class="lockIco" viewBox="0 0 16 22">
+                                <path d="M14 7.5H13V5.5C13 2.74 10.76 0.5 8 0.5C5.24 0.5 3 2.74 3 5.5V7.5H2C0.9 7.5 0 8.4 0 9.5V19.5C0 20.6 0.9 21.5 2 21.5H14C15.1 21.5 16 20.6 16 19.5V9.5C16 8.4 15.1 7.5 14 7.5ZM5 5.5C5 3.84 6.34 2.5 8 2.5C9.66 2.5 11 3.84 11 5.5V7.5H5V5.5ZM14 19.5H2V9.5H14V19.5ZM8 16.5C9.1 16.5 10 15.6 10 14.5C10 13.4 9.1 12.5 8 12.5C6.9 12.5 6 13.4 6 14.5C6 15.6 6.9 16.5 8 16.5Z">
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="commentSection">
+                <div class="newComment">
+                    <textarea name="newComment" id="" cols="30" rows="10"></textarea>
+                    <img class="postComment" src="assets/png/postCommentIco.png" alt="">
+                    <span><span>0</span>/280</span>
+                </div>
+                <div class="placeholder"></div>
+            </div>
+        </div>
     </template>
 
-    <template id="filterLayoutTemplate">
+    <template id="comment">
+        <div class="comment">
+            <svg class="avatarPlaceholder" viewBox="0 0 40 40" fill="none">
+                <rect x="0.1" y="0.1" width="39.8" height="39.8" rx="19.9"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.0002 16C26.0002 19.3137 23.314 22 20.0002 22C16.6865 22 14.0002 19.3137 14.0002 16C14.0002 12.6863 16.6865 10 20.0002 10C23.314 10 26.0002 12.6863 26.0002 16ZM24.0002 16C24.0002 18.2091 22.2094 20 20.0002 20C17.7911 20 16.0002 18.2091 16.0002 16C16.0002 13.7909 17.7911 12 20.0002 12C22.2094 12 24.0002 13.7909 24.0002 16Z"/>
+                <path d="M20.0002 25C13.5259 25 8.00952 28.8284 5.9082 34.192C6.4201 34.7004 6.95934 35.1812 7.52353 35.6321C9.08827 30.7077 13.997 27 20.0002 27C26.0035 27 30.9122 30.7077 32.477 35.6321C33.0412 35.1812 33.5804 34.7004 34.0923 34.1921C31.991 28.8284 26.4746 25 20.0002 25Z"/>
+                <rect x="0.1" y="0.1" width="39.8" height="39.8" rx="19.9"/>
+            </svg>
+            <p></p>
+            <span class="date"></span>
+        </div>
+    </template>
+
+
+
+    <template id="filterPage">
         <div class="filterLayout">
             <div class="date">
                 <input type="date" class="from" placeholder="From"></input> -

@@ -1,7 +1,7 @@
 import { auth } from "./scripts/controller/login.js";
 import { registration } from "./scripts/controller/registration.js";
 import { taskCreate } from "./scripts/controller/taskCreate.js";
-import { showMainPage } from "./scripts/controller/mainPage.js";
+import { showMainPage } from "./scripts/controller/mainPage.js";import { view } from "./index.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -12,13 +12,15 @@ import { showMainPage } from "./scripts/controller/mainPage.js";
 // document.write('<base href="' + document.location + '" />');
 
 
+let body = document.body;
+let hash = location.hash;
 
 // CRUTCH
 
 export function crutchLogin() {
     history.pushState('', '', '#table');
-    clearBody();
     hash = location.hash;
+    body.innerHTML = '';
     choosePage();
 }
 
@@ -34,12 +36,10 @@ function crutchTaskCreation() {
 
 // NAVIGATION
 
-let body = document.body;
-let hash = location.hash;
 choosePage();
 
 window.addEventListener("hashchange", e => {
-    clearBody();
+    body.innerHTML = '';
     hash = location.hash;
     choosePage();
 })
@@ -47,15 +47,15 @@ window.addEventListener("hashchange", e => {
 function choosePage() {
     if (!hash) {
         history.pushState('', '', '#login')
-        gotoLoginPage();
+        gotoAuthorizationPage();
         gotoLoginForm();
     }
     else if (hash === '#login') {
-        gotoLoginPage();
+        gotoAuthorizationPage();
         gotoLoginForm();
     }
     else if (hash === '#register') {
-        gotoLoginPage();
+        gotoAuthorizationPage();
         gotoRegistrationForm();
     }
     else if (hash === '#table') {
@@ -68,56 +68,54 @@ function choosePage() {
 
 
 
-function gotoLoginPage() {
-    let loginLayoutTemplate = document.querySelector('#loginLayoutTemplate');
-    let clone = loginLayoutTemplate.content.cloneNode(true);
-    body.append(clone);
+function gotoAuthorizationPage() {
+    body.append(view.get('authorizationPage'));
 }
 
 function gotoLoginForm() {
-    let loginTemplate = document.querySelector('#loginTemplate');
-    let clone = loginTemplate.content.cloneNode(true);
-    document.getElementById('inputs').append(clone);
+    document.querySelector('.functional').append(view.get('loginFunctional'));
     auth();
 }
 
 function gotoRegistrationForm() {
-    let loginTemplate = document.querySelector('#registrationTemplate');
-    let clone = loginTemplate.content.cloneNode(true);
-    document.getElementById('inputs').append(clone);
+    document.querySelector('.functional').append(view.get('registrationFunctional'));
     registration();
 }
 
 function gotoMainPage() {
-    let mainLayoutTemplate = document.querySelector('#mainLayoutTemplate');
-    let clone = mainLayoutTemplate.content.cloneNode(true);
-    body.append(clone);
+    body.append(view.get('header'));
+    body.querySelector('main').append(view.get('toolbar'));
 }
 
 function gotoTableLayout() {
-    let tableLayoutTemplate = document.querySelector('#tableLayoutTemplate');
-    let clone = tableLayoutTemplate.content.cloneNode(true);
-    body.querySelector(`main`).append(clone);
     showMainPage();
+
+    ////////////////////////////////////////////// !!!
+
+    document.querySelector('header .user').addEventListener('click', click => {
+        showProfileLayout();
+    })
 }
 
 
 
 function showProfileLayout() {
-    let profileLayoutTemplate = document.querySelector('#profileLayoutTemplate');
-    let clone = profileLayoutTemplate.content.cloneNode(true);
-    body.append(clone);
+    body.append(view.get('profileLayoutTemplate'));
+
+    ////////////////////////////////////////////// !!!
+
+    document.querySelector('.profileLayout .crossIco').addEventListener('click', click => {
+        hideProfileLayout();
+    })
 }
 
 
 function hideProfileLayout() {
-    body.removeChild(document.querySelector('.profileLayuot'));
+    body.removeChild(document.querySelector('.profileLayout'));
 }
 
 export function showTaskCreation() {
-    let taskCreationTemplate = document.querySelector('#taskCreationTemplate');
-    let clone = taskCreationTemplate.content.cloneNode(true);
-    body.append(clone);
+    body.append(view.get('taskCreationTemplate'));
     taskCreate();
     const closeButton = document.querySelector('.taskCreationLayout .crossIco');
     closeButton.addEventListener('click', () => {
@@ -132,9 +130,7 @@ function hideTaskCreation() {
 export function showFilter() {
     if (document.querySelector('.filterLayout')) hideFilter();
     else {
-        let filterLayoutTemplate = document.querySelector('#filterLayoutTemplate');
-        let clone = filterLayoutTemplate.content.cloneNode(true);
-        body.append(clone);
+        body.append(view.get('filterPage'));
     }
 }
 
@@ -142,20 +138,5 @@ function hideFilter() {
     body.removeChild(document.querySelector('.filterLayout'));
 }
 
-let clearAnchor;
-body.childNodes.forEach((e, i) => {
-    if(e.nodeName === 'SCRIPT') clearAnchor = i + 1;
-});
-
-let mess = [];
-function clearBody() {
-    mess.length = 0;
-    for (let i = clearAnchor; i < body.childNodes.length; i++) {
-        mess.push(body.childNodes[i]);
-    }
-    mess.forEach(e => {
-        body.removeChild(e);
-    })
-}
 
 /////////////////////////////////////////////////////////

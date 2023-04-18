@@ -1,4 +1,5 @@
 import { mainDB } from "../../index.js";
+import { view } from "../../index.js";
 import { taskView } from "../../index.js";
 
 export class TaskFeedView {
@@ -8,7 +9,7 @@ export class TaskFeedView {
 
     display(containerID, content) {
         const container = document.getElementById(`${containerID}`);
-        container.insertAdjacentHTML('afterbegin', content);
+        container.prepend(content);
     }
 
     getFeed(skip = 0, top = 10, filterConfig = {}, boardName) {
@@ -22,29 +23,17 @@ export class TaskFeedView {
             return acc += elem.toLowerCase();
         },'');
 
-        return `
-            <div class="taskTableWrapper">
-                <div class="tableHeader">
-                    <h4 contenteditable="true">${boardName}</h4>
-                    <div>
-                        <svg class="plusIco" viewBox="0 0 14 14">
-                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="taskTable">
-                    <div class="border top"></div>
-                    <div class="innerContent" id="${idBoardName}">
-                    ${this.getTasksHTML(taskArray)}
-                    </div>
-                    <div class="border bottom"></div>
-                </div>
-            </div>`;
+        const boardHTML = view.get('taskTable');
+        boardHTML.querySelector('h4').innerText = boardName;
+        boardHTML.querySelector('.tasks').id = idBoardName;
+        this.getTasksHTML(taskArray).forEach(e => {
+            boardHTML.querySelector('.tasks').append(e);
+        });
+
+        return boardHTML;
     }
 
     getTasksHTML(taskArray) {
-        let accTaskHTML = ''; 
-        taskArray.forEach(e => accTaskHTML += taskView.getHTML(e));
-        return accTaskHTML;
+        return taskArray.map(e => taskView.getHTML(e));
     }
 }

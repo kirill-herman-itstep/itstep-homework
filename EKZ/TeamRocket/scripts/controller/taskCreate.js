@@ -19,7 +19,7 @@ export function taskCreate() {
         const priority = document.querySelector('.chooseImportance input:checked').value;
         const isPrivate = !!+document.querySelector('.chooseAccess input:checked').value;
         taskView.addTask({name, priority, description, assignee, status, isPrivate});
-        console.log(mainDB);
+        console.log(mainDB.taskArray.at(-1));
         document.querySelector('.taskCreationLayout').remove();
     })
 }

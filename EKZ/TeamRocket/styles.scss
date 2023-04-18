@@ -52,12 +52,12 @@ input:not([type=radio]) {
 
 input[type=radio] {
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &.hidden {
         display: none;
-        
-        &:checked + label {
-            cursor: pointer;
-        }
     }
 }
 
@@ -66,13 +66,17 @@ textarea {
     padding: 0.25 * $default-padding 0.5 * $default-padding;
 }
 
-.layout {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.layout {
+    
 }
 
 svg {
@@ -104,15 +108,11 @@ body {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    
-    // &, .main, .tableForm {
-    //     overflow: hidden;
-    // }
 
-
-    @import 'styles/body/login';
+    @import 'styles/body/authorization';
     @import 'styles/body/header';
     @import 'styles/body/main';
     @import 'styles/body/profile';
     @import 'styles/body/task';
+    @import 'styles/body/filter';
 }
