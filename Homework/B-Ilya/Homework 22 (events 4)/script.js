@@ -35,7 +35,8 @@ resultButton.addEventListener('click', () => {
 })
 
 function getResult(result) {
-    resultButton.insertAdjacentHTML('afterend', `Result: ${result} correct answers to 2 questions`)
+    const outputDiv = document.querySelector('div.result')
+    outputDiv.innerHTML = `Result: ${result} correct answers to 2 questions`
     return false
 }
 
@@ -78,9 +79,96 @@ buyBookButton.addEventListener('click', () => {
 
 // Task 5
 
-const completedLessons = []
-class Lesson {
-    constructor() {
-        
+class Pair {
+    constructor(group, lesson, students, topic) {
+        this.group = group;
+        this.lesson = lesson;
+        this.students = students;
+        this.topic = topic;
+    }
+
+    static isExist(group, lesson) {
+        return allPairs.find((e) => {
+            return (group === e.group) && (lesson === e.lesson);
+        })
     }
 }
+
+class Group {
+    constructor(studentArray) {
+        this.studentArray = studentArray;
+    }
+    
+    getHTML() {
+        return this.studentArray.map((e, i) => {
+            return `
+            <tr>
+            <td class="student-name">${e}</td>
+            <td><input type="checkbox" name="isPresent" id="" value="${i}"></td>
+            </tr>
+            `
+        }).join('')
+    }
+}
+
+const allPairs = []
+const groups = [
+    new Group(['Zapp', 'Yuuri', 'Quilow']),
+    new Group(['Fuffelschmerz', 'Mark', 'Tiffani']),
+    new Group(['Yarik', 'Sanya', 'Toha'])
+]
+
+const tableBody = document.querySelector('table tbody')
+const changeGroupAndLessonButton = document.querySelector(`.lessons-wrap .head button`)
+
+changeGroupAndLessonButton.addEventListener('click', () => {
+    drawTable()
+    const group = +document.querySelector('select[name="groups"]').value;
+    const lesson = +document.querySelector('select[name="lessons"]').value;
+    const existPair = Pair.isExist(group, lesson);
+    if (existPair) {
+        completedPair(existPair.students, existPair.topic)
+    } else {
+        uncompletedPair()
+    }
+})
+
+function drawTable() {
+    const selectedGroup = +document.querySelector('select[name="groups"]').value
+    tableBody.innerHTML = groups[selectedGroup].getHTML()
+}
+
+const saveButton = document.querySelector('#saveLesson')
+saveButton.addEventListener('click', () => {
+    const group = +document.querySelector('select[name="groups"]').value;
+    const lesson = +document.querySelector('select[name="lessons"]').value;
+    const topic = document.querySelector('.topic input').value;
+    const presentedStudents = document.querySelectorAll('tbody input:checked');
+    const presentArrayValue = []
+    presentedStudents.forEach(e => e = presentArrayValue.push(e.value));
+    allPairs.push(new Pair(group, lesson, presentArrayValue, topic))
+    completedPair(presentArrayValue, topic)
+})
+
+function completedPair(presentedStudents, completedLessonTopic) {
+    drawTable()
+    const allCheckboxes = document.querySelectorAll('input[name="isPresent"]')
+    const topic = document.querySelector('.topic input');
+    topic.value = completedLessonTopic;
+    topic.setAttribute('disabled', ' ')
+    allCheckboxes.forEach(e => {
+        if (presentedStudents.find(value => value === e.value)) {
+            e.outerHTML = `<div>Is Present</div>`
+        } else e.outerHTML = ' '
+    })
+    saveButton.setAttribute('disabled', ' ')
+}
+
+function uncompletedPair() {
+    drawTable()
+    const topic = document.querySelector('.topic input');
+    topic.value = '';
+    topic.removeAttribute('disabled', ' ')
+    saveButton.removeAttribute('disabled', ' ')
+}
+
