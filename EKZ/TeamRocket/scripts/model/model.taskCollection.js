@@ -17,35 +17,33 @@ export class TaskCollection {
     getTasks(skip = 0, top = 10, filterConfig = {}) {
 
         const filteredTasks = this.taskArray.filter(task => {
-            if (filterConfig.assignee) {
-                if (task.assignee !== filterConfig.assignee) return false;
+            if (filterConfig.assignee && task.assignee !== filterConfig.assignee) {
+                return false;
             }
 
-            if (filterConfig.dateFrom) {
-                if (filterConfig.dateFrom > task.createdAt) return false;
+            if (filterConfig.dateFrom && filterConfig.dateFrom > task.createdAt) {
+                return false;
             }
 
-            if (filterConfig.dateTo) {
-                if (filterConfig.dateTo < task.createdAt) return false;
+            if (filterConfig.dateTo && filterConfig.dateTo < task.createdAt) {
+                return false;
             }
 
-            if (filterConfig.status) {
-                if (filterConfig.status !== task.status) return false;
+            if (filterConfig.status && filterConfig.status !== task.status) {
+                return false;
             }
 
-            if (filterConfig.priority) {
-                if (filterConfig.priority !== task.priority) return false;
+            if (filterConfig.priority && filterConfig.priority !== task.priority) {
+                return false;
             }
 
-            if (filterConfig.isPrivate !== undefined) {
-                if (filterConfig.isPrivate !== task.isPrivate) return false;
+            if (filterConfig.isPrivate !== undefined && filterConfig.isPrivate !== task.isPrivate) {
+                return false;
             }
 
-            if (filterConfig.description) {
-                if (!task.description.includes(filterConfig.description) && 
-                    !task.name.includes(filterConfig.description)) {
+            if (filterConfig.description && !task.description.includes(filterConfig.description) && 
+            !task.name.includes(filterConfig.description)) {
                     return false;
-                } 
             }
             return true;
         });
@@ -58,7 +56,7 @@ export class TaskCollection {
     }
 
     getTask(id) {
-        return this.taskArray.find(elem => elem.id === id);
+        if (typeof id === 'string') return this.taskArray.find(elem => elem.id === id);
     }
 
     add(name, priority, description, assignee, status, isPrivate) {
@@ -84,35 +82,35 @@ export class TaskCollection {
     }
 
     clear() {
-        this.taskArray.length = 0;
+        this.taskArray = [];
     }
 
     edit(id, name, description, assignee, status, priority, isPrivate = false) {
         const task = this.getTask(id);
 
-        if (name !== task.name) {
-            if (name.length > 100 || !name) {
-                return false;
-            }
-            task.name = name;
+        if (task) return false;
+
+        if (name !== task.name && typeof name === 'string') {
+            if (name.length > 100 || !name) return false;
+            else task.name = name;
         }
-        if (description !== task.description) {
-            if (description > 280) {
-                return false;
-            }
-            task.description = description;
+
+        if (description !== task.description && typeof task.description === 'string') {
+            if (description > 280) return false;
+            else task.description = description;
         }
-        if (assignee !== task.assignee) {
+    
+        if (assignee !== task.assignee && typeof task.assignee === 'string') {
             task.assignee = assignee;
         }
-        if (status !== task.status) {
+        if (status !== task.status && typeof task.status === 'string') {
             task.status = status;
             task.lastDate = new Date();
         }
-        if (priority !== task.priority) {
+        if (priority !== task.priority && typeof task.priority === 'string') {
             task.priority = priority;
         }
-        if (isPrivate !== task.isPrivate) {
+        if (isPrivate !== task.isPrivate && typeof task.isPrivate === 'boolean') {
             task.isPrivate = isPrivate;
         }
         return true;
@@ -121,7 +119,7 @@ export class TaskCollection {
     remove(id) {
         const task = this.getTask(id);
 
-        if ((task.author !== currentUser && task.assignee !== currentUser) || task === undefined) {
+        if ((task.author !== currentUser && task.assignee !== currentUser) || task) {
             return false;
         }
 

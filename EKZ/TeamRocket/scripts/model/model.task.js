@@ -2,34 +2,34 @@ import { currentUser } from "../../index.js";
 import { Comment } from "./model.comment.js";
 
 export class Task {
-    #id;
-    #createdAt;
-    #author;
+    _id;
+    _createdAt;
+    _author;
 
     constructor(name, priority, description = '', assignee = currentUser, status = 'to do', isPrivate = false) {
-        this.#id = Math.random().toString(16).slice(2);
+        this._id = Math.random().toString(16).slice(2);
         this.name = name;
         this.description = description;
-        this.#createdAt = new Date();
+        this._createdAt = new Date();
         this.lastDate = new Date(); 
         this.assignee = assignee;
         this.status = status;
         this.priority = priority
         this.isPrivate = isPrivate;
         this.comments = [];
-        this.#author = currentUser;
+        this._author = currentUser;
     }
 
     get id() {
-        return this.#id;
+        return this._id;
     }
 
     get createdAt() {
-        return this.#createdAt;
+        return this._createdAt;
     }
 
     get author() {
-        return this.#author;
+        return this._author;
     }
 
     addComment(text) {
@@ -38,7 +38,11 @@ export class Task {
     }
 
     static validate(task) {
-        return (task.name && task.name.length <= 100 && task.description.length <= 280 &&
-                task.assignee && task.status && task.priority && (typeof task.isPrivate === 'boolean'));
+        return (task.name && typeof task.name === 'string' && task.name.length <= 100 
+                && task.description.length <= 280 && typeof task.description === 'string' 
+                && task.assignee && typeof task.assignee === 'string' 
+                && task.status && typeof task.status === 'string' 
+                && task.priority && typeof task.priority === 'string' 
+                && (typeof task.isPrivate === 'boolean'));
     }
 }

@@ -1,30 +1,30 @@
 import { currentUser } from "../../index.js";
 
 export class Comment {
-    #id;
-    #createdAt;
-    #author;
+    _id;
+    _createdAt;
+    _author;
 
     constructor(text) { 
-        this.#id = Math.random().toString(16).slice(2);
+        this._id = Math.random().toString(16).slice(2);
         this.text = text;
-        this.#createdAt = new Date();
-        this.#author = currentUser;
+        this._createdAt = new Date();
+        this._author = currentUser;
     }
 
     get id() {
-        return this.#id;
+        return this._id;
     }
 
     get createdAt() {
-        return this.#createdAt;
+        return this._createdAt;
     }
 
     get author() {
-        return this.#author;
+        return this._author;
     }
 
     static validate(com) {
-        return com.text.length <= 280;
+        return com.text.length <= 280 && typeof com.text === 'string';
     }
 }

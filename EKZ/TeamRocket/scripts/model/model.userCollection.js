@@ -6,10 +6,16 @@ export class UserCollection {
     }
 
     create(login, password, name) {
+        if (this.userArray.find(elem => elem.login === login)) {
+            return false;
+        }
+
+        if (typeof login === 'string' && typeof password === 'string' && typeof name === 'string')
         this.userArray.push(new User(login, password, name));
+        return true;
     }
 
     getUserByLogin(login) {
-        return this.userArray.find(elem => elem.login === login);
+        if (typeof login === 'string') return this.userArray.find(elem => elem.login === login);
     }
 }

@@ -7,7 +7,12 @@ export class User {
     }
 
     edit(newPassword, newName) {
-        this.password = newPassword;
-        this.name = newName;
+        if (typeof newPassword === 'string') this.password = newPassword;
+        else return false;
+
+        if (typeof newName === 'string') this.name = newName;
+        else return false;
+
+        return true;
     }
 }
