@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task 1 -->
+    <div class="msg">
+        <div class="msg-head">
+            <div class="sender">Name</div>
+            <div class="time">Date here</div>
+        </div>
+        <div class="msg-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nostrum tempore esse impedit distinctio! Maxime quam similique ea eaque est nam molestias! Sapiente vero unde nobis possimus, deserunt cum quae.</div>
+    </div>
+    <div class="add-msg-field">
+        <div class="title">Add message</div>
+        <form action="" name="msg" onsubmit="event.preventDefault()">
+            <div class="input-name">
+                <span>Your name:</span>
+                <input type="text" name="name">
+            </div>
+            <div class="input-msg">
+                <span>Your message:</span>
+                <textarea name="text"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Task 2 -->
+    <form action="" name="test" onsubmit="event.preventDefault()">
+        <ol>
+            <li class="ques-1">
+                <div>How many letter are there in the word "Hello"?</div>
+                <input type="radio" name="question-1" id="" value="5"> 5
+                <input type="radio" name="question-1" id=""value="2"> 2
+            </li>
+            <li class="ques-2">
+                <div>How many letters are there in the word "World"?</div>
+                <input type="radio" name="question-2" id="" value="4"> 4
+                <input type="radio" name="question-2" id="" value="5"> 5
+            </li>
+        </ol>
+        <button>Finish Test</button>
+        <div class="result"></div>
+    </form>
+
+    <!-- Task 3 -->
+    <form name="text-decor" onsubmit="event.preventDefault()">
+        <div class="style-choose">
+            <input type="checkbox" name="boldText" value="font-weight: 700"> <label for="boldText">Bold</label>
+            <input type="checkbox" name="underlineText" value="text-decoration: underline"> <label for="underlineText">Underline</label>
+            <input type="checkbox" name="italicText" value="font-style: italic"> <label for="italicText">Italic</label>
+            <input type="radio" name="textAlign" value="text-align: left"> <label>Left</label>
+            <input type="radio" name="textAlign" value="text-align: right"> <label>Right</label>
+            <input type="radio" name="textAlign" value="text-align: justify"> <label>Justify</label>
+        </div>
+        <textarea name="" id="" placeholder="Enter some text"></textarea>
+        <button type="submit">Show text</button>
+    </form>
+    <div class="output-text">
+        <div class="output-title">Result:</div>
+        <div class="text"></div>
+    </div>
+
+    <!-- Task 4 -->
+    <div class="book-shop-wrap">
+        <div class="book-list">
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book1.jpg" alt="" class="cover">
+                    <div class="title">Turning Coffee Into Code</div>
+                    <div class="author">Ben E.C. Boyter</div>
+                </div>
+                <div>
+                    <div class="price">13$</div>
+                    <button value="Turning Coffee Into Code">Select</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book2.jpg" alt="" class="cover">
+                    <div class="title">Oh Fuck. The Acid Is Kicking In</div>
+                    <div class="author">Arnold Robbins</div>
+                </div>
+                <div>
+                    <div class="price">11$</div>
+                    <button value="Oh Fuck. The Acid Is Kicking In">Select</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="wrap">
+                    <img src="img/book3.jpeg" alt="" class="cover">
+                    <div class="title">PCs for Dummies</div>
+                    <div class="author">Dan Gookin</div>
+                </div>
+                <div>
+                    <div class="price">14$</div>
+                    <button value="PCs for Dummies">Select</button>
+                </div>
+            </div>
+        </div>
+        <form name="order" onsubmit="event.preventDefault()">
+            <div class="book">
+                <span>Book</span>
+                <input type="text" disabled>
+            </div>
+            <div class="quantity">
+                <span>Quantity</span>
+                <input type="number">
+            </div>
+            <div class="name">
+                <span>Name</span>
+                <input type="text">
+            </div>
+            <div class="del-address">
+                <span>Delivery Address</span>
+                <textarea name=""></textarea>
+            </div>
+            <div class="del-date">
+                <span>Delivery Date</span>
+                <input type="date">
+            </div>
+            <div class="comment">
+                <span>Comment</span>
+                <textarea name=""></textarea>
+            </div>
+            <button type="submit">Buy</button>
+        </form>
+    </div>
+
+    <!-- Task 5 -->
+    <div class="lessons-wrap">
+        <div class="head">
+            <span>Group:</span>
+            <select name="groups" id="">
+                <option value="0">Group 1</option>
+                <option value="1">Group 2</option>
+                <option value="2">Group 3</option>
+            </select>
+            <span>Lesson:</span>
+            <select name="lessons" id="">
+                <option value="0">Lesson 1</option>
+                <option value="1">Lesson 2</option>
+                <option value="2">Lesson 3</option>
+                <option value="3">Lesson 4</option>
+            </select>
+            <button>Select</button>
+        </div>
+        <div class="topic">
+            <span>Topic:</span>
+            <input type="text" name="" id="">
+        </div>
+        <table>
+            <thead>
+                <td>Name</td>
+                <td>Is present</td>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="saveLesson">Save</button>
+    </div>
+    <br>
+
+    <!-- Task 6 -->
+    <div class="tickets-wrap">
+        <div class="head">
+            <span>Direction:</span>
+            <select name="" id="directions"></select>
+            <span>Date:</span>
+            <input type="date" name="" id="">
+            <button>Search</button>
+        </div>
+        <br>
+        <div class="seats">
+            
+        </div>
+        <div class="footer">
+            <span>Total Price:</span>
+            <span class="total-price"></span>
+            <button id="save-btn">Save</button>
+            <button id="book-btn">Book</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

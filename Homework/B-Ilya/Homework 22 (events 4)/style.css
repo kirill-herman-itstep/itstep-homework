@@ -1,0 +1,227 @@
+body {
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+/* Task 1 */
+.msg {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg > div {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+}
+
+.msg-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-msg-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-msg-field .title {
+    margin: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+form[name="msg"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+form[name="msg"] > div  {
+    display: flex;
+}
+
+form[name="msg"] span {
+    display: inline-block;
+    width: 130px;
+    font-weight: 600;
+}
+
+form[name="msg"] input, form[name="msg"] textarea {
+    width: 100%;
+    resize: none;
+}
+
+form[name="msg"] {
+    width: 100%;
+}
+
+/* Task 3 */
+
+form[name="text-decor"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem
+}
+
+form[name="text-decor"] > div {
+    width: 100%;
+}
+
+form[name="text-decor"] textarea {
+    height: 4rem;
+    resize: none;
+}
+
+.output-text .text {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+/* Task 4 */
+.book-shop-wrap {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.book-shop-wrap > div, .book-shop-wrap form {
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.book-shop-wrap input {
+    width: 100%;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    width: 70%;
+}
+
+.book-card {
+    position: relative;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+
+.book-card button, form[name="order"] button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.book-card > div {
+    width: 100%;
+}
+
+.book-card .wrap {
+    height: 75%;
+}
+
+.book-card .wrap img.cover {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.book-card .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.book-card .author {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.book-card .price {
+    position: absolute;
+    right: 0;
+    bottom: 1.5rem;
+    font-weight: 700;
+}
+
+form[name="order"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.6rem;
+    width: 30%;
+}
+
+form[name="order"] > div {
+    display: flex;
+    gap: 0.2rem;
+}
+
+form[name="order"] span {
+    width: 40%;
+    flex-wrap: nowrap;
+}
+
+form[name="order"] input, form[name="order"] textarea {
+    resize: none;
+    width: 100%;
+}
+
+form[name="order"] textarea {
+    height: 240px;
+}
+
+/* Task 5 */
+.lessons-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 400px;
+    margin: 2rem auto;
+}
+
+.lessons-wrap .head {
+    display: flex;
+    gap: 0.7rem;
+}
+.lessons-wrap .head select{
+    width: 6rem;
+}
+
+.lessons-wrap .head button {
+    flex-grow: 1;
+}
+
+.lessons-wrap .topic {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lessons-wrap .topic input {
+    flex-grow: 1;
+}
+
+.lessons-wrap table {
+    border-collapse: collapse;
+}
+
+.lessons-wrap table td {
+    padding: 0.2rem;
+    border-bottom: 1px solid gray;
+    border-bottom-style: dotted;
+}
+
+/* Task 6 */
+table.reserved {
+    border-collapse: collapse;
+}
+
+table.reserved td {
+    padding: 0.5rem;
+    border: 1px solid black;
+    text-align: center;
+}
