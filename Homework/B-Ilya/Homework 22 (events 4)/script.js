@@ -172,3 +172,112 @@ function uncompletedPair() {
     saveButton.removeAttribute('disabled', ' ')
 }
 
+//  Task 6
+
+function getTableHTML() {
+    return `
+    <table class="seats">
+        <tr>
+            ${getTableRowHTML(1, 28)}
+        </tr>
+        <tr>
+            ${getTableRowHTML(2, 28)}
+        </tr>
+    </table>
+    `
+}
+
+function getTableRowHTML(start, end) {
+    let acc = '';
+    for (i = start; i <= end; i = i + 2) {
+        acc += `<td><input type="checkbox" value="${i}">${i}</td>`
+    }
+    return acc;
+}
+
+const directionList = ['Odessa - Lviv', 'Minsk - Smolensk', 'Bulgaria - Livan']
+directions.innerHTML = directionList.map(e => e = `<option>${e}</option>`).join('')
+
+const ticketsByDayList = []
+class TicketsByDay {
+    constructor(direction, date, buyedTickets = []) {
+        this.direction = direction;
+        this.date = date;
+        this.buyedTickets = buyedTickets;
+    }
+
+    static existCheck(direction, date) {
+        return ticketsByDayList.find(e => e.direction === direction && e.date === date)
+    }
+}
+
+const searchTicketBtn = document.querySelector('.tickets-wrap .head button')
+searchTicketBtn.addEventListener('click', () => {
+    const selectedDirection = document.querySelector('.tickets-wrap .head select').value;
+    const selectedDate = document.querySelector(`.tickets-wrap .head input[type="date"]`).value;
+    const isExist = TicketsByDay.existCheck(selectedDirection, selectedDate);
+    if (isExist) {
+        getExistTicketsByDay(isExist.buyedTickets)
+    } else {
+        getNewTicketsByDay()
+    }
+})
+
+function getExistTicketsByDay(buyedTickets) {
+    document.querySelector('div.seats').innerHTML = getTableHTML()
+    const allSeats = document.querySelectorAll('table.seats input[type="checkbox"]')
+    allSeats.forEach(elem => {
+        if (buyedTickets.find(e => e === elem.value)) {
+            elem.setAttribute('checked', ' ')
+        }
+    })
+}
+
+function getNewTicketsByDay() {
+    document.querySelector('div.seats').innerHTML = getTableHTML()
+}
+
+saveBtn = document.querySelector('#save-btn')
+saveBtn.addEventListener('click', () => {
+    const selectedDirection = document.querySelector('.tickets-wrap .head select').value;
+    const selectedDate = document.querySelector(`.tickets-wrap .head input[type="date"]`).value;
+    const selectedSeats = Array.from(document.querySelectorAll('table.seats input:checked')).map(e => e.value)
+    const newObj = new TicketsByDay(selectedDirection, selectedDate, selectedSeats);
+    if (TicketsByDay.existCheck(selectedDirection, selectedDate)) {
+        return 
+    } else {
+        ticketsByDayList.push(newObj)
+        console.log(selectedDirection, selectedDate, selectedSeats);
+    }
+})
+
+bookBtn = document.querySelector('#book-btn')
+bookBtn.addEventListener('click', () => {
+    bookBtn.insertAdjacentHTML('afterend', getBuyedTicketsHTML())
+})
+
+function getBuyedTicketsHTML() {
+    return `
+        <table class="reserved">
+            <thead>
+                <td>Direction</td>
+                <td>Date</td>
+                <td>Seat(-s)</td>
+            </thead>
+            ${getTicketListHTML()}
+        </table>
+    `
+}
+
+function getTicketListHTML() {
+    return ticketsByDayList.map(e => {
+        return `
+            <tr>
+                <td>${e.direction}</td>
+                <td>${e.date}</td>
+                <td>${e.buyedTickets.join(', ')}</td>
+            </tr>
+        `
+    })
+}
+

@@ -214,3 +214,14 @@ form[name="order"] textarea {
     border-bottom: 1px solid gray;
     border-bottom-style: dotted;
 }
+
+/* Task 6 */
+table.reserved {
+    border-collapse: collapse;
+}
+
+table.reserved td {
+    padding: 0.5rem;
+    border: 1px solid black;
+    text-align: center;
+}
