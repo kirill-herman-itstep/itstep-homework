@@ -1,5 +1,5 @@
 import { Task } from "./model.task.js";
-import { currentUser } from "../../index.js";
+import { currentUser, mainDB } from "../../index.js";
 
 export class TaskCollection {
     taskArray = [];
@@ -127,5 +127,16 @@ export class TaskCollection {
         this.taskArray.splice(index, 1);
 
         return true;
+    }
+
+    saveInLocalStorage() {
+        console.log(this.taskArray);
+        localStorage.setItem('taskArray', JSON.stringify(this.taskArray))
+    }
+
+    getFromLocalStorage() {
+        let tasks = JSON.parse(localStorage.getItem('taskArray'))
+        tasks = tasks.map(e => Object.assign(new Task(), e))
+        this.addAll(tasks)
     }
 }

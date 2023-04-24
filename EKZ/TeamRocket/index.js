@@ -17,7 +17,7 @@ import { TaskFeedView } from "./scripts/view/taskFeed.js";
 import { FilterView } from "./scripts/view/filter.js";
 
 export const userDB = new UserCollection();
-export const mainDB = new TaskCollection(mockTasksArray());
+export const mainDB = new TaskCollection();
 
 export const view = new View();
 export const headerView = new HeaderView('user');

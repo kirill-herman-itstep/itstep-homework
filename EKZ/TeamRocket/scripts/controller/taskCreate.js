@@ -21,5 +21,6 @@ export function taskCreate() {
         taskView.addTask({name, priority, description, assignee, status, isPrivate});
         console.log(mainDB.taskArray.at(-1));
         document.querySelector('.taskCreationLayout').remove();
+        mainDB.saveInLocalStorage()
     })
 }
