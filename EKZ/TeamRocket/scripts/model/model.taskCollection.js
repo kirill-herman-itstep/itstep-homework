@@ -138,5 +138,6 @@ export class TaskCollection {
         let tasks = JSON.parse(localStorage.getItem('taskArray'))
         tasks = tasks.map(e => Object.assign(new Task(), e))
         this.addAll(tasks)
+        console.log(this.taskArray); 
     }
 }

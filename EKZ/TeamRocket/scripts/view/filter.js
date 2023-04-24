@@ -13,8 +13,8 @@ export class FilterView {
         taskBoard.innerHTML = '';
 
         const completeBoardFilter = Object.assign({status: 'complete'}, filterObj);
-        const inProgressBoardFilter = Object.assign({status: 'in progress'}, filterObj);
-        const toDoBoardFilter = Object.assign({status: 'to do'}, filterObj);
+        const inProgressBoardFilter = Object.assign({status: 'in-progress'}, filterObj);
+        const toDoBoardFilter = Object.assign({status: 'to-do'}, filterObj);
 
         taskFeedView.getFeed(0, 10, completeBoardFilter, 'Complete');
         taskFeedView.getFeed(0, 10, inProgressBoardFilter, 'In progress');
