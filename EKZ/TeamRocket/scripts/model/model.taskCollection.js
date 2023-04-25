@@ -131,13 +131,17 @@ export class TaskCollection {
 
     saveInLocalStorage() {
         console.log(this.taskArray);
-        localStorage.setItem('taskArray', JSON.stringify(this.taskArray))
+        localStorage.setItem('taskArray', JSON.stringify(this.taskArray));
     }
 
     getFromLocalStorage() {
-        let tasks = JSON.parse(localStorage.getItem('taskArray'))
-        tasks = tasks.map(e => Object.assign(new Task(), e))
-        this.addAll(tasks)
-        console.log(this.taskArray); 
+        let tasks = JSON.parse(localStorage.getItem('taskArray'));
+        if (!tasks) {
+            localStorage.setItem('taskArray', JSON.stringify([]));
+        } else {
+            tasks = tasks.map(e => Object.assign(new Task(), e));
+            this.addAll(tasks);
+            console.log(this.taskArray); 
+        }
     }
 }

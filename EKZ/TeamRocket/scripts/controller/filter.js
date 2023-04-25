@@ -16,6 +16,13 @@ function inputs() {
         const clearButton = document.querySelector('.filterLayout button');
         clearButton.addEventListener('click', () => clearInputs());
 
+        document.onclick = function(e) {
+            if (!e.target.closest('.filterLayout') && !e.target.closest('.filter')) {
+                showFilter();
+                document.onclick = null;
+            }
+        }
+
         const filterLayoutInputs = document.querySelectorAll('.filterLayout input');
         filterLayoutInputs.forEach(e => e.addEventListener('input', () => {
             const dateFrom = filterLayoutInputs[0].value;
