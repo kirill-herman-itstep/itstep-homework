@@ -259,6 +259,10 @@ ul h2 {
     color: #88658c;
     position: relative;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &::after {
         content: '';
         display: block;

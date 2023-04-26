@@ -27,9 +27,31 @@
                         <textarea id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
                         <div id="mainNewTwitСounter">0/280</div>
                     </div>
-                    <button>Post</button>
+                    <button id="postTweet">Post</button>
                 </div>
-                <div class="main-current-all-tweets" id="tweetsMainAllTweets"></div>
+                <div class="main-current-all-tweets" id="tweetsMainAllTweets">
+                    <div class="main-current-twit" id="1">
+                        <div class="main-current-twit-autor">
+                            <div>Инвестинг</div>
+                            <div>20.02.2023, 03:00:00</div>
+                        </div>
+                        <!-- <div class="main-current-twit-text">Сегодня цена на газ снизилась до 2,3$ за МБТЕ</div> -->
+                        <div class="main-current-twit-edit">
+                            <textarea class="main-current-twit-edit-area" rows="5"></textarea>
+                            <div class="main-current-twit-edit-controller">
+                                <div id="twitEditCounter">0/280</div>
+                                <button id="mainTweetEdit">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="main-current-twit-info">
+                            <div class="main-current-twit-info-edit"></div>
+                            <div class="main-current-twit-info-delete"></div>
+                            <div class="main-current-twit-info-messege"></div>
+                            <div id="mainQuantityMessege">0</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <aside class="filtration">
                 <h2>Filtration</h2>
@@ -51,7 +73,7 @@
                     </label>
                     <label class="filtration-form-hashtags">
                         <div>hashtags</div>
-                        <input type="text" class="filtration-form-hashtags-text" placeholder="ignore" disabled />
+                        <input type="text" class="filtration-form-hashtags-text" placeholder="ignore" />
                     </label>
                     <input type="submit" value="Find" id="filtrationFormHashtags" />
                 </form>

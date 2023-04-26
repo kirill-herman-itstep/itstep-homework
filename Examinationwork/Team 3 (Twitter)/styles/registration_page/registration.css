@@ -28,7 +28,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 47px;
   text-align: center;
   color: black;
@@ -234,6 +234,9 @@ body {
   color: #88658c;
   font-size: 1.2rem;
   position: relative;
+}
+#registrationSign:hover {
+  cursor: pointer;
 }
 #registrationSign::after {
   content: "";

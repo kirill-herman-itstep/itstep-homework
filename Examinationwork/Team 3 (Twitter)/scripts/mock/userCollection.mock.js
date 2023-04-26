@@ -8,4 +8,4 @@ const ilonMask = new User('Илон Маск', '152364');
 const buterin = new User('Виталик Бутерин', '15896');
 const tramp = new User('Дональд Трамп', '158969');
 
-export const userCollectionTest = [inwesting, Miller, ilonMask, buterin, tramp];
+export const userCollectionTest = new UserCollection([inwesting, Miller, ilonMask, buterin, tramp]);

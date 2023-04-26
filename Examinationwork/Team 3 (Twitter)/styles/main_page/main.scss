@@ -12,6 +12,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2.5fr 1fr;
     height: 100vh;
+    max-width: 100vw;
     background-color: rgb(235, 174, 242, 0.2);
 
     .main-welcome {
@@ -54,6 +55,10 @@ body {
                 box-sizing: border-box;
                 border-top: $page-border;
                 border-bottom: $page-border;
+
+                .norefresh {
+                    display: none;
+                }
             }
         }
     }

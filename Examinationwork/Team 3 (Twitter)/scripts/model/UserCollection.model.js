@@ -28,7 +28,7 @@ export class UserCollection {
 
     userRegistration(user = '', password, confirmPassword) {
         if (this._users.find(item => item._name === user) === undefined && password !== '' && password === confirmPassword) {
-            this._users.push(user);
+            this._users.push(new User(user, password));
             return true;
         }
         return false;

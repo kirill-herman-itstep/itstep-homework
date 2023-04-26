@@ -125,6 +125,52 @@ body {
   color: rgba(0, 0, 0, 0.6);
   margin-left: auto;
 }
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2vw;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #88658c;
+  border-radius: 10px;
+  align-items: flex-end;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitEditCounter {
+  color: rgba(0, 0, 0, 0.54);
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitTweetEdit {
+  box-sizing: border-box;
+  width: 100px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  margin-left: auto;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitTweetEdit:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-area {
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  flex-grow: 1;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
 .container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-text {
   box-sizing: border-box;
   padding-left: 39px;
@@ -141,6 +187,13 @@ body {
   background: url(../../assets/images/img_twit_page/edit.png);
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-edit:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px 2px #88658c;
+  border-radius: 20%;
+  transition: 0.2s;
 }
 .container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-delete {
   width: 29px;
@@ -150,12 +203,20 @@ body {
   background-position: center;
   box-sizing: border-box;
   margin-left: 22px;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-delete:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px 2px #88658c;
+  border-radius: 20%;
+  transition: 0.2s;
 }
 .container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-messege {
   width: 27px;
   height: 25px;
   background: url(../../assets/images/img_twit_page/Comment.png);
   background-repeat: no-repeat;
+  background-size: 80%;
   background-position: center;
   box-sizing: border-box;
   margin-left: 60px;
@@ -164,6 +225,9 @@ body {
   box-sizing: border-box;
   color: #88658c;
   padding-left: 15px;
+}
+.container-twit .container-corrent-twit .norefresh {
+  display: none;
 }
 .container-twit .container-comments-twit {
   flex-grow: 1;

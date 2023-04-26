@@ -30,7 +30,14 @@
                             <div>Author's name</div>
                             <div>Date and time</div>
                         </div>
-                        <div class="twit-current-twit-text">Text twit</div>
+                        <!-- <div class="twit-current-twit-text">Text twit</div> -->
+                        <div class="twit-current-twit-edit">
+                            <textarea class="twit-current-twit-edit-area" rows="5"></textarea>
+                            <div class="twit-current-twit-edit-controller">
+                                <div id="twitEditCounter">0/280</div>
+                                <button id="twitTweetEdit">Edit</button>
+                            </div>
+                        </div>
                         <div class="twit-current-twit-info">
                             <div class="twit-current-twit-info-edit"></div>
                             <div class="twit-current-twit-info-delete"></div>
@@ -53,7 +60,7 @@
                         <textarea id="commentsAnswerTwit" placeholder="Write your reply"></textarea>
                         <div id="commentsAnswerСounter">0/280</div>
                     </div>
-                    <button>Post</button>
+                    <button id="postComment">Post</button>
                 </div>
             </main>
         </div>

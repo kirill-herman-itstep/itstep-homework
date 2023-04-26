@@ -20,7 +20,6 @@
   left: 39.5%;
   top: 25%;
   width: 60.59px;
-  height: 56.24px;
 }
 
 .Sign {
@@ -312,6 +311,9 @@ ul h2 {
   text-decoration: none;
   color: #88658c;
   position: relative;
+}
+#autorisationSign:hover {
+  cursor: pointer;
 }
 #autorisationSign::after {
   content: "";

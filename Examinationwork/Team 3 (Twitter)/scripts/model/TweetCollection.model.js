@@ -79,7 +79,7 @@ export class TweetCollection {
     remove(id = '') {
         const userRemoveTweet = this.get(id);
         if (userRemoveTweet && userRemoveTweet.author === this.user) {
-            const index = _tweets.findIndex(item => item === userRemoveTweet);
+            const index = this._tweets.findIndex(item => item === userRemoveTweet);
             this._tweets.splice(index, 1);
             return true;
         } else {

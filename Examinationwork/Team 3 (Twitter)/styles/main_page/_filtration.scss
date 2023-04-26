@@ -36,14 +36,14 @@ h2 {
         flex-flow: column;
         gap: 5px;
 
-        :first-of-type {
+        > :first-of-type {
             font-weight: 300;
             font-size: 18px;
             margin-bottom: 5px;
             margin-left: 16px;
         }
 
-        :last-of-type {
+        > :last-of-type {
             display: flex;
             flex-flow: row nowrap;
             gap: 20px;
@@ -57,11 +57,11 @@ h2 {
                 border: none;
                 width: 100%;
                 font-family: 'Roboto', sans-serif;
-            }
+                font-size: 0.9rem;
 
-            input::placeholder {
-                font-size: 14px;
-                color: rgba(0, 0, 5, 0.4);
+                &::placeholder {
+                    color: rgba(0, 0, 5, 0.4);
+                }
             }
         }
     }

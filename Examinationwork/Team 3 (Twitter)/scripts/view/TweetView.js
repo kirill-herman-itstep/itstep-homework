@@ -23,9 +23,11 @@ export class TweetView {
                     <div id="twitQuantityMessege">${tweet.comments.length}</div>
                 </div>
             </div>`;
+            containerTweet.innerHTML = '';
             containerTweet.insertAdjacentHTML('beforeend', HTMLTweet);
 
             const containerComment = this.element.children[2];
+            containerComment.innerHTML = '';
             tweet.comments.forEach(item => {
                 const HTMLComment = `<div class="comments-twit" id="${item._id}">
                     <div class="comments-twit-autor">

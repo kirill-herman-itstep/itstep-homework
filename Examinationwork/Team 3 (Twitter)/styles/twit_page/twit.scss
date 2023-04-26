@@ -47,6 +47,10 @@ body {
             gap: 25px;
             box-sizing: border-box;
         }
+
+        .norefresh {
+            display: none;
+        }
     }
 
     .container-comments-twit {
