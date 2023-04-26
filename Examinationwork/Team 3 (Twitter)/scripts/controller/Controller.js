@@ -376,35 +376,7 @@ export class TweetsController {
     }
 }
 
-// console.log(newTweetCollection);
-// const filterTweets = {
-//     author: 'Илон Маск',
-//     dateFrom: '',
-//     dateTo: '',
-//     text: '',
-//     hashtags: [''],
-// };
-
-// const userNewTwit = new Tweet('Мы заблокируем Эмбер Херт в Twitter', '2020-02-15', 'Илон Маск');
-
-// newTweetCollection.addComment('8', 'Я вот сильно сомневаюсь в этом утверждении!');
-// const showTweets = new TweetView('twitMain');
-
-// const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
-
-// ( new TweetCollection(),  new Tweet(),  new UserCollection(), new HeaderView(),  new TweetFeedView(),  new TweetView())
-
-// console.log(tweetsController);
-
-// console.log(tweetsController.setCurrentUser(newTweetCollection.user));
-// console.log(tweetsController.addTweet('Добрый дэнь!'));
-// console.log(tweetsController.editTweet('29', 'Добрый дэнь всем! #всемДобра #МысВами'));
-// console.log(tweetsController.removeTweet('29'));
-
-// console.log(tweetsController.showTweet('8'));
-
 const root = document.getElementById('root');
-// root.insertAdjacentHTML('afterbegin', autorisation);
 
 const newTweetCollection = new TweetCollection('Илон Маск', _tweets);
 const showUserNameMain = new HeaderView('helloUser');
@@ -412,4 +384,4 @@ const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
 const showTweet = new TweetView('twitMain');
 const tweetsController = new TweetsController(newTweetCollection, '', userCollectionTest, showUserNameMain, tweetsFeed, showTweet);
 
-tweetsController.commentPage();
+tweetsController.autorization();
