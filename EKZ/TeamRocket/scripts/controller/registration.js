@@ -23,7 +23,7 @@ export function registration() {
             if ((regData.password === regData.repeatPassword) && (regData.password.length >= 6)) {
                 userDB.create(regData.login, regData.password, regData.name);
                 userDB.saveCurrentUserInLocalStorage(regData)
-                userDB.saveUserArrayInLocalStorage(regData)
+                userDB.saveUserArrayInLocalStorage()
                 crutchLogin();
             } else alert();
         }
