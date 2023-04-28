@@ -39,8 +39,6 @@ function inputs() {
 
             const createTask = document.querySelectorAll('.tableHeader .plusIco');
             createTask.forEach(elem => elem.addEventListener('click', () => showTaskCreation()));
-
-            console.log({dateFrom, dateTo, assignee, description, priority, isPrivate});
     }))
     } 
 }

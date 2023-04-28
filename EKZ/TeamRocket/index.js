@@ -25,5 +25,3 @@ export const taskView = new TaskView();
 export const taskPage = new TaskPage('main');
 export const taskFeedView = new TaskFeedView('taskBoard');
 export const filterView = new FilterView();
-
-userDB.userArray = mockUserArray();

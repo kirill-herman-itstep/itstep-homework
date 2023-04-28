@@ -119,10 +119,6 @@ export class TaskCollection {
     remove(id) {
         const task = this.getTask(id);
 
-        if ((task.author !== currentUser && task.assignee !== currentUser) || task) {
-            return false;
-        }
-
         const index = this.taskArray.indexOf(task);
         this.taskArray.splice(index, 1);
 
@@ -130,7 +126,6 @@ export class TaskCollection {
     }
 
     saveInLocalStorage() {
-        console.log(this.taskArray);
         localStorage.setItem('taskArray', JSON.stringify(this.taskArray));
     }
 
@@ -141,7 +136,6 @@ export class TaskCollection {
         } else {
             tasks = tasks.map(e => Object.assign(new Task(), e));
             this.addAll(tasks);
-            console.log(this.taskArray); 
         }
     }
 }

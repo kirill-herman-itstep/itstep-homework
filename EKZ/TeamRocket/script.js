@@ -2,6 +2,7 @@ import { auth } from "./scripts/controller/login.js";
 import { registration } from "./scripts/controller/registration.js";
 import { taskCreate } from "./scripts/controller/taskCreate.js";
 import { showMainPage } from "./scripts/controller/mainPage.js";import { view } from "./index.js";
+import { profileFunctional } from "./scripts/controller/profile.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -101,7 +102,7 @@ function gotoTableLayout() {
 
 function showProfileLayout() {
     body.append(view.get('profileLayoutTemplate'));
-
+    profileFunctional()
     ////////////////////////////////////////////// !!!
 
     document.querySelector('.profileLayout .crossIco').addEventListener('click', click => {
@@ -110,7 +111,7 @@ function showProfileLayout() {
 }
 
 
-function hideProfileLayout() {
+export function hideProfileLayout() {
     body.removeChild(document.querySelector('.profileLayout'));
 }
 

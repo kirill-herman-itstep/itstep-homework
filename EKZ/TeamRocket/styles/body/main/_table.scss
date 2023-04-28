@@ -122,6 +122,7 @@
                     border-radius: $default-padding;
                     padding: 0.5 * $default-padding $default-padding;
                     row-gap: 0.25 * $default-padding;
+                    cursor: pointer;
     
                     &:hover {
                         box-shadow: $lesser-white-box-shadow;

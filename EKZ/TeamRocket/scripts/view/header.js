@@ -17,6 +17,7 @@ export class HeaderView {
 
     getHTML(userObj) {
         return `
+        <div>${userObj.name}</div>
         <svg class="avatarPlaceholder" viewBox="0 0 40 40" fill="none"">
             <rect x="0.1" y="0.1" width="39.8" height="39.8" rx="19.9"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M26.0002 16C26.0002 19.3137 23.314 22 20.0002 22C16.6865 22 14.0002 19.3137 14.0002 16C14.0002 12.6863 16.6865 10 20.0002 10C23.314 10 26.0002 12.6863 26.0002 16ZM24.0002 16C24.0002 18.2091 22.2094 20 20.0002 20C17.7911 20 16.0002 18.2091 16.0002 16C16.0002 13.7909 17.7911 12 20.0002 12C22.2094 12 24.0002 13.7909 24.0002 16Z"/>

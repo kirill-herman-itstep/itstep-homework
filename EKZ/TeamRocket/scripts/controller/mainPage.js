@@ -1,11 +1,11 @@
-import { headerView, taskFeedView, mainDB } from "../../index.js";
+import { headerView, taskFeedView, userDB, mainDB } from "../../index.js";
 import { clickableTasks } from "./taskPage.js";
 import { filter } from "./filter.js";
 import { showTaskCreation } from "../../script.js";
 
 
-export function showMainPage(user) {
-    headerView.setCurrentUser(user);
+export function showMainPage() {
+    headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
     mainDB.getFromLocalStorage()
     
     taskFeedView.getFeed(0, 10, {status: 'complete'}, 'Complete');

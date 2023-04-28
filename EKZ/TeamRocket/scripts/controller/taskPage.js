@@ -1,5 +1,6 @@
-import { taskPage } from "../../index.js";
+import { headerView, taskFeedView, taskPage } from "../../index.js";
 import { mainDB } from "../../index.js";
+import { showMainPage } from "./mainPage.js";
 
 let currentTaskOpen = null;
 
@@ -37,12 +38,28 @@ function writeComment(task) {
     });
 
     document.onclick = function(e) {
-        if (!e.target.closest('.task') && !e.target.closest('.taskForm')) {
+        if (!e.target.closest('.task') && !e.target.closest('.taskForm') && currentTaskOpen !== null) {
             currentTaskOpen.remove();
             currentTaskOpen = null;
             document.onclick = null;
         }
     }
+}
+
+function deleteTask(task) {
+    const deleteTaskBtn = document.querySelector('.deleteIco')
+    deleteTaskBtn.addEventListener('click', () => {
+        mainDB.remove(task.id)
+        currentTaskOpen.remove()
+        mainDB.saveInLocalStorage()
+
+        user.innerHTML = '';
+        taskBoard.innerHTML = '';
+        
+        //Почему-то дублируются уже существующие таски после удаления
+
+        showMainPage()
+    }, {capture: true})
 }
 
 function taskPageFunctional(task) {
@@ -51,6 +68,7 @@ function taskPageFunctional(task) {
     taskPage.showTaskPage(task);
 
     writeComment(task)
+    deleteTask(task)
 
     const closeButton = document.querySelector('.task .crossIco');
     currentTaskOpen = document.querySelector('.task');
@@ -60,3 +78,4 @@ function taskPageFunctional(task) {
         currentTaskOpen = null;
     });
 }
+

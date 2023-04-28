@@ -12,6 +12,8 @@ export function auth() {
         };
         const user = userDB.userArray.find((element) => (loginData.login === element.login) && (loginData.password === element.password));
         if(user) {
+            userDB.saveCurrentUserInLocalStorage(user)
+            userDB.saveUserArrayInLocalStorage(user)
             crutchLogin();
         } else alert();
     })
