@@ -1,6 +1,7 @@
-import { headerView, taskFeedView, taskPage } from "../../index.js";
+import { taskPage } from "../../index.js";
 import { mainDB } from "../../index.js";
 import { showMainPage } from "./mainPage.js";
+import { getUserSelects } from "./taskCreate.js";
 
 let currentTaskOpen = null;
 
@@ -44,6 +45,7 @@ function writeComment(task) {
             document.onclick = null;
         }
     }
+    mainDB.saveInLocalStorage()
 }
 
 function deleteTask(task) {
@@ -69,6 +71,7 @@ function taskPageFunctional(task) {
 
     writeComment(task)
     deleteTask(task)
+    assignField(task)
 
     const closeButton = document.querySelector('.task .crossIco');
     currentTaskOpen = document.querySelector('.task');
@@ -79,3 +82,7 @@ function taskPageFunctional(task) {
     });
 }
 
+function assignField(task) {
+    assignOnPage.innerHTML = getUserSelects()
+    assignOnPage.value = task.assignee;
+}

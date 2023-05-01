@@ -28,4 +28,3 @@ export const filterView = new FilterView();
 
 userDB.userArray = mockUserArray()
 userDB.saveUserArrayInLocalStorage()
-console.log(userDB.userArray);

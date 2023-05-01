@@ -1,9 +1,10 @@
 export class User {
-    constructor(login, password, name) {
+    constructor(login, password, name, avatar = 0) {
         this.id = Math.random().toString(16).slice(2);
         this.login = login;
         this.password = password;
         this.name = name;
+        this.avatar = avatar;
     }
 
     edit(newPassword, newName) {

@@ -20,7 +20,7 @@ export class TaskPage {
 
     returnPageHTML(task) {
         const pageHTML = view.get('taskPage');
-        pageHTML.querySelector('.assignTo input').value = task.assignee;
+        pageHTML.querySelector('.assignTo select').value = task.assignee;
         pageHTML.querySelector('.title input').value = task.name;
         pageHTML.querySelector('.description textarea').value = task.description;
         pageHTML.querySelector('.boardName').innerText = task.status;
@@ -38,7 +38,7 @@ export class TaskPage {
     returnCommentHTML(comment) {
         const commentHTML = view.get('comment');
         commentHTML.querySelector('p').innerText = comment.text;
-        commentHTML.querySelector('.date').innerText = comment.createdAt;
+        commentHTML.querySelector('.date').innerText = Date(comment._createdAt);
 
         return commentHTML;
     }

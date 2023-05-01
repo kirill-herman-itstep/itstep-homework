@@ -3,6 +3,11 @@ import { hideProfileLayout } from "../../script.js";
 
 export function profileFunctional() {
     const profile = document.querySelector('.profile')
+    const userAvatar = profile.querySelector('.avatarPlaceholder');
+    userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png">`;
+
+    userAvatar.addEventListener('click', () => changeAvatar(current))
+
     const userName = profile.querySelector('input[value="Current login"]')
     userName.value = currentUser.name;
     const current = userDB.getUserByLogin(currentUser.login)
@@ -25,4 +30,14 @@ export function profileFunctional() {
         userDB.getUserArrayFromLocalStorage()
         hideProfileLayout()
     })
+}
+
+function changeAvatar(current) {
+    const promptValue = prompt('0-5');
+    if (promptValue < 0 || promptValue > 5) {
+        alert()
+    } else {
+        current.avatar = promptValue;
+        currentUser.avatar = promptValue;
+    }
 }
