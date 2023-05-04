@@ -1,8 +1,14 @@
 import { User } from "./model.user.js";
+import { mockUserArray } from "../mock-ups/mock.users.js";
 
 export class UserCollection { 
     constructor () {
-        this.userArray = [];
+        if (localStorage.getItem('userArray') === 'undefined') {
+            this.userArray = mockUserArray();
+            this.saveUserArrayInLocalStorage();
+        } else {
+            this.getUserArrayFromLocalStorage()
+        } 
     }
 
     create(login, password, name) {
@@ -10,7 +16,7 @@ export class UserCollection {
             return false;
         }
 
-        if (typeof login === 'string' && typeof password === 'string' && typeof name === 'string')
+        if (typeof login === 'string' && typeof password === 'string' && typeof name === 'string');
         this.userArray.push(new User(login, password, name));
         return true;
     }

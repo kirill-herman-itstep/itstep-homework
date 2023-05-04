@@ -6,7 +6,7 @@ import { showTaskCreation } from "../../script.js";
 
 export function showMainPage() {
     headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
-    mainDB.getFromLocalStorage()
+    mainDB.getFromLocalStorage();
     
     taskFeedView.getFeed(0, 10, {status: 'complete'}, 'Complete');
     taskFeedView.getFeed(0, 10, {status: 'in-progress'}, 'In progress');

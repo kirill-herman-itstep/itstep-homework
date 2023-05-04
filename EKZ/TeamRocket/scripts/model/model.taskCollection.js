@@ -135,6 +135,7 @@ export class TaskCollection {
             localStorage.setItem('taskArray', JSON.stringify([]));
         } else {
             tasks = tasks.map(e => Object.assign(new Task(), e));
+            this.taskArray = [];
             this.addAll(tasks);
         }
     }

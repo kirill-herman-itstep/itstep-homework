@@ -2,7 +2,7 @@ import { TaskCollection } from "./scripts/model/model.taskCollection.js";
 import { UserCollection } from "./scripts/model/model.userCollection.js";
 
 import { mockTasksArray } from "./scripts/mock-ups/mock.tasks.js";
-import { mockUserArray } from "./scripts/mock-ups/mock.users.js";
+
 
 export let currentUser = '';
 export function setUser(elem) {
@@ -26,5 +26,3 @@ export const taskPage = new TaskPage('main');
 export const taskFeedView = new TaskFeedView('taskBoard');
 export const filterView = new FilterView();
 
-userDB.userArray = mockUserArray()
-userDB.saveUserArrayInLocalStorage()

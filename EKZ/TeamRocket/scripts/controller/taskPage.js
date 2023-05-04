@@ -26,16 +26,16 @@ function writeComment(task) {
     commentText.addEventListener('input', (event) => {
         let count = commentText.value.length;
         if (count >= 280) {
-            commentText.value = commentText.value.slice(0, 280)
-            count = 280
+            commentText.value = commentText.value.slice(0, 280);
+            count = 280;
         }
-        commentWordsCounter.innerHTML = `${count}/280`
+        commentWordsCounter.innerHTML = `${count}/280`;
     });
-    const sendButton = document.querySelector('.postComment')
+    const sendButton = document.querySelector('.postComment');
     sendButton.addEventListener('click', () => {
-        task.addComment(commentText.value)
+        task.addComment(commentText.value);
 
-        taskPageFunctional(task)
+        taskPageFunctional(task);
     });
 
     document.onclick = function(e) {
@@ -45,23 +45,21 @@ function writeComment(task) {
             document.onclick = null;
         }
     }
-    mainDB.saveInLocalStorage()
+    mainDB.saveInLocalStorage();
 }
 
 function deleteTask(task) {
     const deleteTaskBtn = document.querySelector('.deleteIco')
     deleteTaskBtn.addEventListener('click', () => {
-        mainDB.remove(task.id)
-        currentTaskOpen.remove()
-        mainDB.saveInLocalStorage()
+        mainDB.remove(task.id);
+        currentTaskOpen.remove();
+        mainDB.saveInLocalStorage();
 
         user.innerHTML = '';
         taskBoard.innerHTML = '';
-        
-        //Почему-то дублируются уже существующие таски после удаления
 
-        showMainPage()
-    }, {capture: true})
+        showMainPage();
+    }, {capture: true});
 }
 
 function taskPageFunctional(task) {
@@ -69,9 +67,9 @@ function taskPageFunctional(task) {
 
     taskPage.showTaskPage(task);
 
-    writeComment(task)
-    deleteTask(task)
-    assignField(task)
+    writeComment(task);
+    deleteTask(task);
+    assignField(task);
 
     const closeButton = document.querySelector('.task .crossIco');
     currentTaskOpen = document.querySelector('.task');
@@ -83,6 +81,6 @@ function taskPageFunctional(task) {
 }
 
 function assignField(task) {
-    assignOnPage.innerHTML = getUserSelects()
+    assignOnPage.innerHTML = getUserSelects();
     assignOnPage.value = task.assignee;
 }

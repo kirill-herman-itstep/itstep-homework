@@ -4,7 +4,7 @@ export function taskCreate() {
     const closeButton = document.querySelector('.task .crossIco');
     const taskPage = document.querySelector('.task');
     const select = document.querySelectorAll('.taskCreationLayout select');
-    select[0].innerHTML = getUserSelects()
+    select[0].innerHTML = getUserSelects();
     closeButton.addEventListener('click', () => {
         taskPage.remove();
     });
@@ -14,27 +14,35 @@ export function taskCreate() {
         const textarea = document.querySelector('.taskCreationLayout textarea');
         const select = document.querySelectorAll('.taskCreationLayout select');
         
-        const assignee = select[0].value
+        console.dir(select[0].value);
+        const assignee = select[0].value;
         const name = input.value;
         const description = textarea.value;
         const status = select[1].value;
         let priority;
         if (document.querySelector('.chooseImportance input:checked')) {
-            priority = document.querySelector('.chooseImportance input:checked').value
+            priority = document.querySelector('.chooseImportance input:checked').value;
         } else priority = 'low';
         let isPrivate;
         if (document.querySelector('.chooseAccess input:checked')) {
-            isPrivate = !!+document.querySelector('.chooseAccess input:checked').value
+            isPrivate = !!+document.querySelector('.chooseAccess input:checked').value;
         } else isPrivate = false;
 
         taskView.addTask({name, priority, description, assignee, status, isPrivate});
         console.log(mainDB.taskArray.at(-1));
         document.querySelector('.taskCreationLayout').remove();
-        mainDB.saveInLocalStorage()
+        mainDB.saveInLocalStorage();
     })
 }
 
 export function getUserSelects() {
-    userDB.getUserArrayFromLocalStorage()
-    return userDB.userArray.map(e => `<option>${e.name}</option>`).join('')
+    userDB.getUserArrayFromLocalStorage();
+    const currentUser = userDB.getCurrentUserFromLocalStorage();
+    return userDB.userArray.map(e => {
+        if (currentUser.name === e.name) {
+            return `<option selected>${e.name}</option>`;
+        } else {
+            return `<option>${e.name}</option>`;
+        }     
+    }).join('');
 }
