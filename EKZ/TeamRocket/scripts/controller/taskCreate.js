@@ -29,7 +29,6 @@ export function taskCreate() {
         } else isPrivate = false;
 
         taskView.addTask({name, priority, description, assignee, status, isPrivate});
-        console.log(mainDB.taskArray.at(-1));
         document.querySelector('.taskCreationLayout').remove();
         mainDB.saveInLocalStorage();
     })

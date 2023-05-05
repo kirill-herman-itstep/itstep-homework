@@ -1,4 +1,4 @@
-import { mainDB } from "../../index.js";
+import { mainDB, userDB } from "../../index.js";
 import { view } from "../../index.js";
 
 export class TaskView {
@@ -21,7 +21,7 @@ export class TaskView {
         taskHTML.querySelector('.mark').classList.toggle(taskObj.priority);
         taskHTML.querySelector('.mark').innerText = taskObj.priority;
         taskHTML.querySelector('.taskName').innerText = taskObj.name;
-
+        taskHTML.querySelector('.assigneeAvatar').innerHTML = `<image href="avatar/${userDB.userArray.find(e => e.name === taskObj.assignee).avatar}.png" width="100%"">`
         return taskHTML;
     }
 
