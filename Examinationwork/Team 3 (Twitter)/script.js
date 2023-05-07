@@ -1,3 +1,3 @@
 'use strict';
 
-import { TweetsController } from './scripts/controller/controller.js';
+import { TweetsController } from '../scripts/controller/controller.js';

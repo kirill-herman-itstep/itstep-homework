@@ -220,7 +220,7 @@ export class TweetsController {
         document.getElementById('mainContainer').addEventListener('input', listenerMainPageInput);
     }
 
-    commentPage(id = '7') {
+    commentPage(id = '8') {
         const listenerClickComment = event => {
             if (event.target === document.getElementById('postComment')) {
                 const commentText = document.getElementById('commentsAnswerTwit').value;
@@ -261,6 +261,9 @@ export class TweetsController {
             if (event.target === document.querySelector('.twit-current-twit-info-edit')) {
                 const text = event.target.parentElement.previousElementSibling.innerText;
                 const idTweet = event.target.parentElement.parentElement.id;
+                if (!this.tweetCollection.edit(idTweet, text)) {
+                    return;
+                }
 
                 const editListenerClick = event => {
                     const tweetText = editArea.value;
