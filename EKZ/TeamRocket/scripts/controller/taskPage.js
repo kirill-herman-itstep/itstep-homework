@@ -19,11 +19,29 @@ export function clickableTasks() {
     }));
 }
 
+function taskPageFunctional(task) {
+    if (currentTaskOpen) currentTaskOpen.remove();
+
+    taskPage.showTaskPage(task);
+
+    writeComment(task);
+    deleteTask(task);
+    assignField(task);
+
+    const closeButton = document.querySelector('.task .crossIco');
+    currentTaskOpen = document.querySelector('.task');
+
+    closeButton.addEventListener('click', () => {
+        currentTaskOpen.remove();
+        currentTaskOpen = null;
+    });
+}
+
 function writeComment(task) {
     const commentText = document.querySelector('textarea[name="newComment"]');
     const commentWordsCounter = document.querySelector('.newComment span');
 
-    commentText.addEventListener('input', (event) => {
+    commentText.addEventListener('input', () => {
         let count = commentText.value.length;
         if (count >= 280) {
             commentText.value = commentText.value.slice(0, 280);
@@ -62,23 +80,6 @@ function deleteTask(task) {
     }, {capture: true});
 }
 
-function taskPageFunctional(task) {
-    if (currentTaskOpen) currentTaskOpen.remove();
-
-    taskPage.showTaskPage(task);
-
-    writeComment(task);
-    deleteTask(task);
-    assignField(task);
-
-    const closeButton = document.querySelector('.task .crossIco');
-    currentTaskOpen = document.querySelector('.task');
-
-    closeButton.addEventListener('click', () => {
-        currentTaskOpen.remove();
-        currentTaskOpen = null;
-    });
-}
 
 function assignField(task) {
     assignOnPage.innerHTML = getUserSelects();

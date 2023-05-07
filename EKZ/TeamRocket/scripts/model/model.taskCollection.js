@@ -1,4 +1,5 @@
 import { Task } from "./model.task.js";
+import { Comment } from "./model.comment.js";
 import { currentUser, mainDB } from "../../index.js";
 
 export class TaskCollection {
@@ -134,7 +135,15 @@ export class TaskCollection {
         if (!tasks) {
             localStorage.setItem('taskArray', JSON.stringify([]));
         } else {
-            tasks = tasks.map(e => Object.assign(new Task(), e));
+            tasks = tasks.map(e => {
+                const task = Object.assign(new Task(), e);
+
+                for (let i = 0; i < e.comments.length; i++) {
+                    task.comments[i] =  Object.assign(new Comment(), e.comments[i]);
+                }
+                
+                return task;
+            });
             this.taskArray = [];
             this.addAll(tasks);
         }

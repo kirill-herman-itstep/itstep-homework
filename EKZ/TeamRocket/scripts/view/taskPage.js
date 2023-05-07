@@ -24,23 +24,28 @@ export class TaskPage {
         pageHTML.querySelector('.title input').value = task.name;
         pageHTML.querySelector('.description textarea').value = task.description;
         pageHTML.querySelector('.boardName').innerText = task.status;
-        this.returnCommentsHTML(task).forEach(comment => {
+        this.returnComments(task).forEach(comment => {
             pageHTML.querySelector('.commentSection').append(comment);
         })
 
         return pageHTML;
     }
 
-    returnCommentsHTML(task) {
+    returnComments(task) {
         return task.comments.map(comment => this.returnCommentHTML(comment));
     }
     
     returnCommentHTML(comment) {
         const commentHTML = view.get('comment');
         commentHTML.querySelector('p').innerText = comment.text;
-        commentHTML.querySelector('.date').innerText = Date(comment._createdAt);
-
+        commentHTML.querySelector('.date').innerText = comment.createdAt;
+        
         return commentHTML;
+    }
+
+    _getDateCreatComment(comment) {
+        const date = Date.parse(comment.createdAt);
+        
     }
 
     setCurrentImportance(task) {

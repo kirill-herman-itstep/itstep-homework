@@ -16,5 +16,5 @@ export function showMainPage() {
     filter()
 
     const createTask = document.querySelectorAll('.tableHeader .plusIco');
-    createTask.forEach( elem => elem.addEventListener('click', () => showTaskCreation()));
+    createTask.forEach( elem => elem.addEventListener('click', (e) => showTaskCreation(e)));
 }

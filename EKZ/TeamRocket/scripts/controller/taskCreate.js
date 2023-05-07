@@ -1,10 +1,12 @@
 import { taskView, mainDB, userDB } from "../../index.js";
 
-export function taskCreate() {
+export function taskCreate(e) {
     const closeButton = document.querySelector('.task .crossIco');
     const taskPage = document.querySelector('.task');
     const select = document.querySelectorAll('.taskCreationLayout select');
     select[0].innerHTML = getUserSelects();
+    TaskBoardSelected(e.target, select[1]);
+
     closeButton.addEventListener('click', () => {
         taskPage.remove();
     });
@@ -14,7 +16,6 @@ export function taskCreate() {
         const textarea = document.querySelector('.taskCreationLayout textarea');
         const select = document.querySelectorAll('.taskCreationLayout select');
         
-        console.dir(select[0].value);
         const assignee = select[0].value;
         const name = input.value;
         const description = textarea.value;
@@ -31,7 +32,7 @@ export function taskCreate() {
         taskView.addTask({name, priority, description, assignee, status, isPrivate});
         document.querySelector('.taskCreationLayout').remove();
         mainDB.saveInLocalStorage();
-    })
+    });
 }
 
 export function getUserSelects() {
@@ -44,4 +45,29 @@ export function getUserSelects() {
             return `<option>${e.name}</option>`;
         }     
     }).join('');
+}
+
+function TaskBoardSelected(elem, select) {
+   
+    const boardName = findElementBoard(elem).querySelector('h4').innerText;
+
+    for (let i = 0; i < select.length; i++) {
+        if (select[i].innerText === boardName) select[i].setAttribute('selected', true); 
+    }
+}
+
+function findElementBoard(elem) {
+    if (Element.prototype.closest) {
+        return elem.closest('.tableHeader');
+      }
+  
+      let parent = elem;
+  
+      while (parent) {
+        if (parent.matches('.tableHeader')) {
+          return parent;
+        }
+  
+        parent = parent.parentElement;
+      }
 }

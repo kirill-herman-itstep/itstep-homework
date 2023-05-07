@@ -115,9 +115,9 @@ export function hideProfileLayout() {
     body.removeChild(document.querySelector('.profileLayout'));
 }
 
-export function showTaskCreation() {
+export function showTaskCreation(e) {
     body.append(view.get('taskCreationTemplate'));
-    taskCreate();
+    taskCreate(e);
     const closeButton = document.querySelector('.taskCreationLayout .crossIco');
     closeButton.addEventListener('click', () => {
         document.querySelector('.taskCreationLayout').remove();

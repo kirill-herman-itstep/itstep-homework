@@ -32,8 +32,13 @@ export class Task {
         return this._author;
     }
 
-    addComment(text) {
-        this.comments.push(new Comment(text));
+    addComment(value) {
+        if (typeof value === 'string') {
+            this.comments.push(new Comment(value));
+        } else if (typeof value === 'object') {
+            this.comments.push(value)
+        } else return false;
+        
         return true;
     }
 
