@@ -60,7 +60,6 @@ export class TaskPage {
         const date = new Date(Date.parse(comment.createdAt));
         const currentDate = new Date();
         const difference = Math.floor((currentDate - date) / 1000);
-        console.log(difference);
 
         if ((Math.floor(difference / 60)) === 0) {
             return `${difference} seconds ago`;
