@@ -378,13 +378,3 @@ export class TweetsController {
         return false;
     }
 }
-
-const root = document.getElementById('root');
-
-const newTweetCollection = new TweetCollection('Илон Маск', _tweets);
-const showUserNameMain = new HeaderView('helloUser');
-const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
-const showTweet = new TweetView('twitMain');
-const tweetsController = new TweetsController(newTweetCollection, '', userCollectionTest, showUserNameMain, tweetsFeed, showTweet);
-
-tweetsController.autorization();

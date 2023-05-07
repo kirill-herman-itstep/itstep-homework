@@ -7,7 +7,7 @@ import { Comment } from './Comment.model.js';
 export class TweetCollection {
     constructor(user, tweets = []) {
         this._user = user;
-        this._tweets = tweets.filter(item => Tweet.validate(item));
+        this._tweets = tweets.filter(item => Tweet.validate(item)).sort((a, b) => b._createdAt - a._createdAt);
     }
 
     get user() {
@@ -23,7 +23,7 @@ export class TweetCollection {
     set tweets(value) {}
 
     getPage(skip = 0, top = 10, filterConfig = { author: '', dateFrom: '', dateTo: '', text: '', hashtags: [''] }) {
-        if (arguments.length === 2) return _tweets.filter((item, index) => index >= skip && index < skip + top).sort((a, b) => a._createdAt - b._createdAt);
+        if (arguments.length === 2) return this._tweets.filter((item, index) => index >= skip && index < skip + top).sort((a, b) => a._createdAt - b._createdAt);
         if (arguments.length > 2) {
             return this._tweets
                 .filter(item => {
@@ -48,7 +48,7 @@ export class TweetCollection {
                     return true;
                 })
                 .filter((item, index) => index >= skip && index < skip + top)
-                .sort((a, b) => a._createdAt - b._createdAt);
+                .sort((a, b) => b._createdAt - a._createdAt);
         }
     }
 
@@ -59,7 +59,7 @@ export class TweetCollection {
     add(text = '') {
         const newTweet = new Tweet(text, new Date(), this._user);
         if (Tweet.validate(newTweet)) {
-            this._tweets.push(newTweet);
+            this._tweets.unshift(newTweet);
             return true;
         } else {
             return false;
