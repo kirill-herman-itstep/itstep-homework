@@ -50,18 +50,27 @@ function writeComment(task) {
         commentWordsCounter.innerHTML = `${count}/280`;
     });
     const sendButton = document.querySelector('.postComment');
+
     sendButton.addEventListener('click', () => {
-        task.addComment(commentText.value);
+        if (commentText.value.length > 0) {
+                    task.addComment(commentText.value);
 
         taskPageFunctional(task);
+        }
     });
 
+    let mouseDowtMain = true;
+
+    document.querySelector('.task').addEventListener('mousedown', () => mouseDowtMain = false);
+
     document.onclick = function(e) {
-        if (!e.target.closest('.task') && !e.target.closest('.taskForm') && currentTaskOpen !== null) {
+        if (!e.target.closest('.task') && !e.target.closest('.taskForm') && currentTaskOpen !== null && mouseDowtMain) {
             currentTaskOpen.remove();
             currentTaskOpen = null;
             document.onclick = null;
         }
+
+        mouseDowtMain = true;
     }
     mainDB.saveInLocalStorage();
 }
