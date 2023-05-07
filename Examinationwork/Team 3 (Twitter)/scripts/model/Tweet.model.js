@@ -3,8 +3,8 @@
 import { _counter } from '../helper/id.helper.js';
 
 export class Tweet {
-    constructor(text = '', userDate = new Date(), author = '', counter = `${_counter()}`) {
-        (this._id = counter), (this.text = text), (this._createdAt = new Date(`${userDate}`)), (this._author = author), (this.comments = []);
+    constructor(text = '', userDate = new Date(), author = '', id = `${_counter()}`, comments = []) {
+        (this._id = id), (this.text = text), (this._createdAt = new Date(`${userDate}`)), (this._author = author), (this.comments = comments);
     }
 
     get id() {

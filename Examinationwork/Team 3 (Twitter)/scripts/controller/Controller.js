@@ -1,7 +1,7 @@
 'use strict';
 import { Tweet } from '../model/Tweet.model.js';
 import { Comment } from '../model/Comment.model.js';
-import { _tweets, _tweets2 } from '../mock/tweets.mock.js';
+
 import { TweetCollection } from '../model/TweetCollection.model.js';
 import { HeaderView } from '../view/HeaderView.view.js';
 import { TweetFeedView } from '../view/TweetFeedView.view.js';

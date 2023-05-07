@@ -1,6 +1,5 @@
 'use strict';
 
-import { _tweets } from '../mock/tweets.mock.js';
 import { Tweet } from './Tweet.model.js';
 import { Comment } from './Comment.model.js';
 
@@ -60,6 +59,7 @@ export class TweetCollection {
         const newTweet = new Tweet(text, new Date(), this._user);
         if (Tweet.validate(newTweet)) {
             this._tweets.unshift(newTweet);
+            localStorage.setItem('tweets', JSON.stringify(this.tweets));
             return true;
         } else {
             return false;
@@ -70,6 +70,7 @@ export class TweetCollection {
         const editTweet = this.get(id);
         if (editTweet && editTweet._author === this._user && text.length <= 280 && typeof text === 'string') {
             editTweet.text = text;
+            localStorage.setItem('tweets', JSON.stringify(this.tweets));
             return true;
         } else {
             return false;
@@ -81,6 +82,7 @@ export class TweetCollection {
         if (userRemoveTweet && userRemoveTweet.author === this.user) {
             const index = this._tweets.findIndex(item => item === userRemoveTweet);
             this._tweets.splice(index, 1);
+            localStorage.setItem('tweets', JSON.stringify(this.tweets));
             return true;
         } else {
             return false;
@@ -92,6 +94,7 @@ export class TweetCollection {
         const newComment = new Comment(text, this.user);
         if (userTweet && Comment.validate(newComment)) {
             userTweet.comments.push(newComment);
+            localStorage.setItem('tweets', JSON.stringify(this.tweets));
             return true;
         } else {
             return false;

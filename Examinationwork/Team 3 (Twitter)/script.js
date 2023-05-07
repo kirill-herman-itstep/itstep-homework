@@ -5,15 +5,17 @@ import { TweetCollection } from './scripts/model/TweetCollection.model.js';
 import { TweetFeedView } from './scripts/view/TweetFeedView.view.js';
 import { HeaderView } from './scripts/view/HeaderView.view.js';
 import { TweetView } from './scripts/view/TweetView.js';
-import { _tweets } from './scripts/mock/tweets.mock.js';
 import { userCollectionTest } from './scripts/mock/userCollection.mock.js';
+import { showFormatTweets } from './scripts/helper/showFormatTweets.helper.js';
+import { tweets } from './scripts/mock/tweets.mock.js';
 
 const root = document.getElementById('root');
+const localTweets = showFormatTweets();
 
-const newTweetCollection = new TweetCollection('Илон Маск', _tweets);
+const newTweetCollection = new TweetCollection('Илон Маск', localTweets);
 const showUserNameMain = new HeaderView('helloUser');
 const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
 const showTweet = new TweetView('twitMain');
 const tweetsController = new TweetsController(newTweetCollection, '', userCollectionTest, showUserNameMain, tweetsFeed, showTweet);
 
-tweetsController.autorization();
+tweetsController.mainPage();

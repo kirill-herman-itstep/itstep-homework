@@ -3,8 +3,8 @@
 import { _counter } from '../helper/id.helper.js';
 
 export class Comment {
-    constructor(text = '', author = '') {
-        (this._id = `${_counter()}`), (this.text = text), (this._createdAt = new Date()), (this._author = author);
+    constructor(text = '', author = '', id = `${_counter()}`, createdAt = new Date()) {
+        (this._id = id), (this.text = text), (this._createdAt = createdAt), (this._author = author);
     }
 
     get id() {
