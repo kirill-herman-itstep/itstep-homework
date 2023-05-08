@@ -15,6 +15,11 @@ export function showMainPage() {
     clickableTasks();
     filter()
 
+    const assigneeAvatars = document.querySelectorAll('.taskBoard .assignee')
+    assigneeAvatars.forEach(e => e.addEventListener('hover', () => {
+        // Появление assigneeHoverLayout с нужным значением
+    }))
+
     const createTask = document.querySelectorAll('.tableHeader .plusIco');
     createTask.forEach( elem => elem.addEventListener('click', (e) => showTaskCreation(e)));
 }

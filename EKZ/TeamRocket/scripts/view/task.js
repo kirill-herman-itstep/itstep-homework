@@ -21,7 +21,7 @@ export class TaskView {
         taskHTML.querySelector('.mark').classList.toggle(taskObj.priority);
         taskHTML.querySelector('.mark').innerText = taskObj.priority;
         taskHTML.querySelector('.taskName').innerText = taskObj.name;
-        taskHTML.querySelector('.assigneeAvatar').innerHTML = `<image href="avatar/${userDB.userArray.find(e => e.name === taskObj.assignee).avatar}.png" width="100%"">`
+        taskHTML.querySelector('.assigneeAvatar').innerHTML = `<image href="avatar/${userDB.userArray.find(e => e.name === taskObj.assignee).avatar}.png" width="100%" value="${taskObj.assignee}"">`
         return taskHTML;
     }
 

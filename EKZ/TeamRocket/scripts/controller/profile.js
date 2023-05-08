@@ -1,4 +1,4 @@
-import { currentUser, headerView, userDB } from "../../index.js";
+import { currentUser, headerView, setUser, userDB } from "../../index.js";
 import { hideProfileLayout } from "../../script.js";
 
 export function profileFunctional() {
@@ -6,7 +6,7 @@ export function profileFunctional() {
     const userAvatar = profile.querySelector('.avatarPlaceholder');
     userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png">`;
 
-    userAvatar.addEventListener('click', () => changeAvatar(current))
+    userAvatar.addEventListener('click', () => changeAvatar(current)) // Здесь при клике должна открываться менюшка. Сама функция ниже
 
     const userName = profile.querySelector('input[value="Current login"]')
     userName.value = currentUser.name;
@@ -33,11 +33,16 @@ export function profileFunctional() {
 }
 
 function changeAvatar(current) {
-    const promptValue = prompt('0-5');
-    if (promptValue < 0 || promptValue > 5) {
-        alert()
-    } else {
-        current.avatar = promptValue;
-        currentUser.avatar = promptValue;
-    }
+    const avatarChangeLayout = document.querySelector('#avatarChangeLayout');
+    const saveBtn = avatarChangeLayout.querySelector('button');
+    saveBtn.addEventListener('click', () => {
+        current.avatar = avatarChangeLayout.querySelector('input:checked').value;
+        currentUser.avatar = avatarChangeLayout.querySelector('input:checked').value;
+    })
+}
+
+function exit() {
+    // *возвращение на страницу входа*
+    setUser('')
+    userDB.saveCurrentUserInLocalStorage()
 }
