@@ -13,7 +13,7 @@ export function showMainPage() {
     taskFeedView.getFeed(0, 10, {status: 'to-do'}, 'To do');
 
     clickableTasks();
-    filter()
+    filter();
 
     const assigneeAvatars = document.querySelectorAll('.taskBoard .assignee')
     assigneeAvatars.forEach(e => e.addEventListener('hover', () => {

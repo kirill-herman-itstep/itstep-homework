@@ -2,6 +2,7 @@ import { taskPage } from "../../index.js";
 import { mainDB } from "../../index.js";
 import { showMainPage } from "./mainPage.js";
 import { getUserSelects } from "./taskCreate.js";
+import { showFilter } from "../../script.js";
 
 let currentTaskOpen = null;
 
@@ -9,11 +10,13 @@ export function clickableTasks() {
     const allFeeds = document.querySelectorAll('.tasks');
 
     allFeeds.forEach(elem => elem.addEventListener('click', (e) => {
+
         if (e.target.closest('.taskForm')) {
             if (currentTaskOpen) currentTaskOpen.remove();
             const taskElem = e.target.closest('.taskForm');
             const task = mainDB.getTask(taskElem.id);
 
+            if (document.querySelector('.filterLayout')) showFilter();
             taskPageFunctional(task);
         }
     }));
@@ -32,9 +35,13 @@ function taskPageFunctional(task) {
     currentTaskOpen = document.querySelector('.task');
 
     closeButton.addEventListener('click', () => {
-        currentTaskOpen.remove();
-        currentTaskOpen = null;
+        closeTask();
     });
+}
+
+export function closeTask() {
+    currentTaskOpen.remove();
+    currentTaskOpen = null;
 }
 
 function writeComment(task) {
@@ -64,9 +71,10 @@ function writeComment(task) {
     document.querySelector('.task').addEventListener('mousedown', () => mouseDowtMain = false);
 
     document.onclick = function(e) {
-        if (!e.target.closest('.task') && !e.target.closest('.taskForm') && currentTaskOpen !== null && mouseDowtMain) {
-            currentTaskOpen.remove();
-            currentTaskOpen = null;
+        if (!e.target.closest('.task') && !e.target.closest('.taskForm') 
+        && currentTaskOpen !== null && mouseDowtMain
+        ) {
+            closeTask();
             document.onclick = null;
         }
 
@@ -79,7 +87,7 @@ function deleteTask(task) {
     const deleteTaskBtn = document.querySelector('.deleteIco')
     deleteTaskBtn.addEventListener('click', () => {
         mainDB.remove(task.id);
-        currentTaskOpen.remove();
+        closeTask();
         mainDB.saveInLocalStorage();
 
         user.innerHTML = '';

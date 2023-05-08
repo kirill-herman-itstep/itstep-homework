@@ -11,10 +11,6 @@ export class TaskCollection {
         }
     }
 
-    sortTaskByDate() {
-        return this.taskArray.sort((a, b) => a.lastDate - b.lastDate);
-    }
-
     getTasks(skip = 0, top = 10, filterConfig = {}) {
 
         const filteredTasks = this.taskArray.filter(task => {
@@ -22,11 +18,11 @@ export class TaskCollection {
                 return false;
             }
 
-            if (filterConfig.dateFrom && filterConfig.dateFrom > task.createdAt) {
+            if (filterConfig.dateFrom && Date.parse(filterConfig.dateFrom) > Date.parse(task.createdAt)) {
                 return false;
             }
 
-            if (filterConfig.dateTo && filterConfig.dateTo < task.createdAt) {
+            if (filterConfig.dateTo && (Date.parse(filterConfig.dateTo) + (24 * 60 * 60 * 1000)) < Date.parse(task.createdAt)) {
                 return false;
             }
 
@@ -54,6 +50,10 @@ export class TaskCollection {
         let returnedArray = filteredTasks.slice(skip, top + skip);
         
         return returnedArray;
+    }
+
+    sortTaskByDate() {
+        return this.taskArray.sort((a, b) => Date.parse(b.lastDate) - Date.parse(a.lastDate));
     }
 
     getTask(id) {

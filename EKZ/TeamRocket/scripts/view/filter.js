@@ -1,24 +1,32 @@
-import { taskFeedView } from "../../index.js";
+import { view } from "../../index.js";
+
 export class FilterView {
+    _filterObj;
+
     constructor(containerID) {
         this.containerID = containerID;
     }
 
-    display(containerID, content) {
-        const container = document.getElementById(`${containerID}`);
-        container.insertAdjacentHTML('afterbegin', content);
+    set filterObj(value) {
+        this._filterObj = value;
     }
 
-    filter(filterObj) {
-        taskBoard.innerHTML = '';
+    display() {
+        document.body.append(view.get('filterPage'));
 
-        const completeBoardFilter = Object.assign({status: 'complete'}, filterObj);
-        const inProgressBoardFilter = Object.assign({status: 'in-progress'}, filterObj);
-        const toDoBoardFilter = Object.assign({status: 'to-do'}, filterObj);
+        if (this._filterObj) {
+            const filterLayoutInputs = document.querySelectorAll('.filterLayout input');
+            filterLayoutInputs[0].value = this._filterObj.dateFrom;
+            filterLayoutInputs[1].value = this._filterObj.dateTo;
+            filterLayoutInputs[2].value = this._filterObj.assignee;
+            filterLayoutInputs[3].value = this._filterObj.description;
 
-        taskFeedView.getFeed(0, 10, completeBoardFilter, 'Complete');
-        taskFeedView.getFeed(0, 10, inProgressBoardFilter, 'In progress');
-        taskFeedView.getFeed(0, 10, toDoBoardFilter, 'To do');
-
+            // if (this._filterObj.priority) {
+            //     const importance = document.querySelectorAll('.filterLayout .importance');
+            //     for (const elem of importance) {
+            //         if (elem.value === this._filterObj.priority) elem.value.setAttribute('checked', true)
+            //     }  
+            // }
+        }
     }
 }
