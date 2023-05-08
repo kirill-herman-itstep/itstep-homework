@@ -60,7 +60,7 @@ export class TaskCollection {
         if (typeof id === 'string') return this.taskArray.find(elem => elem.id === id);
     }
 
-    add(name, priority, description, assignee, status, isPrivate) {
+    add(name, priority, description, assignee, status, isPrivate = false) {
         const task = new Task(name, priority, description, assignee, status, isPrivate);
         if (Task.validate(task)) {
             this.taskArray.push(task);

@@ -1,4 +1,5 @@
 import { view } from "../../index.js";
+import { getUserSelects } from "../controller/taskCreate.js";
 
 export class TaskPage {
     constructor(containerID) {
@@ -21,7 +22,7 @@ export class TaskPage {
     returnPageHTML(task) {
         const pageHTML = view.get('taskPage');
 
-        pageHTML.querySelector('.assignTo select').value = task.assignee;
+        pageHTML.querySelector('.assignTo select').innerHTML = getUserSelects(task.assignee);
         pageHTML.querySelector('.title input').value = task.name;
         pageHTML.querySelector('.description textarea').value = task.description;
         // pageHTML.querySelector('.boardName').innerText = this._getStatus(task.status);
@@ -102,15 +103,15 @@ export class TaskPage {
         const currentImportance = task.priority;
         const importances = document.querySelectorAll('#importance input')
         importances.forEach(e => {
-            if (e.value === currentImportance) e.setAttribute('checked', ' ')
+            if (e.value === currentImportance) e.checked = true;
         })
     }
 
     setCurrentPrivate(task) {
         const currentAccess = task.isPrivate;
-        const access = document.querySelectorAll('.chooseAccess input')
-        if (currentAccess) {
-            access[1].setAttribute('checked', ' ')
-        } else access[0].setAttribute('checked', ' ')
+        const access = document.querySelectorAll('.chooseAccess input');
+
+        if (currentAccess) access[1].checked = true;
+        else access[0].checked = true;
     }
 }

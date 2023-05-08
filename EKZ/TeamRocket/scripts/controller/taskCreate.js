@@ -6,7 +6,7 @@ export function taskCreate(e) {
     const taskPage = document.querySelector('.task');
     const select = document.querySelectorAll('.taskCreationLayout select');
 
-    select[0].innerHTML = getUserSelects();
+    select[0].innerHTML = getUserSelects(userDB.getCurrentUserFromLocalStorage().name);
     document.querySelector('.chooseImportance input[value="low"]').checked = true;
     TaskBoardSelected(e.target, select[1]);
 
@@ -21,11 +21,10 @@ export function taskCreate(e) {
     createTaskButton.addEventListener('click', () => creat());
 }
 
-export function getUserSelects() {
+export function getUserSelects(user) {
     userDB.getUserArrayFromLocalStorage();
-    const currentUser = userDB.getCurrentUserFromLocalStorage();
     return userDB.userArray.map(e => {
-        if (currentUser.name === e.name) {
+        if (user === e.name) {
             return `<option selected>${e.name}</option>`;
         } else {
             return `<option>${e.name}</option>`;
@@ -70,10 +69,7 @@ function creat() {
     const status = select[1].value;
     let priority = document.querySelector('.chooseImportance input:checked')?.value;
 
-    let isPrivate;
-    if (document.querySelector('.chooseAccess input:checked')) {
-        isPrivate = !!+document.querySelector('.chooseAccess input:checked').value;
-    } else isPrivate = false;
+    const isPrivate = !!+document.querySelector('.chooseAccess input:checked').value;
 
     const newTask = {name, priority, description, assignee, status, isPrivate};
 
