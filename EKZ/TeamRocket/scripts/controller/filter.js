@@ -2,10 +2,15 @@ import { showFilter } from "../../script.js";
 import { filterView } from "../../index.js";
 import { clickableTasks } from "./taskPage.js";
 import { showTaskCreation } from "../../script.js";
+import { closeTask } from "./taskPage.js";
+import { taskFeedView } from "../../index.js";
 
 export function filter() {
     const filterButton = document.querySelector('.filter')
-    filterButton.addEventListener('click', () => inputs())
+    filterButton.addEventListener('click', () => {
+        if (document.querySelector('.task')) closeTask();
+        inputs();
+    })
 }
 
 function inputs() {
@@ -34,13 +39,32 @@ function inputs() {
             let isPrivate = document.querySelector('.filterLayout .access input:checked')?.value;
             if (isPrivate !== undefined) isPrivate = !!+isPrivate;
 
-            filterView.filter({dateFrom, dateTo, assignee, description, priority, isPrivate});
-            clickableTasks();
+            currentFilter({dateFrom, dateTo, assignee, description, priority, isPrivate});
+            // clickableTasks();
 
-            const createTask = document.querySelectorAll('.tableHeader .plusIco');
-            createTask.forEach(elem => elem.addEventListener('click', () => showTaskCreation()));
+            // const createTask = document.querySelectorAll('.tableHeader .plusIco');
+            // createTask.forEach(elem => elem.addEventListener('click', () => showTaskCreation()));
     }))
-    } 
+    }
+}
+
+function currentFilter(filterObj) {
+    filterView.filterObj = filterObj;
+    
+    taskBoard.innerHTML = '';
+
+    const completeBoardFilter = Object.assign({status: 'complete'}, filterObj);
+    const inProgressBoardFilter = Object.assign({status: 'in-progress'}, filterObj);
+    const toDoBoardFilter = Object.assign({status: 'to-do'}, filterObj);
+
+    taskFeedView.getFeed(0, 10, completeBoardFilter, 'Complete');
+    taskFeedView.getFeed(0, 10, inProgressBoardFilter, 'In progress');
+    taskFeedView.getFeed(0, 10, toDoBoardFilter, 'To do');
+
+    clickableTasks();
+
+    const createTask = document.querySelectorAll('.tableHeader .plusIco');
+    createTask.forEach( elem => elem.addEventListener('click', (e) => showTaskCreation(e)));
 }
 
 function clearInputs() {
@@ -49,6 +73,5 @@ function clearInputs() {
         if (e.getAttribute('type') === 'radio') e.removeAttribute('checked');
         else e.value = '';
     });
-    filterView.filter();
-    clickableTasks();
+    currentFilter();
 }

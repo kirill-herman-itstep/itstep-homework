@@ -1,7 +1,8 @@
 import { auth } from "./scripts/controller/login.js";
 import { registration } from "./scripts/controller/registration.js";
 import { taskCreate } from "./scripts/controller/taskCreate.js";
-import { showMainPage } from "./scripts/controller/mainPage.js";import { view } from "./index.js";
+import { showMainPage } from "./scripts/controller/mainPage.js";
+import { filterView, view } from "./index.js";
 import { profileFunctional } from "./scripts/controller/profile.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
@@ -131,7 +132,7 @@ function hideTaskCreation() {
 export function showFilter() {
     if (document.querySelector('.filterLayout')) hideFilter();
     else {
-        body.append(view.get('filterPage'));
+        filterView.display();
     }
 }
 
