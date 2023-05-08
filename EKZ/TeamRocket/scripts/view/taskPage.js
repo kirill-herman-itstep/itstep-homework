@@ -24,7 +24,7 @@ export class TaskPage {
         pageHTML.querySelector('.assignTo select').value = task.assignee;
         pageHTML.querySelector('.title input').value = task.name;
         pageHTML.querySelector('.description textarea').value = task.description;
-        pageHTML.querySelector('.boardName').innerText = this._getStatus(task.status);
+        // pageHTML.querySelector('.boardName').innerText = this._getStatus(task.status);
 
         const comments = this.returnComments(task);
         for (let i = comments.length - 1; i >= 0; i--) {

@@ -3,7 +3,7 @@ import { mockUserArray } from "../mock-ups/mock.users.js";
 
 export class UserCollection { 
     constructor () {
-        if (localStorage.getItem('userArray') === 'undefined') {
+        if (localStorage.getItem('userArray') === 'undefined' || localStorage.getItem('userArray') === null) {
             this.userArray = mockUserArray();
             this.saveUserArrayInLocalStorage();
         } else {

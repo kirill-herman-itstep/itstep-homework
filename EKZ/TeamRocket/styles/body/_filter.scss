@@ -23,7 +23,7 @@
         box-shadow: none;
 
         input {
-            min-width: 6 * $default-padding;
+            min-width: 8 * $default-padding;
             width: 6 * $default-padding;
             flex-grow: 1;
             box-shadow: $lesser-white-box-shadow;
@@ -86,6 +86,11 @@
                 outline-offset: 2 * $border-width;
                 cursor: pointer;
             }
+        }
+
+        input:checked + label {
+            outline: $light-border;
+            outline-offset: 2 * $border-width;
         }
     }
 

@@ -37,6 +37,15 @@
         color: $light-bg-color;
     }
 
+    .assignTo select {
+        border: none;
+        outline: none;
+        box-shadow: $lesser-white-box-shadow;
+        border-radius: $little-border-radius;
+        padding: 0.25 * $default-padding 0.5 * $default-padding;
+        background-color: $main-bg-color;
+    }
+
     .actionsBar{
         position: absolute;
         right: $default-padding;
@@ -127,7 +136,6 @@
                     input:checked + label {
                         outline: $light-border;
                         outline-offset: 2 * $border-width;
-                        cursor: pointer;
                     }
 
                     >* {
