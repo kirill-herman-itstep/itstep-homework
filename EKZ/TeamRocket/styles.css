@@ -298,12 +298,27 @@ body header .logo .mainLogo {
   filter: invert(1);
 }
 body header .user {
-  background-color: rgb(249, 248, 248);
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+  border-radius: 1rem;
+}
+body header .user:hover {
+  background-color: #1C1C1C;
+}
+body header .user .userName {
+  padding: 0.25rem;
+  color: rgb(249, 248, 248);
+}
+body header .user .userLogo {
+  height: 100%;
+  padding: 0.25rem;
   border-radius: 50%;
   transition: all 0.3s linear;
 }
-body header .user:hover {
-  opacity: 0.5;
+body header .user .userLogo img {
+  width: calc(2.5rem - 1px - 0.5rem);
+  height: 100%;
 }
 body header .user svg {
   width: calc(2.5rem - 1px);
@@ -902,4 +917,13 @@ body .filterLayout .importance input:checked + label {
 body .filterLayout .access {
   padding-top: 0;
   padding-bottom: 0;
+}
+body .profileOptions {
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
+  display: flex;
+  width: 10vw;
+  height: 10vh;
+  background-color: red;
 }/*# sourceMappingURL=styles.css.map */

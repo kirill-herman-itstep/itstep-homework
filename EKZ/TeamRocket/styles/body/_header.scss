@@ -40,12 +40,30 @@ header {
     }
 
     .user {
-        background-color: $light-bg-color;
-        border-radius: 50%;
-        transition: all 0.3s linear;
+        display: flex;
+        align-items: center;
+        padding: 0 0.25 * $default-padding;
+        border-radius: $default-padding;
 
         &:hover {
-            opacity: 0.5;
+            background-color: $secondary-bg-color;
+        }
+
+        .userName {
+            padding: 0.25 * $default-padding;
+            color: $light-bg-color;
+        }
+
+        .userLogo {
+            height: 100%;
+            padding: 0.25 * $default-padding;
+            border-radius: 50%;
+            transition: all 0.3s linear;
+            
+            img {
+                width: calc($square-elemets-width - 2 * 0.25 * $default-padding);
+                height: 100%;
+            }
         }
         
         svg {
