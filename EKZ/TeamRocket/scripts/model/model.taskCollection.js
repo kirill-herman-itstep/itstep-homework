@@ -117,6 +117,13 @@ export class TaskCollection {
         return true;
     }
 
+    editWhenChangUserName(lastName, newName) {
+        for (const task of this.taskArray) {
+            if (task.assignee === lastName) task.assignee = newName;
+            if (task._author.name === lastName) task._author.name = newName;
+        }
+    }
+
     remove(id) {
         const task = this.getTask(id);
 

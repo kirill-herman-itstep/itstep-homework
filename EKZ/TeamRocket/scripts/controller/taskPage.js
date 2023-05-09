@@ -1,6 +1,5 @@
-import { taskPage } from "../../index.js";
-import { mainDB } from "../../index.js";
-import { showMainPage } from "./mainPage.js";
+import { mainDB, taskPage, taskFeedView } from "../../index.js";
+import { showTaskFeed } from "./mainPage.js";
 import { getUserSelects } from "./taskCreate.js";
 import { showFilter } from "../../script.js";
 
@@ -88,14 +87,15 @@ function writeComment(task) {
 function deleteTask(task) {
     const deleteTaskBtn = document.querySelector('.deleteIco')
     deleteTaskBtn.addEventListener('click', () => {
-        mainDB.remove(task.id);
-        closeTask();
-        mainDB.saveInLocalStorage();
+        if (confirm('Do you want to delete the task?')) {
+            mainDB.remove(task.id);
+            closeTask();
+            mainDB.saveInLocalStorage();
 
-        user.innerHTML = '';
-        taskBoard.innerHTML = '';
+            taskBoard.innerHTML = '';
 
-        showMainPage();
+            showTaskFeed();
+        }
     }, {capture: true});
 }
 
@@ -105,7 +105,7 @@ function assignField(task) {
     assignOnPage.value = task.assignee;
 }
 
-function edit(task) {
+export function edit(task) {
     if (currentTaskOpen && task) {
         const assignee = currentTaskOpen.querySelector('.assignTo select').value;
         const name = currentTaskOpen.querySelector('.title input').value;
@@ -120,15 +120,26 @@ function edit(task) {
                 priority !== task.priority ||
                 status !== task.status ||
                 isPrivate !== task.isPrivate) {
-                    
+
             if (confirm('Do you want to change the task?')) {
                 mainDB.edit(task.id, name, description, assignee, status, priority, isPrivate);
                 mainDB.saveInLocalStorage();
 
-                user.innerHTML = '';
                 taskBoard.innerHTML = '';
-                showMainPage();
+
+                showTaskFeed();
             }
-        }      
+        }
+        
+        return;
+    }
+
+    if (task.lastUserName && task.newUserName) {
+        mainDB.editWhenChangUserName(task.lastUserName, task.newUserName);
+        mainDB.saveInLocalStorage();
+
+        taskBoard.innerHTML = '';
+
+        showTaskFeed();
     }
 }

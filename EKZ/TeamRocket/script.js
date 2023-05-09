@@ -136,8 +136,10 @@ export function showFilter() {
     }
 }
 
-function hideFilter() {
-    body.removeChild(document.querySelector('.filterLayout'));
+export function hideFilter() {
+    if (document.querySelector('.filterLayout')) {
+        body.removeChild(document.querySelector('.filterLayout'));
+    }
 }
 
 

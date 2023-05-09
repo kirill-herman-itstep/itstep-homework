@@ -1,9 +1,7 @@
-import { showFilter } from "../../script.js";
+import { showFilter, hideFilter } from "../../script.js";
 import { filterView } from "../../index.js";
-import { clickableTasks } from "./taskPage.js";
-import { showTaskCreation } from "../../script.js";
 import { closeTask } from "./taskPage.js";
-import { taskFeedView } from "../../index.js";
+import { showTaskFeed } from "./mainPage.js";
 
 export function filter() {
     const filterButton = document.querySelector('.filter')
@@ -23,7 +21,7 @@ function inputs() {
 
         document.onclick = function(e) {
             if (!e.target.closest('.filterLayout') && !e.target.closest('.filter')) {
-                showFilter();
+                hideFilter();
                 document.onclick = null;
             }
         }
@@ -40,10 +38,6 @@ function inputs() {
             if (isPrivate !== undefined) isPrivate = !!+isPrivate;
 
             currentFilter({dateFrom, dateTo, assignee, description, priority, isPrivate});
-            // clickableTasks();
-
-            // const createTask = document.querySelectorAll('.tableHeader .plusIco');
-            // createTask.forEach(elem => elem.addEventListener('click', () => showTaskCreation()));
     }))
     }
 }
@@ -57,14 +51,7 @@ function currentFilter(filterObj) {
     const inProgressBoardFilter = Object.assign({status: 'in-progress'}, filterObj);
     const toDoBoardFilter = Object.assign({status: 'to-do'}, filterObj);
 
-    taskFeedView.getFeed(0, 10, completeBoardFilter, 'Complete');
-    taskFeedView.getFeed(0, 10, inProgressBoardFilter, 'In progress');
-    taskFeedView.getFeed(0, 10, toDoBoardFilter, 'To do');
-
-    clickableTasks();
-
-    const createTask = document.querySelectorAll('.tableHeader .plusIco');
-    createTask.forEach( elem => elem.addEventListener('click', (e) => showTaskCreation(e)));
+    showTaskFeed(completeBoardFilter, inProgressBoardFilter, toDoBoardFilter);
 }
 
 function clearInputs() {
