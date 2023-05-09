@@ -15,8 +15,8 @@ export class TaskPage {
 
     showTaskPage(task) {
         this.display(this.containerID, this.returnPageHTML(task));
-        this.setCurrentImportance(task)
-        this.setCurrentPrivate(task)
+        this.setCurrentImportance(task);
+        this.setCurrentPrivate(task);
     }
 
     returnPageHTML(task) {
@@ -25,7 +25,7 @@ export class TaskPage {
         pageHTML.querySelector('.assignTo select').innerHTML = getUserSelects(task.assignee);
         pageHTML.querySelector('.title input').value = task.name;
         pageHTML.querySelector('.description textarea').value = task.description;
-        // pageHTML.querySelector('.boardName').innerText = this._getStatus(task.status);
+        pageHTML.querySelector('.boardName').value = task.status;
 
         const comments = this.returnComments(task);
         for (let i = comments.length - 1; i >= 0; i--) {
@@ -33,16 +33,6 @@ export class TaskPage {
         }
 
         return pageHTML;
-    }
-
-    _getStatus(status) {
-        return status.split('').reduce((result, char, index) => {
-            if (index === 0) {
-                return result += char.toUpperCase();
-            } else if (char === '-') {
-                return result += ' ';
-            } else return result += char;
-        }, '')
     }
 
     returnComments(task) {

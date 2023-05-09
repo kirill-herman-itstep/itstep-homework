@@ -5,6 +5,7 @@ import { getUserSelects } from "./taskCreate.js";
 import { showFilter } from "../../script.js";
 
 let currentTaskOpen = null;
+let task;
 
 export function clickableTasks() {
     const allFeeds = document.querySelectorAll('.tasks');
@@ -12,9 +13,11 @@ export function clickableTasks() {
     allFeeds.forEach(elem => elem.addEventListener('click', (e) => {
 
         if (e.target.closest('.taskForm')) {
-            if (currentTaskOpen) currentTaskOpen.remove();
+            if (currentTaskOpen) closeTask(task);
+            
             const taskElem = e.target.closest('.taskForm');
-            const task = mainDB.getTask(taskElem.id);
+            task = mainDB.getTask(taskElem.id);
+
 
             if (document.querySelector('.filterLayout')) showFilter();
             taskPageFunctional(task);
@@ -23,7 +26,6 @@ export function clickableTasks() {
 }
 
 function taskPageFunctional(task) {
-    if (currentTaskOpen) currentTaskOpen.remove();
 
     taskPage.showTaskPage(task);
 
@@ -35,11 +37,12 @@ function taskPageFunctional(task) {
     currentTaskOpen = document.querySelector('.task');
 
     closeButton.addEventListener('click', () => {
-        closeTask();
+        closeTask(task);
     });
 }
 
-export function closeTask() {
+export function closeTask(task) {
+    edit(task);
     currentTaskOpen.remove();
     currentTaskOpen = null;
 }
@@ -60,9 +63,8 @@ function writeComment(task) {
 
     sendButton.addEventListener('click', () => {
         if (commentText.value.length > 0) {
-                    task.addComment(commentText.value);
-
-        taskPageFunctional(task);
+            task.addComment(commentText.value);
+            taskPageFunctional(task);
         }
     });
 
@@ -74,7 +76,7 @@ function writeComment(task) {
         if (!e.target.closest('.task') && !e.target.closest('.taskForm') 
         && currentTaskOpen !== null && mouseDowtMain
         ) {
-            closeTask();
+            closeTask(task);
             document.onclick = null;
         }
 
@@ -101,4 +103,32 @@ function deleteTask(task) {
 function assignField(task) {
     assignOnPage.innerHTML = getUserSelects();
     assignOnPage.value = task.assignee;
+}
+
+function edit(task) {
+    if (currentTaskOpen && task) {
+        const assignee = currentTaskOpen.querySelector('.assignTo select').value;
+        const name = currentTaskOpen.querySelector('.title input').value;
+        const description = currentTaskOpen.querySelector('.description textarea').value;
+        const priority = currentTaskOpen.querySelector('.chooseImportance input:checked').value;
+        const status = currentTaskOpen.querySelector('.chooseBoard select').value;
+        const isPrivate = !!+currentTaskOpen.querySelector('.chooseAccess input:checked').value;
+
+        if (assignee !== task.assignee ||
+                name !== task.name ||
+                description !== task.description ||
+                priority !== task.priority ||
+                status !== task.status ||
+                isPrivate !== task.isPrivate) {
+                    
+            if (confirm('Do you want to change the task?')) {
+                mainDB.edit(task.id, name, description, assignee, status, priority, isPrivate);
+                mainDB.saveInLocalStorage();
+
+                user.innerHTML = '';
+                taskBoard.innerHTML = '';
+                showMainPage();
+            }
+        }      
+    }
 }

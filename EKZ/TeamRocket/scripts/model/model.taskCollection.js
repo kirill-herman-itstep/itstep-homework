@@ -89,7 +89,7 @@ export class TaskCollection {
     edit(id, name, description, assignee, status, priority, isPrivate = false) {
         const task = this.getTask(id);
 
-        if (task) return false;
+        if (!task) return false;
 
         if (name !== task.name && typeof name === 'string') {
             if (name.length > 100 || !name) return false;
