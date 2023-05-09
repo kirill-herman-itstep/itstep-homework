@@ -95,10 +95,26 @@ function gotoTableLayout() {
     ////////////////////////////////////////////// !!!
 
     document.querySelector('header .user').addEventListener('click', click => {
-        showProfileLayout();
+        showProfileOptions();
+        // showProfileLayout();
     })
 }
 
+function showProfileOptions() {
+    hideProfileOptions();
+    body.append(view.get('profileOptions'));
+
+    body.onclick = function(click) {
+        if (!(click.target.closest('.profileOptions') || click.target.closest('.user'))) {
+            hideProfileOptions();
+            body.onclick = '';
+        }
+    }
+}
+
+export function hideProfileOptions() {
+    if (document.querySelector('.profileOptions')) body.removeChild(document.querySelector('.profileOptions'));
+}
 
 
 function showProfileLayout() {

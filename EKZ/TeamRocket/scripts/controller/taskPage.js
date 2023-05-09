@@ -92,7 +92,7 @@ function deleteTask(task) {
         closeTask();
         mainDB.saveInLocalStorage();
 
-        user.innerHTML = '';
+        // user.innerHTML = '';
         taskBoard.innerHTML = '';
 
         showMainPage();
