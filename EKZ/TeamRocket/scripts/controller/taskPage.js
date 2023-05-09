@@ -9,7 +9,7 @@ let task;
 export function clickableTasks() {
     const allFeeds = document.querySelectorAll('.tasks');
 
-    allFeeds.forEach(elem => elem.addEventListener('click', (e) => {
+    allFeeds.forEach(elem => elem.addEventListener('mousedown', (e) => {
 
         if (e.target.closest('.taskForm')) {
             if (currentTaskOpen) closeTask(task);
@@ -38,6 +38,21 @@ function taskPageFunctional(task) {
     closeButton.addEventListener('click', () => {
         closeTask(task);
     });
+
+    let mouseDowtMain = true;
+
+    document.querySelector('.task').addEventListener('mousedown', () => mouseDowtMain = false);
+
+    document.onclick = function(e) {
+        if (!e.target.closest('.task') && !e.target.closest('.taskForm') 
+        && currentTaskOpen !== null && mouseDowtMain
+        ) {
+            closeTask(task);
+            document.onclick = null;
+        }
+
+        mouseDowtMain = true;
+    }
 }
 
 export function closeTask(task) {
@@ -67,20 +82,6 @@ function writeComment(task) {
         }
     });
 
-    let mouseDowtMain = true;
-
-    document.querySelector('.task').addEventListener('mousedown', () => mouseDowtMain = false);
-
-    document.onclick = function(e) {
-        if (!e.target.closest('.task') && !e.target.closest('.taskForm') 
-        && currentTaskOpen !== null && mouseDowtMain
-        ) {
-            closeTask(task);
-            document.onclick = null;
-        }
-
-        mouseDowtMain = true;
-    }
     mainDB.saveInLocalStorage();
 }
 

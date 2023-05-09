@@ -57,7 +57,7 @@ function currentFilter(filterObj) {
 function clearInputs() {
     const filterLayoutInputs = document.querySelectorAll('.filterLayout input');
     filterLayoutInputs.forEach(e => {
-        if (e.getAttribute('type') === 'radio') e.removeAttribute('checked');
+        if (e.getAttribute('type') === 'radio') e.checked = false;
         else e.value = '';
     });
     currentFilter();
