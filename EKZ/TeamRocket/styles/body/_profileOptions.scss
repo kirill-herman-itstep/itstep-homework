@@ -1,9 +1,20 @@
 .profileOptions {
     position: absolute;
     top: $header-height;
-    right: 0;
+    right: 2 * $default-padding;
     display: flex;
-    width: 10vw;
-    height: 10vh;
-    background-color: red;
+    flex-direction: column;
+    border-radius: 0.5 * $default-padding;
+    background-color: $secondary-bg-color;
+    overflow: hidden;
+
+    >* {
+        min-width: 6rem;
+        padding: 0.25 * $default-padding 0.5 * $default-padding;
+        color: $light-bg-color;
+
+        &:hover {
+            background-color: $main-border-color;
+        }
+    }
 }

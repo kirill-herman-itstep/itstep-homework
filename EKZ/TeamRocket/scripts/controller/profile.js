@@ -3,7 +3,7 @@ import { hideProfileLayout } from "../../script.js";
 import { edit } from "./taskPage.js";
 
 export function profileFunctional() {
-    const profile = document.querySelector('.profile')
+    const profile = document.querySelector('.overlay .profile')
     const userAvatar = profile.querySelector('.avatarPlaceholder');
     userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png">`;
 
@@ -31,7 +31,7 @@ export function profileFunctional() {
         current.name = userName.value;
         userDB.saveCurrentUserInLocalStorage(currentUser)
         userDB.saveUserArrayInLocalStorage()
-        user.innerHTML = '';
+        // user.innerHTML = '';
         headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
         userDB.getUserArrayFromLocalStorage()
         hideProfileLayout()
@@ -51,7 +51,7 @@ function changeAvatar(current) {
     })
 }
 
-function exit() {
+export function exit() {
     setUser('')
     userDB.saveCurrentUserInLocalStorage()
 }

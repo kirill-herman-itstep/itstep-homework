@@ -97,5 +97,14 @@
     .access {
         padding-top: 0;
         padding-bottom: 0;
+
+        label {
+            border-radius: $svg-radius;
+        }
+        
+        input:checked + label svg{
+            background-color: $secondary-bg-color;
+            cursor: pointer;
+        }
     }
 }

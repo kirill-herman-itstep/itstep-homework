@@ -134,7 +134,7 @@ export function edit(task) {
         return;
     }
 
-    if (task.lastUserName && task.newUserName) {
+    if (task && task.lastUserName && task.newUserName) {
         mainDB.editWhenChangUserName(task.lastUserName, task.newUserName);
         mainDB.saveInLocalStorage();
 

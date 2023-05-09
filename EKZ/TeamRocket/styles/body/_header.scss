@@ -42,7 +42,7 @@ header {
     .user {
         display: flex;
         align-items: center;
-        padding: 0 0.25 * $default-padding;
+        padding: 0 0.25 * $default-padding 0 0.5 * $default-padding;
         border-radius: $default-padding;
 
         &:hover {

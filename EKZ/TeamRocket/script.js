@@ -3,7 +3,7 @@ import { registration } from "./scripts/controller/registration.js";
 import { taskCreate } from "./scripts/controller/taskCreate.js";
 import { showMainPage } from "./scripts/controller/mainPage.js";
 import { filterView, view } from "./index.js";
-import { profileFunctional } from "./scripts/controller/profile.js";
+import { profileFunctional, exit } from "./scripts/controller/profile.js";
 
 // document.querySelectorAll('.taskTable').forEach(table => {
     //     table.addEventListener('scroll', e => {
@@ -108,6 +108,16 @@ function showProfileOptions() {
         if (!(click.target.closest('.profileOptions') || click.target.closest('.user'))) {
             hideProfileOptions();
             body.onclick = '';
+        } else if (click.target.closest('.profileOptions')) {
+            if (click.target.closest('.profile')) {
+                hideProfileOptions();
+                showProfileLayout();
+            } else if (click.target.closest('.logOut')) {
+                history.pushState('', '', '#login')
+                gotoAuthorizationPage();
+                gotoLoginForm();
+                exit();
+            }
         }
     }
 }
