@@ -1,5 +1,6 @@
 import { currentUser, headerView, setUser, userDB, view } from "../../index.js";
 import { hideProfileLayout } from "../../script.js";
+import { edit } from "./taskPage.js";
 
 export function profileFunctional() {
     const profile = document.querySelector('.profile')
@@ -16,8 +17,13 @@ export function profileFunctional() {
     applyChangesBtn.addEventListener('click', () => {
         const newPass = profile.querySelector('input[placeholder="New password"]')
         const repeatNewPass = profile.querySelector('input[placeholder="Repeat new password"]')
+
+        const lastUserName = currentUser.name;
+        const newUserName = userName.value;
         
-        currentUser.name = userName.value;
+        
+
+        currentUser.name = newUserName;
         if ((newPass.value === repeatNewPass.value) && (newPass.value !== '' && repeatNewPass.value !== '')) {
             current.edit(newPass.value, userName.value)
             currentUser.password = newPass.value;
@@ -29,7 +35,9 @@ export function profileFunctional() {
         headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
         userDB.getUserArrayFromLocalStorage()
         hideProfileLayout()
-        document.querySelector('.avatarChangeLayout').remove()
+        // document.querySelector('.avatarChangeLayout').remove()
+
+        edit({lastUserName, newUserName});
     })
 }
 

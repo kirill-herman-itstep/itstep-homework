@@ -6,19 +6,28 @@ import { showTaskCreation } from "../../script.js";
 
 export function showMainPage() {
     headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
-    mainDB.getFromLocalStorage();
-    
-    taskFeedView.getFeed(0, 10, {status: 'complete'}, 'Complete');
-    taskFeedView.getFeed(0, 10, {status: 'in-progress'}, 'In progress');
-    taskFeedView.getFeed(0, 10, {status: 'to-do'}, 'To do');
 
-    clickableTasks();
     filter();
 
     const assigneeAvatars = document.querySelectorAll('.taskBoard .assignee')
     assigneeAvatars.forEach(e => e.addEventListener('hover', () => {
-        // Появление assigneeHoverLayout с нужным значением
+
     }))
+
+    showTaskFeed();
+}
+
+export function showTaskFeed(completeBoardFilter = {status: 'complete'}, 
+        inProgressBoardFilter = {status: 'in-progress'},
+        toDoBoardFilter = {status: 'to-do'}) {
+
+    mainDB.getFromLocalStorage();
+    
+    taskFeedView.getFeed(0, 10, completeBoardFilter, 'Complete');
+    taskFeedView.getFeed(0, 10, inProgressBoardFilter, 'In progress');
+    taskFeedView.getFeed(0, 10, toDoBoardFilter, 'To do');
+
+    clickableTasks();
 
     const createTask = document.querySelectorAll('.tableHeader .plusIco');
     createTask.forEach( elem => elem.addEventListener('click', (e) => showTaskCreation(e)));
