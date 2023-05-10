@@ -12,6 +12,8 @@ export function clickableTasks() {
     allFeeds.forEach(elem => elem.addEventListener('mousedown', e => {
 
         if (e.target.closest('.taskForm')) {
+            if (currentTaskOpen) closeTask(task);
+
             let currentBoard;
             const taskElem = e.target.closest('.taskForm');
 
@@ -84,8 +86,6 @@ export function clickableTasks() {
                 if (currentBoard && currentBoard !== elem) {
                     edit({id: taskElem.id, currentBoard: currentBoard.querySelector('.tasks').id});
                 }
-
-                if (currentTaskOpen) closeTask(task);
                 
                 if (startX === moveX && startY === moveY) {
                     task = mainDB.getTask(taskElem.id);
@@ -113,6 +113,7 @@ function identifyBoard(e, allFeeds) {
 }
 
 function taskPageFunctional(task) {
+    if (currentTaskOpen) closeTask(task);
 
     taskPage.showTaskPage(task);
 
