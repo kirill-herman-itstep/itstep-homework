@@ -1,15 +1,9 @@
 'use strict';
-import { Tweet } from '../model/Tweet.model.js';
-import { Comment } from '../model/Comment.model.js';
 
-import { TweetCollection } from '../model/TweetCollection.model.js';
 import { HeaderView } from '../view/HeaderView.view.js';
 import { TweetFeedView } from '../view/TweetFeedView.view.js';
-import { FilterView } from '../view/FilterView.view.js';
 import { TweetView } from '../view/TweetView.js';
 import { autorisation, registration, errorPage, mainPage, tweetPage } from '../view/static.view.js';
-import { UserCollection, User } from '../model/UserCollection.model.js';
-import { userCollectionTest } from '../mock/userCollection.mock.js';
 
 export class TweetsController {
     constructor(tweetCollection, tweet, userCollection, headerView, tweetFeedView, tweetView) {
@@ -106,6 +100,7 @@ export class TweetsController {
             if (event.target === Array.from(document.querySelectorAll('.main-current-twit-info-delete')).find(item => item === event.target)) {
                 const tweetId = event.target.parentElement.parentElement.id;
                 this.removeTweet(tweetId);
+                this._showTweetsIcons();
                 return;
             }
 
@@ -115,6 +110,7 @@ export class TweetsController {
                 if (this.addTweet(text)) {
                     document.getElementById('mainNewTwit').value = '';
                     document.getElementById('mainNewTwitСounter').innerText = `0/280`;
+                    this._showTweetsIcons();
                     return;
                 }
             }
@@ -127,6 +123,7 @@ export class TweetsController {
                     const editListenerClick = event => {
                         const tweetText = editArea.value;
                         this.editTweet(idTweet, tweetText);
+                        this._showTweetsIcons();
                         editArea.removeEventListener('input', editListenerInput);
                         editButton.removeEventListener('input', editListenerClick);
                     };
@@ -164,6 +161,8 @@ export class TweetsController {
                     autorHeader.after(divContainer);
                     valueTweet.classList.add('norefresh');
 
+                    this._showTweetsIcons();
+
                     editArea.addEventListener('input', editListenerInput);
                     editButton.addEventListener('click', editListenerClick);
                 }
@@ -177,6 +176,8 @@ export class TweetsController {
                 const userFilterTweets = document.querySelector('.filtration-form-hashtags-text').value;
 
                 this.getFeed(0, this.tweetCollection.tweets.length, { author: userAuthor, dateFrom: userDateFrom, dateTo: userDateTo, text: userTextTweet, hashtags: [userFilterTweets] });
+
+                this._showTweetsIcons();
             }
 
             if (event.target === document.getElementById('mainLogOut')) {
@@ -212,6 +213,8 @@ export class TweetsController {
         this.tweetFeedView = new TweetFeedView('tweetsMainAllTweets');
 
         this.tweetFeedView.display(this.tweetCollection.tweets);
+
+        this._showTweetsIcons();
 
         this.arrayCBFunctions.push(listenerMainPageClick);
         document.getElementById('mainContainer').addEventListener('click', listenerMainPageClick);
@@ -321,6 +324,15 @@ export class TweetsController {
         this.tweetView = new TweetView('twitMain');
         this.showTweet(id);
 
+        const tweetAuthor = this.tweetCollection.get(id).author;
+        if (this.tweetCollection.user !== tweetAuthor) {
+            document.querySelector('.twit-current-twit-info-edit').style.opacity = '0';
+            document.querySelector('.twit-current-twit-info-delete').style.opacity = '0';
+        } else {
+            document.querySelector('.twit-current-twit-info-edit').style.opacity = '1';
+            document.querySelector('.twit-current-twit-info-delete').style.opacity = '1';
+        }
+
         this.headerView = new HeaderView('helloUser');
         this.setCurrentUser(this.tweetCollection.user);
 
@@ -331,16 +343,11 @@ export class TweetsController {
 
     setCurrentUser(user = '') {
         this.tweetCollection.changeUser(user);
-        if (this.headerView.element.id === 'helloUser') {
-            this.headerView.display(user);
-            return true;
-        }
-        return false;
+        this.headerView.display(user);
     }
 
     addTweet(text = '') {
-        if (this.tweetCollection.add(text) && this.headerView.element.id === 'helloUser') {
-            this.tweetFeedView.element.innerHTML = '';
+        if (this.tweetCollection.add(text)) {
             this.tweetFeedView.display(this.tweetCollection.tweets);
             return true;
         }
@@ -349,7 +356,6 @@ export class TweetsController {
 
     editTweet(id = '', text = '') {
         if (this.tweetCollection.edit(id, text)) {
-            this.tweetFeedView.element.innerHTML = '';
             this.tweetFeedView.display(this.tweetCollection.tweets);
             return true;
         }
@@ -358,7 +364,6 @@ export class TweetsController {
 
     removeTweet(id = '') {
         if (this.tweetCollection.remove(id)) {
-            this.tweetFeedView.element.innerHTML = '';
             this.tweetFeedView.display(this.tweetCollection.tweets);
             return true;
         }
@@ -366,7 +371,6 @@ export class TweetsController {
     }
 
     getFeed(skip = 0, top = 10, filterConfig = { author: '', dateFrom: '', dateTo: '', text: '', hashtags: [''] }) {
-        this.tweetFeedView.element.innerHTML = '';
         this.tweetFeedView.display(this.tweetCollection.getPage(skip, top, filterConfig));
     }
 
@@ -376,5 +380,20 @@ export class TweetsController {
             return true;
         }
         return false;
+    }
+
+    _showTweetsIcons() {
+        const arrayIconDeleteTweets = Array.from(document.querySelectorAll('.main-current-twit-info-delete'));
+        const arrayIconEditTweets = Array.from(document.querySelectorAll('.main-current-twit-info-edit'));
+
+        arrayIconDeleteTweets.forEach(item => {
+            const tweetAuthor = item.parentElement.parentElement.children[0].children[0].innerText;
+            if (this.tweetCollection.user !== tweetAuthor) item.style.opacity = '0';
+        });
+
+        arrayIconEditTweets.forEach(item => {
+            const tweetAuthor = item.parentElement.parentElement.children[0].children[0].innerText;
+            if (this.tweetCollection.user !== tweetAuthor) item.style.opacity = '0';
+        });
     }
 }

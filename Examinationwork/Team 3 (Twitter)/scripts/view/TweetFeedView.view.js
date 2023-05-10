@@ -6,6 +6,7 @@ export class TweetFeedView {
     }
 
     display(tweets = []) {
+        this.element.innerHTML = '';
         tweets.forEach(item => {
             const HTMLcode = `<div class="main-current-twit" id=${item.id}>
                 <div class="main-current-twit-autor">
