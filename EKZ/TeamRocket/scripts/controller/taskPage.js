@@ -224,8 +224,8 @@ export function edit(task) {
         return;
     }
 
-    if (task && task.lastUserName && task.newUserName) {
-        mainDB.editWhenChangUserName(task.lastUserName, task.newUserName);
+    if (task && task.lastUserName && task.newUserName && task.avatar) {
+        mainDB.editWhenChangUserName(task.lastUserName, task.newUserName, task.avatar);
         mainDB.saveInLocalStorage();
 
         taskBoard.innerHTML = '';

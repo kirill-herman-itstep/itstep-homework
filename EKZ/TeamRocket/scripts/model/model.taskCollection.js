@@ -117,10 +117,21 @@ export class TaskCollection {
         return true;
     }
 
-    editWhenChangUserName(lastName, newName) {
+    editWhenChangUserName(lastName, newName, avatar) {
         for (const task of this.taskArray) {
             if (task.assignee === lastName) task.assignee = newName;
-            if (task._author.name === lastName) task._author.name = newName;
+
+            if (task._author.name === lastName) {
+                task._author.name = newName;
+                task._author.avatar = avatar;
+            }
+
+            for (const comment of task.comments) {
+                if (comment._author === lastName) {
+                    comment._author.name = newName;
+                    comment._author.avatar = avatar;
+                }
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 import { currentUser, headerView, setUser, userDB, view } from "../../index.js";
 import { hideProfileLayout } from "../../script.js";
 import { edit } from "./taskPage.js";
+import { showTaskFeed } from "./mainPage.js";
 
 export function profileFunctional() {
     const profile = document.querySelector('.overlay .profile')
@@ -57,7 +58,11 @@ export function profileFunctional() {
         userDB.getUserArrayFromLocalStorage()
         hideProfileLayout()
 
-        edit({lastUserName, newUserName});
+        edit({lastUserName, newUserName, avatar: current.avatar});
+
+        taskBoard.innerHTML = '';
+
+        showTaskFeed();
     })
 }
 
