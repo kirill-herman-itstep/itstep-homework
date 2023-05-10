@@ -41,6 +41,7 @@ export class TaskPage {
     
     returnCommentHTML(comment) {
         const commentHTML = view.get('comment');
+        commentHTML.querySelector('.avatarPlaceholder').innerHTML = `<image href="avatar/${comment.author.avatar}.png" width="100%"></image>`;
         commentHTML.querySelector('p').innerText = comment.text;
         commentHTML.querySelector('.date').innerText = this._getDateCreatComment(comment);
         
