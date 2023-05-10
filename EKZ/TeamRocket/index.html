@@ -91,7 +91,7 @@
     <template id="taskTable">
         <div class="taskTableWrapper" id="getFromJS">
             <div class="tableHeader">
-                <h4 contenteditable="true"></h4>
+                <h4 contenteditable="false"></h4>
                 <div>
                     <svg class="plusIco" viewBox="0 0 14 14">
                         <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
@@ -110,9 +110,9 @@
         <div class="taskForm">
             <div class="taskStatus">
                 <div class="mark"></div>
-                <svg class="optionsIco" viewBox="0 0 4 17">
+                <!-- <svg class="optionsIco" viewBox="0 0 4 17">
                     <path d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z"/>
-                </svg>
+                </svg> -->
             </div>
             <div class="taskName">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui numquam minus. Omnis ducimus nam ex beatae cum, facilis sunt pariatur laboriosam. Quis sit numquam doloremque, rerum assumenda corrupti cum.
@@ -137,11 +137,10 @@
                     <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
                 </svg>
                 <svg class="avatarPlaceholder" viewBox="0 0 40 40" fill="none">
-                    <rect x="0.1" y="0.1" width="39.8" height="39.8" rx="19.9"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.0002 16C26.0002 19.3137 23.314 22 20.0002 22C16.6865 22 14.0002 19.3137 14.0002 16C14.0002 12.6863 16.6865 10 20.0002 10C23.314 10 26.0002 12.6863 26.0002 16ZM24.0002 16C24.0002 18.2091 22.2094 20 20.0002 20C17.7911 20 16.0002 18.2091 16.0002 16C16.0002 13.7909 17.7911 12 20.0002 12C22.2094 12 24.0002 13.7909 24.0002 16Z"/>
-                        <path d="M20.0002 25C13.5259 25 8.00952 28.8284 5.9082 34.192C6.4201 34.7004 6.95934 35.1812 7.52353 35.6321C9.08827 30.7077 13.997 27 20.0002 27C26.0035 27 30.9122 30.7077 32.477 35.6321C33.0412 35.1812 33.5804 34.7004 34.0923 34.1921C31.991 28.8284 26.4746 25 20.0002 25Z"/>
-                    <rect x="0.1" y="0.1" width="39.8" height="39.8" rx="19.9"/>
                 </svg>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="change">
+                    <path d="M24.5 3.5V24.5H3.5V3.5H24.5ZM24.5 0.5H3.5C1.85 0.5 0.5 1.85 0.5 3.5V24.5C0.5 26.15 1.85 27.5 3.5 27.5H24.5C26.15 27.5 27.5 26.15 27.5 24.5V3.5C27.5 1.85 26.15 0.5 24.5 0.5ZM17.21 13.79L12.71 19.595L9.5 15.71L5 21.5H23L17.21 13.79Z" fill="white"/>
+                    </svg>
                 <div class="name">
                     <span>Your full name</span>
                     <input type="text" value="Current login">
@@ -247,7 +246,7 @@
             </div>
             <div class="description">
                 <span>Description</span>
-                <textarea placeholder="Detailed taxt description."></textarea>
+                <textarea placeholder="Detailed task description."></textarea>
             </div>
             <div class="options">
                 <div class="chooseImportance">
@@ -365,22 +364,36 @@
 
 
     <template id="avatarChange">
-        <div class="avatarChangeLayout">
-            <div class="avatarList">
-                <input type="radio" name="avatar" id="avatar1" value="0">
-                <label for="avatar1"></label>
-                <input type="radio" name="avatar" id="avatar2" value="1">
-                <label for="avatar2"></label>
-                <input type="radio" name="avatar" id="avatar3" value="2">
-                <label for="avatar3"></label>
-                <input type="radio" name="avatar" id="avatar4" value="3">
-                <label for="avatar4"></label>
-                <input type="radio" name="avatar" id="avatar5" value="4">
-                <label for="avatar5"></label>
-                <input type="radio" name="avatar" id="avatar6" value="5">
-                <label for="avatar6"></label>
+        <div class="avatarChangeOverlay overlay">
+            <div class="avatarChangeLayout">
+                <div class="avatarList">
+                    <input type="radio" name="avatar" id="avatar1" value="0">
+                    <label for="avatar1">
+                        <img src="avatar/0.png" alt="">
+                    </label>
+                    <input type="radio" name="avatar" id="avatar2" value="1">
+                    <label for="avatar2">
+                        <img src="avatar/1.png" alt="">
+                    </label>
+                    <input type="radio" name="avatar" id="avatar3" value="2">
+                    <label for="avatar3">
+                        <img src="avatar/2.png" alt="">
+                    </label>
+                    <input type="radio" name="avatar" id="avatar4" value="3">
+                    <label for="avatar4">
+                        <img src="avatar/3.png" alt="">
+                    </label>
+                    <input type="radio" name="avatar" id="avatar5" value="4">
+                    <label for="avatar5">
+                        <img src="avatar/4.png" alt="">
+                    </label>
+                    <input type="radio" name="avatar" id="avatar6" value="5">
+                    <label for="avatar6">
+                        <img src="avatar/5.png" alt="">
+                    </label>
+                </div>
+                <button class="saveBtn">Save</button>
             </div>
-            <button class="saveBtn">Save</button>
         </div>
     </template>
 

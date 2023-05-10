@@ -21,11 +21,13 @@ export function registration() {
             alert('Email already used');
         } else {
             if ((regData.password === regData.repeatPassword) && (regData.password.length >= 6)) {
-                userDB.create(regData.login, regData.password, regData.name);
-                userDB.saveCurrentUserInLocalStorage(regData);
-                userDB.saveUserArrayInLocalStorage();
-                crutchLogin();
-            } else alert();
+                if (userDB.create(regData.login, regData.password, regData.name)) {
+                    userDB.saveCurrentUserInLocalStorage(userDB.userArray.at(-1));
+                    userDB.saveUserArrayInLocalStorage();
+                    crutchLogin();
+                } else alert(`User with this email already exist.`);
+
+            } else alert(`Wrong password`);
         }
     })
 }

@@ -5,9 +5,9 @@ import { edit } from "./taskPage.js";
 export function profileFunctional() {
     const profile = document.querySelector('.overlay .profile')
     const userAvatar = profile.querySelector('.avatarPlaceholder');
-    userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png">`;
+    userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png"></image>`;
 
-    userAvatar.addEventListener('click', () => changeAvatar(current))
+    userAvatar.nextElementSibling.addEventListener('click', () => changeAvatar(current))
 
     const userName = profile.querySelector('input[value="Current login"]')
     userName.value = currentUser.name;

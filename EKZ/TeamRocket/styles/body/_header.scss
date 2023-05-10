@@ -47,6 +47,7 @@ header {
 
         &:hover {
             background-color: $secondary-bg-color;
+            cursor: pointer;
         }
 
         .userName {
