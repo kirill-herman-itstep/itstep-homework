@@ -89,7 +89,7 @@ export function clickableTasks() {
                 
                 if (startX === moveX && startY === moveY) {
                     task = mainDB.getTask(taskElem.id);
-                    taskPageFunctional(task);
+                    setTimeout(taskPageFunctional, 130, task);
                 }
 
                 document.onmouseup = null;
