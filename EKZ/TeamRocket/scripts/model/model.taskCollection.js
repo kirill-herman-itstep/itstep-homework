@@ -96,22 +96,22 @@ export class TaskCollection {
             else task.name = name;
         }
 
-        if (description !== task.description && typeof task.description === 'string') {
+        if (description !== task.description && typeof description === 'string') {
             if (description > 280) return false;
             else task.description = description;
         }
     
-        if (assignee !== task.assignee && typeof task.assignee === 'string') {
+        if (assignee !== task.assignee && typeof assignee === 'string') {
             task.assignee = assignee;
         }
-        if (status !== task.status && typeof task.status === 'string') {
+        if (status !== task.status && typeof status === 'string') {
             task.status = status;
             task.lastDate = new Date();
         }
-        if (priority !== task.priority && typeof task.priority === 'string') {
+        if (priority !== task.priority && typeof priority === 'string') {
             task.priority = priority;
         }
-        if (isPrivate !== task.isPrivate && typeof task.isPrivate === 'boolean') {
+        if (isPrivate !== task.isPrivate && typeof isPrivate === 'boolean') {
             task.isPrivate = isPrivate;
         }
         return true;

@@ -81,6 +81,10 @@ export function clickableTasks() {
                 
                 document.querySelector('.empty-div').remove();
 
+                if (currentBoard && currentBoard !== elem) {
+                    edit({id: taskElem.id, currentBoard: currentBoard.querySelector('.tasks').id});
+                }
+
                 if (currentTaskOpen) closeTask(task);
                 
                 if (startX === moveX && startY === moveY) {
@@ -221,6 +225,15 @@ export function edit(task) {
 
     if (task && task.lastUserName && task.newUserName) {
         mainDB.editWhenChangUserName(task.lastUserName, task.newUserName);
+        mainDB.saveInLocalStorage();
+
+        taskBoard.innerHTML = '';
+
+        showTaskFeed();
+    }
+
+    if (task && task.currentBoard) {
+        mainDB.edit(task.id, undefined, undefined, undefined, task.currentBoard);
         mainDB.saveInLocalStorage();
 
         taskBoard.innerHTML = '';
