@@ -9,6 +9,27 @@ export function profileFunctional() {
 
     userAvatar.nextElementSibling.addEventListener('click', () => changeAvatar(current))
 
+    function changeAvatar(current) {
+        document.body.append(view.get('avatarChange'))
+        const avatarChangeLayout = document.querySelector('.avatarChangeLayout');
+        const saveBtn = avatarChangeLayout.querySelector('button');
+        const inputs = document.querySelectorAll('.avatarChangeLayout input');
+
+        for (const input of inputs) {
+            if (input.value === current.avatar) input.checked = true;
+        }
+
+        saveBtn.addEventListener('click', () => {
+            current.avatar = avatarChangeLayout.querySelector('input:checked').value;
+            currentUser.avatar = avatarChangeLayout.querySelector('input:checked').value;
+
+            document.querySelector('.avatarChangeLayout').remove();
+            document.querySelector('.avatarChangeOverlay').remove();
+
+            userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png"></image>`;
+        })
+    }
+
     const userName = profile.querySelector('input[value="Current login"]')
     userName.value = currentUser.name;
     const current = userDB.getUserByLogin(currentUser.login)
@@ -31,23 +52,12 @@ export function profileFunctional() {
         current.name = userName.value;
         userDB.saveCurrentUserInLocalStorage(currentUser)
         userDB.saveUserArrayInLocalStorage()
-        // user.innerHTML = '';
+
         headerView.setCurrentUser(userDB.getCurrentUserFromLocalStorage());
         userDB.getUserArrayFromLocalStorage()
         hideProfileLayout()
-        // document.querySelector('.avatarChangeLayout').remove()
 
         edit({lastUserName, newUserName});
-    })
-}
-
-function changeAvatar(current) {
-    document.body.append(view.get('avatarChange'))
-    const avatarChangeLayout = document.querySelector('.avatarChangeLayout');
-    const saveBtn = avatarChangeLayout.querySelector('button');
-    saveBtn.addEventListener('click', () => {
-        current.avatar = avatarChangeLayout.querySelector('input:checked').value;
-        currentUser.avatar = avatarChangeLayout.querySelector('input:checked').value;
     })
 }
 
