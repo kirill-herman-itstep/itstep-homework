@@ -20,4 +20,4 @@ const tweetsFeed = new TweetFeedView('tweetsMainAllTweets');
 const showTweet = new TweetView('twitMain');
 const tweetsController = new TweetsController(newTweetCollection, '', localUsers, showUserNameMain, tweetsFeed, showTweet);
 
-tweetsController.mainPage();
+tweetsController.autorization();
