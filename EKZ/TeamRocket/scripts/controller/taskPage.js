@@ -7,21 +7,105 @@ let currentTaskOpen = null;
 let task;
 
 export function clickableTasks() {
-    const allFeeds = document.querySelectorAll('.tasks');
+    const allFeeds = document.querySelectorAll('.taskTable');
 
-    allFeeds.forEach(elem => elem.addEventListener('mousedown', (e) => {
+    allFeeds.forEach(elem => elem.addEventListener('mousedown', e => {
 
         if (e.target.closest('.taskForm')) {
-            if (currentTaskOpen) closeTask(task);
-            
+            let currentBoard;
             const taskElem = e.target.closest('.taskForm');
-            task = mainDB.getTask(taskElem.id);
-
 
             if (document.querySelector('.filterLayout')) showFilter();
-            taskPageFunctional(task);
+
+            const startX = e.clientX;
+            const startY = e.clientY;
+            let moveX = startX;
+            let moveY = startY;
+
+            taskElem.style.position = 'relative';
+
+            let mousePositionX = startX - (startX - elem.offsetLeft - e.offsetX - e.target.offsetLeft);
+            let mousePositionY = startY - (startY - elem.offsetTop - e.offsetY - e.target.offsetTop);
+
+            if (e.target === taskElem) {
+                mousePositionX = startX - (startX - elem.offsetLeft - e.offsetX);
+                mousePositionY = startY - (startY - elem.offsetTop - e.offsetY);
+            }
+
+            
+
+            taskElem.style.width = `${taskElem.offsetWidth}px`;
+            taskElem.style.position = 'absolute';
+            taskElem.style.left = `${startX - mousePositionX}px`;
+            taskElem.style.top = `${startY - mousePositionY}px`;
+            taskElem.style.zIndex = '10';
+            
+            
+            const emptyDiv = document.createElement('div');
+            emptyDiv.classList.add('empty-div');
+            emptyDiv.style.minHeight = `${taskElem.offsetHeight}px`;
+            taskElem.before(emptyDiv);
+
+            
+            function moveTask(e) {
+
+                moveX = e.clientX;
+                moveY = e.clientY;
+                
+                taskElem.style.left = `${moveX - mousePositionX}px`;
+                taskElem.style.top = `${moveY - mousePositionY}px`;
+
+                
+
+                if (identifyBoard(e, allFeeds)) {
+                    currentBoard = identifyBoard(e, allFeeds);
+                    currentBoard.style.boxShadow = '0 0 2px';
+                } else {
+                    if (currentBoard) currentBoard.style.boxShadow = '';
+                }
+            }
+
+
+            document.addEventListener('mousemove', moveTask);
+
+            document.onmouseup = () => {
+                document.removeEventListener('mousemove', moveTask);
+
+                taskElem.style.position = '';
+                taskElem.style.top = '';
+                taskElem.style.left = '';
+                taskElem.style.width = '';
+                taskElem.style.zIndex = '';
+                taskElem.style.position = '';
+                if (currentBoard) currentBoard.style.boxShadow = '';
+                
+                document.querySelector('.empty-div').remove();
+
+                if (currentTaskOpen) closeTask(task);
+                
+                if (startX === moveX && startY === moveY) {
+                    task = mainDB.getTask(taskElem.id);
+                    taskPageFunctional(task);
+                }
+
+                document.onmouseup = null;
+            }          
         }
     }));
+}
+
+function identifyBoard(e, allFeeds) {
+    allFeeds = Array.from(allFeeds);
+    return allFeeds.find(elem => {
+        const top = elem.offsetTop;
+        const left = elem.offsetLeft;
+        const height = elem.offsetHeight;
+        const width = elem.offsetWidth;
+
+        if (e.clientX > left && e.clientX < left + width && e.clientY > top && e.clientY < top + height) {
+            return true;
+        } else return false;
+    })
 }
 
 function taskPageFunctional(task) {
