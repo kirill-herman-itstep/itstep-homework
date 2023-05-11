@@ -1,4 +1,4 @@
-import { view } from "../../index.js";
+import { userDB, view } from "../../index.js";
 import { getUserSelects } from "../controller/taskCreate.js";
 
 export class TaskPage {
@@ -41,11 +41,15 @@ export class TaskPage {
     
     returnCommentHTML(comment) {
         const commentHTML = view.get('comment');
-        commentHTML.querySelector('.avatarPlaceholder').innerHTML = `<image href="avatar/${comment._author.avatar}.png" width="100%"></image>`;
+        commentHTML.querySelector('.avatarPlaceholder').innerHTML = `<image href="avatar/${this.getAuthorAvatar(comment._author.login)}.png" width="100%"></image>`;
         commentHTML.querySelector('p').innerText = comment.text;
         commentHTML.querySelector('.date').innerHTML = `${comment._author.name.italics()} ` + this._getDateCreatComment(comment);
         
         return commentHTML;
+    }
+
+    getAuthorAvatar(commentAuthor) {
+        return userDB.getUserByLogin(commentAuthor).avatar
     }
 
     _getDateCreatComment(comment) {
