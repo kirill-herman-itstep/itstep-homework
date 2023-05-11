@@ -1,5 +1,6 @@
 import { crutchLogin } from "../../script.js";
 import { userDB } from "../../index.js";
+import { popUp } from "../helpers/popUp.js";
 
 export function registration() {
     const regForm = document.querySelector('form[name="registration"]');
@@ -18,16 +19,16 @@ export function registration() {
         })
         if (regData.login === '' || regData.password === '' || regData.repeatPassword === '' || regData.name === '') return alert();
         if (existCheck) {
-            alert('Email already used');
+            popUp('Email already used');
         } else {
             if ((regData.password === regData.repeatPassword) && (regData.password.length >= 6)) {
                 if (userDB.create(regData.login, regData.password, regData.name)) {
                     userDB.saveCurrentUserInLocalStorage(userDB.userArray.at(-1));
                     userDB.saveUserArrayInLocalStorage();
                     crutchLogin();
-                } else alert(`User with this email already exist.`);
+                } else popUp(`User with this email already exist.`);
 
-            } else alert(`Wrong password`);
+            } else popUp(`Wrong password`);
         }
     })
 }

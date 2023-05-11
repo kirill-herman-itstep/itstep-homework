@@ -2,6 +2,7 @@ import { showFilter, hideFilter } from "../../script.js";
 import { filterView } from "../../index.js";
 import { closeTask } from "./taskPage.js";
 import { showTaskFeed } from "./mainPage.js";
+import { popUp } from "../helpers/popUp.js";
 
 export function filter() {
     const filterButton = document.querySelector('.filter')
@@ -38,6 +39,7 @@ function inputs() {
             if (isPrivate !== undefined) isPrivate = !!+isPrivate;
 
             currentFilter({dateFrom, dateTo, assignee, description, priority, isPrivate});
+            popUp('Filtered')
     }))
     }
 }
@@ -61,4 +63,5 @@ function clearInputs() {
         else e.value = '';
     });
     currentFilter();
+    popUp('Cleared')
 }

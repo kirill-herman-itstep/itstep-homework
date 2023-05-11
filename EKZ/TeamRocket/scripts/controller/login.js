@@ -1,5 +1,6 @@
 import { crutchLogin } from "../../script.js";
 import { userDB } from "../../index.js";
+import { popUp } from "../helpers/popUp.js";
 
 export function auth() {
     const loginForm = document.querySelector('form[name="login"]');
@@ -15,6 +16,6 @@ export function auth() {
             userDB.saveCurrentUserInLocalStorage(user)
             userDB.saveUserArrayInLocalStorage()
             crutchLogin();
-        } else alert('You have entered an incorrect username or password.');
+        } else popUp('You have entered an incorrect username or password.')
     })
 }

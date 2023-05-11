@@ -1,4 +1,5 @@
 import { taskView, mainDB, userDB } from "../../index.js";
+import { popUp } from "../helpers/popUp.js";
 import { Task } from "../model/model.task.js";
 
 export function taskCreate(e) {
@@ -77,7 +78,8 @@ function creat() {
         taskView.addTask(newTask);
         document.querySelector('.taskCreationLayout').remove();
         mainDB.saveInLocalStorage();
-    }
+        popUp('Created')
+    } else popUp('Not Created')
 }
 
 function reset(e) {

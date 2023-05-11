@@ -2,6 +2,7 @@ import { currentUser, headerView, setUser, userDB, view } from "../../index.js";
 import { hideProfileLayout } from "../../script.js";
 import { edit } from "./taskPage.js";
 import { showTaskFeed } from "./mainPage.js";
+import { popUp } from "../helpers/popUp.js";
 
 export function profileFunctional() {
     const profile = document.querySelector('.overlay .profile')
@@ -53,9 +54,11 @@ export function profileFunctional() {
             currentUser.password = newPass.value;
         }
         current.name = userName.value;
-        current.avatar = newAvatar
-        currentUser.avatar = newAvatar
-
+        if (newAvatar) {
+            current.avatar = newAvatar
+            currentUser.avatar = newAvatar
+        }
+        
         userDB.saveCurrentUserInLocalStorage(currentUser)
         userDB.saveUserArrayInLocalStorage()
 
@@ -68,6 +71,7 @@ export function profileFunctional() {
         taskBoard.innerHTML = '';
 
         showTaskFeed();
+        popUp('Changed')
     })
 }
 

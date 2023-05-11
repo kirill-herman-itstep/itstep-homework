@@ -155,3 +155,14 @@ body {
         }
     }
 }
+
+.popUp {
+    position: absolute;
+    padding: 1rem 0.5rem;
+    background-color: rgba($color: #ffffff, $alpha: 0.85);
+    border: 1px solid $good-color;
+    border-radius: 0.5rem;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    color: black;
+}
