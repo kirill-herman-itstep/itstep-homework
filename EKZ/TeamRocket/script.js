@@ -63,6 +63,8 @@ function choosePage() {
     else if (hash === '#table') {
         gotoMainPage();
         gotoTableLayout();
+    } else {
+        showError();
     }
 };
 
@@ -166,6 +168,11 @@ export function hideFilter() {
     if (document.querySelector('.filterLayout')) {
         body.removeChild(document.querySelector('.filterLayout'));
     }
+}
+
+export function showError() {
+    body.append(view.get('errorModal'));
+    body.querySelector('.errorOverlay .text').innerText = 'The page does not exist.'
 }
 
 

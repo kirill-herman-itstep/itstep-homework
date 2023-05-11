@@ -878,7 +878,6 @@ body .task .comment .avatarPlaceholder {
   height: 2rem;
   padding: 0;
   border-radius: 50%;
-  background-color: rgb(249, 248, 248);
 }
 body .task .comment .avatarPlaceholder path {
   fill: #1C1C1C;
@@ -1002,4 +1001,38 @@ body .profileOptions > * {
 }
 body .profileOptions > *:hover {
   background-color: #000000;
+}
+
+#assigneeHoverLayout {
+  position: absolute;
+  padding: 0.15rem 0.3rem;
+  border: 2px solid #1C1C1C;
+  background-color: #2E2E2E;
+  color: rgb(249, 248, 248);
+  font-size: 0.875rem;
+}
+
+.errorOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.errorOverlay .errorLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 7rem;
+  min-height: 5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #2E2E2E;
+}
+.errorOverlay .errorLayout span {
+  color: rgb(249, 248, 248);
+}
+.errorOverlay .errorLayout span:first-child {
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=styles.css.map */

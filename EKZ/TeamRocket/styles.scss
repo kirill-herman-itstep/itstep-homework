@@ -117,3 +117,41 @@ body {
     @import 'styles/body/filter';
     @import 'styles/body/profileOptions';
 }
+
+#assigneeHoverLayout {
+    position: absolute;
+    padding: 0.15 * $default-padding 0.3 * $default-padding;
+    border: 2 * $border-width solid $secondary-bg-color;
+    // border-radius: $default-padding;
+    background-color: $main-bg-color;
+    color: $light-bg-color;
+    font-size: $small-font-size;
+}
+
+.errorOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+    
+    .errorLayout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 7 * $default-padding;
+        min-height: 5 * $default-padding;
+        padding: 2 * $default-padding;
+        border-radius: $default-padding;
+        background-color: $main-bg-color;
+        
+        span {
+            color: $light-bg-color;
+
+            &:first-child {
+                font-size: 2 * $h3-font-size;
+                margin-bottom: 2 * $default-padding;
+            }
+        }
+    }
+}
