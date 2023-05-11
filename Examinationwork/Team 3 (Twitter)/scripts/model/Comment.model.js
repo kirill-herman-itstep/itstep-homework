@@ -4,7 +4,7 @@ import { _counter } from '../helper/id.helper.js';
 
 export class Comment {
     constructor(text = '', author = '', id = `${_counter()}`, createdAt = new Date()) {
-        (this._id = id), (this.text = text), (this._createdAt = createdAt), (this._author = author);
+        (this._id = id), (this.text = text), (this._createdAt = new Date(`${createdAt}`)), (this._author = author);
     }
 
     get id() {

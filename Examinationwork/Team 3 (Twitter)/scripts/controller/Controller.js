@@ -98,10 +98,7 @@ export class TweetsController {
 
         const listenerMainPageClick = event => {
             if (event.target === Array.from(document.querySelectorAll('.main-current-twit-info-delete')).find(item => item === event.target)) {
-                const tweetId = event.target.parentElement.parentElement.id;
-                this.removeTweet(tweetId);
-                this._showTweetsIcons();
-                return;
+                this._mainPageDelete(event);
             }
 
             if (event.target === document.getElementById('postTweet')) {
@@ -116,68 +113,11 @@ export class TweetsController {
             }
 
             if (event.target === Array.from(document.querySelectorAll('.main-current-twit-info-edit')).find(item => item === event.target)) {
-                const text = event.target.parentElement.previousElementSibling.innerText;
-                const idTweet = event.target.parentElement.parentElement.id;
-
-                if (this.tweetCollection.edit(idTweet, text)) {
-                    const editListenerClick = event => {
-                        const tweetText = editArea.value;
-                        this.editTweet(idTweet, tweetText);
-                        this._showTweetsIcons();
-                        editArea.removeEventListener('input', editListenerInput);
-                        editButton.removeEventListener('input', editListenerClick);
-                    };
-
-                    const editListenerInput = event => {
-                        editCounter.innerText = `${editArea.value.length}/280`;
-                    };
-
-                    const valueTweet = event.target.parentElement.previousElementSibling;
-                    const autorHeader = event.target.parentElement.previousElementSibling.previousElementSibling;
-
-                    const divContainer = document.createElement('div');
-                    divContainer.classList.add('main-current-twit-edit');
-
-                    const editArea = document.createElement('textarea');
-                    editArea.classList.add('main-current-twit-edit-area');
-                    editArea.setAttribute('rows', '5');
-
-                    const editController = document.createElement('div');
-                    editController.classList.add('main-current-twit-edit-controller');
-
-                    const editCounter = document.createElement('div');
-                    editCounter.setAttribute('id', 'twitEditCounter');
-
-                    const editButton = document.createElement('button');
-                    editButton.setAttribute('id', 'mainTweetEdit');
-                    editButton.innerText = 'Edit';
-
-                    editController.append(editCounter, editButton);
-                    divContainer.append(editArea, editController);
-
-                    editArea.value = valueTweet.innerText;
-                    editCounter.innerText = `${editArea.value.length}/280`;
-
-                    autorHeader.after(divContainer);
-                    valueTweet.classList.add('norefresh');
-
-                    this._showTweetsIcons();
-
-                    editArea.addEventListener('input', editListenerInput);
-                    editButton.addEventListener('click', editListenerClick);
-                }
+                this._mainPageEdit(event);
             }
 
             if (event.target === document.getElementById('filtrationFormHashtags')) {
-                const userAuthor = document.getElementById('filtrationUserAutor').value;
-                const userDateFrom = document.getElementById('filtrationDateFrom').value;
-                const userDateTo = document.getElementById('filtrationDateTo').value;
-                const userTextTweet = document.querySelector('.filtration-form-text-twit-area').value;
-                const userFilterTweets = document.querySelector('.filtration-form-hashtags-text').value;
-
-                this.getFeed(0, this.tweetCollection.tweets.length, { author: userAuthor, dateFrom: userDateFrom, dateTo: userDateTo, text: userTextTweet, hashtags: [userFilterTweets] });
-
-                this._showTweetsIcons();
+                this._mainPageFiltration(event);
             }
 
             if (event.target === document.getElementById('mainLogOut')) {
@@ -190,17 +130,7 @@ export class TweetsController {
             }
 
             if (event.target === Array.from(document.querySelectorAll('.main-current-twit-info-messege')).find(item => item === event.target)) {
-                document.getElementById('mainContainer').removeEventListener('click', this.arrayCBFunctions[0]);
-                document.getElementById('mainContainer').removeEventListener('input', this.arrayCBFunctions[1]);
-                this.arrayCBFunctions.shift();
-                this.arrayCBFunctions.shift();
-
-                root.innerHTML = '';
-                root.insertAdjacentHTML('afterbegin', tweetPage);
-
-                const tweetId = event.target.parentElement.parentElement.id;
-
-                this.commentPage(tweetId);
+                this._mainPageMessege(event);
             }
         };
 
@@ -262,56 +192,7 @@ export class TweetsController {
             }
 
             if (event.target === document.querySelector('.twit-current-twit-info-edit')) {
-                const text = event.target.parentElement.previousElementSibling.innerText;
-                const idTweet = event.target.parentElement.parentElement.id;
-                if (!this.tweetCollection.edit(idTweet, text)) {
-                    return;
-                }
-
-                const editListenerClick = event => {
-                    const tweetText = editArea.value;
-                    if (this.tweetCollection.edit(idTweet, tweetText)) {
-                        this.showTweet(idTweet);
-                        editArea.removeEventListener('input', editListenerInput);
-                        editButton.removeEventListener('input', editListenerClick);
-                    }
-                };
-
-                const editListenerInput = event => {
-                    editCounter.innerText = `${editArea.value.length}/280`;
-                };
-
-                const valueTweet = event.target.parentElement.previousElementSibling;
-                const autorHeader = event.target.parentElement.previousElementSibling.previousElementSibling;
-
-                const divContainer = document.createElement('div');
-                divContainer.classList.add('twit-current-twit-edit');
-
-                const editArea = document.createElement('textarea');
-                editArea.classList.add('twit-current-twit-edit-area');
-                editArea.setAttribute('rows', '5');
-
-                const editController = document.createElement('div');
-                editController.classList.add('twit-current-twit-edit-controller');
-
-                const editCounter = document.createElement('div');
-                editCounter.setAttribute('id', 'twitEditCounter');
-
-                const editButton = document.createElement('button');
-                editButton.setAttribute('id', 'twitTweetEdit');
-                editButton.innerText = 'Edit';
-
-                editController.append(editCounter, editButton);
-                divContainer.append(editArea, editController);
-
-                editArea.value = valueTweet.innerText;
-                editCounter.innerText = `${editArea.value.length}/280`;
-
-                autorHeader.after(divContainer);
-                valueTweet.classList.add('norefresh');
-
-                editArea.addEventListener('input', editListenerInput);
-                editButton.addEventListener('click', editListenerClick);
+                this._commentPageEdit(event);
             }
         };
         const listenerInputComment = event => {
@@ -395,5 +276,144 @@ export class TweetsController {
             const tweetAuthor = item.parentElement.parentElement.children[0].children[0].innerText;
             if (this.tweetCollection.user !== tweetAuthor) item.style.opacity = '0';
         });
+    }
+
+    _mainPageDelete(event) {
+        const tweetId = event.target.parentElement.parentElement.id;
+        this.removeTweet(tweetId);
+        this._showTweetsIcons();
+        return;
+    }
+
+    _mainPageEdit(event) {
+        const text = event.target.parentElement.previousElementSibling.innerText;
+        const idTweet = event.target.parentElement.parentElement.id;
+
+        if (this.tweetCollection.edit(idTweet, text)) {
+            const editListenerClick = event => {
+                const tweetText = editArea.value;
+                this.editTweet(idTweet, tweetText);
+                this._showTweetsIcons();
+                editArea.removeEventListener('input', editListenerInput);
+                editButton.removeEventListener('input', editListenerClick);
+            };
+
+            const editListenerInput = event => {
+                editCounter.innerText = `${editArea.value.length}/280`;
+            };
+
+            const valueTweet = event.target.parentElement.previousElementSibling;
+            const autorHeader = event.target.parentElement.previousElementSibling.previousElementSibling;
+
+            const divContainer = document.createElement('div');
+            divContainer.classList.add('main-current-twit-edit');
+
+            const editArea = document.createElement('textarea');
+            editArea.classList.add('main-current-twit-edit-area');
+            editArea.setAttribute('rows', '5');
+
+            const editController = document.createElement('div');
+            editController.classList.add('main-current-twit-edit-controller');
+
+            const editCounter = document.createElement('div');
+            editCounter.setAttribute('id', 'twitEditCounter');
+
+            const editButton = document.createElement('button');
+            editButton.setAttribute('id', 'mainTweetEdit');
+            editButton.innerText = 'Edit';
+
+            editController.append(editCounter, editButton);
+            divContainer.append(editArea, editController);
+
+            editArea.value = valueTweet.innerText;
+            editCounter.innerText = `${editArea.value.length}/280`;
+
+            autorHeader.after(divContainer);
+            valueTweet.classList.add('norefresh');
+
+            this._showTweetsIcons();
+
+            editArea.addEventListener('input', editListenerInput);
+            editButton.addEventListener('click', editListenerClick);
+        }
+    }
+
+    _mainPageMessege(event) {
+        document.getElementById('mainContainer').removeEventListener('click', this.arrayCBFunctions[0]);
+        document.getElementById('mainContainer').removeEventListener('input', this.arrayCBFunctions[1]);
+        this.arrayCBFunctions.shift();
+        this.arrayCBFunctions.shift();
+
+        root.innerHTML = '';
+        root.insertAdjacentHTML('afterbegin', tweetPage);
+
+        const tweetId = event.target.parentElement.parentElement.id;
+
+        this.commentPage(tweetId);
+    }
+
+    _mainPageFiltration(event) {
+        const userAuthor = document.getElementById('filtrationUserAutor').value;
+        const userDateFrom = document.getElementById('filtrationDateFrom').value;
+        const userDateTo = document.getElementById('filtrationDateTo').value;
+        const userTextTweet = document.querySelector('.filtration-form-text-twit-area').value;
+        const userFilterTweets = document.querySelector('.filtration-form-hashtags-text').value;
+
+        this.getFeed(0, this.tweetCollection.tweets.length, { author: userAuthor, dateFrom: userDateFrom, dateTo: userDateTo, text: userTextTweet, hashtags: [userFilterTweets] });
+
+        this._showTweetsIcons();
+    }
+
+    _commentPageEdit(event) {
+        const text = event.target.parentElement.previousElementSibling.innerText;
+        const idTweet = event.target.parentElement.parentElement.id;
+        if (!this.tweetCollection.edit(idTweet, text)) {
+            return;
+        }
+
+        const editListenerClick = event => {
+            const tweetText = editArea.value;
+            if (this.tweetCollection.edit(idTweet, tweetText)) {
+                this.showTweet(idTweet);
+                editArea.removeEventListener('input', editListenerInput);
+                editButton.removeEventListener('input', editListenerClick);
+            }
+        };
+
+        const editListenerInput = event => {
+            editCounter.innerText = `${editArea.value.length}/280`;
+        };
+
+        const valueTweet = event.target.parentElement.previousElementSibling;
+        const autorHeader = event.target.parentElement.previousElementSibling.previousElementSibling;
+
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('twit-current-twit-edit');
+
+        const editArea = document.createElement('textarea');
+        editArea.classList.add('twit-current-twit-edit-area');
+        editArea.setAttribute('rows', '5');
+
+        const editController = document.createElement('div');
+        editController.classList.add('twit-current-twit-edit-controller');
+
+        const editCounter = document.createElement('div');
+        editCounter.setAttribute('id', 'twitEditCounter');
+
+        const editButton = document.createElement('button');
+        editButton.setAttribute('id', 'twitTweetEdit');
+        editButton.innerText = 'Edit';
+
+        editController.append(editCounter, editButton);
+        divContainer.append(editArea, editController);
+
+        editArea.value = valueTweet.innerText;
+        editCounter.innerText = `${editArea.value.length}/280`;
+
+        autorHeader.after(divContainer);
+        valueTweet.classList.add('norefresh');
+
+        editArea.addEventListener('input', editListenerInput);
+        editButton.addEventListener('click', editListenerClick);
     }
 }
