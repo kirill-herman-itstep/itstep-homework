@@ -848,6 +848,7 @@ body .task .newComment textarea {
   padding-right: 2.5rem;
 }
 body .task .newComment .postComment {
+  filter: invert(60%);
   position: absolute;
   right: 0.375rem;
   bottom: 0.75rem;
@@ -855,9 +856,10 @@ body .task .newComment .postComment {
   height: 2rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 body .task .newComment .postComment:hover {
-  background-color: #1C1C1C;
+  background-color: rgba(249, 248, 248, 0.5);
 }
 body .task .newComment > span {
   position: absolute;

@@ -207,6 +207,7 @@
         }
 
         .postComment {
+            filter: invert(60%);
             position: absolute;
             right: 0.375 * $default-padding;
             bottom: 0.75 * $default-padding;
@@ -214,9 +215,10 @@
             height: 2 * $default-padding;
             padding: 0.5 * $default-padding;
             border-radius: $svg-radius;
+            cursor: pointer;
 
             &:hover {
-                background-color: $secondary-bg-color;
+                background-color: $secondary-light-bg-color;
             }
         }
 
