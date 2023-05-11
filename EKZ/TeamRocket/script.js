@@ -65,6 +65,7 @@ function choosePage() {
         gotoTableLayout();
     } else {
         showError();
+        body.querySelector('.errorOverlay .text').innerText = 'The page does not exist.'
     }
 };
 
@@ -172,7 +173,6 @@ export function hideFilter() {
 
 export function showError() {
     body.append(view.get('errorModal'));
-    body.querySelector('.errorOverlay .text').innerText = 'The page does not exist.'
 }
 
 
