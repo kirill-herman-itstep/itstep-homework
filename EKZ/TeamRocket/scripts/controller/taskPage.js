@@ -9,6 +9,33 @@ let task;
 export function clickableTasks() {
     const allFeeds = document.querySelectorAll('.taskTable');
 
+    let isCteatUserNameBlock = false;
+
+    allFeeds.forEach(elem => elem.addEventListener('mouseover', e => {
+        if (e.target.closest('.assignee')) {
+            const taskElem = e.target.closest('.taskForm');
+            const assigneeName = mainDB.getTask(taskElem.id).assignee;
+            
+            if (!isCteatUserNameBlock) {
+                const assigneeNameBlock = document.createElement('span');
+                assigneeNameBlock.innerHTML = assigneeName;
+                e.target.closest('.assignee').before(assigneeNameBlock);
+
+                isCteatUserNameBlock = true;
+            }
+        }
+    }));
+
+    allFeeds.forEach(elem => elem.addEventListener('mouseout', e => {
+        if (e.target.closest('.assignee')) {
+            
+            if (isCteatUserNameBlock) {
+                document.querySelector('.taskForm .taskAssignee span').remove();
+                isCteatUserNameBlock = false;
+            }
+        }
+    }));
+
     allFeeds.forEach(elem => elem.addEventListener('mousedown', e => {
 
         if (e.target.closest('.taskForm')) {

@@ -490,6 +490,7 @@ body main .taskBoard .taskTableWrapper .taskTable .tasks .taskForm > * {
 }
 body main .taskBoard .taskTableWrapper .taskTable .tasks .taskForm div {
   display: flex;
+  align-items: center;
 }
 body main .taskBoard .taskTableWrapper .taskTable .tasks .taskForm .taskStatus {
   justify-content: space-between;
