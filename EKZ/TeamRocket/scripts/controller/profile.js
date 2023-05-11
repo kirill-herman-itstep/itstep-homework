@@ -10,24 +10,26 @@ export function profileFunctional() {
 
     userAvatar.nextElementSibling.addEventListener('click', () => changeAvatar(current))
 
+    let newAvatar;
+
     function changeAvatar(current) {
         document.body.append(view.get('avatarChange'))
         const avatarChangeLayout = document.querySelector('.avatarChangeLayout');
         const saveBtn = avatarChangeLayout.querySelector('button');
         const inputs = document.querySelectorAll('.avatarChangeLayout input');
+        
 
         for (const input of inputs) {
             if (input.value === current.avatar) input.checked = true;
         }
 
         saveBtn.addEventListener('click', () => {
-            current.avatar = avatarChangeLayout.querySelector('input:checked').value;
-            currentUser.avatar = avatarChangeLayout.querySelector('input:checked').value;
+            newAvatar = avatarChangeLayout.querySelector('input:checked').value;
 
             document.querySelector('.avatarChangeLayout').remove();
             document.querySelector('.avatarChangeOverlay').remove();
 
-            userAvatar.innerHTML = `<image href="avatar/${currentUser.avatar}.png"></image>`;
+            userAvatar.innerHTML = `<image href="avatar/${newAvatar}.png"></image>`;
         })
     }
 
@@ -51,6 +53,9 @@ export function profileFunctional() {
             currentUser.password = newPass.value;
         }
         current.name = userName.value;
+        current.avatar = newAvatar
+        currentUser.avatar = newAvatar
+
         userDB.saveCurrentUserInLocalStorage(currentUser)
         userDB.saveUserArrayInLocalStorage()
 
