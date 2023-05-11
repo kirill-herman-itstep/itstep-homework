@@ -1,0 +1,152 @@
+h2 {
+    font-size: 26px;
+}
+
+.filtration-form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
+
+    .filtration-form-autor {
+        div {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-left: 16px;
+        }
+
+        input {
+            box-sizing: border-box;
+            padding: 10px 0 10px 16px;
+            outline: none;
+            border: none;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        input::placeholder {
+            font-size: 14px;
+            color: rgba(0, 0, 5, 0.4);
+        }
+    }
+
+    .filtration-form-date {
+        display: flex;
+        flex-flow: column;
+        gap: 5px;
+
+        > :first-of-type {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-left: 16px;
+        }
+
+        > :last-of-type {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+
+            input {
+                flex-grow: 1;
+                width: 40%;
+                margin: 0;
+                padding: 10px 0 10px 16px;
+                outline: none;
+                border: none;
+                width: 100%;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0.9rem;
+
+                &::placeholder {
+                    color: rgba(0, 0, 5, 0.4);
+                }
+            }
+        }
+    }
+
+    .filtration-form-text-twit {
+        display: flex;
+        flex-flow: column;
+        gap: 5px;
+
+        :first-of-type {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-left: 16px;
+        }
+
+        .filtration-form-text-twit-area {
+            display: flex;
+            box-sizing: border-box;
+            margin: 0;
+            width: 100%;
+            resize: none;
+            outline: none;
+            border: none;
+            padding-left: 16px;
+            height: 75px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            padding: 10px 0 10px 16px;
+        }
+
+        .filtration-form-text-twit-area::placeholder {
+            color: rgba(0, 0, 5, 0.4);
+            box-sizing: border-box;
+        }
+    }
+
+    .filtration-form-hashtags {
+        :first-of-type {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-left: 16px;
+        }
+
+        .filtration-form-hashtags-text {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px 0 10px 16px;
+            outline: none;
+            border: none;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .filtration-form-hashtags-text::placeholder {
+            color: rgba(0, 0, 5, 0.4);
+            box-sizing: border-box;
+        }
+    }
+
+    #filtrationFormHashtags {
+        box-sizing: border-box;
+        width: 100px;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3px 0;
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        margin-top: 20px;
+
+        border-color: #88658c;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+        transition: all 250ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+            color: #a248ac;
+        }
+    }
+}

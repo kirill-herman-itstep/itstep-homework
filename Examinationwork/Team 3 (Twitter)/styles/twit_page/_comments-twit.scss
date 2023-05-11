@@ -1,0 +1,33 @@
+@import 'vars';
+
+.comments-twit {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 21px 31px 50px 21px;
+    gap: 25px;
+    box-sizing: border-box;
+
+    .comments-twit-autor {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+
+        :first-of-type {
+            font-weight: 700;
+            font-size: 18px;
+            margin-right: auto;
+        }
+
+        :last-of-type {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+            margin-left: auto;
+        }
+    }
+
+    .comments-twit-text {
+        box-sizing: border-box;
+        padding-left: 39px;
+    }
+}

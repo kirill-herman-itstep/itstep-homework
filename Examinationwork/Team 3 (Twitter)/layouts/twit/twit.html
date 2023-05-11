@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Twit</title>
+        <link rel="stylesheet" href="../../styles/twit_page/twit.css" />
+    </head>
+    <body>
+        <div class="container-twit">
+            <aside class="welcome-twit">
+                <div class="welcome-icon-twit"></div>
+                <h1>Welcome!</h1>
+                <h2 id="tweetUser"></h2>
+                <a href="#" id="twitLogOut">Log out</a>
+                <div class="welcome-site-twit">MAIN PAGE</div>
+            </aside>
+            <main class="twit-main" id="twitMain">
+                <div class="twit-main-navigation">
+                    <div class="twit-main-navigation-icon"></div>
+                    <a href="#">Main</a>
+                    <div class="twit-main-next">></div>
+                    <a href="#">Twit</a>
+                    <div class="twit-main-next">></div>
+                </div>
+                <div class="container-corrent-twit">
+                    <div class="twit-current-twit" id="twitNumber1">
+                        <div class="twit-current-twit-autor">
+                            <div>Author's name</div>
+                            <div>Date and time</div>
+                        </div>
+                        <!-- <div class="twit-current-twit-text">Text twit</div> -->
+                        <div class="twit-current-twit-edit">
+                            <textarea class="twit-current-twit-edit-area" rows="5"></textarea>
+                            <div class="twit-current-twit-edit-controller">
+                                <div id="twitEditCounter">0/280</div>
+                                <button id="twitTweetEdit">Edit</button>
+                            </div>
+                        </div>
+                        <div class="twit-current-twit-info">
+                            <div class="twit-current-twit-info-edit"></div>
+                            <div class="twit-current-twit-info-delete"></div>
+                            <div class="twit-current-twit-info-messege"></div>
+                            <div id="twitQuantityMessege">5</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-comments-twit">
+                    <div class="comments-twit" id="twitNumber1">
+                        <div class="comments-twit-autor">
+                            <div>Сommenter's name</div>
+                            <div>Date and time</div>
+                        </div>
+                        <div class="comments-twit-text">Comment text</div>
+                    </div>
+                </div>
+                <div class="container-comments-answer">
+                    <div class="comments-answer">
+                        <textarea id="commentsAnswerTwit" placeholder="Write your reply"></textarea>
+                        <div id="commentsAnswerСounter">0/280</div>
+                    </div>
+                    <button id="postComment">Post</button>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

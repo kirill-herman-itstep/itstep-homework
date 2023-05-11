@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inspiration&family=Permanent+Marker&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,500;1,400;1,500&display=swap");
+#errorMainWrapper {
+  margin-right: 0%;
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  margin: 0%;
+}
+
+#errorMainSektion {
+  background-image: url(../../assets/images/error_page/Error\ view.png);
+  background-size: 62%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 15px;
+  background-position-x: 20px;
+}
+
+#nyatterSmall {
+  display: flex;
+  flex-direction: row;
+  margin-top: 148px;
+}
+
+#errorFooterEnd {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(0deg, rgba(176, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+  margin: 0%;
+}
+
+.error-liraight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#errorRaightBlock {
+  margin-top: 0px;
+  box-sizing: border-box;
+  padding-left: 0%;
+  border: 0%;
+  width: 80.41%;
+  min-width: 500px;
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 18px 3px rgba(136, 101, 140, 0.4);
+  margin-bottom: 0%;
+}
+
+.error-main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  top: 0px;
+  padding-left: 5%;
+  background: #ffffff;
+  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.error-main-header h3:nth-of-type(2),
+.error-main-header h3:nth-of-type(4) {
+  width: 7px;
+  height: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #88658c;
+  padding-left: 20.12px;
+}
+
+.error-main-header h3:nth-of-type(1),
+.error-main-header h3:nth-of-type(3) {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #88658c;
+  padding-left: 20.12px;
+}
+
+#errorLeftBlock {
+  display: flex;
+  min-width: 301px;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-left: 0%;
+  padding-left: 0%;
+  margin-bottom: 0%;
+  box-sizing: border-box;
+  align-items: center;
+  width: 19.59%;
+  height: 88vh;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
+}
+
+.error-cat {
+  padding-top: 86px;
+  width: 60.59px;
+  height: 56.24px;
+}
+
+#errorLeftBlock h3 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 26px;
+  margin-top: 0%;
+}
+
+.error-sign {
+  margin-top: 0%;
+  padding-top: 27px;
+  width: 231px;
+  height: 38px;
+  left: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  color: black;
+}
+
+.error-main-page {
+  padding-top: 35%;
+}
+
+#errorLogout {
+  text-decoration: none;
+  color: #88658c;
+  font-size: 1.2rem;
+  position: relative;
+}
+#errorLogout::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+#errorLogout:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}/*# sourceMappingURL=error.css.map */

@@ -1,0 +1,35 @@
+#leftBlock {
+    display: flex;
+    min-width: 301px;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-bottom: 0%;
+    box-sizing: border-box;
+    align-items: center;
+    width: 19.59%;
+    height: 88vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: linear-gradient(0deg, rgba(235, 174, 242, 0.2), rgba(235, 174, 242, 0.2)), #ffffff;
+}
+.vectorKat {
+    padding-top: 86px;
+    left: 39.5%;
+    top: 25%;
+    width: 60.59px;
+}
+.Sign {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 40%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    color: black;
+    height: 100%;
+}
+.mainPage {
+    width: 100%;
+}

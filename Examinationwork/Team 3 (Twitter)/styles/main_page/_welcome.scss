@@ -1,0 +1,52 @@
+@import 'vars';
+
+.main-welcome-icon {
+    margin-top: 86px;
+    width: $width-welcome-icon;
+    height: $height-welcome-icon;
+    background: url(../../assets/images/img_main_page/Group.png);
+}
+
+h1 {
+    margin: 0;
+    margin-top: 27px;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 0;
+    margin-top: 16px;
+    font-size: 28px;
+}
+
+#mainLogOut {
+    margin-top: 18px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        width: 0;
+        height: 2px;
+        background-color: #88658c;
+        transition: width 0.5s;
+    }
+
+    &:hover::after {
+        content: '';
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        height: 2px;
+        background-color: #88658c;
+        transition: width 0.5s;
+    }
+}

@@ -1,0 +1,326 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.container-twit {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  min-height: 100vh;
+  background-color: rgba(235, 174, 242, 0.2);
+}
+.container-twit .welcome-twit {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container-twit .welcome-twit .welcome-icon-twit {
+  margin-top: 86px;
+  width: 95px;
+  height: 81px;
+  background: url(../../assets/images/img_twit_page/Group.png);
+}
+.container-twit .welcome-twit h1 {
+  margin: 0;
+  margin-top: 27px;
+  font-size: 40px;
+}
+.container-twit .welcome-twit h2 {
+  margin: 0;
+  margin-top: 16px;
+  font-size: 28px;
+}
+.container-twit .welcome-twit #twitLogOut {
+  margin-top: 18px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.container-twit .welcome-twit #twitLogOut::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+.container-twit .welcome-twit #twitLogOut:hover::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #88658c;
+  transition: width 0.5s;
+}
+.container-twit .welcome-twit .welcome-site-twit {
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 200px;
+}
+.container-twit .twit-main {
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 100vh;
+}
+.container-twit .twit-main .twit-main-navigation {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  background: rgb(255, 255, 255);
+  min-height: 40px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container-twit .twit-main .twit-main-navigation .twit-main-navigation-icon {
+  margin-left: 41px;
+  background: url(../../assets/images/img_twit_page/home.png);
+  width: 25px;
+  height: 25px;
+}
+.container-twit .twit-main .twit-main-navigation a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #88658c;
+}
+.container-twit .twit-main .twit-main-navigation .twit-main-next {
+  color: #88658c;
+  font-size: 12px;
+}
+.container-twit .container-corrent-twit {
+  box-sizing: border-box;
+  padding: 32px 240px 32px 105px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container-twit .container-corrent-twit .twit-current-twit {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 21px 31px 10px 21px;
+  gap: 25px;
+  box-sizing: border-box;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-autor {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-autor :first-of-type {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: auto;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-autor :last-of-type {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2vw;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #88658c;
+  border-radius: 10px;
+  align-items: flex-end;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitEditCounter {
+  color: rgba(0, 0, 0, 0.54);
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitTweetEdit {
+  box-sizing: border-box;
+  width: 100px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  margin-left: auto;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-controller #twitTweetEdit:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-edit .twit-current-twit-edit-area {
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  flex-grow: 1;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-text {
+  box-sizing: border-box;
+  padding-left: 39px;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-flow: row nowrap;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-edit {
+  width: 25px;
+  height: 25px;
+  background: url(../../assets/images/img_twit_page/edit.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-edit:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px 2px #88658c;
+  border-radius: 20%;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-delete {
+  width: 29px;
+  height: 29px;
+  background: url(../../assets/images/img_twit_page/Delete.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  margin-left: 22px;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-delete:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px 2px #88658c;
+  border-radius: 20%;
+  transition: 0.2s;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info .twit-current-twit-info-messege {
+  width: 27px;
+  height: 25px;
+  background: url(../../assets/images/img_twit_page/Comment.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  box-sizing: border-box;
+  margin-left: 60px;
+}
+.container-twit .container-corrent-twit .twit-current-twit .twit-current-twit-info #twitQuantityMessege {
+  box-sizing: border-box;
+  color: #88658c;
+  padding-left: 15px;
+}
+.container-twit .container-corrent-twit .norefresh {
+  display: none;
+}
+.container-twit .container-comments-twit {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 32px 240px 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3vh;
+  overflow: auto;
+}
+.container-twit .container-comments-twit .comments-twit {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 21px 31px 50px 21px;
+  gap: 25px;
+  box-sizing: border-box;
+}
+.container-twit .container-comments-twit .comments-twit .comments-twit-autor {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.container-twit .container-comments-twit .comments-twit .comments-twit-autor :first-of-type {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: auto;
+}
+.container-twit .container-comments-twit .comments-twit .comments-twit-autor :last-of-type {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+}
+.container-twit .container-comments-twit .comments-twit .comments-twit-text {
+  box-sizing: border-box;
+  padding-left: 39px;
+}
+.container-twit .container-comments-answer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 30px 0;
+  padding-left: 43px;
+}
+.container-twit .container-comments-answer .comments-answer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+  align-items: center;
+  flex-grow: 1;
+}
+.container-twit .container-comments-answer #commentsAnswerTwit {
+  box-sizing: border-box;
+  padding: 18px;
+  width: 100%;
+  margin: auto;
+  resize: none;
+  min-height: 3rem;
+  border-radius: 29px 29px 0 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.container-twit .container-comments-answer #commentsAnswerСounter {
+  display: flex;
+  justify-content: right;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 9px 26px 9px 0;
+  border-radius: 0 0 29px 29px;
+  color: rgba(0, 0, 5, 0.54);
+}
+.container-twit .container-comments-answer #postComment {
+  box-sizing: border-box;
+  width: 121px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  padding: 5px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  margin: 0 60px;
+  border-color: #88658c;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #88658c inset, 0 0 0 0 #88658c;
+  transition: all 250ms ease-in-out;
+}
+.container-twit .container-comments-answer #postComment:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 #88658c inset, 0 0 10px 4px #88658c;
+  color: #a248ac;
+}/*# sourceMappingURL=twit.css.map */

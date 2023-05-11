@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Главная страница</title>
+        <link rel="stylesheet" href="../../styles/main_page/main.css" />
+    </head>
+    <body>
+        <div class="main-container">
+            <aside class="main-welcome">
+                <div class="main-welcome-icon"></div>
+                <h1>Welcome!</h1>
+                <h2 id="mainUser"></h2>
+                <a href="#" id="mainLogOut">Log out</a>
+            </aside>
+            <div class="main-content">
+                <div class="main-navigation">
+                    <div class="main-navigation-icon"></div>
+                    <a href="#">Main</a>
+                    <div>></div>
+                </div>
+                <div class="main-new-twit">
+                    <h2>What's new?</h2>
+                    <div class="main-new-twit-text">
+                        <textarea id="mainNewTwit" cols="10" placeholder="Write here..."></textarea>
+                        <div id="mainNewTwitСounter">0/280</div>
+                    </div>
+                    <button id="postTweet">Post</button>
+                </div>
+                <div class="main-current-all-tweets" id="tweetsMainAllTweets">
+                    <div class="main-current-twit" id="1">
+                        <div class="main-current-twit-autor">
+                            <div>Инвестинг</div>
+                            <div>20.02.2023, 03:00:00</div>
+                        </div>
+                        <!-- <div class="main-current-twit-text">Сегодня цена на газ снизилась до 2,3$ за МБТЕ</div> -->
+                        <div class="main-current-twit-edit">
+                            <textarea class="main-current-twit-edit-area" rows="5"></textarea>
+                            <div class="main-current-twit-edit-controller">
+                                <div id="twitEditCounter">0/280</div>
+                                <button id="mainTweetEdit">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="main-current-twit-info">
+                            <div class="main-current-twit-info-edit"></div>
+                            <div class="main-current-twit-info-delete"></div>
+                            <div class="main-current-twit-info-messege"></div>
+                            <div id="mainQuantityMessege">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="filtration">
+                <h2>Filtration</h2>
+                <form class="filtration-form">
+                    <label class="filtration-form-autor">
+                        <div>Autor name</div>
+                        <input type="text" name="" id="" list="filtrationUserAutor" placeholder="ignore" />
+                    </label>
+                    <label class="filtration-form-date">
+                        <div>Data</div>
+                        <div>
+                            <input type="text" name="" id="" placeholder="ignore" />
+                            <input type="text" name="" id="" placeholder="ignore" />
+                        </div>
+                    </label>
+                    <label class="filtration-form-text-twit">
+                        <div>Twit text</div>
+                        <textarea class="filtration-form-text-twit-area" placeholder="ignore"></textarea>
+                    </label>
+                    <label class="filtration-form-hashtags">
+                        <div>hashtags</div>
+                        <input type="text" class="filtration-form-hashtags-text" placeholder="ignore" />
+                    </label>
+                    <input type="submit" value="Find" id="filtrationFormHashtags" />
+                </form>
+            </aside>
+        </div>
+    </body>
+</html>

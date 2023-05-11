@@ -1,0 +1,12 @@
+@import 'autorisation_page/autorisation.scss';
+@import 'registration_page/registration.scss';
+@import 'error_page/error.scss';
+@import 'main_page/main.scss';
+@import 'twit_page/twit.scss';
+
+#root {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
