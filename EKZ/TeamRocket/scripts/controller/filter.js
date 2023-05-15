@@ -36,7 +36,6 @@ function inputs() {
             const priority = document.querySelector('.filterLayout .importance input:checked')?.value;
             
             let isPrivate = document.querySelector('.filterLayout .access input:checked')?.value;
-            if (isPrivate !== undefined) isPrivate = !!+isPrivate;
 
             currentFilter({dateFrom, dateTo, assignee, description, priority, isPrivate});
             popUp('Filtered')

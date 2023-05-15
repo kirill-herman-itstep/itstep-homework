@@ -21,7 +21,7 @@ export function profileFunctional() {
         
 
         for (const input of inputs) {
-            if (input.value === current.avatar) input.checked = true;
+            if (+input.value === current.avatar) input.checked = true;
         }
 
         saveBtn.addEventListener('click', () => {

@@ -14,7 +14,7 @@ export function clickableTasks() {
     allFeeds.forEach(elem => elem.addEventListener('mouseover', e => {
         if (e.target.closest('.assignee')) {
             const taskElem = e.target.closest('.taskForm');
-            const assigneeName = mainDB.getTask(taskElem.id).assignee;
+            const assigneeName = mainDB.getTask(taskElem.id)?.assignee;
             
             if (!isCteatUserNameBlock) {
                 const assigneeNameBlock = document.createElement('span');

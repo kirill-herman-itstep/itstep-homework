@@ -21,12 +21,10 @@ export class FilterView {
             filterLayoutInputs[2].value = this._filterObj.assignee;
             filterLayoutInputs[3].value = this._filterObj.description;
 
-            // if (this._filterObj.priority) {
-            //     const importance = document.querySelectorAll('.filterLayout .importance');
-            //     for (const elem of importance) {
-            //         if (elem.value === this._filterObj.priority) elem.value.setAttribute('checked', true)
-            //     }  
-            // }
+            for (const input of filterLayoutInputs) {
+                if (this._filterObj.priority && this._filterObj.priority === input.value) input.checked = true;
+                if (this._filterObj.isPrivate !== undefined && this._filterObj.isPrivate === input.value) input.checked = true;
+            }
         }
     }
 }
