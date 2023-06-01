@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./work-exp.component.scss']
 })
 export class WorkExpComponent {
-
+  position = 'PC Operator'
+  company = 'Green Market'
+  workDesc = 'Hahaho'
+  workPeriod = '2021 - 2023'
 }

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
-
+  cardTitle = ['HTML', 'CSS', 'JavaScript', 'Angular'];
+  cardDesc = [85, 80, 40, 15];
 }
