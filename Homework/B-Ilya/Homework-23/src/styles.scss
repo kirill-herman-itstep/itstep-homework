@@ -1,0 +1,52 @@
+:root {
+    --light-green: #15D199;   
+    --gray: #A9A9A9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+
+    padding: 3rem;
+
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 70px;
+    text-transform: uppercase;
+    color: var(--light-green);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+h3.work-title {
+    color: var(--light-green);
+}
+
+h3.edu-title {
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 3.5rem;
+    font-weight: 400;
+}
+
+p.desc {
+    color: var(--gray);
+}
