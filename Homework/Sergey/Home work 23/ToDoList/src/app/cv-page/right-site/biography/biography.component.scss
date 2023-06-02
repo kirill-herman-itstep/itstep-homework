@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2vh;
+
+  h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+}

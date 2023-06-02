@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 90%;
+  margin: 0 auto;
+  gap: 2vh;
+
+  .right-site-hobbys-contact {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+
+    > app-contacts,
+    > app-hobbys {
+      flex-basis: 50%;
+      flex-shrink: 0;
+    }
+  }
+}
