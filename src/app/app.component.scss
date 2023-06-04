@@ -1,0 +1,90 @@
+$pageWidth: calc(100vw - 18px);
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: $pageWidth;
+    min-height: 100vh;
+
+    >* {
+        width: $pageWidth;
+    }
+
+    header, .background {
+        opacity: 0.5;
+        filter: grayscale(0.3);
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        width: $pageWidth;
+        background-color: orangered;
+        text-align: center;
+        z-index: 1;
+
+        span {
+            font-size: 5rem;
+            font-weight: 700;
+            color: black;
+        }
+    }
+
+    .background {
+        position: fixed;
+        left: 0;
+        background-image: url("../assets/konoha.jpg");
+        background-size: cover;
+        background-position: 50% 0;
+    }
+
+    .personal-page {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: fit-content;
+        
+        .properties{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            row-gap: 1rem;
+            flex-shrink: 0;
+
+            .property {
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: flex-end;
+    
+                span {
+                    width: fit-content;
+                    padding: 0.125rem 0.5rem;
+
+                    &:first-child{
+                        font-weight: 600;
+                        background-color: rgba($color: white, $alpha: .3);
+                    }
+    
+                    &:nth-child(2) {
+                        background-color: rgba($color: dimgray, $alpha: .8);
+                        color: aliceblue;
+                    }
+                }
+                
+            }
+        }
+        
+        .photo {
+            height: 100%;
+
+            img {
+                height: 1rem;
+                width: 100%;
+            }
+        }
+
+    }
+}
