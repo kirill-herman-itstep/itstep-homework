@@ -26,4 +26,6 @@ export class AppComponent implements OnInit {
         (document.querySelector('main>div.background') as HTMLElement).style.height = `${document.documentElement.clientHeight - document.querySelector('main>header')!.clientHeight}px`;
       })
   }
+
+  // zdrada
 }
