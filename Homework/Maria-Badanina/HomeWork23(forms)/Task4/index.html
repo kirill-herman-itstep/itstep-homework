@@ -5,8 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main>
+        <div class="books">
+            <div class="book">
+                <img src="img/book1.jpg" alt="">
+                <div class="name-book">Learning JavaScript: JavaScript Essentials for Modern Application Development</div>
+                <div class="other-info">
+                    <div class="autor">Ethan Brown</div>
+                    <div class="price">
+                        16$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+            <div class="book">
+                <img src="img/book2.jpg" alt="">
+                <div class="name-book">You Don't Know JS: Scope & Closures</div>
+                <div class="other-info">
+                    <div class="autor">Kyle Simpson</div>
+                    <div class="price">
+                        20$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+            <div class="book">
+                <img src="img/book3.jpg" alt="">
+                <div class="name-book">JavaScript and jQuery: Interactive Front-End Web Development</div>
+                <div class="other-info">
+                    <div class="autor">Jon Duckett</div>
+                    <div class="price">
+                        22$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+            <div class="book">
+                <img src="img/book5.jpg" alt="">
+                <div class="name-book">Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming</div>
+                <div class="other-info">
+                    <div class="autor">Marijn Haverbeke</div>
+                    <div class="price">
+                        24$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+            <div class="book">
+                <img src="img/book4.jpg" alt="">
+                <div class="name-book">JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language</div>
+                <div class="other-info">
+                    <div class="autor">David Flanagan</div>
+                    <div class="price">
+                        36$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+            <div class="book">
+                <img src="img/book6.jpg" alt="">
+                <div class="name-book">Head First JavaScript Programming: A Brain-Friendly Guide</div>
+                <div class="other-info">
+                    <div class="autor">Eric Freeman,Elisabeth Robson</div>
+                    <div class="price">
+                        22$
+                    </div>
+                </div>
+                <button class="book-button">Select</button>
+            </div>
+        </div>
+        <form action="">
+            <div>
+                <label for="bookName">Book:</label>
+                <input id="bookName" type="text" value="" tabindex="0" disabled>
+                <label for="quantityBook">Quantity:</label>
+                <input id="quantityBook" type="number" tabindex="1" required>
+                <label for="addresseeName">Name:</label>
+                <input id="addresseeName" type="text" tabindex="2" required>
+                <label for="deliveryAddress">Delivery address:</label>
+                <textarea id="deliveryAddress" name="" tabindex="3" required></textarea>
+                <label for="deliveryDate">Delivery date:</label>
+                <input id="deliveryDate" type="date" tabindex="4" required>        
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="" tabindex="5"></textarea>  
+            </div>
+            <button class="buy" tabindex="6">Buy</button>
+        </form>
+    </main>
+
+    <div class="none shadow">
+        <div class="modal">
+            <div class="message"></div>
+            <button>OK</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
