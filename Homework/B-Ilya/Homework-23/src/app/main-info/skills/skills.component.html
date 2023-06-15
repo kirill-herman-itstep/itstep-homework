@@ -1,21 +1,9 @@
 <div class="skills">
     <h1>Skills</h1>
     <div class="skills-list">
-        <div class="card">
-            <h3>{{cardTitle[0]}}</h3>
-            <p>{{cardDesc[0]}}</p>
-        </div>
-        <div class="card">
-            <h3>{{cardTitle[1]}}</h3>
-            <p>{{cardDesc[1]}}</p>
-        </div>
-        <div class="card">
-            <h3>{{cardTitle[2]}}</h3>
-            <p>{{cardDesc[2]}}</p>
-        </div>
-        <div class="card">
-            <h3>{{cardTitle[3]}}</h3>
-            <p>{{cardDesc[3]}}</p>
+        <div class="card" *ngFor="let skill of skills">
+            <h3>{{skill.name}}</h3>
+            <p>{{skill.value | percent}}</p>
         </div>
     </div>
 </div>
