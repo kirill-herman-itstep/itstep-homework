@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Домашняя работа №22</title>
+        <link rel="stylesheet" href="../styles/Task5.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="check-parametr">
+                <div class="check-group">
+                    <label for="checkgGroup">Group:</label>
+                    <select name="checkgGroup" id="checkgGroup">
+                        <option value="Group 1"></option>
+                        <option value="Group 2"></option>
+                    </select>
+                </div>
+                <div class="check-lesson">
+                    <label for="checkLesson">Lesson:</label>
+                    <select name="checkLesson" id="checkLesson">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <button class="select">Select</button>
+            </div>
+            <div class="info-lesson-student">
+                <div class="info-lesson">
+                    <label for="lessonTopic">Topic:</label>
+                    <input type="text" / id="lessonTopic" >
+                </div>
+                <ul class="info-student">
+                    <li class="list-header">
+                        <div>Name</div>
+                        <div>Is present</div>
+                    </li>
+                    <li>
+                        <label for="StudentOne">Student 1</label>
+                        <input type="checkbox" name="StudentOne" id="StudentOne" />
+                        <div class="student-present noreflect"></div>
+                    </li>
+                    <li>
+                        <label for="StudentTwo">Student 2</label>
+                        <input type="checkbox" name="StudentTwo" id="StudentTwo" />
+                        <div class="student-present noreflect"></div>
+                    </li>
+                    <li>
+                        <label for="StudentThree">Student 3</label>
+                        <input type="checkbox" name="StudentThree" id="StudentThree" />
+                        <div class="student-present noreflect"></div>
+                    </li>
+                </ul>
+            </div>
+            <button class="save">Save</button>
+        </div>
+        <script src="../scripts/Task5.js"></script>
+    </body>
+</html>

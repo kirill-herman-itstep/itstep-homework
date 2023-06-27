@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
+    width: 750px;
+    background: #fbf2e9;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-direction-date {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid rgb(0, 0, 5, 0.3);
+}
+
+.table-places {
+    padding: 25px;
+    border: 1px solid rgb(0, 0, 5, 0.3);
+    border-radius: 30px;
+}
+
+.places {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+td {
+    height: 30px;
+    min-width: 2.5rem;
+    border: 1px solid rgb(0, 0, 5);
+}
+
+.search-direction > select {
+    padding: 5px 20px 5px 5px;
+}
+
+label {
+    margin-left: 3px;
+}
+
+input[type='date'] {
+    padding: 5px 0 5px 5px;
+}
+
+.search {
+    padding: 5px 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.total-price {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2vw;
+    align-items: center;
+}
+
+#price {
+    font-weight: bold;
+}
+
+.total-price-value {
+    margin-left: auto;
+}
+
+.book {
+    padding: 5px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.show-my-tyckets {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#showMyTickets {
+    width: max-content;
+    padding: 5px 50px;
+}
+
+.info-my-tickets h4 {
+    margin: 1.5rem 0;
+}
+
+.table-my-tickets {
+    border-collapse: collapse;
+}
+
+.table-my-tickets td {
+    width: max-content;
+    padding: 5px 20px;
+    min-width: 80px;
+    border: 1px solid rgb(0, 0, 5, 0.3);
+}
+
+.norefresh {
+    display: none;
+}
+
+.reserve {
+    opacity: 0;
+}
+
+.reserve-parrent {
+    background: red;
+}

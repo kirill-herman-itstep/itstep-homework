@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    padding: 20px;
+    width: 500px;
+    background: #fbf2e9;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4vh;
+}
+
+.check-parametr {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 4vh;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+}
+
+#checkLesson,
+#checkgGroup {
+    width: 90px;
+    padding: 5px;
+}
+
+.select {
+    padding: 5px 20px;
+}
+
+.info-lesson-student {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4vh;
+}
+
+.info-lesson {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1vw;
+}
+
+.info-lesson > input {
+    flex-grow: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3px 5px;
+}
+
+.info-student {
+    padding: 0;
+}
+
+.info-student > li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: dotted 1px rgb(0, 0, 1, 0.3);
+    justify-items: center;
+}
+
+.info-student > li > :first-of-type {
+    width: 30%;
+}
+
+.info-student > li > input,
+.info-student > li > div {
+    width: 50%;
+    text-align: center;
+}
+
+.list-header > :last-of-type {
+    width: 30%;
+    text-align: center;
+}
+
+.list-header > :first-of-type {
+    text-align: left;
+}
+
+.noreflect {
+    display: none;
+}
