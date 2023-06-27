@@ -1,0 +1,69 @@
+<h3 class="use-currency">1. Использование pipe CurrencyPipe:</h3>
+
+<div class="currency-pipes">
+  <div class="currency-pipes-container">
+    <label for="user-currency"> Введите сумму для перевода:</label>
+    <div>
+      <input type="text" id="user-currency" #value />
+      <span> {{ currency }} </span>
+    </div>
+    <button (click)="showResult(value)">Перевести валюту</button>
+  </div>
+  <div class="result" *ngIf="resultCurrency">
+    Сумма после конвертации:
+    {{ resultCurrency | currency : "BYN" : "symbol-narrow" : "1.2-2" }}
+  </div>
+</div>
+
+<h3 class="use-currency">2. Использование pipe PersentPipe:</h3>
+
+<div class="persent-pipes">
+  <div class="persent-pipes-container">
+    <label for="user-persent"> Введите число №1:</label>
+    <input type="text" class="user-persent" #persentOne />
+
+    <label for="user-persent"> Введите число №2:</label>
+    <input type="text" class="user-persent" #persentTwo />
+
+    <button (click)="showResultPersent(persentOne, persentTwo)">
+      Выислить процент
+    </button>
+  </div>
+  <div class="result-persent" *ngIf="resultPersentOne">
+    Первое число составляет
+    {{ resultPersentOne | percent : "1.0-2" : "ru-BY" }} от второго
+  </div>
+  <div class="result-persent" *ngIf="resultPersentTwo">
+    Второе число составляет
+    {{ resultPersentTwo | percent : "1.0-2" : "ru-BY" }} от первого
+  </div>
+
+  <h3 class="use-currency">3. Использование директивы [ngSwitch]</h3>
+
+  <div class="directive-container">
+    <h4>Выберите номер месяца</h4>
+    <div class="button-container">
+      <button
+        class="select-month"
+        *ngFor="let item of arayMonth"
+        (click)="selectMonth($event)"
+      >
+        {{ item }}
+      </button>
+    </div>
+    <div [ngSwitch]="selectedMonth" *ngIf="selectedMonth">
+      <ng-container *ngSwitchCase="1">Выбран месяц январь</ng-container>
+      <ng-container *ngSwitchCase="2">Выбран месяц февраль</ng-container>
+      <ng-container *ngSwitchCase="3">Выбран месяц март</ng-container>
+      <ng-container *ngSwitchCase="4">Выбран месяц апрель</ng-container>
+      <ng-container *ngSwitchCase="5">Выбран месяц май</ng-container>
+      <ng-container *ngSwitchCase="6">Выбран месяц июнь</ng-container>
+      <ng-container *ngSwitchCase="7">Выбран месяц июль</ng-container>
+      <ng-container *ngSwitchCase="8">Выбран месяц август</ng-container>
+      <ng-container *ngSwitchCase="9">Выбран месяц сентябрь</ng-container>
+      <ng-container *ngSwitchCase="10">Выбран месяц октябрь</ng-container>
+      <ng-container *ngSwitchCase="11">Выбран месяц ноябрь</ng-container>
+      <ng-container *ngSwitchCase="12">Выбран месяц декабрь</ng-container>
+    </div>
+  </div>
+</div>

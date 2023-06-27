@@ -1,0 +1,48 @@
+<div class="left-site-skills-html">
+  <div class="left-site-skills-html-text">{{ "html" | uppercase }}</div>
+  <div class="left-site-skills-html-circles">
+    <div
+      class="left-site-skills-html-circles-one"
+      *ngFor="let item of htmlSkills"
+      [ngClass]="{
+        'html-skill': item,
+      }"
+    ></div>
+  </div>
+</div>
+<div class="left-site-skills-css">
+  <div class="left-site-skills-css-text">SCSS, SASS, CSS, LESS</div>
+  <div class="left-site-skills-css-circles">
+    <div
+      class="left-site-skills-css-circles-one"
+      *ngFor="let item of sassSkills"
+      [ngClass]="{
+        'sass-skill': item,
+      }"
+    ></div>
+  </div>
+</div>
+<div class="left-site-skills-js">
+  <div class="left-site-skills-js-text">JavaScript, TypeScript</div>
+  <div class="left-site-skills-js-circles">
+    <div
+      class="left-site-skills-js-circles-one"
+      *ngFor="let item of sassSkills"
+      [ngClass]="{
+        'js-skill': item,
+      }"
+    ></div>
+  </div>
+</div>
+<div class="left-site-skills-angular">
+  <div class="left-site-skills-angular-text">Angular</div>
+  <div class="left-site-skills-angular-circles">
+    <div
+      class="left-site-skills-angular-circles-one"
+      *ngFor="let item of angularSkills"
+      [ngClass]="{
+      'angular-skill': item,
+    }"
+    ></div>
+  </div>
+</div>

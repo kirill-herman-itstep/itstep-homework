@@ -1,0 +1,13 @@
+<div>My Hobbys</div>
+<div class="right-site-hobbys-container">
+  <div class="right-site-hobbys" *ngFor="let item of hobbis; index as index">
+    <div
+      [ngClass]="{
+      snowbording: getNameClass(index) === 'snowbording',
+      videogames: getNameClass(index) === 'videogames',
+      traveling: getNameClass(index) === 'traveling',
+    }"
+    ></div>
+    <div>{{ getNameHobby(index) | titlecase }}</div>
+  </div>
+</div>

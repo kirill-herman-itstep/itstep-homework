@@ -1,0 +1,44 @@
+.currency-pipes,
+.persent-pipes {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1vh;
+
+  .currency-pipes-container,
+  .persent-pipes-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1vw;
+
+    #user-currency,
+    .user-persent {
+      box-sizing: border-box;
+      padding: 3px;
+      max-width: 80px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+  }
+}
+
+.directive-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2vh;
+
+  > h4 {
+    margin: 0;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 0.5vw;
+    flex-flow: row nowrap;
+  }
+  .select-month {
+    box-sizing: border-box;
+    display: flex;
+    padding: 5px 10px;
+  }
+}
