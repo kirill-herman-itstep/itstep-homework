@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #fbf2e9;
+    padding: 20px;
+    width: 50vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 550px;
+    min-height: 350px;
+    gap: 5vh;
+}
+
+.generate-month {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vh;
+}
+
+.buttun-generate {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.read-info {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1vw;
+}
+
+.number-month,
+.number-year {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5vw;
+}
+
+.number-month > input,
+.number-year > input {
+    flex-grow: 1;
+    outline: none;
+}
+
+.text-month {
+    font-weight: bold;
+}
+
+.info-month {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
+    margin-top: auto;
+}
+
+.table-month {
+    border-collapse: collapse;
+}
+
+td {
+    width: calc(100% / 7);
+    text-align: center;
+    border: 1px solid black;
+    height: 30px;
+}
+
+.table-month > thead {
+    font-weight: bold;
+}
+
+.table-month > tbody td {
+    padding: 5px 0;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}

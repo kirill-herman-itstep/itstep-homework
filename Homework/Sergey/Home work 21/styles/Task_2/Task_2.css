@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    width: 50vw;
+    box-sizing: border-box;
+    padding: 50px;
+    background: #fbf2e9;
+    align-items: center;
+}
+
+button {
+    box-sizing: border-box;
+    border: none;
+}
+
+.button-back,
+.button-forward {
+    background: url(../../assets/Task_2/Arrow.png);
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.button-back {
+    transform: rotate(180deg);
+}
+
+.visibility {
+    height: calc((50vw * 6) / 8);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.html_image {
+    background: url(../../assets/Task_2/HTML.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.css_image {
+    background: url(../../assets/Task_2/CSS.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.js_image {
+    background: url(../../assets/Task_2/JS.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.notreflect {
+    display: none;
+}

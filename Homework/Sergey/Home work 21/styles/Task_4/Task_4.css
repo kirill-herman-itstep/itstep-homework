@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    background: #fbf2e9;
+    padding: 20px;
+    width: 60vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+h3 {
+    margin: 20px 0;
+}
