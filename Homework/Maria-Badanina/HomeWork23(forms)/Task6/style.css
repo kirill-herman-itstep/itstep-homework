@@ -1,0 +1,122 @@
+:root {
+    --black: rgb(54, 54, 54);
+    --out-line: rgba(144, 144, 144, 0.699);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    color: var(--black);
+    background-color: #f0e7da;
+}
+
+form, div.booked-tickets {
+    width: 36rem;
+    margin: 5rem auto 2rem;
+}
+
+input, select {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid var(--black);
+    border-radius: 2px;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 1.5px 0px  var(--out-line);
+}
+
+form.search-form {
+    display: flex;
+    gap: 1rem;
+}
+
+form.search-form select, 
+form.search-form input,
+form button {
+    width: 7.5rem;
+}
+
+form.search-form > div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+form.book-form {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 1px solid var(--out-line);
+    padding: 2rem 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+div.sites-28 {
+    padding: 0.75rem;
+    padding-bottom: 1.25rem;
+    border: 1px solid var(--out-line);
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: space-between;
+}
+
+div.sites-4 {
+    display: flex;
+    border: 1px solid var(--out-line);
+    gap: 1px;
+}
+
+div.sites-2 {
+    display: grid;
+    gap: 2px;
+}
+
+div.site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.75rem;
+    border: 1px solid var(--out-line);
+    width: 2.25rem;
+    height: 1.25rem;
+}
+
+div.site > input, div.site > label {
+    margin: 0;
+    cursor: pointer;
+}
+
+div.price-and-book {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    height: 1.5rem;
+}
+
+
+div.booked-tickets {
+    margin-top: 0rem;
+}
+
+div.booked-tickets > * {
+    margin: 0.5rem;
+}
+
+div.booked-tickets > table {
+    border-collapse: collapse;
+}
+
+div.booked-tickets th, div.booked-tickets td {
+    border: 1px solid var(--black);
+    padding: 0.5rem 1rem;
+}

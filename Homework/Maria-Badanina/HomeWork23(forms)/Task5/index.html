@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="select-lesson" action="">
+        <div>
+            <label for="group">Group:</label>
+            <select name="group" id="group">
+                
+            </select>
+        </div>
+        <div>
+            <label for="lesson">Lesson:</label>
+            <select name="lesson" id="lesson">
+            
+            </select>
+        </div>
+        <button>Select</button>
+    </form>
+    <div class="conteaner"></div>
+    <template class="not-saved">
+        <form action="" class="lesson-information">
+            <div class="topic">
+                <label for="topic">Topic:</label>
+                <input type="text" name="topic">
+            </div>
+            <div class="students">
+                <div>Name</div>
+                <div>Is present</div>
+            </div>
+            <button class="save" name="save">Save</button>
+        </form>
+    </template>
+    <template class="saved">
+        <div class="lesson-information">
+            <div class="topic">
+                <div>Topic:</div>
+                <div class="topic-name"></div>
+            </div>
+            <div class="students">
+                <div>Name</div>
+                <div>Is present</div>
+            </div>
+        </div>
+    </template>
+     
+    <script src="script.js"></script>
+</body>
+</html>
