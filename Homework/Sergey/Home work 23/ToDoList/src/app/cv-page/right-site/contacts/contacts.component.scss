@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 80%;
+  padding-left: 30px;
+  gap: 1vh;
+  padding-top: 30px;
+  gap: 2vh;
+
+  .right-site-contact-text {
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .right-site-contact-phone {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1vw;
+
+    > a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: url(../../../../assets/phone.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    div {
+      letter-spacing: 1px;
+    }
+  }
+
+  .right-site-contact-mail {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1vw;
+
+    > a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: url(../../../../assets/gmail.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    div {
+      letter-spacing: 1px;
+    }
+  }
+}
