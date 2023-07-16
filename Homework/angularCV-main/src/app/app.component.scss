@@ -1,0 +1,44 @@
+@import '../styles/vars.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5 * $defaultOffset;
+    min-height: 100vh;
+    padding: $defaultOffset;
+
+    background-image: url(../assets/Firelink_shrine.webp);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    .self-description {
+        display: flex;
+        align-items: center;
+
+        >span {
+            padding: 0 5 * $defaultOffset;
+            font-size: 1.2em;
+
+            p {
+                display: flex;
+                justify-content: space-between;
+                margin-top: $defaultOffset;
+            }
+
+            div {
+                flex-shrink: 0;
+            }
+        }
+
+        img {
+            width: 355px;
+            height: 462px;
+            box-shadow: 0 0 0.5 * $defaultOffset rgba($color: white, $alpha: 0.6);
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
