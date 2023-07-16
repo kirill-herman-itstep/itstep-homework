@@ -1,0 +1,15 @@
+<div>
+    <span>{{ rowList[name][0] ? rowList[name][0] : '' }}</span>
+    <div>
+        <span #first *ngIf="rowList[name][1]" 
+        (mouseover)="chosen = first"
+        (mouseout)="chosen = ''">
+            <span [ngClass]="{'chosen': chosen === first}">{{ rowList[name][1] }}</span>
+        </span>
+        <span #second *ngIf="rowList[name][2]" 
+        (mouseover)="chosen = second"
+        (mouseout)="chosen = ''">
+            <span [ngClass]="{'chosen': chosen === second}">{{ rowList[name][2] }}</span>
+        </span>
+    </div>
+</div>
