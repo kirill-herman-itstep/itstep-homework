@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="modal">
+        <p></p>
+    </div> -->
+    <section class="task1">
+        <h4>Task 1</h4>
+        <template>
+            <div class="message">
+                <div class="userInfo">
+                    <span class="userName"></span>
+                    <span class="date"></span>
+                </div>
+                <div class="text"></div>
+            </div>
+        </template>
+        <div class="messageList">
+        </div>
+        <form class="postForm">
+            <h4>Add new Message</h4>
+            <div class="yourName">
+                <span>Your name:</span>
+                <input type="text">
+            </div>
+            <div class="yourMessage">
+                <span>Your message:</span>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <button>Send</button>
+        </form>
+    </section>
+    <section class="task2">
+        <template class="questionForm">
+            <div class="question">
+                <p>
+                    <strong></strong><span></span>
+                </p>
+                <form action="">
+                    <button>Next</button>
+                </form>
+            </div>
+        </template>
+        <template class="answerForm">
+            <div class="answer">
+                <input name="quiz" type="radio"><label for=""></label>
+            </div>
+        </template>
+        <h4>Task 2</h4>
+    </section>
+    <section class="task3">
+        <div class="styles">
+            <div class="style">
+                <input id="style1" type="checkbox" name="fontWeight"><label for="style1">Bold</label>
+            </div>
+            <div class="style">
+                <input id="style2" type="checkbox" name="textDecoration"><label for="style2">Underline</label>
+            </div>
+            <div class="style">
+                <input id="style3" type="checkbox" name='fontStyle'><label for="style3">Italic</label>
+            </div>
+            <div class="style">
+                <input id="style4" type="radio" name="textAlign"><label for="style4">Left</label>
+            </div>
+            <div class="style">
+                <input id="style5" type="radio" name="textAlign"><label for="style5">Right</label>
+            </div>
+            <div class="style">
+                <input id="style6" type="radio" name="textAlign"><label for="style6">Justify</label>
+            </div>
+        </div>
+        <textarea></textarea>
+        <button>Show text</button>
+    </section>
+    <section class="task4">
+        <template>
+            <div class="book">
+                <div class="top">
+                    <div class="img"></div>
+                    <strong>Book</strong>
+                    <p>Author</p>
+                </div>
+                <div class="price">price</div>
+                <div class="bot">
+                    <button>Select</button>
+                </div>
+            </div>
+        </template>
+        <div class="booklist">
+            <div class="order">
+                <form action="">
+                    <div class="_book">
+                        <span>Book:</span>
+                        <input type="text" disabled>
+                    </div>
+                    <div class="quantity">
+                        <span>Quantity:</span>
+                        <input type="number">
+                    </div>
+                    <div class="name">
+                        <span>Name:</span>
+                        <input type="text">
+                    </div>
+                    <div class="address">
+                        <span>Delivery address:</span>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="date">
+                        <span>Delivery date:</span>
+                        <input type="date">
+                    </div>
+                    <div class="comment">
+                        <span>Comment:</span>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </form>
+                <button>Buy</button>
+            </div>
+        </div>
+    </section>
+    <section class="task5">
+        <div class="gs">
+            <span>Group:</span>
+            <select name="group" id="">
+                <option value="0" selected="selected">Group 1</option>
+                <option value="1">Group 2</option>
+                <option value="2">Group 3</option>
+                <option value="3">Group 4</option>
+                <option value="4">Group 5</option>
+            </select>
+            <span>Lesson:</span>
+            <select name="lesson" id="" >
+                <option value="0" selected="selected">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+                <option value="4">5</option>
+            </select>
+            <button>Select</button>
+        </div>
+        <template class="list">
+            <div class="list">
+    
+                <div class="topic">
+                    <span>Topic:</span>
+                    <input type="text">
+                </div>
+                <form class="students">
+                    <p>
+                        <span>Name</span>
+                        <span>Is present</span>
+                    </p>
+                    <p>
+                        <span>Student 1</span>
+                        <input type="checkbox">
+                    </p>
+                    <p>
+                        <span>Student 2</span>
+                        <input type="checkbox">
+                    </p>
+                    <p>
+                        <span>Student 3</span>
+                        <input type="checkbox">
+                    </p>
+                    <p>
+                        <span>Student 4</span>
+                        <input type="checkbox">
+                    </p>
+                    <p>
+                        <span>Student 5</span>
+                        <input type="checkbox">
+                    </p>
+                    <button>Save</button>
+                </form>
+            </div>
+        </template>
+    </section>
+    <section class="task6">
+        <form class="ds">
+            <span>Direction:</span>
+            <select name="direction" id="">
+                <option value="ab" selected="selected">Moskow - Petersburg</option>
+                <option value="ac">Moskow - Minsk</option>
+                <option value="bc">Petersburg - Minsk</option>
+                <option value="ba">Petersburg - Moskow</option>
+                <option value="ca">Minsk - Moskow</option>
+                <option value="cb">Minsk - Petersburg</option>
+            </select>
+            <span>Date:</span>
+            <input type="date">
+            <button class="search">Search</button>
+        </form>
+
+        <div class="tickets">
+        </div>
+        <table class="my-tickets">
+            <tr>
+                <th>Direction</th>
+                <th>Date</th>
+                <th>Seat</th>
+            </tr>
+        </table>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
